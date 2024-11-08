@@ -1,0 +1,19 @@
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Lecture "
+
+rmd_files: [
+  "index.Rmd",
+  "lecture_1/lecture_01.Rmd",
+  "lecture_1/introduction_to_chemical_kinetics.Rmd",
+  "lecture_1/reaction_rates.Rmd",
+  "lecture_1/simple_rate_equations.Rmd",
+  "lecture_1/elementary_processes.Rmd"
+]
+
+output:
+  bookdown::pdf_book:
+    dev: "pdf"
+  bookdown::html_book:
+    dev: "png"

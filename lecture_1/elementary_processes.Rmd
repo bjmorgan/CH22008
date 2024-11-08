@@ -1,0 +1,16 @@
+## Elementary Processes
+
+Any chemical reaction can be broken down into a sequence of one of more single-step &ldquo;elementary&rdquo; processes.
+
+For example, for the reaction $\mathrm{H}_2 + \mathrm{Br}_2 \longrightarrow 2\mathrm{HBr}$, where the empirical rate law is given by \@ref(eq:HBrratelaw), one sequence of elementary processes that is consistent with this rate law is
+
+\begin{eqnarray}
+\mathrm{Br}_2 & \longrightarrow & \mathrm{Br} + \mathrm{Br} \\
+\mathrm{Br} + \mathrm{H}_2 & \longrightarrow & \mathrm{H} + \mathrm{HBr} \\
+\mathrm{H} + \mathrm{Br}_2 & \longrightarrow & \mathrm{Br} + \mathrm{HBr} \\
+\mathrm{Br} + \mathrm{Br} & \longrightarrow & \mathrm{Br}_2
+\end{eqnarray}
+
+### Molecularity
+
+foo

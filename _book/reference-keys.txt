@@ -1,0 +1,9 @@
+fig:fig-yield
+fig:fig-changingconditions
+eq:HBrratelaw
+lecture1
+why-study-chemical-kinetics
+reaction-rates
+simple-rate-equations
+elementary-processes
+molecularity
