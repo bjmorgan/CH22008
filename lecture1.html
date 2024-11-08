@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lecture 1 Chemical Kinetics | CH22008 Lecture Notes</title>
+  <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lecture 1 Chemical Kinetics | CH22008 Lecture Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lecture 1 Chemical Kinetics | CH22008 Lecture Notes" />
+  
+  <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
+  
+
+<meta name="author" content="Benjamin J. Morgan" />
+
+
+<meta name="date" content="2024-11-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="lecture1.html"><a href="lecture1.html"><i class="fa fa-check"></i><b>1</b> Chemical Kinetics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lecture1.html"><a href="lecture1.html#why-study-chemical-kinetics"><i class="fa fa-check"></i><b>1.1</b> Why Study Chemical Kinetics?</a></li>
+<li class="chapter" data-level="1.2" data-path="lecture1.html"><a href="lecture1.html#reaction-rates"><i class="fa fa-check"></i><b>1.2</b> Reaction Rates</a></li>
+<li class="chapter" data-level="1.3" data-path="lecture1.html"><a href="lecture1.html#simple-rate-equations"><i class="fa fa-check"></i><b>1.3</b> Simple Rate Equations</a></li>
+<li class="chapter" data-level="1.4" data-path="lecture1.html"><a href="lecture1.html#elementary-processes"><i class="fa fa-check"></i><b>1.4</b> Elementary Processes</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="lecture1.html"><a href="lecture1.html#molecularity"><i class="fa fa-check"></i><b>1.4.1</b> Molecularity</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CH22008 Lecture Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lecture1" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Lecture 1</span> Chemical Kinetics<a href="lecture1.html#lecture1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+
+<div id="why-study-chemical-kinetics" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Why Study Chemical Kinetics?<a href="lecture1.html#why-study-chemical-kinetics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Chemical kinetics addresses the fundamental question of how chemical reactions proceed through time.
+While thermodynamics tells us about the driving forces and ultimate endpoints of reactions, kinetics reveals the pathways and speeds by which these endpoints are reached.</p>
+<p>Understanding chemical kinetics helps us to answer practical questions. For a given reaction, A <span class="math inline">\(\longrightarrow\)</span> B, we might want to predict how much product B will be present after a given time, or how long it will take to achieve a desired conversion percentage from A to B.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-yield"></span>
+<img src="lecture_1/figures/time_to_yield.png" alt="A plot of concentrations of reactant A and product B for a generic reaction A $\longrightarrow$ B as a function of time. Over time, A is converted to B. How long will it take to obtain 90% yield?" width="35%" />
+<p class="caption">
+Figure 1.1: A plot of concentrations of reactant A and product B for a generic reaction A <span class="math inline">\(\longrightarrow\)</span> B as a function of time. Over time, A is converted to B. How long will it take to obtain 90% yield?
+</p>
+</div>
+<p>Going beyond this, can we optimise our reaction by changing the conditions (e.g., pressure or temperature)? How would these changes affect the overall rate of our reaction or the reaction yield?</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-changingconditions"></span>
+<img src="lecture_1/figures/changing_conditions.png" alt="If we increase the temperature we (usually) expect our reaction to speed up. But by how much? If we increase the reaction temperature by 10 K, how much faster can we reach 90% yield?" width="35%" />
+<p class="caption">
+Figure 1.2: If we increase the temperature we (usually) expect our reaction to speed up. But by how much? If we increase the reaction temperature by 10 K, how much faster can we reach 90% yield?
+</p>
+</div>
+
+</div>
+<div id="reaction-rates" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Reaction Rates<a href="lecture1.html#reaction-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A core concept in chemical kinetics is the idea of a <strong>reaction rate</strong> — the speed at which chemical change happens.
+We express reaction rates mathematically as derivatives of the form <span class="math inline">\(\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}\)</span>, representing the change in concentration of a species X with time. This rate can be positive (for products being formed) or negative (for reactants being consumed).</p>
+<p>For any reaction that does not have a 1:1 stoichiometry ratio between all reactants and products, the numerical “rate” will depend on the the chemical species we choose to define this. For example, for the reaction</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{A} \longrightarrow 2\mathrm{B}
+\end{equation}\]</span></p>
+<p>the product, B, is formed at twice the rate that the reactant, A, is consumed. Hence,</p>
+<p><span class="math display">\[2\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\]</span></p>
+<p>In general, we can define an “overall” reaction rate <span class="math inline">\(\nu\)</span> that is related to the rates of change of reactants and products by</p>
+<p><span class="math display">\[\nu = \frac{1}{n_\mathrm{X}}\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}\]</span></p>
+<p>where <span class="math inline">\(n_\mathrm{X}\)</span> is the stoichiometric coefficient of species <span class="math inline">\(X\)</span> in the reaction equation.</p>
+
+</div>
+<div id="simple-rate-equations" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Simple Rate Equations<a href="lecture1.html#simple-rate-equations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For many reactions, the rate of reaction is proportional to the concentrations of the reactants, raised to some power; i.e.,</p>
+<p><span class="math display">\[\nu = k [\mathrm{A}]^a [\mathrm{B}]^b [\mathrm{C}]^c \ldots\]</span></p>
+<p>The proportionality constant, <span class="math inline">\(k\)</span>, is called the <strong>rate constant</strong>.
+The exponents, <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> …, describe the <strong>order</strong> of the reaction with respect to the reactants A, B, C ….</p>
+<p>So, for a reaction</p>
+<p><span class="math display">\[A + B \longrightarrow C\]</span></p>
+<p>with rate equation (or “rate law”)</p>
+<p><span class="math display">\[\nu = k[\mathrm{A}]^2[\mathrm{B}]\]</span>,</p>
+<p>we would describe this as being <strong>second-order</strong> with respect to A, and <strong>first-order</strong> with respect to B.</p>
+<p>For rate equations that have the simple form above, we can define an <strong>overall order</strong>, which is the sum of the individual orders with respect to each of the reactants. In the example above, this reaction would be described as being <strong>third-order</strong> overall, since <span class="math inline">\(a+b = 3\)</span>.</p>
+<p>Not all reactions follow simple rate laws. For example, the reaction between H<sub>2</sub> and Br<sub>2</sub> to form HBr has an empirically-determined rate law</p>
+<p><span class="math display" id="eq:HBrratelaw">\[\begin{equation}
+\nu = k\frac{[\mathrm{H}_2][\mathrm{Br}_2]^\frac{1}{2}}{1+k^\prime [\mathrm{HBr}]/[\mathrm{Br}_2]}
+\tag{1.1}
+\end{equation}\]</span></p>
+<p>This rate law is first-order with respect to H<sub>2</sub>, because <span class="math inline">\(\nu \propto [\mathrm{H_2}]\)</span>. But we cannot define an order with respect to Br<sub>2</sub>, because the overall rate is not simply proportional to <span class="math inline">\([\mathrm{Br}_2]\)</span> raised to some power. Instead, we would describe the order with respect to Br<sub>2</sub> as being undefined. This means the overall order is also undefined, since we cannot siply add the orders with respect to H<sub>2</sub> and Br<sub>2</sub>.</p>
+
+</div>
+<div id="elementary-processes" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Elementary Processes<a href="lecture1.html#elementary-processes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Any chemical reaction can be broken down into a sequence of one of more single-step “elementary” processes.</p>
+<p>For example, for the reaction <span class="math inline">\(\mathrm{H}_2 + \mathrm{Br}_2 \longrightarrow 2\mathrm{HBr}\)</span>, where the empirical rate law is given by <a href="lecture1.html#eq:HBrratelaw">(1.1)</a>, one sequence of elementary processes that is consistent with this rate law is</p>
+<p><span class="math display">\[\begin{eqnarray}
+\mathrm{Br}_2 &amp; \longrightarrow &amp; \mathrm{Br} + \mathrm{Br} \\
+\mathrm{Br} + \mathrm{H}_2 &amp; \longrightarrow &amp; \mathrm{H} + \mathrm{HBr} \\
+\mathrm{H} + \mathrm{Br}_2 &amp; \longrightarrow &amp; \mathrm{Br} + \mathrm{HBr} \\
+\mathrm{Br} + \mathrm{Br} &amp; \longrightarrow &amp; \mathrm{Br}_2
+\end{eqnarray}\]</span></p>
+<div id="molecularity" class="section level3 hasAnchor" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Molecularity<a href="lecture1.html#molecularity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>foo</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/lecture_1/lecture_01.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
