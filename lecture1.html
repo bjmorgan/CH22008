@@ -206,12 +206,18 @@ The exponents, <span class="math inline">\(a\)</span>, <span class="math inline"
 <h2><span class="header-section-number">1.5</span> Moving Between Concentration and Rate Perspectives<a href="lecture1.html#moving-between-concentration-and-rate-perspectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The progression of any chemical reaction can be viewed from two complementary perspectives: the concentration of species as they change over time, <span class="math inline">\([\mathrm{A}]\)</span>, and the instantaneous rates at which these changes occur, <span class="math inline">\(\mathrm{d}[\mathrm{A}]/\mathrm{d}t\)</span>. These two perspectives both describe the same underlying chemical process, just viewed through different mathematical lenses.</p>
 <p>Consider a reactant A being consumed during a reaction. We might track its concentration <span class="math inline">\([\mathrm{A}]\)</span> as it decreases over time, giving us a curve of concentration versus time. At any point on this curve, we can determine the instantaneous rate of reaction by finding the slope of the tangent line. Mathematically, this is equivalent to computing the derivative of <span class="math inline">\([\mathrm{A}]\)</span>, i.e., <span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span>. Since we are dealing with the concentration of a reactant, the reaction rate is then the negative of this derivative (since the concentrations of A decreases with time): <span class="math inline">\(\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span>.</p>
+<p>We can also go the other way, from a description of rate to a description of the concentration profile over time. Mathematically we do this by integration, which is the inverse operation to differentiation. By integrating a rate, we effetively sum all the small changes in concentration over some time interval. For example, the change in concentration of A from the start of a reaction at <span class="math inline">\(t=0\)</span> is given by</p>
+<p><span class="math display">\[\begin{equation}
+[\mathrm{A}]_t - [\mathrm{A}]_0 = \int_0^t \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\,\mathrm{d}t
+\end{equation}\]</span></p>
+<p>Whether we work in terms of concentrations or rates depends on the question we are trying to answer, what information we have avialable to us, and whether it is more mathematically convenient to work with one than the other.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-conctorate"></span>
-<img src="lecture_1/figures/concentration_to_rate.png" alt="TODO" width="85%" />
+<img src="lecture_1/figures/concentration_to_rate.png" alt="If we know the concentration of a reactant or product as a function of time we can calculate the rate of change of this concentration by differentiation. We can also calculate how concentrations vary in time from rates by the inverse procedure, integration." width="85%" />
 <p class="caption">
-Figure 1.3: TODO
+Figure 1.3: If we know the concentration of a reactant or product as a function of time we can calculate the rate of change of this concentration by differentiation. We can also calculate how concentrations vary in time from rates by the inverse procedure, integration.
 </p>
 </div>
+<p>TODO: update figure.</p>
 
 </div>
 </div>
