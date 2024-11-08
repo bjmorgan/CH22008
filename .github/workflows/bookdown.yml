@@ -24,8 +24,8 @@ jobs:
       - name: Build book
         run: Rscript -e 'bookdown::render_book("index.Rmd")'
         
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: gh-pages
           folder: _book
