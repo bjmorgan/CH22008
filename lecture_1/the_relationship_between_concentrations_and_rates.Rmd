@@ -4,7 +4,16 @@ The progression of any chemical reaction can be viewed from two complementary pe
 
 Consider a reactant A being consumed during a reaction. We might track its concentration $[\mathrm{A}]$ as it decreases over time, giving us a curve of concentration versus time. At any point on this curve, we can determine the instantaneous rate of reaction by finding the slope of the tangent line. Mathematically, this is equivalent to computing the derivative of $[\mathrm{A}]$, i.e., $\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$. Since we are dealing with the concentration of a reactant, the reaction rate is then the negative of this derivative (since the concentrations of A decreases with time): $\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$.
 
-```{r fig-conctorate, fig.cap="TODO", out.width='85%', fig.align='center'}
+We can also go the other way, from a description of rate to a description of the concentration profile over time. Mathematically we do this by integration, which is the inverse operation to differentiation. By integrating a rate, we effetively sum all the small changes in concentration over some time interval. For example, the change in concentration of A from the start of a reaction at $t=0$ is given by
+
+\begin{equation}
+[\mathrm{A}]_t - [\mathrm{A}]_0 = \int_0^t \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\,\mathrm{d}t
+\end{equation}
+
+Whether we work in terms of concentrations or rates depends on the question we are trying to answer, what information we have avialable to us, and whether it is more mathematically convenient to work with one than the other. 
+
+```{r fig-conctorate, fig.cap="If we know the concentration of a reactant or product as a function of time we can calculate the rate of change of this concentration by differentiation. We can also calculate how concentrations vary in time from rates by the inverse procedure, integration.", out.width='85%', fig.align='center'}
 knitr::include_graphics("lecture_1/figures/concentration_to_rate.png")
 ```
 
+TODO: update figure.
