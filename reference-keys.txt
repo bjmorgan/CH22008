@@ -1,9 +1,13 @@
 fig:fig-yield
 fig:fig-changingconditions
 eq:HBrratelaw
+eq:HBrmechanism
+fig:fig-conctorate
 lecture1
 why-study-chemical-kinetics
 reaction-rates
 simple-rate-equations
 elementary-processes
 molecularity
+rate-laws-for-elementary-processes
+moving-between-concentration-and-rate-perspectives

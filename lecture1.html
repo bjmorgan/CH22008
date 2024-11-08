@@ -85,7 +85,9 @@
 <li class="chapter" data-level="1.4" data-path="lecture1.html"><a href="lecture1.html#elementary-processes"><i class="fa fa-check"></i><b>1.4</b> Elementary Processes</a>
 <ul>
 <li class="chapter" data-level="1.4.1" data-path="lecture1.html"><a href="lecture1.html#molecularity"><i class="fa fa-check"></i><b>1.4.1</b> Molecularity</a></li>
+<li class="chapter" data-level="1.4.2" data-path="lecture1.html"><a href="lecture1.html#rate-laws-for-elementary-processes"><i class="fa fa-check"></i><b>1.4.2</b> Rate Laws for Elementary Processes</a></li>
 </ul></li>
+<li class="chapter" data-level="1.5" data-path="lecture1.html"><a href="lecture1.html#moving-between-concentration-and-rate-perspectives"><i class="fa fa-check"></i><b>1.5</b> Moving Between Concentration and Rate Perspectives</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -152,7 +154,7 @@ We express reaction rates mathematically as derivatives of the form <span class=
 <p>The proportionality constant, <span class="math inline">\(k\)</span>, is called the <strong>rate constant</strong>.
 The exponents, <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> …, describe the <strong>order</strong> of the reaction with respect to the reactants A, B, C ….</p>
 <p>So, for a reaction</p>
-<p><span class="math display">\[A + B \longrightarrow C\]</span></p>
+<p><span class="math display">\[\mathrm{A} + \mathrm{B} \longrightarrow \mathrm{C}\]</span></p>
 <p>with rate equation (or “rate law”)</p>
 <p><span class="math display">\[\nu = k[\mathrm{A}]^2[\mathrm{B}]\]</span>,</p>
 <p>we would describe this as being <strong>second-order</strong> with respect to A, and <strong>first-order</strong> with respect to B.</p>
@@ -169,17 +171,48 @@ The exponents, <span class="math inline">\(a\)</span>, <span class="math inline"
 <h2><span class="header-section-number">1.4</span> Elementary Processes<a href="lecture1.html#elementary-processes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Any chemical reaction can be broken down into a sequence of one of more single-step “elementary” processes.</p>
 <p>For example, for the reaction <span class="math inline">\(\mathrm{H}_2 + \mathrm{Br}_2 \longrightarrow 2\mathrm{HBr}\)</span>, where the empirical rate law is given by <a href="lecture1.html#eq:HBrratelaw">(1.1)</a>, one sequence of elementary processes that is consistent with this rate law is</p>
-<p><span class="math display">\[\begin{eqnarray}
-\mathrm{Br}_2 &amp; \longrightarrow &amp; \mathrm{Br} + \mathrm{Br} \\
-\mathrm{Br} + \mathrm{H}_2 &amp; \longrightarrow &amp; \mathrm{H} + \mathrm{HBr} \\
-\mathrm{H} + \mathrm{Br}_2 &amp; \longrightarrow &amp; \mathrm{Br} + \mathrm{HBr} \\
-\mathrm{Br} + \mathrm{Br} &amp; \longrightarrow &amp; \mathrm{Br}_2
+<p><span class="math display" id="eq:HBrmechanism">\[\begin{eqnarray}
+\mathrm{Br}_2 &amp; \longrightarrow &amp; \mathrm{Br}^\bullet + \mathrm{Br}^\bullet \\
+\mathrm{Br}^\bullet + \mathrm{H}_2 &amp; \longrightarrow &amp; \mathrm{H}^\bullet + \mathrm{HBr} \\
+\mathrm{H}^\bullet + \mathrm{Br}_2 &amp; \longrightarrow &amp; \mathrm{Br}^\bullet + \mathrm{HBr} \\
+\mathrm{Br}^\bullet + \mathrm{Br}^\bullet &amp; \longrightarrow &amp; \mathrm{Br}_2
+\tag{1.2}
 \end{eqnarray}\]</span></p>
 <div id="molecularity" class="section level3 hasAnchor" number="1.4.1">
 <h3><span class="header-section-number">1.4.1</span> Molecularity<a href="lecture1.html#molecularity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>foo</p>
+<p>Elementary processes can be classified according to their <strong>molecularity</strong> — the number of reactant molecules that must come together for a particular reaction step. For example, in reaction mechanism <a href="lecture1.html#eq:HBrmechanism">(1.2)</a>, the first step involves the dissociation of Br<sub>2</sub> to form two Br radicals:</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{Br}_2 \longrightarrow \mathrm{Br}^\bullet + \mathrm{Br}^\bullet
+\end{equation}\]</span></p>
+<p>This reaction step involves a single reactant molecule, so it is described a <strong>unimolecular</strong>.</p>
+<p>The second step involves a Br radical and H<sub>2</sub> molecule reacting:</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{Br}^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{H}^\bullet + \mathrm{HBr}
+\end{equation}\]</span></p>
+<p>Because two reactant molecules must come together for this step, this is described as a <strong>bimolecular</strong> process.</p>
+<p>A process that involves two molecules of the same chemical species, as in the last step of the reaction mechanism above, is also bimolecular:</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{Br}^\bullet + \mathrm{Br}^\bullet \longrightarrow \mathrm{Br}_2
+\end{equation}\]</span></p>
+</div>
+<div id="rate-laws-for-elementary-processes" class="section level3 hasAnchor" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Rate Laws for Elementary Processes<a href="lecture1.html#rate-laws-for-elementary-processes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The rate laws for elementary processes directly reflect their molecularity. Unimolecular processes (<span class="math inline">\(\mathrm{A} \longrightarrow \mathrm{P}\)</span>) show first-order kinetics with rate <span class="math inline">\(\nu = k[\mathrm{A}]\)</span>. Similarly, bimolecular processes show second-order kinetics: for a bimolecular process involving two distinct chemical species (<span class="math inline">\(\mathrm{A} + \mathrm{B} \longrightarrow \mathrm{P}\)</span>), the process is first-order with respect to each species: <span class="math inline">\(\nu = k[\mathrm{A}][\mathrm{B}]\)</span>, while a bimolecular process that involves two molecules of the same chemical species (<span class="math inline">\(2\mathrm{A} \longrightarrow \mathrm{P}\)</span>) is second-order with respect to that species: <span class="math inline">\(\nu = k[\mathrm{A}]^2\)</span>.</p>
+<p>Termolecular processes, involving three reactant molecules, show third order kinetics, e.g., <span class="math inline">\(\nu = k[\mathrm{A}]^2[\mathrm{B}]\)</span>. In general, termolecular processes are rare, because the probability of three molecules colliding simultaneously with the correct orientation is very small. While termolecular processes can play a role at very high pressure, under more typical reaction conditions, experimental observations of third-order kinetics are often better explained by a complex multistep reaction mechanism.</p>
 
 </div>
+</div>
+<div id="moving-between-concentration-and-rate-perspectives" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Moving Between Concentration and Rate Perspectives<a href="lecture1.html#moving-between-concentration-and-rate-perspectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The progression of any chemical reaction can be viewed from two complementary perspectives: the concentration of species as they change over time, <span class="math inline">\([\mathrm{A}]\)</span>, and the instantaneous rates at which these changes occur, <span class="math inline">\(\mathrm{d}[\mathrm{A}]/\mathrm{d}t\)</span>. These two perspectives both describe the same underlying chemical process, just viewed through different mathematical lenses.</p>
+<p>Consider a reactant A being consumed during a reaction. We might track its concentration <span class="math inline">\([\mathrm{A}]\)</span> as it decreases over time, giving us a curve of concentration versus time. At any point on this curve, we can determine the instantaneous rate of reaction by finding the slope of the tangent line. Mathematically, this is equivalent to computing the derivative of <span class="math inline">\([\mathrm{A}]\)</span>, i.e., <span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span>. Since we are dealing with the concentration of a reactant, the reaction rate is then the negative of this derivative (since the concentrations of A decreases with time): <span class="math inline">\(\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span>.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-conctorate"></span>
+<img src="lecture_1/figures/concentration_to_rate.png" alt="TODO" width="85%" />
+<p class="caption">
+Figure 1.3: TODO
+</p>
+</div>
+
 </div>
 </div>
             </section>
