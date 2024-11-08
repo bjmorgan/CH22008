@@ -1,5 +1,4 @@
 ```{r setup, include=FALSE}
-library(magick)
 knitr::opts_chunk$set(
   dev = 'png',
   dpi = 300,
