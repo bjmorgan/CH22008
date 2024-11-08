@@ -2,6 +2,8 @@ fig:fig-yield
 fig:fig-changingconditions
 eq:HBrratelaw
 eq:HBrmechanism
+eq:conctorate
+eq:ratetoconc
 fig:fig-conctorate
 lecture1
 why-study-chemical-kinetics
@@ -11,3 +13,8 @@ elementary-processes
 molecularity
 rate-laws-for-elementary-processes
 moving-between-concentration-and-rate-perspectives
+simple-integrated-rate-laws
+analysing-complex-reaction-mechanisms
+exact-solutions
+approximate-analytical-solutions
+numerical-integration

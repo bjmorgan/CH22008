@@ -88,6 +88,13 @@
 <li class="chapter" data-level="1.4.2" data-path="lecture1.html"><a href="lecture1.html#rate-laws-for-elementary-processes"><i class="fa fa-check"></i><b>1.4.2</b> Rate Laws for Elementary Processes</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="lecture1.html"><a href="lecture1.html#moving-between-concentration-and-rate-perspectives"><i class="fa fa-check"></i><b>1.5</b> Moving Between Concentration and Rate Perspectives</a></li>
+<li class="chapter" data-level="1.6" data-path="lecture1.html"><a href="lecture1.html#simple-integrated-rate-laws"><i class="fa fa-check"></i><b>1.6</b> Simple Integrated Rate Laws</a></li>
+<li class="chapter" data-level="1.7" data-path="lecture1.html"><a href="lecture1.html#analysing-complex-reaction-mechanisms"><i class="fa fa-check"></i><b>1.7</b> Analysing Complex Reaction Mechanisms</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="lecture1.html"><a href="lecture1.html#exact-solutions"><i class="fa fa-check"></i><b>1.7.1</b> Exact Solutions</a></li>
+<li class="chapter" data-level="1.7.2" data-path="lecture1.html"><a href="lecture1.html#approximate-analytical-solutions"><i class="fa fa-check"></i><b>1.7.2</b> Approximate Analytical Solutions</a></li>
+<li class="chapter" data-level="1.7.3" data-path="lecture1.html"><a href="lecture1.html#numerical-integration"><i class="fa fa-check"></i><b>1.7.3</b> Numerical Integration</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -133,7 +140,7 @@ Figure 1.2: If we increase the temperature we (usually) expect our reaction to s
 <h2><span class="header-section-number">1.2</span> Reaction Rates<a href="lecture1.html#reaction-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A core concept in chemical kinetics is the idea of a <strong>reaction rate</strong> — the speed at which chemical change happens.
 We express reaction rates mathematically as derivatives of the form <span class="math inline">\(\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}\)</span>, representing the change in concentration of a species X with time. This rate can be positive (for products being formed) or negative (for reactants being consumed).</p>
-<p>For any reaction that does not have a 1:1 stoichiometry ratio between all reactants and products, the numerical “rate” will depend on the the chemical species we choose to define this. For example, for the reaction</p>
+<p>For any reaction that does not have a 1:1 stoichiometry ratio between all reactants and products, the numerical “rate” will depend on the chemical species we choose to define this. For example, for the reaction</p>
 <p><span class="math display">\[\begin{equation}
 \mathrm{A} \longrightarrow 2\mathrm{B}
 \end{equation}\]</span></p>
@@ -202,21 +209,88 @@ The exponents, <span class="math inline">\(a\)</span>, <span class="math inline"
 <div id="moving-between-concentration-and-rate-perspectives" class="section level2 hasAnchor" number="1.5">
 <h2><span class="header-section-number">1.5</span> Moving Between Concentration and Rate Perspectives<a href="lecture1.html#moving-between-concentration-and-rate-perspectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The progression of any chemical reaction can be viewed from two complementary perspectives: the concentration of species as they change over time, <span class="math inline">\([\mathrm{A}]\)</span>, and the instantaneous rates at which these changes occur, <span class="math inline">\(\mathrm{d}[\mathrm{A}]/\mathrm{d}t\)</span>. These two perspectives both describe the same underlying chemical process, just viewed through different mathematical lenses.</p>
-<p>Consider a reactant A being consumed during a reaction. We might track its concentration <span class="math inline">\([\mathrm{A}]\)</span> as it decreases over time, giving us a curve of concentration versus time. At any point on this curve, we can determine the instantaneous rate of reaction by finding the slope of the tangent line. Mathematically, this is equivalent to computing the derivative of <span class="math inline">\([\mathrm{A}]\)</span>, i.e., <span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span>. Since we are dealing with the concentration of a reactant, the reaction rate is then the negative of this derivative (since the concentrations of A decreases with time): <span class="math inline">\(\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span>.</p>
-<p>We can also go the other way, from a description of rate to a description of the concentration profile over time. Mathematically we do this by integration, which is the inverse operation to differentiation. By integrating a rate, we effetively sum all the small changes in concentration over some time interval. For example, the change in concentration of A from the start of a reaction at <span class="math inline">\(t=0\)</span> is given by</p>
-<p><span class="math display">\[\begin{equation}
-[\mathrm{A}]_t - [\mathrm{A}]_0 = \int_0^t \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\,\mathrm{d}t
+<p>Consider a reactant A being consumed during a reaction. We might track its concentration <span class="math inline">\([\mathrm{A}]\)</span> as it decreases over time, giving us a curve of concentration versus time. At any point on this curve, we can determine the instantaneous rate of reaction by finding the slope of the tangent line. Mathematically, this is equivalent to computing the derivative of <span class="math inline">\([\mathrm{A}]\)</span>, i.e., <span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span>. Since we are dealing with the concentration of a reactant, the reaction rate is then the negative of this derivative (since the concentrations of A decreases with time):</p>
+<p><span class="math display" id="eq:conctorate">\[\begin{equation}
+\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}
+\tag{1.3}
 \end{equation}\]</span></p>
-<p>Whether we work in terms of concentrations or rates depends on the question we are trying to answer, what information we have avialable to us, and whether it is more mathematically convenient to work with one than the other.</p>
+<p>We can also go the other way from a description of rate to a description of the concentration profile over time. Mathematically we do this by integration, which is the inverse operation to differentiation. By integrating a rate, we effectively sum all the small changes in concentration over some time interval. For example, the change in concentration of A from the start of a reaction at <span class="math inline">\(t=0\)</span> is given by</p>
+<p><span class="math display" id="eq:ratetoconc">\[\begin{equation}
+[\mathrm{A}]_t - [\mathrm{A}]_0 = \int_0^t -\nu(t)\,\mathrm{d}t
+\tag{1.4}
+\end{equation}\]</span></p>
+<p>Whether we work in terms of concentrations or rates depends on the question we are trying to answer, what information we have available to us, and whether it is more mathematically convenient to work with one than the other.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-conctorate"></span>
 <img src="lecture_1/figures/concentration_to_rate.png" alt="If we know the concentration of a reactant or product as a function of time we can calculate the rate of change of this concentration by differentiation. We can also calculate how concentrations vary in time from rates by the inverse procedure, integration." width="85%" />
 <p class="caption">
 Figure 1.3: If we know the concentration of a reactant or product as a function of time we can calculate the rate of change of this concentration by differentiation. We can also calculate how concentrations vary in time from rates by the inverse procedure, integration.
 </p>
 </div>
-<p>TODO: update figure.</p>
 
 </div>
+<div id="simple-integrated-rate-laws" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Simple Integrated Rate Laws<a href="lecture1.html#simple-integrated-rate-laws" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For simple rate laws of the form</p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]^n\]</span></p>
+<p>we can derive corresponding integrated rate laws by integrating (see CH12002 Lecture 3).</p>
+<p>For example, for a first-order process, the rate of change of concentration of reactant, A, is given by</p>
+<p><span class="math display">\[\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
+\end{equation}\]</span></p>
+<p>To derive the corresponding integrated rate law, we rearrange this to form an integral equation:</p>
+<p><span class="math display">\[\begin{equation}
+\int_{[\mathrm{A}]_0}^{\mathrm[A]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]}\,\mathrm{d}[\mathrm{A}] = \int_0^t -k\,\mathrm{d}t
+\end{equation}\]</span></p>
+<p>where the limits of the integral with respect to concentration of A are between the concentration at time <span class="math inline">\(0\)</span> (<span class="math inline">\([\mathrm{A}]_0\)</span>) and the concentration at time <span class="math inline">\(t\)</span> (<span class="math inline">\([\mathrm{A}]_t\)</span>), and the limits of the integral with respect to time are between <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=t\)</span>.</p>
+<p>Integrating<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> gives</p>
+<p><span class="math display">\[\begin{equation}
+\ln [\mathrm{A}]_t - \ln [\mathrm{A}]_0 = -kt
+\end{equation}\]</span></p>
+<p>which can be rearranged as</p>
+<p><span class="math display">\[\begin{equation}
+[\mathrm{A}]_t = [\mathrm{A}]_0\mathrm{e}^{-kt}
+\end{equation}\]</span></p>
+<p>i.e., the exponential decay that is characteristic of a first-order process.</p>
+
+</div>
+<div id="analysing-complex-reaction-mechanisms" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Analysing Complex Reaction Mechanisms<a href="lecture1.html#analysing-complex-reaction-mechanisms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The relationship between reaction mechanisms and the time evolution of chemical concentrations depends strongly on the complexity of the reaction scheme. For reactions that consist of a single elementary process, we can usually determine how the concentrations of reactants and products evolve with time through a straightforward two-step process:</p>
+<p>Write down the rate equations for reactants and products based on the molecularity of the elementary process
+Directly integrate these rate equations to obtain the corresponding integrated rate laws</p>
+<p>For example, we have already seen how this works for first-order processes in Section @ref{#simple-integrated-rate-laws).
+For reactions with multistep mechanisms, however, the path from mechanism to time evolution is often more complex. Our starting point is always the reaction mechanism itself—the sequence of elementary processes that describes the complete reaction scheme. From this mechanism, we write differential rate equations for all chemical species that appear, including not only the reactants and products, but also any reaction intermediates.
+When analysing multistep mechanisms, we typically pursue one or both of two goals:</p>
+<p>To derive an expression for the overall reaction rate in terms of reactant concentrations only, eliminating any dependence on intermediate concentrations
+To obtain integrated rate laws that describe how the concentrations of reactants and products vary with time</p>
+<p>How we approach these goals depends on the nature of the reaction mechanism under consideration. In general, we can analyse complex reaction mechanisms using one of three strategies:</p>
+<div id="exact-solutions" class="section level3 hasAnchor" number="1.7.1">
+<h3><span class="header-section-number">1.7.1</span> Exact Solutions<a href="lecture1.html#exact-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For some reaction mechanisms, we can derive exact analytical solutions to our coupled differential rate equations. While this approach is the most mathematically satisfying, it is only possible for relatively simple reaction schemes.</p>
+</div>
+<div id="approximate-analytical-solutions" class="section level3 hasAnchor" number="1.7.2">
+<h3><span class="header-section-number">1.7.2</span> Approximate Analytical Solutions<a href="lecture1.html#approximate-analytical-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>More commonly, we can simplify our set of coupled differential equations by applying chemical approximations based on the physical nature of the reaction mechanism. We then solve these simplified equations to obtain analytical solutions that accurately describe the real system within the range of conditions where our approximations hold. This approach often provides valuable chemical insight into the factors controlling reaction rates and time evolution.</p>
+</div>
+<div id="numerical-integration" class="section level3 hasAnchor" number="1.7.3">
+<h3><span class="header-section-number">1.7.3</span> Numerical Integration<a href="lecture1.html#numerical-integration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When analytical solutions prove intractable, we can always fall back on numerical methods. By numerically integrating our differential rate equations, we can model how the concentrations of all species—reactants, products, and intermediates—evolve over time. While this approach will always work in principle, it may provide less direct insight into the underlying chemical processes than analytical solutions, even approximate ones.
+Although numerical integration provides a reliable method of last resort, there is often significant value in pursuing analytical solutions, either exact or approximate. These solutions can reveal fundamental relationships between reaction parameters and chemical behavior that might be obscured in purely numerical results.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Using the standard integral, <span class="math inline">\(\int \frac{1}{x}\,\mathrm{x} = \ln x\)</span><a href="lecture1.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
