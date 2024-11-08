@@ -1,0 +1,35 @@
+## Simple Integrated Rate Laws {#simple-integrated-rate-laws}
+
+For simple rate laws of the form
+
+$$\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]^n$$
+
+we can derive corresponding integrated rate laws by integrating (see CH12002 Lecture 3).
+
+For example, for a first-order process, the rate of change of concentration of reactant, A, is given by
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
+\end{equation}
+
+To derive the corresponding integrated rate law, we rearrange this to form an integral equation:
+
+\begin{equation}
+\int_{[\mathrm{A}]_0}^{\mathrm[A]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]}\,\mathrm{d}[\mathrm{A}] = \int_0^t -k\,\mathrm{d}t
+\end{equation}
+
+where the limits of the integral with respect to concentration of A are between the concentration at time $0$ ($[\mathrm{A}]_0$) and the concentration at time $t$ ($[\mathrm{A}]_t$), and the limits of the integral with respect to time are between $t=0$ and $t=t$.
+
+Integrating^[Using the standard integral, $\int \frac{1}{x}\,\mathrm{x} = \ln x$] gives
+
+\begin{equation}
+\ln [\mathrm{A}]_t - \ln [\mathrm{A}]_0 = -kt
+\end{equation}
+
+which can be rearranged as
+
+\begin{equation}
+[\mathrm{A}]_t = [\mathrm{A}]_0\mathrm{e}^{-kt}
+\end{equation}
+
+i.e., the exponential decay that is characteristic of a first-order process.

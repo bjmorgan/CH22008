@@ -10,7 +10,9 @@ rmd_files: [
   "lecture_1/reaction_rates.Rmd",
   "lecture_1/simple_rate_equations.Rmd",
   "lecture_1/elementary_processes.Rmd",
-  "lecture_1/the_relationship_between_concentrations_and_rates.Rmd"
+  "lecture_1/the_relationship_between_concentrations_and_rates.Rmd",
+  "lecture_1/simple_integrated_rate_laws.Rmd",
+  "lecture_1/towards_complex_integrated_rate_laws.Rmd"
 ]
 
 output:

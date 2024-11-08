@@ -1,0 +1,27 @@
+## Analysing Complex Reaction Mechanisms
+
+The relationship between reaction mechanisms and the time evolution of chemical concentrations depends strongly on the complexity of the reaction scheme. For reactions that consist of a single elementary process, we can usually determine how the concentrations of reactants and products evolve with time through a straightforward two-step process:
+
+Write down the rate equations for reactants and products based on the molecularity of the elementary process
+Directly integrate these rate equations to obtain the corresponding integrated rate laws
+
+For example, we have already seen how this works for first-order processes in Section \@ref{#simple-integrated-rate-laws).
+For reactions with multistep mechanisms, however, the path from mechanism to time evolution is often more complex. Our starting point is always the reaction mechanism itself—the sequence of elementary processes that describes the complete reaction scheme. From this mechanism, we write differential rate equations for all chemical species that appear, including not only the reactants and products, but also any reaction intermediates.
+When analysing multistep mechanisms, we typically pursue one or both of two goals:
+
+To derive an expression for the overall reaction rate in terms of reactant concentrations only, eliminating any dependence on intermediate concentrations
+To obtain integrated rate laws that describe how the concentrations of reactants and products vary with time
+
+How we approach these goals depends on the nature of the reaction mechanism under consideration. In general, we can analyse complex reaction mechanisms using one of three strategies:
+
+### Exact Solutions
+For some reaction mechanisms, we can derive exact analytical solutions to our coupled differential rate equations. While this approach is the most mathematically satisfying, it is only possible for relatively simple reaction schemes.
+
+### Approximate Analytical Solutions
+More commonly, we can simplify our set of coupled differential equations by applying chemical approximations based on the physical nature of the reaction mechanism. We then solve these simplified equations to obtain analytical solutions that accurately describe the real system within the range of conditions where our approximations hold. This approach often provides valuable chemical insight into the factors controlling reaction rates and time evolution.
+
+###  Numerical Integration
+When analytical solutions prove intractable, we can always fall back on numerical methods. By numerically integrating our differential rate equations, we can model how the concentrations of all species—reactants, products, and intermediates—evolve over time. While this approach will always work in principle, it may provide less direct insight into the underlying chemical processes than analytical solutions, even approximate ones.
+Although numerical integration provides a reliable method of last resort, there is often significant value in pursuing analytical solutions, either exact or approximate. These solutions can reveal fundamental relationships between reaction parameters and chemical behavior that might be obscured in purely numerical results.
+
+

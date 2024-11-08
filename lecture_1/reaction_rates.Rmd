@@ -3,7 +3,7 @@
 A core concept in chemical kinetics is the idea of a **reaction rate** &mdash; the speed at which chemical change happens.
 We express reaction rates mathematically as derivatives of the form $\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}$, representing the change in concentration of a species X with time. This rate can be positive (for products being formed) or negative (for reactants being consumed).
 
-For any reaction that does not have a 1:1 stoichiometry ratio between all reactants and products, the numerical &ldquo;rate&rdquo; will depend on the the chemical species we choose to define this. For example, for the reaction
+For any reaction that does not have a 1:1 stoichiometry ratio between all reactants and products, the numerical &ldquo;rate&rdquo; will depend on the chemical species we choose to define this. For example, for the reaction
 
 \begin{equation}
 \mathrm{A} \longrightarrow 2\mathrm{B}
