@@ -26,6 +26,6 @@ Not all reactions follow simple rate laws. For example, the reaction between H~2
 (\#eq:HBrratelaw)
 \end{equation}
 
-This rate law is first-order with respect to H~2~, because $\nu \propto [\mathrm{H_2}]$. But we cannot define an order with respect to Br~2~, because the overall rate is not simply proportional to $[\mathrm{Br}_2]$ raised to some power. Instead, we would describe the order with respect to Br~2~ as being undefined. This means the overall order is also undefined, since we cannot siply add the orders with respect to H~2~ and Br~2~.
+This rate law is first-order with respect to H~2~, because $\nu \propto [\mathrm{H_2}]$. But we cannot define an order with respect to Br~2~, because the overall rate is not simply proportional to $[\mathrm{Br}_2]$ raised to some power. Instead, we would describe the order with respect to Br~2~ as being undefined. This means the overall order is also undefined, since we cannot simply add the orders with respect to H~2~ and Br~2~.
 
 
