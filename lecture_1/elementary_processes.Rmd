@@ -5,12 +5,39 @@ Any chemical reaction can be broken down into a sequence of one of more single-s
 For example, for the reaction $\mathrm{H}_2 + \mathrm{Br}_2 \longrightarrow 2\mathrm{HBr}$, where the empirical rate law is given by \@ref(eq:HBrratelaw), one sequence of elementary processes that is consistent with this rate law is
 
 \begin{eqnarray}
-\mathrm{Br}_2 & \longrightarrow & \mathrm{Br} + \mathrm{Br} \\
-\mathrm{Br} + \mathrm{H}_2 & \longrightarrow & \mathrm{H} + \mathrm{HBr} \\
-\mathrm{H} + \mathrm{Br}_2 & \longrightarrow & \mathrm{Br} + \mathrm{HBr} \\
-\mathrm{Br} + \mathrm{Br} & \longrightarrow & \mathrm{Br}_2
+\mathrm{Br}_2 & \longrightarrow & \mathrm{Br}^\bullet + \mathrm{Br}^\bullet \\
+\mathrm{Br}^\bullet + \mathrm{H}_2 & \longrightarrow & \mathrm{H}^\bullet + \mathrm{HBr} \\
+\mathrm{H}^\bullet + \mathrm{Br}_2 & \longrightarrow & \mathrm{Br}^\bullet + \mathrm{HBr} \\
+\mathrm{Br}^\bullet + \mathrm{Br}^\bullet & \longrightarrow & \mathrm{Br}_2
+(\#eq:HBrmechanism)
 \end{eqnarray}
 
 ### Molecularity
 
-foo
+Elementary processes can be classified according to their **molecularity** &mdash; the number of reactant molecules that must come together for a particular reaction step. For example, in reaction mechanism \@ref(eq:HBrmechanism), the first step involves the dissociation of Br~2~ to form two Br radicals:
+
+\begin{equation}
+\mathrm{Br}_2 \longrightarrow \mathrm{Br}^\bullet + \mathrm{Br}^\bullet
+\end{equation}
+
+This reaction step involves a single reactant molecule, so it is described a **unimolecular**.
+
+The second step involves a Br radical and H~2~ molecule reacting:
+
+\begin{equation}
+\mathrm{Br}^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{H}^\bullet + \mathrm{HBr}
+\end{equation}
+
+Because two reactant molecules must come together for this step, this is described as a **bimolecular** process.
+
+A process that involves two molecules of the same chemical species, as in the last step of the reaction mechanism above, is also bimolecular:
+
+\begin{equation}
+\mathrm{Br}^\bullet + \mathrm{Br}^\bullet \longrightarrow \mathrm{Br}_2
+\end{equation}
+
+### Rate Laws for Elementary Processes
+
+The rate laws for elementary processes directly reflect their molecularity. Unimolecular processes ($\mathrm{A} \longrightarrow \mathrm{P}$) show first-order kinetics with rate $\nu = k[\mathrm{A}]$. Similarly, bimolecular processes show second-order kinetics: for a bimolecular process involving two distinct chemical species ($\mathrm{A} + \mathrm{B} \longrightarrow \mathrm{P}$), the process is first-order with respect to each species: $\nu = k[\mathrm{A}][\mathrm{B}]$, while a bimolecular process that involves two molecules of the same chemical species ($2\mathrm{A} \longrightarrow \mathrm{P}$) is second-order with respect to that species: $\nu = k[\mathrm{A}]^2$.
+
+Termolecular processes, involving three reactant molecules, show third order kinetics, e.g., $\nu = k[\mathrm{A}]^2[\mathrm{B}]$. In general, termolecular processes are rare, because the probability of three molecules colliding simultaneously with the correct orientation is very small. While termolecular processes can play a role at very high pressure, under more typical reaction conditions, experimental observations of third-order kinetics are often better explained by a complex multistep reaction mechanism.

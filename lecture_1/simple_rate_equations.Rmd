@@ -9,7 +9,7 @@ The exponents, $a$, $b$, $c$ &hellip;, describe the **order** of the reaction wi
 
 So, for a reaction
 
-$$A + B \longrightarrow C$$
+$$\mathrm{A} + \mathrm{B} \longrightarrow \mathrm{C}$$
 
 with rate equation (or &ldquo;rate law&rdquo;)
 

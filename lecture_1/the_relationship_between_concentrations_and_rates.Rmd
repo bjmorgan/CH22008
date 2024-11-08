@@ -1,0 +1,10 @@
+## Moving Between Concentration and Rate Perspectives
+
+The progression of any chemical reaction can be viewed from two complementary perspectives: the concentration of species as they change over time, $[\mathrm{A}]$, and the instantaneous rates at which these changes occur, $\mathrm{d}[\mathrm{A}]/\mathrm{d}t$. These two perspectives both describe the same underlying chemical process, just viewed through different mathematical lenses.
+
+Consider a reactant A being consumed during a reaction. We might track its concentration $[\mathrm{A}]$ as it decreases over time, giving us a curve of concentration versus time. At any point on this curve, we can determine the instantaneous rate of reaction by finding the slope of the tangent line. Mathematically, this is equivalent to computing the derivative of $[\mathrm{A}]$, i.e., $\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$. Since we are dealing with the concentration of a reactant, the reaction rate is then the negative of this derivative (since the concentrations of A decreases with time): $\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$.
+
+```{r fig-conctorate, fig.cap="TODO", out.width='85%', fig.align='center'}
+knitr::include_graphics("lecture_1/figures/concentration_to_rate.png")
+```
+
