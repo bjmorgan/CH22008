@@ -5,6 +5,8 @@ eq:HBrmechanism
 eq:conctorate
 eq:ratetoconc
 fig:fig-conctorate
+eq:concA
+fig:fig-first-order-example
 lecture1
 why-study-chemical-kinetics
 reaction-rates
@@ -13,7 +15,7 @@ elementary-processes
 molecularity
 rate-laws-for-elementary-processes
 moving-between-concentration-and-rate-perspectives
-simple-integrated-rate-laws
+sec:simpleint
 analysing-complex-reaction-mechanisms
 exact-solutions
 approximate-analytical-solutions
