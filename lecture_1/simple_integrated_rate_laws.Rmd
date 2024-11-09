@@ -1,4 +1,4 @@
-## Simple Integrated Rate Laws {#simple-integrated-rate-laws}
+## Simple Integrated Rate Laws {#sec:simpleint}
 
 For simple rate laws of the form
 
@@ -6,7 +6,7 @@ $$\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]^n$$
 
 we can derive corresponding integrated rate laws by integrating (see CH12002 Lecture 3).
 
-For example, for a first-order process, the rate of change of concentration of reactant, A, is given by
+For example, for a first-order process $\mathrm{A} \longrightarrow \mathrm{B}$, the rate of change of concentration of reactant, A, is given by
 
 \begin{equation}
 \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
@@ -30,6 +30,23 @@ which can be rearranged as
 
 \begin{equation}
 [\mathrm{A}]_t = [\mathrm{A}]_0\mathrm{e}^{-kt}
+(\#eq:concA)
 \end{equation}
 
-i.e., the exponential decay that is characteristic of a first-order process.
+Hence, for a first-order process, the concentration of the reactant decays exponentially with time.
+
+Having derived an expression for $[\mathrm{A}]_t$ we can now derive the integrated rate law for the concentration of the product, B, as a function of time. To do so, we use the known stoichoimetry of the reaction: for every molecule of A consumed, one molecule of B is formed, so the sum $[\mathrm{A}] + [\mathrm{B}]$ must be constant. Furthermore, when $t=0$, only A is present, with a concentration $[\mathrm{A}]_0$. So, $[\mathrm{A}] + [\mathrm{B}] = [\mathrm{A}]_0$.
+
+Substituting in our expression for $[\mathrm{A}]$ (Eqn. \@ref(eq:concA) gives
+
+\begin{eqnarray}
+[\mathrm{B}] & = & [\mathrm{A}]_0 - [\mathrm{A}]_0\mathrm{e}^{-kt} \\
+             & = & [\mathrm{A}]_0\left(1-\mathrm{e}^{-kt}\right)
+\end{eqnarray}
+
+Hence, for a first-order process, the concentration of the product exponentially approaches a limit of $[\mathrm{B}]_t = [\mathrm{A}]_0$.
+
+```{r fig-first-order-example, fig.cap="A plot of concentrations as a function of time for a first-order process $\\mathrm{A} \\longrightarrow \\mathrm{B}$, showing characteristic exponential form.", out.width='45%', fig.align='center'}
+knitr::include_graphics("lecture_1/figures/first_order_example.png")
+```
+
