@@ -1,4 +1,4 @@
-## Reaction Rates
+## Reaction Rates {#sec:reaction-rates}
 
 A core concept in chemical kinetics is the idea of a **reaction rate** &mdash; the speed at which chemical change happens.
 We express reaction rates mathematically as derivatives of the form $\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}$, representing the change in concentration of a species X with time. This rate can be positive (for products being formed) or negative (for reactants being consumed).

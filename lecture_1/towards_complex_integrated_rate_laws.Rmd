@@ -1,4 +1,4 @@
-## Analysing Complex Reaction Mechanisms
+## From Mechanisms to Rate Laws
 
 The relationship between reaction mechanisms and the time evolution of chemical concentrations depends strongly on the complexity of the reaction scheme. For reactions that consist of a single elementary process, we can usually determine how the concentrations of reactants and products evolve with time through a straightforward two-step process:
 

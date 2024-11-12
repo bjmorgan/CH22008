@@ -4,8 +4,12 @@ bookdown::gitbook:
     toc:
       before: |
         <li><a href="./">CH22008</a></li>
-    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
-    download: ["pdf", "epub"]
+    edit: https://github.com/bjmorgan/CH22008/main/%s
+    mathjax_config:
+      TeX:
+        Macros:
+          conc: ["[\\mathrm{#1}]", 1]
+          diffc: ["\\frac{\\mathrm{d}\\conc{#1}}{\\mathrm{d}t}", 1]
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

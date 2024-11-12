@@ -12,11 +12,14 @@ rmd_files: [
   "lecture_1/elementary_processes.Rmd",
   "lecture_1/the_relationship_between_concentrations_and_rates.Rmd",
   "lecture_1/simple_integrated_rate_laws.Rmd",
-  "lecture_1/towards_complex_integrated_rate_laws.Rmd"
+  "lecture_1/towards_complex_integrated_rate_laws.Rmd",
+  "lecture_2/lecture_02.Rmd",
+  "lecture_3/lecture_03.Rmd",
+  "lecture_4/lecture_04.Rmd",
+  "lecture_4/numerical_integration.Rmd",
+  "lecture_5/lecture_05.Rmd"
 ]
 
 output:
-  bookdown::pdf_book:
-    dev: "pdf"
   bookdown::html_book:
     dev: "png"

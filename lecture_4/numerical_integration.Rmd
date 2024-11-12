@@ -1,0 +1,150 @@
+## From Mechanisms to Kinetic Data {#sec:mech-to-data}
+
+One reason to study the kinetics of reactions is beacause kinetic data can provide us with information about reaction mechanisms.
+Often, we start by collecting experimental concentration-time data for some reaction, and using this to deduce an empirical rate law (see CH12002 Lecture 4). Once we have an empirical rate law, this can inform our thinking around possible reaction mechanisms. The rate law may be of the same form as for another reaction where we know the mechanism, and so we propose that our current reaction proceeds by an equivalent mechanism. Or our empirical rate law simply acts as a constraint: any proposed mechanisms must give a theoretical rate law that is consistent with out experimentally deduced rate law.
+Alternatively, we might start from some hypothetical reaction mechanism: perhaps proposed on the basis of some prior chemical knowledge we have about our specific reaction. From this proposed mechanism, we can predict the shape of concentration-time profiles we would expect in experiments, given that our mechanism is correct, and then compare our predicted concentration-time profiles to those obtained from experiments. If we find good agreement between our predicted concetration-time data and those recorded experimentally then this provides support for our proposed mechanism being correct. If our predicted concentration-time data, however, do not agree with our experimental results &mdash; in particular, if the predicted and experimental concentration-time profiles have qualitatively different shapes &mdash; then we can reject the proposed mechanism on the basis that it is inconsistent with experiment.
+
+TODO: add comment that if we do find good agreement between our model and our data, we can then use the experimental data to estimate any parameters in our model (in this case, these are rate constants for elementary steps or combinations of these rate constants).
+
+## The Role of Integration in Chemical Kinetics {#sec:integration-role}
+
+For simple reaction mechanisms, we can often derive analytical expressions for how concentrations change with time. Consider a first-order reaction $\mathrm{A} \longrightarrow \mathrm{B}$. The differential rate equation is
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
+(\#eq:first-order)
+\end{equation}
+
+and we can solve this by integration to obtain
+
+\begin{equation}
+[\mathrm{A}]_t = [\mathrm{A}]_0\mathrm{e}^{-kt}
+(\#eq:first-order-int)
+\end{equation}
+
+TODO: Add commentary that we can validate this against experimental data (usually done by plotting our data according to the linear form of this first-order intergrated rate equation – if our data when plotted in this form are approximately linear, then we have supporting evidence for our proposed mechanism. If our data are __not__ linear when plotted in this form, then the data contradict our hypothesis of a first-order process. If our data do appear consistent with out proposed mechanism, we can then fit our model to the data to estimate the first-order rate constant $k$.
+
+However, for many reaction mechanisms, deriving analytical solutions becomes either extremely difficult or impossible. Consider, for example, the Lindemann mechanism for a unimolecular reaction:
+
+\begin{align*}
+\mathrm{A} + \mathrm{M} &\rightleftharpoons \mathrm{A}^* + \mathrm{M} & k_1,\, k_{-1} \\
+\mathrm{A}^* &\longrightarrow \mathrm{P} & k_2
+\end{align*}
+
+The corresponding differential rate equations are:
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k_1[\mathrm{A}][\mathrm{M}] + k_{-1}[\mathrm{A}^*][\mathrm{M}]
+(\#eq:lindemann-a)
+\end{equation}
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}^*]}{\mathrm{d}t} = k_1[\mathrm{A}][\mathrm{M}] - k_{-1}[\mathrm{A}^*][\mathrm{M}] - k_2[\mathrm{A}^*]
+(\#eq:lindemann-astar)
+\end{equation}
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k_2[\mathrm{A}^*]
+(\#eq:lindemann-p)
+\end{equation}
+
+While we can make approximations (such as the steady-state approximation) to derive approximate analytical solutions under certain conditions, numerical integration provides a general approach that can be applied to any mechanism, regardless of its complexity.
+
+## Principles of Numerical Integration {#sec:num-principles}
+
+To understand how numerical integration works, let us return to our simple first-order reaction $\mathrm{A} \longrightarrow \mathrm{B}$. The differential rate equations are:
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
+(\#eq:num-example-a)
+\end{equation}
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = +k[\mathrm{A}]
+(\#eq:num-example-b)
+\end{equation}
+
+The numerical integration approach recognises that these equations tell us the instantaneous rates of change of $[\mathrm{A}]$ and $[\mathrm{B}]$ at any point in time. If we know these rates at time $t$, we can estimate the concentrations a short time later, at $t + \Delta t$:
+
+\begin{equation}
+[\mathrm{A}]_{t+\Delta t} = [\mathrm{A}]_t + \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\Delta t
+(\#eq:num-step-a)
+\end{equation}
+
+\begin{equation}
+[\mathrm{B}]_{t+\Delta t} = [\mathrm{B}]_t + \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\Delta t
+(\#eq:num-step-b)
+\end{equation}
+
+where $\Delta t$ is called the time step. Starting with known initial concentrations at $t = 0$, we can use these equations to "step forward" in time, calculating new concentrations at each step.
+
+### A Simple Example {#sec:simple-example}
+
+Let us work through a specific example. Consider the first-order reaction above with $k = 1\,\mathrm{s}^{-1}$ and initial conditions $[\mathrm{A}]_0 = 1\,\mathrm{M}$ and $[\mathrm{B}]_0 = 0\,\mathrm{M}$. Using a time step $\Delta t = 0.1\,\mathrm{s}$:
+
+At $t = 0~\mathrm{s}$:
+
+- $[\mathrm{A}]_0 = 1~\mathrm{M}$
+- $\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -(1~\mathrm{s}^{-1})(1~\mathrm{M}) = -1~\mathrm{M}~\mathrm{s}^{-1}$
+- $[\mathrm{A}]_{0.1} = 1~\mathrm{M} + (-1~\mathrm{M}\mathrm{s}^{-1})(0.1\mathrm{s}) = 0.9~\mathrm{M}$
+- Similarly, $[\mathrm{B}]_{0.1} = 0~\mathrm{M} + (1~\mathrm{M}\mathrm{s}^{-1})(0.1\mathrm{s}) = 0.1~\mathrm{M}$
+
+At $t = 0.1~\mathrm{s}$:
+
+- $[\mathrm{A}]_{0.1} = 0.9~\mathrm{M}$
+- $\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -(1~\mathrm{s}^{-1})(0.9~\mathrm{M}) = -0.9~\mathrm{M}~\mathrm{s}^{-1}$
+- $[\mathrm{A}]_{0.2} = 0.9~\mathrm{M} + (-0.9~\mathrm{M}\mathrm{s}^{-1})(0.1\mathrm{s}) = 0.81~\mathrm{M}$
+
+This process continues, giving us approximate values for $[\mathrm{A}]_t$ and $[\mathrm{B}]_t$ at discrete time points.
+
+## Sources of Error {#sec:error-sources}
+
+The numerical integration method makes one key approximation: it assumes the reaction rates remain constant over each time step. In reality, rates change continuously as concentrations change. This approximation introduces systematic errors that become larger when:
+
+- The time step $\Delta t$ is increased
+- Reaction rates change more rapidly within each time step
+
+We can improve accuracy by:
+
+- Using a smaller time step (at the cost of more computational steps)
+- Using more sophisticated algorithms (e.g., Runge-Kutta methods) that better approximate the changing reaction rates
+
+## Practical Implementation
+
+The basic method described above is easily implemented in Python:
+
+```python
+def dA_by_dt(k1, A):
+    return -k1 * A
+
+def dB_by_dt(k1, A):
+    return +k1 * A
+
+# Initial conditions and parameters
+A0, B0 = 1.0, 0.0  # Initial concentrations (M)
+k1 = 1.0           # Rate constant (s⁻¹)
+dt = 0.1           # Time step (s)
+
+# Arrays to store results
+A_stored = [A0]
+B_stored = [B0]
+timesteps = [0]
+
+# Main integration loop
+t = 0
+A = A0
+B = B0
+
+simulation_time = 5.0
+
+while t < simulation_time:
+    dA = dA_by_dt(k1, A) * dt
+    dB = dB_by_dt(k1, A) * dt
+
+    A += dA
+    B += dB
+
+    A_stored.append(A)
+    B_stored.append(B)
+    t += dt
+```

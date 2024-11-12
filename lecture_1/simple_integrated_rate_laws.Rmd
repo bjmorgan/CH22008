@@ -1,4 +1,4 @@
-## Simple Integrated Rate Laws {#sec:simpleint}
+## Integrating Simple Rate Laws {#sec:simpleint}
 
 For simple rate laws of the form
 
@@ -6,7 +6,9 @@ $$\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]^n$$
 
 we can derive corresponding integrated rate laws by integrating (see CH12002 Lecture 3).
 
-For example, for a first-order process $\mathrm{A} \longrightarrow \mathrm{B}$, the rate of change of concentration of reactant, A, is given by
+### First-Order Reactions
+
+For a first-order process $\mathrm{A} \longrightarrow \mathrm{B}$, the rate of change of concentration of reactant, A, is given by
 
 \begin{equation}
 \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
@@ -20,7 +22,7 @@ To derive the corresponding integrated rate law, we rearrange this to form an in
 
 where the limits of the integral with respect to concentration of A are between the concentration at time $0$ ($[\mathrm{A}]_0$) and the concentration at time $t$ ($[\mathrm{A}]_t$), and the limits of the integral with respect to time are between $t=0$ and $t=t$.
 
-Integrating^[Using the standard integral, $\int \frac{1}{x}\,\mathrm{x} = \ln x$] gives
+Integrating, using the integral $\int \frac{1}{x}\,\mathrm{d}x = \ln x$, gives
 
 \begin{equation}
 \ln [\mathrm{A}]_t - \ln [\mathrm{A}]_0 = -kt
@@ -35,7 +37,7 @@ which can be rearranged as
 
 Hence, for a first-order process, the concentration of the reactant decays exponentially with time.
 
-Having derived an expression for $[\mathrm{A}]_t$ we can now derive the integrated rate law for the concentration of the product, B, as a function of time. To do so, we use the known stoichoimetry of the reaction: for every molecule of A consumed, one molecule of B is formed, so the sum $[\mathrm{A}] + [\mathrm{B}]$ must be constant. Furthermore, when $t=0$, only A is present, with a concentration $[\mathrm{A}]_0$. So, $[\mathrm{A}] + [\mathrm{B}] = [\mathrm{A}]_0$.
+Having derived an expression for $[\mathrm{A}]_t$ we can now derive the integrated rate law for the concentration of the product, B, as a function of time. To do so, we use the known stoichoimetry of the reaction: for every molecule of A consumed, one molecule of B is formed, so the total concentration $[\mathrm{A}] + [\mathrm{B}]$ must be constant. Furthermore, when $t=0$, only A is present, with a concentration $[\mathrm{A}]_0$. So, $[\mathrm{A}] + [\mathrm{B}] = [\mathrm{A}]_0$.
 
 Substituting in our expression for $[\mathrm{A}]$ (Eqn. \@ref(eq:concA) gives
 
@@ -46,7 +48,80 @@ Substituting in our expression for $[\mathrm{A}]$ (Eqn. \@ref(eq:concA) gives
 
 Hence, for a first-order process, the concentration of the product exponentially approaches a limit of $[\mathrm{B}]_t = [\mathrm{A}]_0$.
 
-```{r fig-first-order-example, fig.cap="A plot of concentrations as a function of time for a first-order process $\\mathrm{A} \\longrightarrow \\mathrm{B}$, showing characteristic exponential form.", out.width='45%', fig.align='center'}
+```{r fig-first-order-example, fig.cap="Concentrations as a function of time for a first-order process $\\mathrm{A} \\longrightarrow \\mathrm{B}$.", out.width='45%', fig.align='center'}
 knitr::include_graphics("lecture_1/figures/first_order_example.png")
 ```
 
+### Second-Order Reactions
+
+For a second-order process $2\mathrm{A} \longrightarrow \mathrm{B}$, with overall rate $\nu = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}$, the rate of change of concentration of reactant, A, is
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -2k[\mathrm{A}]^2
+(\#eq:secondorderdiff)
+\end{equation}
+
+
+As for first-order reactions, above, we can derive the corresponding integrated rate law for $[\mathrm{A}]_t$ by rearranging Eqn. \@ref(eq:secondorderdiff) and then integrating:
+
+\begin{equation}
+\int_{[\mathrm{A}]_0}^{\mathrm[A]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]^2}\,\mathrm{d}[\mathrm{A}] = \int_0^t -k\,\mathrm{d}t
+\end{equation}
+
+Integrating, using the integral $\int \frac{1}{x^2}\,\mathrm{d}x = -\frac{1}{x}$, gives
+
+\begin{equation}
+\frac{1}{[\mathrm{A}]_t} - \frac{1}{[\mathrm{A}]_0} = -kt
+\end{equation}
+
+which can be rearranged as
+
+\begin{equation}
+[\mathrm{A}]_t = \frac{[\mathrm{A}]_0}{1 + kt[\mathrm{A}]_0}
+\end{equation}
+
+To obtain an expression for $[\mathrm{B}]_t$, we again use our knowledge of the reaction stoichiometry and initial conditions: we start with only the reactant A, and at any stage of the reaction, the amount of B formed is equal to half the amount of A consumed.
+
+\begin{equation}
+[\mathrm{B}]_t = \frac{1}{2}\left([\mathrm{A}]_0 - [\mathrm{A}]_t\right)
+\end{equation}
+
+And, so
+
+\begin{equation}
+[\mathrm{B}]_t = \frac{[\mathrm{A}]_0}{2}\left(1 - \frac{1}{1+kt[\mathrm{A}_0]}\right)
+\end{equation}
+
+which rearranges to
+
+\begin{equation}
+[\mathrm{B}]_t = \frac{kt[\mathrm{A}]_0^2}{2(1 + kt[\mathrm{A}]_0)}
+\end{equation}
+
+```{r fig-second-order-example, fig.cap="Concentrations as a function of time for a second-order process $2\\mathrm{A} \\longrightarrow \\mathrm{B}$. The dashed line shows the sum $[\\mathrm{A}]_t + [\\mathrm{B}]_t$.", out.width='45%', fig.align='center'}
+knitr::include_graphics("lecture_1/figures/second_order_example.png")
+```
+
+#### Aside: Why Does Our Second-Order Rate Equation Include a Factor of 2? {-}
+
+Let us briefly examine the origin of the factor of 2 on the right-hand side of Eqn. \@ref{eq:secondorderdiff}. Writing the rate equation for $\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$ in this way is consistent with the convention in Section \@ref(sec:reaction-rates), that the overall rate of a reaction is related to the rates of change of specific reactants or products by
+
+\begin{equation}
+\nu = \frac{1}{n_\mathrm{X}}\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}
+(\#eq:relativerates)
+\end{equation}
+
+We can also justify the factor of $2$ by recognising that the stoichiometry of the reaction requires 2 molecules of A to be consumed for every 1 molecule of B formed, and, hence,
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = 2\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}
+\end{equation}
+
+The factor of 2 in Eqn. \@ref(eq:secondorderdiff) is somewhat arbitrary though, as it is a consequence of our choice to define the overall rate of reaction as $\nu = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}$. If, instead, we define our overall rate as $\nu = \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$ then we would write the rate of change of concentration of A as
+
+\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]^2
+(\#eq:secondorderdiff-alt)
+\end{equation}
+
+The functional form for $\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$ is the same in both cases (Eqns. \@ref(eq:secondorderdiff) and \@ref(eq:secondorderdiff-alt). Our choice of how we define our overall rate, however, determines what the rate constant $k$ actually describes. The rate constant in \@ref(eq:secondorderdiff-alt) is equal to twice the rate constant in \@ref(eq:secondorderdiff). Upon reflection, it should perhaps not be surprising that the numerical value of our rate constant $k$ depends on how we choose to define the reaction rate. Whichever of these two ways we choose to define our overall rate, the procedure for deriving the second-order intergrated rate law is unchanged, and we end up with the same functional form for the integrated rate law &mdash; either with, or without, the factor of 2 carried through the derivation.
