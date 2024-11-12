@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lecture 4 Numerical Integration | CH22008 Lecture Notes</title>
+  <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lecture 4 Numerical Integration | CH22008 Lecture Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lecture 4 Numerical Integration | CH22008 Lecture Notes" />
+  
+  <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
+  
+
+<meta name="author" content="Benjamin J. Morgan" />
+
+
+<meta name="date" content="2024-11-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lecture3.html"/>
+<link rel="next" href="lecture5.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">CH22008</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="lecture1.html"><a href="lecture1.html"><i class="fa fa-check"></i><b>1</b> Chemical Kinetics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lecture1.html"><a href="lecture1.html#why-study-chemical-kinetics"><i class="fa fa-check"></i><b>1.1</b> Why Study Chemical Kinetics?</a></li>
+<li class="chapter" data-level="1.2" data-path="lecture1.html"><a href="lecture1.html#sec:reaction-rates"><i class="fa fa-check"></i><b>1.2</b> Reaction Rates</a></li>
+<li class="chapter" data-level="1.3" data-path="lecture1.html"><a href="lecture1.html#simple-rate-equations"><i class="fa fa-check"></i><b>1.3</b> Simple Rate Equations</a></li>
+<li class="chapter" data-level="1.4" data-path="lecture1.html"><a href="lecture1.html#elementary-processes"><i class="fa fa-check"></i><b>1.4</b> Elementary Processes</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="lecture1.html"><a href="lecture1.html#molecularity"><i class="fa fa-check"></i><b>1.4.1</b> Molecularity</a></li>
+<li class="chapter" data-level="1.4.2" data-path="lecture1.html"><a href="lecture1.html#rate-laws-for-elementary-processes"><i class="fa fa-check"></i><b>1.4.2</b> Rate Laws for Elementary Processes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="lecture1.html"><a href="lecture1.html#moving-between-concentration-and-rate-perspectives"><i class="fa fa-check"></i><b>1.5</b> Moving Between Concentration and Rate Perspectives</a></li>
+<li class="chapter" data-level="1.6" data-path="lecture1.html"><a href="lecture1.html#sec:simpleint"><i class="fa fa-check"></i><b>1.6</b> Integrating Simple Rate Laws</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="lecture1.html"><a href="lecture1.html#first-order-reactions"><i class="fa fa-check"></i><b>1.6.1</b> First-Order Reactions</a></li>
+<li class="chapter" data-level="1.6.2" data-path="lecture1.html"><a href="lecture1.html#second-order-reactions"><i class="fa fa-check"></i><b>1.6.2</b> Second-Order Reactions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="lecture1.html"><a href="lecture1.html#from-mechanisms-to-rate-laws"><i class="fa fa-check"></i><b>1.7</b> From Mechanisms to Rate Laws</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="lecture1.html"><a href="lecture1.html#exact-solutions"><i class="fa fa-check"></i><b>1.7.1</b> Exact Solutions</a></li>
+<li class="chapter" data-level="1.7.2" data-path="lecture1.html"><a href="lecture1.html#approximate-analytical-solutions"><i class="fa fa-check"></i><b>1.7.2</b> Approximate Analytical Solutions</a></li>
+<li class="chapter" data-level="1.7.3" data-path="lecture1.html"><a href="lecture1.html#numerical-integration"><i class="fa fa-check"></i><b>1.7.3</b> Numerical Integration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lecture2.html"><a href="lecture2.html"><i class="fa fa-check"></i><b>2</b> Parallel Irreversible Reactions</a></li>
+<li class="chapter" data-level="3" data-path="lecture3.html"><a href="lecture3.html"><i class="fa fa-check"></i><b>3</b> Parallel Reversibile Reactions</a></li>
+<li class="chapter" data-level="4" data-path="lecture4.html"><a href="lecture4.html"><i class="fa fa-check"></i><b>4</b> Numerical Integration</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lecture4.html"><a href="lecture4.html#sec:mech-to-data"><i class="fa fa-check"></i><b>4.1</b> From Mechanisms to Kinetic Data</a></li>
+<li class="chapter" data-level="4.2" data-path="lecture4.html"><a href="lecture4.html#sec:integration-role"><i class="fa fa-check"></i><b>4.2</b> The Role of Integration in Chemical Kinetics</a></li>
+<li class="chapter" data-level="4.3" data-path="lecture4.html"><a href="lecture4.html#sec:num-principles"><i class="fa fa-check"></i><b>4.3</b> Principles of Numerical Integration</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="lecture4.html"><a href="lecture4.html#sec:simple-example"><i class="fa fa-check"></i><b>4.3.1</b> A Simple Example</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="lecture4.html"><a href="lecture4.html#sec:error-sources"><i class="fa fa-check"></i><b>4.4</b> Sources of Error</a></li>
+<li class="chapter" data-level="4.5" data-path="lecture4.html"><a href="lecture4.html#practical-implementation"><i class="fa fa-check"></i><b>4.5</b> Practical Implementation</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lecture5.html"><a href="lecture5.html"><i class="fa fa-check"></i><b>5</b> Simple Collision Theory</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CH22008 Lecture Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lecture4" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Lecture 4</span> Numerical Integration<a href="lecture4.html#lecture4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+
+<div id="sec:mech-to-data" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> From Mechanisms to Kinetic Data<a href="lecture4.html#sec:mech-to-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One reason to study the kinetics of reactions is beacause kinetic data can provide us with information about reaction mechanisms.
+Often, we start by collecting experimental concentration-time data for some reaction, and using this to deduce an empirical rate law (see CH12002 Lecture 4). Once we have an empirical rate law, this can inform our thinking around possible reaction mechanisms. The rate law may be of the same form as for another reaction where we know the mechanism, and so we propose that our current reaction proceeds by an equivalent mechanism. Or our empirical rate law simply acts as a constraint: any proposed mechanisms must give a theoretical rate law that is consistent with out experimentally deduced rate law.
+Alternatively, we might start from some hypothetical reaction mechanism: perhaps proposed on the basis of some prior chemical knowledge we have about our specific reaction. From this proposed mechanism, we can predict the shape of concentration-time profiles we would expect in experiments, given that our mechanism is correct, and then compare our predicted concentration-time profiles to those obtained from experiments. If we find good agreement between our predicted concetration-time data and those recorded experimentally then this provides support for our proposed mechanism being correct. If our predicted concentration-time data, however, do not agree with our experimental results — in particular, if the predicted and experimental concentration-time profiles have qualitatively different shapes — then we can reject the proposed mechanism on the basis that it is inconsistent with experiment.</p>
+<p>TODO: add comment that if we do find good agreement between our model and our data, we can then use the experimental data to estimate any parameters in our model (in this case, these are rate constants for elementary steps or combinations of these rate constants).</p>
+</div>
+<div id="sec:integration-role" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> The Role of Integration in Chemical Kinetics<a href="lecture4.html#sec:integration-role" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For simple reaction mechanisms, we can often derive analytical expressions for how concentrations change with time. Consider a first-order reaction <span class="math inline">\(\mathrm{A} \longrightarrow \mathrm{B}\)</span>. The differential rate equation is</p>
+<p><span class="math display" id="eq:first-order">\[\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
+\tag{4.1}
+\end{equation}\]</span></p>
+<p>and we can solve this by integration to obtain</p>
+<p><span class="math display" id="eq:first-order-int">\[\begin{equation}
+[\mathrm{A}]_t = [\mathrm{A}]_0\mathrm{e}^{-kt}
+\tag{4.2}
+\end{equation}\]</span></p>
+<p>TODO: Add commentary that we can validate this against experimental data (usually done by plotting our data according to the linear form of this first-order intergrated rate equation – if our data when plotted in this form are approximately linear, then we have supporting evidence for our proposed mechanism. If our data are <strong>not</strong> linear when plotted in this form, then the data contradict our hypothesis of a first-order process. If our data do appear consistent with out proposed mechanism, we can then fit our model to the data to estimate the first-order rate constant <span class="math inline">\(k\)</span>.</p>
+<p>However, for many reaction mechanisms, deriving analytical solutions becomes either extremely difficult or impossible. Consider, for example, the Lindemann mechanism for a unimolecular reaction:</p>
+<p><span class="math display">\[\begin{align*}
+\mathrm{A} + \mathrm{M} &amp;\rightleftharpoons \mathrm{A}^* + \mathrm{M} &amp; k_1,\, k_{-1} \\
+\mathrm{A}^* &amp;\longrightarrow \mathrm{P} &amp; k_2
+\end{align*}\]</span></p>
+<p>The corresponding differential rate equations are:</p>
+<p><span class="math display" id="eq:lindemann-a">\[\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k_1[\mathrm{A}][\mathrm{M}] + k_{-1}[\mathrm{A}^*][\mathrm{M}]
+\tag{4.3}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:lindemann-astar">\[\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}^*]}{\mathrm{d}t} = k_1[\mathrm{A}][\mathrm{M}] - k_{-1}[\mathrm{A}^*][\mathrm{M}] - k_2[\mathrm{A}^*]
+\tag{4.4}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:lindemann-p">\[\begin{equation}
+\frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k_2[\mathrm{A}^*]
+\tag{4.5}
+\end{equation}\]</span></p>
+<p>While we can make approximations (such as the steady-state approximation) to derive approximate analytical solutions under certain conditions, numerical integration provides a general approach that can be applied to any mechanism, regardless of its complexity.</p>
+</div>
+<div id="sec:num-principles" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Principles of Numerical Integration<a href="lecture4.html#sec:num-principles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To understand how numerical integration works, let us return to our simple first-order reaction <span class="math inline">\(\mathrm{A} \longrightarrow \mathrm{B}\)</span>. The differential rate equations are:</p>
+<p><span class="math display" id="eq:num-example-a">\[\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
+\tag{4.6}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:num-example-b">\[\begin{equation}
+\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = +k[\mathrm{A}]
+\tag{4.7}
+\end{equation}\]</span></p>
+<p>The numerical integration approach recognises that these equations tell us the instantaneous rates of change of <span class="math inline">\([\mathrm{A}]\)</span> and <span class="math inline">\([\mathrm{B}]\)</span> at any point in time. If we know these rates at time <span class="math inline">\(t\)</span>, we can estimate the concentrations a short time later, at <span class="math inline">\(t + \Delta t\)</span>:</p>
+<p><span class="math display" id="eq:num-step-a">\[\begin{equation}
+[\mathrm{A}]_{t+\Delta t} = [\mathrm{A}]_t + \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\Delta t
+\tag{4.8}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:num-step-b">\[\begin{equation}
+[\mathrm{B}]_{t+\Delta t} = [\mathrm{B}]_t + \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\Delta t
+\tag{4.9}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(\Delta t\)</span> is called the time step. Starting with known initial concentrations at <span class="math inline">\(t = 0\)</span>, we can use these equations to “step forward” in time, calculating new concentrations at each step.</p>
+<div id="sec:simple-example" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> A Simple Example<a href="lecture4.html#sec:simple-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let us work through a specific example. Consider the first-order reaction above with <span class="math inline">\(k = 1\,\mathrm{s}^{-1}\)</span> and initial conditions <span class="math inline">\([\mathrm{A}]_0 = 1\,\mathrm{M}\)</span> and <span class="math inline">\([\mathrm{B}]_0 = 0\,\mathrm{M}\)</span>. Using a time step <span class="math inline">\(\Delta t = 0.1\,\mathrm{s}\)</span>:</p>
+<p>At <span class="math inline">\(t = 0~\mathrm{s}\)</span>:</p>
+<ul>
+<li><span class="math inline">\([\mathrm{A}]_0 = 1~\mathrm{M}\)</span></li>
+<li><span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -(1~\mathrm{s}^{-1})(1~\mathrm{M}) = -1~\mathrm{M}~\mathrm{s}^{-1}\)</span></li>
+<li><span class="math inline">\([\mathrm{A}]_{0.1} = 1~\mathrm{M} + (-1~\mathrm{M}\mathrm{s}^{-1})(0.1\mathrm{s}) = 0.9~\mathrm{M}\)</span></li>
+<li>Similarly, <span class="math inline">\([\mathrm{B}]_{0.1} = 0~\mathrm{M} + (1~\mathrm{M}\mathrm{s}^{-1})(0.1\mathrm{s}) = 0.1~\mathrm{M}\)</span></li>
+</ul>
+<p>At <span class="math inline">\(t = 0.1~\mathrm{s}\)</span>:</p>
+<ul>
+<li><span class="math inline">\([\mathrm{A}]_{0.1} = 0.9~\mathrm{M}\)</span></li>
+<li><span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -(1~\mathrm{s}^{-1})(0.9~\mathrm{M}) = -0.9~\mathrm{M}~\mathrm{s}^{-1}\)</span></li>
+<li><span class="math inline">\([\mathrm{A}]_{0.2} = 0.9~\mathrm{M} + (-0.9~\mathrm{M}\mathrm{s}^{-1})(0.1\mathrm{s}) = 0.81~\mathrm{M}\)</span></li>
+</ul>
+<p>This process continues, giving us approximate values for <span class="math inline">\([\mathrm{A}]_t\)</span> and <span class="math inline">\([\mathrm{B}]_t\)</span> at discrete time points.</p>
+</div>
+</div>
+<div id="sec:error-sources" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Sources of Error<a href="lecture4.html#sec:error-sources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The numerical integration method makes one key approximation: it assumes the reaction rates remain constant over each time step. In reality, rates change continuously as concentrations change. This approximation introduces systematic errors that become larger when:</p>
+<ul>
+<li>The time step <span class="math inline">\(\Delta t\)</span> is increased</li>
+<li>Reaction rates change more rapidly within each time step</li>
+</ul>
+<p>We can improve accuracy by:</p>
+<ul>
+<li>Using a smaller time step (at the cost of more computational steps)</li>
+<li>Using more sophisticated algorithms (e.g., Runge-Kutta methods) that better approximate the changing reaction rates</li>
+</ul>
+</div>
+<div id="practical-implementation" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Practical Implementation<a href="lecture4.html#practical-implementation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The basic method described above is easily implemented in Python:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="lecture4.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dA_by_dt(k1, A):</span>
+<span id="cb1-2"><a href="lecture4.html#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span>k1 <span class="op">*</span> A</span>
+<span id="cb1-3"><a href="lecture4.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="lecture4.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dB_by_dt(k1, A):</span>
+<span id="cb1-5"><a href="lecture4.html#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">+</span>k1 <span class="op">*</span> A</span>
+<span id="cb1-6"><a href="lecture4.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="lecture4.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial conditions and parameters</span></span>
+<span id="cb1-8"><a href="lecture4.html#cb1-8" aria-hidden="true" tabindex="-1"></a>A0, B0 <span class="op">=</span> <span class="fl">1.0</span>, <span class="fl">0.0</span>  <span class="co"># Initial concentrations (M)</span></span>
+<span id="cb1-9"><a href="lecture4.html#cb1-9" aria-hidden="true" tabindex="-1"></a>k1 <span class="op">=</span> <span class="fl">1.0</span>           <span class="co"># Rate constant (s⁻¹)</span></span>
+<span id="cb1-10"><a href="lecture4.html#cb1-10" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.1</span>           <span class="co"># Time step (s)</span></span>
+<span id="cb1-11"><a href="lecture4.html#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="lecture4.html#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrays to store results</span></span>
+<span id="cb1-13"><a href="lecture4.html#cb1-13" aria-hidden="true" tabindex="-1"></a>A_stored <span class="op">=</span> [A0]</span>
+<span id="cb1-14"><a href="lecture4.html#cb1-14" aria-hidden="true" tabindex="-1"></a>B_stored <span class="op">=</span> [B0]</span>
+<span id="cb1-15"><a href="lecture4.html#cb1-15" aria-hidden="true" tabindex="-1"></a>timesteps <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb1-16"><a href="lecture4.html#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="lecture4.html#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Main integration loop</span></span>
+<span id="cb1-18"><a href="lecture4.html#cb1-18" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-19"><a href="lecture4.html#cb1-19" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> A0</span>
+<span id="cb1-20"><a href="lecture4.html#cb1-20" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> B0</span>
+<span id="cb1-21"><a href="lecture4.html#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="lecture4.html#cb1-22" aria-hidden="true" tabindex="-1"></a>simulation_time <span class="op">=</span> <span class="fl">5.0</span></span>
+<span id="cb1-23"><a href="lecture4.html#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="lecture4.html#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> t <span class="op">&lt;</span> simulation_time:</span>
+<span id="cb1-25"><a href="lecture4.html#cb1-25" aria-hidden="true" tabindex="-1"></a>    dA <span class="op">=</span> dA_by_dt(k1, A) <span class="op">*</span> dt</span>
+<span id="cb1-26"><a href="lecture4.html#cb1-26" aria-hidden="true" tabindex="-1"></a>    dB <span class="op">=</span> dB_by_dt(k1, A) <span class="op">*</span> dt</span>
+<span id="cb1-27"><a href="lecture4.html#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="lecture4.html#cb1-28" aria-hidden="true" tabindex="-1"></a>    A <span class="op">+=</span> dA</span>
+<span id="cb1-29"><a href="lecture4.html#cb1-29" aria-hidden="true" tabindex="-1"></a>    B <span class="op">+=</span> dB</span>
+<span id="cb1-30"><a href="lecture4.html#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="lecture4.html#cb1-31" aria-hidden="true" tabindex="-1"></a>    A_stored.append(A)</span>
+<span id="cb1-32"><a href="lecture4.html#cb1-32" aria-hidden="true" tabindex="-1"></a>    B_stored.append(B)</span>
+<span id="cb1-33"><a href="lecture4.html#cb1-33" aria-hidden="true" tabindex="-1"></a>    t <span class="op">+=</span> dt</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lecture3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lecture5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bjmorgan/CH22008/main/lecture_4/lecture_04.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"mathjax_config": {
+"TeX": {
+"Macros": {
+"conc": ["[\mathrm{#1}]", 1],
+"diffc": ["\frac{\mathrm{d}\conc{#1}}{\mathrm{d}t}", 1]
+}
+}
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
