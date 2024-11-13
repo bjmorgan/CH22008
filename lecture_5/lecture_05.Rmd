@@ -1,3 +1,108 @@
-# Simple Collision Theory {#lecture5}
+# Collision Theory {#lecture5}
 
-TODO
+## Introduction to Kinetic Theories
+
+Up to this point, we have focused on describing and interpreting empirical data—either deriving rate laws from experimental data or proposing reaction mechanisms and comparing their predictions against observations. While this approach allows us to understand the *shape* of concentration–time profiles, it does not explain *quantitative* differences in reaction rates.
+
+Several important questions remain:
+- For two bimolecular reactions, which would we expect to be faster, and by how much?
+- Can we predict rate constants $k$ (and how they vary with temperature) without experimental data?
+
+While we have discussed the Arrhenius equation, $k = A_0\mathrm{e}^{-\Delta E/RT}$, this is an approximate empirical relationship that requires experimental data to determine $A_0$ and $\Delta E$. To move beyond empirical descriptions, we need microscopic theories that can make quantitative predictions of reaction rates.
+
+In this course, we will examine two such theories:
+
+1. Collision Theory (this lecture)—focuses on gas-phase bimolecular reactions, treating molecules as hard spheres
+2. Transition State Theory (lectures 6–9)—considers formation of activated complexes for all types of reactions
+
+## Collision Theory &mdash; Basic Principles and Assumptions
+
+Collision theory provides one of the simplest microscopic models of reaction rates, specifically for gas-phase bimolecular reactions of the form:
+
+$$\mathrm{A} + \mathrm{B} \rightarrow \mathrm{P}$$
+
+For such reactions, we expect a rate law of the form $\nu = k[\mathrm{A}][\mathrm{B}]$, but what determines the value of $k$?
+
+Building on the kinetic theory of gases, collision theory makes two key assumptions:
+
+1. Molecules behave as hard spheres
+2. Molecules must collide to react
+
+The overall reaction rate is then:
+
+rate = rate of collisions &times; fraction of &ldquo;successful&rdquo; collisions
+
+## Deriving the Collision Frequency
+
+Consider two molecules A and B with radii $r_\mathrm{A}$ and $r_\mathrm{B}$ and velocities $v_\mathrm{A}$ and $v_\mathrm{B}$. To analyze their collisions, we can adopt the reference frame of molecule B, where:
+
+- B appears stationary
+- A moves with relative velocity $v = v_\mathrm{B} - v_\mathrm{A}$
+
+A collision occurs when the closest distance of approach (the &ldquo;impact parameter&rdquo; $b$) is less than the sum of the molecular radii:
+
+$$b < (r_\mathrm{A} + r_\mathrm{B}) = d$$
+
+As molecule A moves through space, it sweeps out a cylindrical volume:
+
+- Radius = $d = (r_\mathrm{A} + r_\mathrm{B})$
+- Length (per unit time) = $v$ (the relative velocity)
+- Volume (per unit time) = $vS = v\pi d^2$
+
+The collision frequency per unit volume ($Z'$) is then:
+
+$$Z' = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}v\pi d^2$$
+
+where $N_\mathrm{A}$ and $N_\mathrm{B}$ are the numbers of molecules of each species in volume $V$.
+
+## Average Relative Velocity
+
+The relative velocity between molecules follows the Maxwell-Boltzmann distribution. The average relative velocity is:
+
+$$\bar{v} = \left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}$$
+
+where $\mu$ is the reduced mass:
+
+$$\mu = \frac{m_\mathrm{A}m_\mathrm{B}}{m_\mathrm{A} + m_\mathrm{B}}$$
+
+Substituting this into our expression for collision frequency:
+
+$$Z' = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}$$
+
+## Successful Collisions
+
+Not all collisions lead to reaction. We assume a collision is successful if the relative kinetic energy exceeds a threshold activation energy $E_\mathrm{a}$. For a Maxwell-Boltzmann distribution, the fraction of collisions with sufficient energy is:
+
+$$P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
+
+This gives a total reaction rate:
+
+$$\nu = Z' \times P(E \geq E_\mathrm{a}) = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
+
+This can be written in the familiar form of a second-order rate law:
+
+\begin{equation}
+\nu=k[\mathrm{A}][\mathrm{B}]
+\end{equation}
+
+where
+
+\begin{equation}
+k = \pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
+\end{equation}
+
+## Limitations of the Theory
+
+Collision theory often overestimates reaction rates, sometimes by several orders of magnitude. This is because molecules are not truly hard spheres, and successful reaction often requires specific molecular orientations or more complex mechanisms.
+To account for this, we introduce an empirical steric factor $P$:
+
+$$k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
+
+where $P$ is the ratio of the experimental pre-exponential factor to the theoretical value:
+
+$$P = A_\text{exp}/A_\text{th}$$
+
+Examples illustrate the range of steric factors:
+
+- H~2~ + C~2~H~4~ → C~2~H~6~: $P = 1.7 \times 10^{-6}$ (specific orientation required)
+- K + Br~2~ → KBr + Br: $P = 4.8$ (enhanced cross-section due to "harpoon mechanism")

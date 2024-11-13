@@ -1,3 +1,86 @@
 # Parallel Reversibile Reactions {#lecture3}
 
-TODO
+## Introduction to Parallel Reversible Reactions
+
+Building on our previous discussion of parallel reactions, we now consider systems where the individual reactions are reversible:
+
+$$\mathrm{A} \mathrel{\mathop{\rightleftarrows}^{k_1}_{k_{-1}}} \mathrm{B}$$
+$$\mathrm{A} \mathrel{\mathop{\rightleftarrows}^{k_2}_{k_{-2}}} \mathrm{C}$$
+
+For such systems, the rate equations are:
+
+$$\frac{d[\mathrm{A}]}{dt} = -(k_1 + k_2)[\mathrm{A}] + k_{-1}[\mathrm{B}] + k_{-2}[\mathrm{C}]$$
+
+$$\frac{d[\mathrm{B}]}{dt} = +k_1[\mathrm{A}] - k_{-1}[\mathrm{B}]$$
+
+$$\frac{d[\mathrm{C}]}{dt} = +k_2[\mathrm{A}] - k_{-2}[\mathrm{C}]$$
+
+## Time Evolution of Product Distributions
+
+### Short-Time Behavior
+
+At very short times, when [B] ≈ 0 and [C] ≈ 0, the backward reactions can be neglected and the system behaves similarly to the irreversible case we studied previously. The relative yields of products are determined by the ratio of the forward rate constants:
+
+$$\frac{[\mathrm{B}]}{[\mathrm{C}]} \approx \frac{k_1}{k_2}$$
+
+This is often called &ldquo;kinetic control&rdquo;, as the product distribution is determined by the relative rates of the forward reactions.
+
+### Long-Time Behavior
+
+At long times, the system reaches equilibrium, where:
+
+$$\frac{d[\mathrm{A}]}{dt} = \frac{d[\mathrm{B}]}{dt} = \frac{d[\mathrm{C}]}{dt} = 0$$
+
+At equilibrium:
+
+$$k_1[\mathrm{A}]_\mathrm{eq} = k_{-1}[\mathrm{B}]_\mathrm{eq}$$
+$$k_2[\mathrm{A}]_\mathrm{eq} = k_{-2}[\mathrm{C}]_\mathrm{eq}$$
+
+This gives equilibrium constants:
+
+$$K_\mathrm{AB} = \frac{[\mathrm{B}]_\mathrm{eq}}{[\mathrm{A}]_\mathrm{eq}} = \frac{k_1}{k_{-1}}$$
+$$K_\mathrm{AC} = \frac{[\mathrm{C}]_\mathrm{eq}}{[\mathrm{A}]_\mathrm{eq}} = \frac{k_2}{k_{-2}}$$
+
+The final product ratio at equilibrium is:
+
+$$\frac{[\mathrm{B}]_\mathrm{eq}}{[\mathrm{C}]_\mathrm{eq}} = \frac{k_1k_{-2}}{k_{-1}k_2}$$
+
+This is called &ldquo;thermodynamic control&rdquo;, as the product distribution is determined by the relative thermodynamic stabilities of the products.
+
+## Kinetic vs Thermodynamic Control
+
+The evolution from kinetic to thermodynamic control can be understood using reaction coordinate diagrams. Consider a system where:
+
+1. Product B has the lower activation energy (faster formation, kinetic product)
+2. Product C has the lower free energy (more stable, thermodynamic product)
+
+At short times, B forms more rapidly due to its lower activation barrier. However, if the reaction is reversible (small enough barriers for reverse reactions), the system will eventually equilibrate to favor the more thermodynamically stable product C.
+
+Important factors that determine whether kinetic or thermodynamic control dominates:
+
+1. Reaction conditions:
+   - Strong bases/irreversible conditions → kinetic control
+   - Weak bases/reversible conditions → thermodynamic control
+
+2. Temperature:
+   - Higher temperatures promote equilibration
+   - Lower temperatures can "freeze" kinetic product distributions
+
+## Example: Base-Catalyzed Isomerization
+
+A classic example is the base-catalyzed isomerization of substituted cyclohexanones:
+
+- With LDA (strong base) in DME:
+  - Product A (kinetic): 99%
+  - Product B (thermodynamic): 1%
+
+- With triethylamine (weak base) in DMF:
+  - Product A (kinetic): 22%
+  - Product B (thermodynamic): 78%
+
+This difference arises because:
+
+1. The less hindered position (Product A) has lower activation energy
+2. The more substituted alkene (Product B) is thermodynamically more stable
+3. Strong bases make the reaction effectively irreversible (kinetic control)
+4. Weak bases allow equilibration (thermodynamic control)

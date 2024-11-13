@@ -1,3 +1,102 @@
 # Parallel Irreversible Reactions {#lecture2}
 
-TODO
+## Introduction
+
+In many chemical systems, a single reactant can undergo multiple competing reactions simultaneously to form different products. These are called parallel reactions. The simplest example is where a reactant A can form either product B or product C:
+
+$$\mathrm{A} \xrightarrow{k_1} \mathrm{B}$$
+$$\mathrm{A} \xrightarrow{k_2} \mathrm{C}$$
+
+Understanding how these parallel reactions proceed and what controls their relative rates is crucial for many practical applications, particularly in synthetic chemistry where we often want to maximize the yield of one product over another.
+
+## Simple First-Order Parallel Reactions
+
+Let us first consider the case of a single first-order reaction:
+
+$$\mathrm{A} \xrightarrow{k} \mathrm{B}$$
+
+The rate equations are:
+
+$$\frac{d[\mathrm{A}]}{dt} = -k[\mathrm{A}]$$
+$$\frac{d[\mathrm{B}]}{dt} = +k[\mathrm{A}]$$
+
+Integrating these gives:
+$$[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-kt}$$
+
+And since [B] = [A]~0~ - [A] (from conservation of mass):
+$$[\mathrm{B}] = [\mathrm{A}]_0(1-\mathrm{e}^{-kt})$$
+
+## First-Order Parallel Reactions
+
+For parallel reactions where both pathways are first-order:
+
+$$\mathrm{A} \xrightarrow{k_1} \mathrm{B}$$
+$$\mathrm{A} \xrightarrow{k_2} \mathrm{C}$$
+
+The rate of change of A is now:
+
+$$\frac{d[\mathrm{A}]}{dt} = -(k_1 + k_2)[\mathrm{A}]$$
+
+Integrating this gives:
+
+$$[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-(k_1+k_2)t}$$
+
+For product B:
+
+$$\frac{d[\mathrm{B}]}{dt} = k_1[\mathrm{A}] = k_1[\mathrm{A}]_0\mathrm{e}^{-(k_1+k_2)t}$$
+
+Integrating:
+
+$$[\mathrm{B}] = \frac{k_1}{k_1+k_2}[\mathrm{A}]_0(1-\mathrm{e}^{-(k_1+k_2)t})$$
+
+Similarly for C:
+
+$$[\mathrm{C}] = \frac{k_2}{k_1+k_2}[\mathrm{A}]_0(1-\mathrm{e}^{-(k_1+k_2)t})$$
+
+## Key Features of Parallel Reactions
+
+Several important points emerge from these expressions:
+
+1. The formation of both products B and C is controlled by the same overall rate constant (k~1~+k~2~)
+
+2. The relative yields of products are determined by the ratio of the rate constants:
+
+   $$\frac{[\mathrm{B}]}{[\mathrm{C}]} = \frac{k_1}{k_2}$$
+
+This ratio is often called the selectivity, S:
+
+$$S = \frac{k_1}{k_2}$$
+
+## Temperature Effects on Selectivity
+
+How does changing temperature affect the selectivity? Using the Arrhenius equation:
+
+$$k_1 = A_1\exp\left(-\frac{\Delta E_1}{RT}\right)$$
+$$k_2 = A_2\exp\left(-\frac{\Delta E_2}{RT}\right)$$
+
+Therefore:
+
+$$S = \frac{k_1}{k_2} = \frac{A_1}{A_2}\exp\left(-\frac{\Delta E_1-\Delta E_2}{RT}\right)$$
+
+If ΔE~1~ > ΔE~2~, then (ΔE~1~-ΔE~2~) is positive, and increasing temperature will increase S. This can be visualized using an Arrhenius plot (ln k vs 1/T), where the reaction with the higher activation energy has the steeper slope.
+
+## Pressure Effects on Selectivity
+
+The effect of pressure on selectivity depends on the molecularity of the competing reactions:
+
+1. If both reactions have the same molecularity (e.g., both first-order), pressure has no effect on selectivity because k is independent of pressure.
+
+2. For reactions with different molecularity:
+
+   $$\mathrm{A} \xrightarrow{k_1} \mathrm{B}$$
+   $$2\mathrm{A} \xrightarrow{k_2} \mathrm{C}$$
+
+   The selectivity becomes pressure-dependent:
+
+   $$\frac{[\mathrm{B}]}{[\mathrm{C}]} = \frac{\text{rate}_\mathrm{B}}{\text{rate}_\mathrm{C}} = \frac{k_1[\mathrm{A}]}{k_2[\mathrm{A}]^2} = \frac{k_1}{k_2[\mathrm{A}]}$$
+
+Following Le Chatelier's principle, increasing pressure favors the reaction with the higher molecularity.
+
+## Applications
+
+Parallel reactions are particularly important in synthetic chemistry. For example, in the selective nitration of phenol (C~6~H~5~OH), controlling temperature and other conditions can direct the nitration to favor either ortho- or para- substitution. Understanding how reaction conditions affect selectivity allows chemists to optimize yields of desired products while minimizing unwanted side products.
