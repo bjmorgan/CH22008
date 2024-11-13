@@ -3,3 +3,4 @@ _book/*
 **/.ipynb_checkpoints
 **/*.html
 **/*.swp
+_book/*
