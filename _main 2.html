@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>CH22008 Lecture Notes</title>
+  <meta name="description" content="<p>These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics.</p>" />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+
+  <meta property="og:title" content="CH22008 Lecture Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CH22008 Lecture Notes" />
+  
+  <meta name="twitter:description" content="<p>These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics.</p>" />
+  
+
+<meta name="author" content="Benjamin J. Morgan" />
+
+
+<meta name="date" content="2024-11-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">CH22008 Lecture Notes</h1>
+<p class="author"><em>Benjamin J. Morgan</em></p>
+<p class="date"><em>2024-11-08</em></p>
+</div>
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#about" id="toc-about">About</a></li>
+<li><a href="#lecture1" id="toc-lecture1"><span class="toc-section-number">1</span> Chemical Kinetics</a>
+<ul>
+<li><a href="#why-study-chemical-kinetics" id="toc-why-study-chemical-kinetics"><span class="toc-section-number">1.1</span> Why Study Chemical Kinetics?</a></li>
+<li><a href="#reaction-rates" id="toc-reaction-rates"><span class="toc-section-number">1.2</span> Reaction Rates</a></li>
+<li><a href="#simple-rate-equations" id="toc-simple-rate-equations"><span class="toc-section-number">1.3</span> Simple Rate Equations</a></li>
+<li><a href="#elementary-processes" id="toc-elementary-processes"><span class="toc-section-number">1.4</span> Elementary Processes</a>
+<ul>
+<li><a href="#molecularity" id="toc-molecularity"><span class="toc-section-number">1.4.1</span> Molecularity</a></li>
+<li><a href="#rate-laws-for-elementary-processes" id="toc-rate-laws-for-elementary-processes"><span class="toc-section-number">1.4.2</span> Rate Laws for Elementary Processes</a></li>
+</ul></li>
+<li><a href="#moving-between-concentration-and-rate-perspectives" id="toc-moving-between-concentration-and-rate-perspectives"><span class="toc-section-number">1.5</span> Moving Between Concentration and Rate Perspectives</a></li>
+<li><a href="#simple-integrated-rate-laws" id="toc-simple-integrated-rate-laws"><span class="toc-section-number">1.6</span> Simple Integrated Rate Laws</a></li>
+</ul></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CH22008 Lecture Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+<div id="about" class="section level1 unnumbered hasAnchor">
+<h1 class="unnumbered hasAnchor">About<a href="#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>These notes are intended to accompany the 2024 CH22008 lecture course on Advanced Kinetics.</p>
+<!--chapter:end:index.Rmd-->
+</div>
+<div id="lecture1" class="section level1 hasAnchor" number="1">
+<h1 class="hasAnchor"><span class="header-section-number">1</span> Chemical Kinetics<a href="#lecture1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--chapter:end:lecture_1/lecture_01.Rmd-->
+<div id="why-study-chemical-kinetics" class="section level2 hasAnchor" number="1.1">
+<h2 class="hasAnchor"><span class="header-section-number">1.1</span> Why Study Chemical Kinetics?<a href="#why-study-chemical-kinetics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Chemical kinetics addresses the fundamental question of how chemical reactions proceed through time.
+While thermodynamics tells us about the driving forces and ultimate endpoints of reactions, kinetics reveals the pathways and speeds by which these endpoints are reached.</p>
+<p>Understanding chemical kinetics helps us to answer practical questions. For a given reaction, A <span class="math inline">\(\longrightarrow\)</span> B, we might want to predict how much product B will be present after a given time, or how long it will take to achieve a desired conversion percentage from A to B.</p>
+<div class="figure" style="text-align: center">
+<img src="lecture_1/figures/time_to_yield.png" alt="A plot of concentrations of reactant A and product B for a generic reaction A $\longrightarrow$ B as a function of time. Over time, A is converted to B. How long will it take to obtain 90% yield?" width="35%" />
+<p class="caption">
+(#fig:fig-yield)A plot of concentrations of reactant A and product B for a generic reaction A <span class="math inline">\(\longrightarrow\)</span> B as a function of time. Over time, A is converted to B. How long will it take to obtain 90% yield?
+</p>
+</div>
+<p>Going beyond this, can we optimise our reaction by changing the conditions (e.g., pressure or temperature)? How would these changes affect the overall rate of our reaction or the reaction yield?</p>
+<div class="figure" style="text-align: center">
+<img src="lecture_1/figures/changing_conditions.png" alt="If we increase the temperature we (usually) expect our reaction to speed up. But by how much? If we increase the reaction temperature by 10 K, how much faster can we reach 90% yield?" width="35%" />
+<p class="caption">
+(#fig:fig-changingconditions)If we increase the temperature we (usually) expect our reaction to speed up. But by how much? If we increase the reaction temperature by 10 K, how much faster can we reach 90% yield?
+</p>
+</div>
+<!--chapter:end:lecture_1/introduction_to_chemical_kinetics.Rmd-->
+</div>
+<div id="reaction-rates" class="section level2 hasAnchor" number="1.2">
+<h2 class="hasAnchor"><span class="header-section-number">1.2</span> Reaction Rates<a href="#reaction-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A core concept in chemical kinetics is the idea of a <strong>reaction rate</strong> — the speed at which chemical change happens.
+We express reaction rates mathematically as derivatives of the form <span class="math inline">\(\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}\)</span>, representing the change in concentration of a species X with time. This rate can be positive (for products being formed) or negative (for reactants being consumed).</p>
+<p>For any reaction that does not have a 1:1 stoichiometry ratio between all reactants and products, the numerical “rate” will depend on the the chemical species we choose to define this. For example, for the reaction</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{A} \longrightarrow 2\mathrm{B}
+\end{equation}\]</span></p>
+<p>the product, B, is formed at twice the rate that the reactant, A, is consumed. Hence,</p>
+<p><span class="math display">\[2\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\]</span></p>
+<p>In general, we can define an “overall” reaction rate <span class="math inline">\(\nu\)</span> that is related to the rates of change of reactants and products by</p>
+<p><span class="math display">\[\nu = \frac{1}{n_\mathrm{X}}\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}\]</span></p>
+<p>where <span class="math inline">\(n_\mathrm{X}\)</span> is the stoichiometric coefficient of species <span class="math inline">\(X\)</span> in the reaction equation.</p>
+<!--chapter:end:lecture_1/reaction_rates.Rmd-->
+</div>
+<div id="simple-rate-equations" class="section level2 hasAnchor" number="1.3">
+<h2 class="hasAnchor"><span class="header-section-number">1.3</span> Simple Rate Equations<a href="#simple-rate-equations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For many reactions, the rate of reaction is proportional to the concentrations of the reactants, raised to some power; i.e.,</p>
+<p><span class="math display">\[\nu = k [\mathrm{A}]^a [\mathrm{B}]^b [\mathrm{C}]^c \ldots\]</span></p>
+<p>The proportionality constant, <span class="math inline">\(k\)</span>, is called the <strong>rate constant</strong>.
+The exponents, <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span> …, describe the <strong>order</strong> of the reaction with respect to the reactants A, B, C ….</p>
+<p>So, for a reaction</p>
+<p><span class="math display">\[\mathrm{A} + \mathrm{B} \longrightarrow \mathrm{C}\]</span></p>
+<p>with rate equation (or “rate law”)</p>
+<p><span class="math display">\[\nu = k[\mathrm{A}]^2[\mathrm{B}]\]</span>,</p>
+<p>we would describe this as being <strong>second-order</strong> with respect to A, and <strong>first-order</strong> with respect to B.</p>
+<p>For rate equations that have the simple form above, we can define an <strong>overall order</strong>, which is the sum of the individual orders with respect to each of the reactants. In the example above, this reaction would be described as being <strong>third-order</strong> overall, since <span class="math inline">\(a+b = 3\)</span>.</p>
+<p>Not all reactions follow simple rate laws. For example, the reaction between H<sub>2</sub> and Br<sub>2</sub> to form HBr has an empirically-determined rate law</p>
+<p><span class="math display">\[\begin{equation}
+\nu = k\frac{[\mathrm{H}_2][\mathrm{Br}_2]^\frac{1}{2}}{1+k^\prime [\mathrm{HBr}]/[\mathrm{Br}_2]}
+(\#eq:HBrratelaw)
+\end{equation}\]</span></p>
+<p>This rate law is first-order with respect to H<sub>2</sub>, because <span class="math inline">\(\nu \propto [\mathrm{H_2}]\)</span>. But we cannot define an order with respect to Br<sub>2</sub>, because the overall rate is not simply proportional to <span class="math inline">\([\mathrm{Br}_2]\)</span> raised to some power. Instead, we would describe the order with respect to Br<sub>2</sub> as being undefined. This means the overall order is also undefined, since we cannot simply add the orders with respect to H<sub>2</sub> and Br<sub>2</sub>.</p>
+<!--chapter:end:lecture_1/simple_rate_equations.Rmd-->
+</div>
+<div id="elementary-processes" class="section level2 hasAnchor" number="1.4">
+<h2 class="hasAnchor"><span class="header-section-number">1.4</span> Elementary Processes<a href="#elementary-processes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Any chemical reaction can be broken down into a sequence of one of more single-step “elementary” processes.</p>
+<p>For example, for the reaction <span class="math inline">\(\mathrm{H}_2 + \mathrm{Br}_2 \longrightarrow 2\mathrm{HBr}\)</span>, where the empirical rate law is given by @ref(eq:HBrratelaw), one sequence of elementary processes that is consistent with this rate law is</p>
+<p><span class="math display">\[\begin{eqnarray}
+\mathrm{Br}_2 &amp; \longrightarrow &amp; \mathrm{Br}^\bullet + \mathrm{Br}^\bullet \\
+\mathrm{Br}^\bullet + \mathrm{H}_2 &amp; \longrightarrow &amp; \mathrm{H}^\bullet + \mathrm{HBr} \\
+\mathrm{H}^\bullet + \mathrm{Br}_2 &amp; \longrightarrow &amp; \mathrm{Br}^\bullet + \mathrm{HBr} \\
+\mathrm{Br}^\bullet + \mathrm{Br}^\bullet &amp; \longrightarrow &amp; \mathrm{Br}_2
+(\#eq:HBrmechanism)
+\end{eqnarray}\]</span></p>
+<div id="molecularity" class="section level3 hasAnchor" number="1.4.1">
+<h3 class="hasAnchor"><span class="header-section-number">1.4.1</span> Molecularity<a href="#molecularity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Elementary processes can be classified according to their <strong>molecularity</strong> — the number of reactant molecules that must come together for a particular reaction step. For example, in reaction mechanism @ref(eq:HBrmechanism), the first step involves the dissociation of Br<sub>2</sub> to form two Br radicals:</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{Br}_2 \longrightarrow \mathrm{Br}^\bullet + \mathrm{Br}^\bullet
+\end{equation}\]</span></p>
+<p>This reaction step involves a single reactant molecule, so it is described a <strong>unimolecular</strong>.</p>
+<p>The second step involves a Br radical and H<sub>2</sub> molecule reacting:</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{Br}^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{H}^\bullet + \mathrm{HBr}
+\end{equation}\]</span></p>
+<p>Because two reactant molecules must come together for this step, this is described as a <strong>bimolecular</strong> process.</p>
+<p>A process that involves two molecules of the same chemical species, as in the last step of the reaction mechanism above, is also bimolecular:</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{Br}^\bullet + \mathrm{Br}^\bullet \longrightarrow \mathrm{Br}_2
+\end{equation}\]</span></p>
+</div>
+<div id="rate-laws-for-elementary-processes" class="section level3 hasAnchor" number="1.4.2">
+<h3 class="hasAnchor"><span class="header-section-number">1.4.2</span> Rate Laws for Elementary Processes<a href="#rate-laws-for-elementary-processes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The rate laws for elementary processes directly reflect their molecularity. Unimolecular processes (<span class="math inline">\(\mathrm{A} \longrightarrow \mathrm{P}\)</span>) show first-order kinetics with rate <span class="math inline">\(\nu = k[\mathrm{A}]\)</span>. Similarly, bimolecular processes show second-order kinetics: for a bimolecular process involving two distinct chemical species (<span class="math inline">\(\mathrm{A} + \mathrm{B} \longrightarrow \mathrm{P}\)</span>), the process is first-order with respect to each species: <span class="math inline">\(\nu = k[\mathrm{A}][\mathrm{B}]\)</span>, while a bimolecular process that involves two molecules of the same chemical species (<span class="math inline">\(2\mathrm{A} \longrightarrow \mathrm{P}\)</span>) is second-order with respect to that species: <span class="math inline">\(\nu = k[\mathrm{A}]^2\)</span>.</p>
+<p>Termolecular processes, involving three reactant molecules, show third order kinetics, e.g., <span class="math inline">\(\nu = k[\mathrm{A}]^2[\mathrm{B}]\)</span>. In general, termolecular processes are rare, because the probability of three molecules colliding simultaneously with the correct orientation is very small. While termolecular processes can play a role at very high pressure, under more typical reaction conditions, experimental observations of third-order kinetics are often better explained by a complex multistep reaction mechanism.</p>
+<!--chapter:end:lecture_1/elementary_processes.Rmd-->
+</div>
+</div>
+<div id="moving-between-concentration-and-rate-perspectives" class="section level2 hasAnchor" number="1.5">
+<h2 class="hasAnchor"><span class="header-section-number">1.5</span> Moving Between Concentration and Rate Perspectives<a href="#moving-between-concentration-and-rate-perspectives" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The progression of any chemical reaction can be viewed from two complementary perspectives: the concentration of species as they change over time, <span class="math inline">\([\mathrm{A}]\)</span>, and the instantaneous rates at which these changes occur, <span class="math inline">\(\mathrm{d}[\mathrm{A}]/\mathrm{d}t\)</span>. These two perspectives both describe the same underlying chemical process, just viewed through different mathematical lenses.</p>
+<p>Consider a reactant A being consumed during a reaction. We might track its concentration <span class="math inline">\([\mathrm{A}]\)</span> as it decreases over time, giving us a curve of concentration versus time. At any point on this curve, we can determine the instantaneous rate of reaction by finding the slope of the tangent line. Mathematically, this is equivalent to computing the derivative of <span class="math inline">\([\mathrm{A}]\)</span>, i.e., <span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span>. Since we are dealing with the concentration of a reactant, the reaction rate is then the negative of this derivative (since the concentrations of A decreases with time):</p>
+<p><span class="math display">\[\begin{equation}
+\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}
+(\#eq:conctorate)
+\end{equation}\]</span></p>
+<p>We can also go the other way, from a description of rate to a description of the concentration profile over time. Mathematically we do this by integration, which is the inverse operation to differentiation. By integrating a rate, we effetively sum all the small changes in concentration over some time interval. For example, the change in concentration of A from the start of a reaction at <span class="math inline">\(t=0\)</span> is given by</p>
+<p><span class="math display">\[\begin{equation}
+[\mathrm{A}]_t - [\mathrm{A}]_0 = \int_0^t -\nu(t)\,\mathrm{d}t
+(\#eq:ratetoconc)
+\end{equation}\]</span></p>
+<p>Whether we work in terms of concentrations or rates depends on the question we are trying to answer, what information we have avialable to us, and whether it is more mathematically convenient to work with one than the other.</p>
+<div class="figure" style="text-align: center">
+<img src="lecture_1/figures/concentration_to_rate.png" alt="If we know the concentration of a reactant or product as a function of time we can calculate the rate of change of this concentration by differentiation. We can also calculate how concentrations vary in time from rates by the inverse procedure, integration." width="85%" />
+<p class="caption">
+(#fig:fig-conctorate)If we know the concentration of a reactant or product as a function of time we can calculate the rate of change of this concentration by differentiation. We can also calculate how concentrations vary in time from rates by the inverse procedure, integration.
+</p>
+</div>
+<!--chapter:end:lecture_1/the_relationship_between_concentrations_and_rates.Rmd-->
+</div>
+<div id="simple-integrated-rate-laws" class="section level2 hasAnchor" number="1.6">
+<h2 class="hasAnchor"><span class="header-section-number">1.6</span> Simple Integrated Rate Laws<a href="#simple-integrated-rate-laws" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For simple rate laws of the form</p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]^n\]</span></p>
+<p>we can derive corresponding integrated rate laws by integrating (see CH12002 Lecture 3).</p>
+<p>For example, for a first-order process, the rate of change of concentration of reactant, A, is given by</p>
+<p><span class="math display">\[\begin{equation}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
+\end{equation}\]</span></p>
+<p>To derive the corresponding integrated rate law, we rearrange this to form an integral equation:</p>
+<p><span class="math display">\[\begin{equation}
+\int_{[\mathrm{A}]_0}^{\mathrm[A]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]}\,\mathrm{d}[\mathrm{A}] = \int_0^t -k\,\mathrm{d}t
+\end{equation}\]</span></p>
+<p>where the limits of the integral with respect to concentration of A are between the concentration at time <span class="math inline">\(0\)</span> (<span class="math inline">\([\mathrm{A}]_0\)</span>) and the concentration at time <span class="math inline">\(t\)</span> (<span class="math inline">\([\mathrm{A}]_t\)</span>), and the limits of the integral with respect to time are between <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=t\)</span>.</p>
+<p>Using the standard integral, <span class="math inline">\(\int \frac{1}{x}\,\mathrm{x} = \ln x\)</span>, this equation integrates to give</p>
+<p><span class="math display">\[\begin{equation}
+\ln [\mathrm{A}]_t - \ln [\mathrm{A}]_0 = -kt
+\end{equation}\]</span></p>
+<p>which can be rearranged as</p>
+<p><span class="math display">\[\begin{equation}
+[\mathrm{A}]_t = [\mathrm{A}]_0\mathrm{e}^{-kt}
+\end{equation}\]</span></p>
+<p>i.e., the exponential decay that is characteristic of a first-order process.</p>
+<!--chapter:end:lecture_1/simple_integrated_rate_laws.Rmd-->
+</div>
+</div>
+<!--bookdown:body:end-->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+    </div>
+  </div>
+<!--bookdown:config-->
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
