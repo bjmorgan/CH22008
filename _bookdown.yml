@@ -17,7 +17,8 @@ rmd_files: [
   "lecture_3/lecture_03.Rmd",
   "lecture_4/lecture_04.Rmd",
   "lecture_4/numerical_integration.Rmd",
-  "lecture_5/lecture_05.Rmd"
+  "lecture_5/lecture_05.Rmd",
+  "lecture_6/lecture_06.Rmd"
 ]
 
 output:

@@ -1,0 +1,156 @@
+# Transition State Theory {#lecture6}
+
+## Moving Beyond Collision Theory {#sec:tst-intro}
+
+In our previous discussion of chemical kinetics, we established the importance of developing theoretical frameworks that allow us to predict reaction rates without relying on experimental data. Our first approach was collision theory, which provided a simple model for bimolecular gas-phase reactions based on the kinetic theory of gases. While collision theory works reasonably well for reactions between small simple molecules, it typically overestimates reaction rates for more complex molecules, often significantly.
+
+This limitation can be partially addressed by introducing an empirical &ldquo;steric factor&rdquo;, which accounts for the fact that molecules are not featureless spheres but often need specific orientations to react. However, collision theory still has two major limitations:
+
+1. The activation energy ($E_\mathrm{a}$) appears as an arbitrary "threshold energy" for reaction, providing little insight into why $E_\mathrm{a}$ varies systematically within families of reactions.
+2. There is no quantitative theory to predict the steric factor, $P$.
+
+To address these limitations, we now turn to transition state theory (TST), a more sophisticated approach to understanding reaction kinetics.
+
+## Basic Principles of Transition State Theory {#sec:tst-principles}
+
+Consider a bimolecular reaction A + B → P. TST proposes that this reaction proceeds through a specific pathway along a reaction coordinate, which corresponds to changes in the internal coordinates of A and B that take us from reactants to products. The reaction must overcome a free energy barrier, and the maximum along this reaction coordinate is called the transition state.
+
+At the transition state, the reactants A and B have come together to form what we call the &ldquo;activated complex&rdquo; C$^{\ddagger}$. This represents our reactants in a specific orientation that enables reaction. The reaction can be represented as a two-step process:
+
+\begin{equation}
+\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \xrightarrow{k^{\ddagger}} \mathrm{P}
+(\#eq:tst-scheme)
+\end{equation}
+
+Transition state theory makes two fundamental assumptions:
+
+1. There exists a pseudo-equilibrium between the reactants (A + B) and the activated complex (C$^{\ddagger}$)
+   - Note: This is termed a "pseudo-equilibrium" because the activated complex is dynamically unstable
+   - C$^{\ddagger}$ can either break apart back to A + B or convert to products P
+
+2. There is a characteristic rate constant $k^{\ddagger}$ that describes the conversion of the activated complex to products
+   - This is a first-order process: $\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]$
+
+## Mathematical Development of TST {#sec:tst-math}
+
+To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a pseudo-equilibrium constant:
+
+\begin{equation}
+K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]}{[\mathrm{A}][\mathrm{B}]}
+(\#eq:equilibrium-constant)
+\end{equation}
+
+Therefore:
+
+\begin{equation}
+[\mathrm{C}^{\ddagger}] = K^{\ddagger}[\mathrm{A}][\mathrm{B}]
+(\#eq:activated-complex-conc)
+\end{equation}
+
+We can relate this equilibrium constant to the Gibbs free energy of activation using:
+
+\begin{equation}
+\Delta G^{\ddagger} = -RT\ln(K^{\ddagger}c^{\circ})
+(\#eq:gibbs-activation)
+\end{equation}
+
+where $c^{\circ}$ is a reference concentration (typically 1 mol dm$^{-3}$) that is included to make the logarithm argument dimensionless.^[If our reaction takes place under standard conditions, $c^\circ=1\,\mathrm{mol}\,\mathrm{dm}^{-3}$ and has no effect on the numerical value of $k$. Because of this, c$^\circ$ is often omitted in basic treatments of Transition State Theory, so you might see examples where it is missing. Including $c^\circ$, however, ensures that $k$ has the correct units for a second-order rate constant (dm$^3$ mol$^{-1}$ s$^{-1}$).]
+Since $\Delta G^{\ddagger} = \Delta H^{\ddagger} - T\Delta S^{\ddagger}$, we can write:
+
+\begin{equation}
+K^{\ddagger} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
+(\#eq:equilibrium-constant-expanded)
+\end{equation}
+
+Substituting our expression for $K^\ddagger$ into the rate equation:
+
+\begin{equation}
+\nu = k^{\ddagger}[\mathrm{C}^{\ddagger}] = \frac{k^{\ddagger}}{c^{\circ}}[\mathrm{A}][\mathrm{B}]\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
+(\#eq:tst-rate)
+\end{equation}
+
+This has the form of a second-order rate law with rate constant:
+
+\begin{equation}
+k = \frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
+(\#eq:tst-rate-constant)
+\end{equation}
+
+Comparing this to the empirical Arrhenius equation:
+
+\begin{equation}
+k = A\mathrm{e}^{-E_\mathrm{a}/RT}
+(\#eq:arrhenius)
+\end{equation}
+
+We can identify that:
+
+- The $\mathrm{e}^{-\Delta H^{\ddagger}/RT}$ term approximately corresponds to the Arrhenius $\mathrm{e}^{-E_\mathrm{a}/RT}$ term
+- The pre-exponential factor A approximately corresponds to $\frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}$
+
+## Enthalpy of Activation {#sec:enthalpy-activation}
+
+Understanding $\Delta H^{\ddagger}$ provides insight into activation energies and their systematic variation across related reactions. Consider the simple reaction A–B + C → A + B–C. In forming the activated complex:
+
+- The A–B bond is mostly broken
+- The B–C bond is partially formed
+- Therefore, $\Delta H^{\ddagger}$ is:
+  - Strongly dependent on the strength of bonds being broken
+  - Weakly dependent on the strength of bonds being formed
+
+This principle helps explain trends in activation energies for a family of related reactions. Consider these examples involving H and Br:
+
+\begin{align*}
+\mathrm{H–H} + \mathrm{H} &\longrightarrow \mathrm{H} + \mathrm{H–H} & E_\mathrm{a} &= +39~\mathrm{kJ~mol^{-1}} \\
+\mathrm{H–H} + \mathrm{Br} &\longrightarrow \mathrm{H} + \mathrm{H–Br} & E_\mathrm{a} &= +82~\mathrm{kJ~mol^{-1}} \\
+\mathrm{Br–H} + \mathrm{H} &\longrightarrow \mathrm{Br} + \mathrm{H–H} & E_\mathrm{a} &= +12~\mathrm{kJ~mol^{-1}} \\
+\mathrm{Br–Br} + \mathrm{H} &\longrightarrow \mathrm{Br} + \mathrm{Br–H} & E_\mathrm{a} &= +4~\mathrm{kJ~mol^{-1}}
+\end{align*}
+
+To understand these trends, we need to consider the bond dissociation energies:
+
+\begin{align*}
+\mathrm{H–H}: & ~E_\mathrm{d} = +436~\mathrm{kJ~mol^{-1}} \\
+\mathrm{H–Br}: & ~E_\mathrm{d} = +366~\mathrm{kJ~mol^{-1}} \\
+\mathrm{Br–Br}: & ~E_\mathrm{d} = +193~\mathrm{kJ~mol^{-1}}
+\end{align*}
+
+The trends in activation energy can be explained by:
+
+1. The first two reactions involve breaking H–H bonds (highest $E_\mathrm{d}$) → highest $E_\mathrm{a}$ values
+2. Between these two:
+   - H–H + H forms H–H (more favorable)
+   - H–H + Br forms H–Br (less favorable)
+   - Therefore $E_\mathrm{a}$ is lower for H–H + H
+
+3. The remaining reactions follow the trend in bond strength being broken:
+   - Breaking H–Br ($E_\mathrm{a} = +12~\mathrm{kJ~mol^{-1}}$)
+   - Breaking Br–Br ($E_\mathrm{a} = +4~\mathrm{kJ~mol^{-1}}$)
+
+## Reconciling TST with Collision Theory {#sec:tst-collision}
+
+Our two theories provide different physical interpretations of activation energy:
+
+- Collision theory: $E_\mathrm{a}$ represents a threshold kinetic energy
+- TST: $\Delta H^{\ddagger}$ represents energy stored in partially broken/formed bonds
+
+These interpretations can be reconciled by considering the energy changes during a reactive collision:
+
+1. Initial state:
+   - Separated molecules with relative KE ≥ $E_\mathrm{a}$
+   - Undistorted internal bonds
+
+2. At the transition state:
+   - Relative KE has been converted to potential energy
+   - Energy stored in partially broken/formed bonds
+   - Distorted molecular geometries
+
+Therefore:
+
+- Collision theory $E_\mathrm{a}$ describes the minimum energy input required.
+- TST $\Delta H^{\ddagger}$ describes where that energy ends up.
+- These must be approximately equal by energy conservation.
+
+The two theories thus provide complementary perspectives on the same process:
+- Collision theory focuses on what energy must go in
+- TST focuses on where that energy ends up and how it affects molecular structure
