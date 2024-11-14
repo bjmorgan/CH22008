@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 5 Collision Theory | CH22008 Lecture Notes</title>
+  <title>Lecture 6 Transition State Theory | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 5 Collision Theory | CH22008 Lecture Notes" />
+  <meta property="og:title" content="Lecture 6 Transition State Theory | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 5 Collision Theory | CH22008 Lecture Notes" />
+  <meta name="twitter:title" content="Lecture 6 Transition State Theory | CH22008 Lecture Notes" />
   
   <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lecture4.html"/>
-<link rel="next" href="lecture6.html"/>
+<link rel="prev" href="lecture5.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -230,99 +230,176 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lecture5" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Lecture 5</span> Collision Theory<a href="lecture5.html#lecture5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction-to-kinetic-theories" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Introduction to Kinetic Theories<a href="lecture5.html#introduction-to-kinetic-theories" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Up to this point, we have focused on describing and interpreting empirical data—either deriving rate laws from experimental data or proposing reaction mechanisms and comparing their predictions against observations. While this approach allows us to understand the <em>shape</em> of concentration–time profiles, it does not explain <em>quantitative</em> differences in reaction rates.</p>
-<p>Several important questions remain:
-- For two bimolecular reactions, which would we expect to be faster, and by how much?
-- Can we predict rate constants <span class="math inline">\(k\)</span> (and how they vary with temperature) without experimental data?</p>
-<p>While we have discussed the Arrhenius equation, <span class="math inline">\(k = A_0\mathrm{e}^{-\Delta E/RT}\)</span>, this is an approximate empirical relationship that requires experimental data to determine <span class="math inline">\(A_0\)</span> and <span class="math inline">\(\Delta E\)</span>. To move beyond empirical descriptions, we need microscopic theories that can make quantitative predictions of reaction rates.</p>
-<p>In this course, we will examine two such theories:</p>
+<div id="lecture6" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Lecture 6</span> Transition State Theory<a href="lecture6.html#lecture6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sec:tst-intro" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Moving Beyond Collision Theory<a href="lecture6.html#sec:tst-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In our previous discussion of chemical kinetics, we established the importance of developing theoretical frameworks that allow us to predict reaction rates without relying on experimental data. Our first approach was collision theory, which provided a simple model for bimolecular gas-phase reactions based on the kinetic theory of gases. While collision theory works reasonably well for reactions between small simple molecules, it typically overestimates reaction rates for more complex molecules, often significantly.</p>
+<p>This limitation can be partially addressed by introducing an empirical “steric factor”, which accounts for the fact that molecules are not featureless spheres but often need specific orientations to react. However, collision theory still has two major limitations:</p>
 <ol style="list-style-type: decimal">
-<li>Collision Theory (this lecture)—focuses on gas-phase bimolecular reactions, treating molecules as hard spheres</li>
-<li>Transition State Theory (lectures 6–9)—considers formation of activated complexes for all types of reactions</li>
+<li>The activation energy (<span class="math inline">\(E_\mathrm{a}\)</span>) appears as an arbitrary “threshold energy” for reaction, providing little insight into why <span class="math inline">\(E_\mathrm{a}\)</span> varies systematically within families of reactions.</li>
+<li>There is no quantitative theory to predict the steric factor, <span class="math inline">\(P\)</span>.</li>
+</ol>
+<p>To address these limitations, we now turn to transition state theory (TST), a more sophisticated approach to understanding reaction kinetics.</p>
+</div>
+<div id="sec:tst-principles" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Basic Principles of Transition State Theory<a href="lecture6.html#sec:tst-principles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider a bimolecular reaction A + B → P. TST proposes that this reaction proceeds through a specific pathway along a reaction coordinate, which corresponds to changes in the internal coordinates of A and B that take us from reactants to products. The reaction must overcome a free energy barrier, and the maximum along this reaction coordinate is called the transition state.</p>
+<p>At the transition state, the reactants A and B have come together to form what we call the “activated complex” C<span class="math inline">\(^{\ddagger}\)</span>. This represents our reactants in a specific orientation that enables reaction. The reaction can be represented as a two-step process:</p>
+<p><span class="math display" id="eq:tst-scheme">\[\begin{equation}
+\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \xrightarrow{k^{\ddagger}} \mathrm{P}
+\tag{6.1}
+\end{equation}\]</span></p>
+<p>Transition state theory makes two fundamental assumptions:</p>
+<ol style="list-style-type: decimal">
+<li>There exists a pseudo-equilibrium between the reactants (A + B) and the activated complex (C<span class="math inline">\(^{\ddagger}\)</span>)
+<ul>
+<li>Note: This is termed a “pseudo-equilibrium” because the activated complex is dynamically unstable</li>
+<li>C<span class="math inline">\(^{\ddagger}\)</span> can either break apart back to A + B or convert to products P</li>
+</ul></li>
+<li>There is a characteristic rate constant <span class="math inline">\(k^{\ddagger}\)</span> that describes the conversion of the activated complex to products
+<ul>
+<li>This is a first-order process: <span class="math inline">\(\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]\)</span></li>
+</ul></li>
 </ol>
 </div>
-<div id="collision-theory-basic-principles-and-assumptions" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Collision Theory — Basic Principles and Assumptions<a href="lecture5.html#collision-theory-basic-principles-and-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Collision theory provides one of the simplest microscopic models of reaction rates, specifically for gas-phase bimolecular reactions of the form:</p>
-<p><span class="math display">\[\mathrm{A} + \mathrm{B} \rightarrow \mathrm{P}\]</span></p>
-<p>For such reactions, we expect a rate law of the form <span class="math inline">\(\nu = k[\mathrm{A}][\mathrm{B}]\)</span>, but what determines the value of <span class="math inline">\(k\)</span>?</p>
-<p>Building on the kinetic theory of gases, collision theory makes two key assumptions:</p>
+<div id="sec:tst-math" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Mathematical Development of TST<a href="lecture6.html#sec:tst-math" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a pseudo-equilibrium constant:</p>
+<p><span class="math display" id="eq:equilibrium-constant">\[\begin{equation}
+K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]}{[\mathrm{A}][\mathrm{B}]}
+\tag{6.2}
+\end{equation}\]</span></p>
+<p>Therefore:</p>
+<p><span class="math display" id="eq:activated-complex-conc">\[\begin{equation}
+[\mathrm{C}^{\ddagger}] = K^{\ddagger}[\mathrm{A}][\mathrm{B}]
+\tag{6.3}
+\end{equation}\]</span></p>
+<p>We can relate this equilibrium constant to the Gibbs free energy of activation using:</p>
+<p><span class="math display" id="eq:gibbs-activation">\[\begin{equation}
+\Delta G^{\ddagger} = -RT\ln(K^{\ddagger}c^{\circ})
+\tag{6.4}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(c^{\circ}\)</span> is a reference concentration (typically 1 mol dm<span class="math inline">\(^{-3}\)</span>) that is included to make the logarithm argument dimensionless.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>
+Since <span class="math inline">\(\Delta G^{\ddagger} = \Delta H^{\ddagger} - T\Delta S^{\ddagger}\)</span>, we can write:</p>
+<p><span class="math display" id="eq:equilibrium-constant-expanded">\[\begin{equation}
+K^{\ddagger} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
+\tag{6.5}
+\end{equation}\]</span></p>
+<p>Substituting our expression for <span class="math inline">\(K^\ddagger\)</span> into the rate equation:</p>
+<p><span class="math display" id="eq:tst-rate">\[\begin{equation}
+\nu = k^{\ddagger}[\mathrm{C}^{\ddagger}] = \frac{k^{\ddagger}}{c^{\circ}}[\mathrm{A}][\mathrm{B}]\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
+\tag{6.6}
+\end{equation}\]</span></p>
+<p>This has the form of a second-order rate law with rate constant:</p>
+<p><span class="math display" id="eq:tst-rate-constant">\[\begin{equation}
+k = \frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
+\tag{6.7}
+\end{equation}\]</span></p>
+<p>Comparing this to the empirical Arrhenius equation:</p>
+<p><span class="math display" id="eq:arrhenius">\[\begin{equation}
+k = A\mathrm{e}^{-E_\mathrm{a}/RT}
+\tag{6.8}
+\end{equation}\]</span></p>
+<p>We can identify that:</p>
+<ul>
+<li>The <span class="math inline">\(\mathrm{e}^{-\Delta H^{\ddagger}/RT}\)</span> term approximately corresponds to the Arrhenius <span class="math inline">\(\mathrm{e}^{-E_\mathrm{a}/RT}\)</span> term</li>
+<li>The pre-exponential factor A approximately corresponds to <span class="math inline">\(\frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\)</span></li>
+</ul>
+</div>
+<div id="sec:enthalpy-activation" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Enthalpy of Activation<a href="lecture6.html#sec:enthalpy-activation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Understanding <span class="math inline">\(\Delta H^{\ddagger}\)</span> provides insight into activation energies and their systematic variation across related reactions. Consider the simple reaction A–B + C → A + B–C. In forming the activated complex:</p>
+<ul>
+<li>The A–B bond is mostly broken</li>
+<li>The B–C bond is partially formed</li>
+<li>Therefore, <span class="math inline">\(\Delta H^{\ddagger}\)</span> is:
+<ul>
+<li>Strongly dependent on the strength of bonds being broken</li>
+<li>Weakly dependent on the strength of bonds being formed</li>
+</ul></li>
+</ul>
+<p>This principle helps explain trends in activation energies for a family of related reactions. Consider these examples involving H and Br:</p>
+<p><span class="math display">\[\begin{align*}
+\mathrm{H–H} + \mathrm{H} &amp;\longrightarrow \mathrm{H} + \mathrm{H–H} &amp; E_\mathrm{a} &amp;= +39~\mathrm{kJ~mol^{-1}} \\
+\mathrm{H–H} + \mathrm{Br} &amp;\longrightarrow \mathrm{H} + \mathrm{H–Br} &amp; E_\mathrm{a} &amp;= +82~\mathrm{kJ~mol^{-1}} \\
+\mathrm{Br–H} + \mathrm{H} &amp;\longrightarrow \mathrm{Br} + \mathrm{H–H} &amp; E_\mathrm{a} &amp;= +12~\mathrm{kJ~mol^{-1}} \\
+\mathrm{Br–Br} + \mathrm{H} &amp;\longrightarrow \mathrm{Br} + \mathrm{Br–H} &amp; E_\mathrm{a} &amp;= +4~\mathrm{kJ~mol^{-1}}
+\end{align*}\]</span></p>
+<p>To understand these trends, we need to consider the bond dissociation energies:</p>
+<p><span class="math display">\[\begin{align*}
+\mathrm{H–H}: &amp; ~E_\mathrm{d} = +436~\mathrm{kJ~mol^{-1}} \\
+\mathrm{H–Br}: &amp; ~E_\mathrm{d} = +366~\mathrm{kJ~mol^{-1}} \\
+\mathrm{Br–Br}: &amp; ~E_\mathrm{d} = +193~\mathrm{kJ~mol^{-1}}
+\end{align*}\]</span></p>
+<p>The trends in activation energy can be explained by:</p>
 <ol style="list-style-type: decimal">
-<li>Molecules behave as hard spheres</li>
-<li>Molecules must collide to react</li>
+<li>The first two reactions involve breaking H–H bonds (highest <span class="math inline">\(E_\mathrm{d}\)</span>) → highest <span class="math inline">\(E_\mathrm{a}\)</span> values</li>
+<li>Between these two:
+<ul>
+<li>H–H + H forms H–H (more favorable)</li>
+<li>H–H + Br forms H–Br (less favorable)</li>
+<li>Therefore <span class="math inline">\(E_\mathrm{a}\)</span> is lower for H–H + H</li>
+</ul></li>
+<li>The remaining reactions follow the trend in bond strength being broken:
+<ul>
+<li>Breaking H–Br (<span class="math inline">\(E_\mathrm{a} = +12~\mathrm{kJ~mol^{-1}}\)</span>)</li>
+<li>Breaking Br–Br (<span class="math inline">\(E_\mathrm{a} = +4~\mathrm{kJ~mol^{-1}}\)</span>)</li>
+</ul></li>
 </ol>
-<p>The overall reaction rate is then:</p>
-<p>rate = rate of collisions × fraction of “successful” collisions</p>
 </div>
-<div id="deriving-the-collision-frequency" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Deriving the Collision Frequency<a href="lecture5.html#deriving-the-collision-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Consider two molecules A and B with radii <span class="math inline">\(r_\mathrm{A}\)</span> and <span class="math inline">\(r_\mathrm{B}\)</span> and velocities <span class="math inline">\(v_\mathrm{A}\)</span> and <span class="math inline">\(v_\mathrm{B}\)</span>. To analyze their collisions, we can adopt the reference frame of molecule B, where:</p>
+<div id="sec:tst-collision" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Reconciling TST with Collision Theory<a href="lecture6.html#sec:tst-collision" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Our two theories provide different physical interpretations of activation energy:</p>
 <ul>
-<li>B appears stationary</li>
-<li>A moves with relative velocity <span class="math inline">\(v = v_\mathrm{B} - v_\mathrm{A}\)</span></li>
+<li>Collision theory: <span class="math inline">\(E_\mathrm{a}\)</span> represents a threshold kinetic energy</li>
+<li>TST: <span class="math inline">\(\Delta H^{\ddagger}\)</span> represents energy stored in partially broken/formed bonds</li>
 </ul>
-<p>A collision occurs when the closest distance of approach (the “impact parameter” <span class="math inline">\(b\)</span>) is less than the sum of the molecular radii:</p>
-<p><span class="math display">\[b &lt; (r_\mathrm{A} + r_\mathrm{B}) = d\]</span></p>
-<p>As molecule A moves through space, it sweeps out a cylindrical volume:</p>
+<p>These interpretations can be reconciled by considering the energy changes during a reactive collision:</p>
+<ol style="list-style-type: decimal">
+<li>Initial state:
 <ul>
-<li>Radius = <span class="math inline">\(d = (r_\mathrm{A} + r_\mathrm{B})\)</span></li>
-<li>Length (per unit time) = <span class="math inline">\(v\)</span> (the relative velocity)</li>
-<li>Volume (per unit time) = <span class="math inline">\(vS = v\pi d^2\)</span></li>
-</ul>
-<p>The collision frequency per unit volume (<span class="math inline">\(Z&#39;\)</span>) is then:</p>
-<p><span class="math display">\[Z&#39; = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}v\pi d^2\]</span></p>
-<p>where <span class="math inline">\(N_\mathrm{A}\)</span> and <span class="math inline">\(N_\mathrm{B}\)</span> are the numbers of molecules of each species in volume <span class="math inline">\(V\)</span>.</p>
-</div>
-<div id="average-relative-velocity" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> Average Relative Velocity<a href="lecture5.html#average-relative-velocity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The relative velocity between molecules follows the Maxwell-Boltzmann distribution. The average relative velocity is:</p>
-<p><span class="math display">\[\bar{v} = \left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\]</span></p>
-<p>where <span class="math inline">\(\mu\)</span> is the reduced mass:</p>
-<p><span class="math display">\[\mu = \frac{m_\mathrm{A}m_\mathrm{B}}{m_\mathrm{A} + m_\mathrm{B}}\]</span></p>
-<p>Substituting this into our expression for collision frequency:</p>
-<p><span class="math display">\[Z&#39; = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\]</span></p>
-</div>
-<div id="successful-collisions" class="section level2 hasAnchor" number="5.5">
-<h2><span class="header-section-number">5.5</span> Successful Collisions<a href="lecture5.html#successful-collisions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Not all collisions lead to reaction. We assume a collision is successful if the relative kinetic energy exceeds a threshold activation energy <span class="math inline">\(E_\mathrm{a}\)</span>. For a Maxwell-Boltzmann distribution, the fraction of collisions with sufficient energy is:</p>
-<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
-<p>This gives a total reaction rate:</p>
-<p><span class="math display">\[\nu = Z&#39; \times P(E \geq E_\mathrm{a}) = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
-<p>This can be written in the familiar form of a second-order rate law:</p>
-<p><span class="math display">\[\begin{equation}
-\nu=k[\mathrm{A}][\mathrm{B}]
-\end{equation}\]</span></p>
-<p>where</p>
-<p><span class="math display">\[\begin{equation}
-k = \pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-\end{equation}\]</span></p>
-</div>
-<div id="limitations-of-the-theory" class="section level2 hasAnchor" number="5.6">
-<h2><span class="header-section-number">5.6</span> Limitations of the Theory<a href="lecture5.html#limitations-of-the-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Collision theory often overestimates reaction rates, sometimes by several orders of magnitude. This is because molecules are not truly hard spheres, and successful reaction often requires specific molecular orientations or more complex mechanisms.
-To account for this, we introduce an empirical steric factor <span class="math inline">\(P\)</span>:</p>
-<p><span class="math display">\[k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
-<p>where <span class="math inline">\(P\)</span> is the ratio of the experimental pre-exponential factor to the theoretical value:</p>
-<p><span class="math display">\[P = A_\text{exp}/A_\text{th}\]</span></p>
-<p>Examples illustrate the range of steric factors:</p>
+<li>Separated molecules with relative KE ≥ <span class="math inline">\(E_\mathrm{a}\)</span></li>
+<li>Undistorted internal bonds</li>
+</ul></li>
+<li>At the transition state:
 <ul>
-<li>H<sub>2</sub> + C<sub>2</sub>H<sub>4</sub> → C<sub>2</sub>H<sub>6</sub>: <span class="math inline">\(P = 1.7 \times 10^{-6}\)</span> (specific orientation required)</li>
-<li>K + Br<sub>2</sub> → KBr + Br: <span class="math inline">\(P = 4.8\)</span> (enhanced cross-section due to “harpoon mechanism”)</li>
+<li>Relative KE has been converted to potential energy</li>
+<li>Energy stored in partially broken/formed bonds</li>
+<li>Distorted molecular geometries</li>
+</ul></li>
+</ol>
+<p>Therefore:</p>
+<ul>
+<li>Collision theory <span class="math inline">\(E_\mathrm{a}\)</span> describes the minimum energy input required.</li>
+<li>TST <span class="math inline">\(\Delta H^{\ddagger}\)</span> describes where that energy ends up.</li>
+<li>These must be approximately equal by energy conservation.</li>
 </ul>
+<p>The two theories thus provide complementary perspectives on the same process:
+- Collision theory focuses on what energy must go in
+- TST focuses on where that energy ends up and how it affects molecular structure</p>
 
 </div>
+</div>
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>If our reaction takes place under standard conditions, <span class="math inline">\(c^\circ=1\,\mathrm{mol}\,\mathrm{dm}^{-3}\)</span> and has no effect on the numerical value of <span class="math inline">\(k\)</span>. Because of this, c<span class="math inline">\(^\circ\)</span> is often omitted in basic treatments of Transition State Theory, so you might see examples where it is missing. Including <span class="math inline">\(c^\circ\)</span>, however, ensures that <span class="math inline">\(k\)</span> has the correct units for a second-order rate constant (dm<span class="math inline">\(^3\)</span> mol<span class="math inline">\(^{-1}\)</span> s<span class="math inline">\(^{-1}\)</span>).<a href="lecture6.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lecture4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lecture6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lecture5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -353,7 +430,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bjmorgan/CH22008/main/lecture_5/lecture_05.Rmd",
+"link": "https://github.com/bjmorgan/CH22008/main/lecture_6/lecture_06.Rmd",
 "text": "Edit"
 },
 "history": {

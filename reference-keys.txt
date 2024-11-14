@@ -20,6 +20,14 @@ eq:num-example-a
 eq:num-example-b
 eq:num-step-a
 eq:num-step-b
+eq:tst-scheme
+eq:equilibrium-constant
+eq:activated-complex-conc
+eq:gibbs-activation
+eq:equilibrium-constant-expanded
+eq:tst-rate
+eq:tst-rate-constant
+eq:arrhenius
 lecture1
 why-study-chemical-kinetics
 sec:reaction-rates
@@ -64,3 +72,9 @@ deriving-the-collision-frequency
 average-relative-velocity
 successful-collisions
 limitations-of-the-theory
+lecture6
+sec:tst-intro
+sec:tst-principles
+sec:tst-math
+sec:enthalpy-activation
+sec:tst-collision
