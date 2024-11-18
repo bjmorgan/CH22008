@@ -15,13 +15,15 @@ In this course, we will examine two such theories:
 1. Collision Theory (this lecture)—focuses on gas-phase bimolecular reactions, treating molecules as hard spheres
 2. Transition State Theory (lectures 6–9)—considers formation of activated complexes for all types of reactions
 
-## Collision Theory &mdash; Basic Principles and Assumptions
+## Fundamentals of Collision Theory {#sec:fundamentals}
 
 Collision theory provides one of the simplest microscopic models of reaction rates, specifically for gas-phase bimolecular reactions of the form:
 
 $$\mathrm{A} + \mathrm{B} \rightarrow \mathrm{P}$$
 
 For such reactions, we expect a rate law of the form $\nu = k[\mathrm{A}][\mathrm{B}]$, but what determines the value of $k$?
+
+### Basic Principles and Assumptions {#sec:principles}
 
 Building on the kinetic theory of gases, collision theory makes two key assumptions:
 
@@ -32,7 +34,7 @@ The overall reaction rate is then:
 
 rate = rate of collisions &times; fraction of &ldquo;successful&rdquo; collisions
 
-## Deriving the Collision Frequency
+### Collision Frequency {#sec:frequency}
 
 Consider two molecules A and B with radii $r_\mathrm{A}$ and $r_\mathrm{B}$ and velocities $v_\mathrm{A}$ and $v_\mathrm{B}$. To analyze their collisions, we can adopt the reference frame of molecule B, where:
 
@@ -55,7 +57,7 @@ $$Z' = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}v\pi d^2$$
 
 where $N_\mathrm{A}$ and $N_\mathrm{B}$ are the numbers of molecules of each species in volume $V$.
 
-## Average Relative Velocity
+### Average Relative Velocity
 
 The relative velocity between molecules follows the Maxwell-Boltzmann distribution. The average relative velocity is:
 
@@ -69,7 +71,9 @@ Substituting this into our expression for collision frequency:
 
 $$Z' = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}$$
 
-## Successful Collisions
+## From Collisions to Reaction Rates
+
+### Successful Collisions
 
 Not all collisions lead to reaction. We assume a collision is successful if the relative kinetic energy exceeds a threshold activation energy $E_\mathrm{a}$. For a Maxwell-Boltzmann distribution, the fraction of collisions with sufficient energy is:
 
@@ -91,18 +95,61 @@ where
 k = \pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
 \end{equation}
 
-## Limitations of the Theory
+### Steric Factors {#sec:steric-factors}
 
-Collision theory often overestimates reaction rates, sometimes by several orders of magnitude. This is because molecules are not truly hard spheres, and successful reaction often requires specific molecular orientations or more complex mechanisms.
-To account for this, we introduce an empirical steric factor $P$:
+When we compare the reaction rates predicted by collision theory with experimental measurements, we typically find that collision theory overestimates reaction rates, sometimes by several orders of magnitude. This discrepancy arises because our model of molecules as hard spheres is an oversimplification—successful reactions often require specific molecular orientations or more complex interactions than simple collisions.
+To account for these effects, we introduce an empirical correction factor $P$, called the steric factor, that modifies our expression for the rate constant:
+\begin{equation}
+k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
+(#eq:steric-k)
+\end{equation}
+The steric factor $P$ is defined as the ratio of the experimental pre-exponential factor to the theoretical value predicted by collision theory:
+\begin{equation}
+P = \frac{A_\mathrm{exp}}{A_\mathrm{th}}
+(#eq:steric-factor)
+\end{equation}
+Different types of reactions exhibit characteristic ranges of steric factors. Consider these examples:
 
-$$k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
+1. For the hydrogenation of ethene: H~2~+C~2~H~4~$\longrightarrow$C~2~H~6~
+$P = 1.7 \times 10^{-6}$.
+This very small steric factor reflects the strict geometric requirements for reaction&mdash;the H~2~ molecule must approach the C=C double bond in a specific orientation for reaction to occur.
+2. For the reaction between potassium and bromine:
+K+Br~2~$\longrightarrow$KBr+Br
+$P = 4.8$.
+Here the steric factor is greater than unity, indicating that reactions occur more frequently than predicted by simple collision theory. This enhanced reactivity arises from the "harpoon mechanism", where electron transfer between K and Br~2~ creates long-range attractive forces that effectively increase the collision cross-section.
 
-where $P$ is the ratio of the experimental pre-exponential factor to the theoretical value:
+## Relationship to the Arrhenius Equation {#sec:arrhenius-comparison}
 
-$$P = A_\text{exp}/A_\text{th}$$
+The rate constant derived from collision theory has a remarkably similar form to the empirical Arrhenius equation.
+Let us compare them directly:
 
-Examples illustrate the range of steric factors:
+From collision theory:
+\begin{equation}
+k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
+(#eq:collision-k)
+\end{equation}
 
-- H~2~ + C~2~H~4~ → C~2~H~6~: $P = 1.7 \times 10^{-6}$ (specific orientation required)
-- K + Br~2~ → KBr + Br: $P = 4.8$ (enhanced cross-section due to "harpoon mechanism")
+The Arrhenius equation:
+\begin{equation}
+k = A_0\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
+(#eq:arrhenius)
+\end{equation}
+
+This comparison provides physical insight into the meaning of the Arrhenius parameters:
+
+1. The activation energy $E_\mathrm{a}$ in the Arrhenius equation can be interpreted as the minimum relative kinetic energy that colliding molecules must possess for reaction to occur. This threshold energy is needed to overcome the potential energy barrier to reaction.
+2. The pre-exponential factor $A_0$ represents a normalized collision frequency. The collision theory expression shows that this frequency depends on:
+  - The collision cross-section ($\pi d^2$)
+  - The average relative velocity of molecules ($\propto \sqrt{T/\mu}$)
+  - A steric factor $P$ that accounts for orientation requirements
+
+Therefore, while the Arrhenius equation was originally proposed as an empirical relationship, collision theory provides a theoretical foundation for its functional form and offers molecular-level interpretations of its parameters. However, we should note that this interpretation is strictly valid only for gas-phase bimolecular reactions. For more complex reactions, particularly in solution, the physical meaning of the Arrhenius parameters becomes less clear, and we need more sophisticated theories to understand their molecular basis.
+
+## Limitations of Collision Theory as a Predictive Framework {#sec:collision-limitations}
+
+While collision theory provides our first microscopic model for reaction rates, its utility as a predictive framework is limited. For reactions between small simple molecules, it works reasonably well. However, for more complex molecules, it typically overestimates reaction rates significantly.
+
+Two key limitations prevent collision theory from serving as a fully predictive framework:
+
+- The activation energy E$\mathrm{a}$ appears as an arbitrary &ldquo;threshold energy&rdquo; that molecules must possess to react. While we can measure this energy experimentally, the theory provides no insight into how $E_\mathrm{a}$ varies between different reactions. 
+- While we can determine the steric factor $P$ by comparing experimental and theoretical rate constants, we have no quantitative theory to predict its value. This means we cannot predict absolute rate constants for new reactions without experimental data.

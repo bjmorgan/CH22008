@@ -1,37 +1,32 @@
 # Transition State Theory {#lecture6}
 
-## Moving Beyond Collision Theory {#sec:tst-intro}
+## A Molecular Theory of Reaction Rates {#sec:intro}
 
-In our previous discussion of chemical kinetics, we established the importance of developing theoretical frameworks that allow us to predict reaction rates without relying on experimental data. Our first approach was collision theory, which provided a simple model for bimolecular gas-phase reactions based on the kinetic theory of gases. While collision theory works reasonably well for reactions between small simple molecules, it typically overestimates reaction rates for more complex molecules, often significantly.
+Our study of chemical kinetics aims to predict reaction rates from fundamental molecular principles. While collision theory provides some insight into gas-phase bimolecular reactions by modelling molecules as colliding spheres, it leaves key questions unanswered. We cannot predict steric factors without experimental data, and we lack understanding of why activation energies vary systematically within families of reactions.
 
-This limitation can be partially addressed by introducing an empirical &ldquo;steric factor&rdquo;, which accounts for the fact that molecules are not featureless spheres but often need specific orientations to react. However, collision theory still has two major limitations:
+Consider a bimolecular reaction A + B → P. The reaction coordinate diagram shows how the energy changes as reactant molecules A and B come together to form product P. At the highest point on this energy profile—the top of the activation barrier—the molecular system passes through what we call the transition state. Molecules at the transition state form what we call an activated complex, which we denote as C$^\ddagger$.
 
-1. The activation energy ($E_\mathrm{a}$) appears as an arbitrary "threshold energy" for reaction, providing little insight into why $E_\mathrm{a}$ varies systematically within families of reactions.
-2. There is no quantitative theory to predict the steric factor, $P$.
-
-To address these limitations, we now turn to transition state theory (TST), a more sophisticated approach to understanding reaction kinetics.
+```{r fig-tst-reaction-coordinate, fig.cap="Figure 6.1: A reaction coordinate diagram for the reaction A + B → P. The energy profile shows the barrier that must be crossed as reactants are converted to products. The peak of this barrier corresponds to the transition state configuration, and the collection of molecules at the transition state form the activated complex, C$^\\ddagger$.", out.width='55%', fig.align='center'}
+knitr::include_graphics("lecture_6/figures/reaction_coordinate.png")
+```
 
 ## Basic Principles of Transition State Theory {#sec:tst-principles}
-
-Consider a bimolecular reaction A + B → P. TST proposes that this reaction proceeds through a specific pathway along a reaction coordinate, which corresponds to changes in the internal coordinates of A and B that take us from reactants to products. The reaction must overcome a free energy barrier, and the maximum along this reaction coordinate is called the transition state.
-
-At the transition state, the reactants A and B have come together to form what we call the &ldquo;activated complex&rdquo; C$^{\ddagger}$. This represents our reactants in a specific orientation that enables reaction. The reaction can be represented as a two-step process:
-
-\begin{equation}
-\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \xrightarrow{k^{\ddagger}} \mathrm{P}
-(\#eq:tst-scheme)
-\end{equation}
 
 Transition state theory makes two fundamental assumptions:
 
 1. There exists a pseudo-equilibrium between the reactants (A + B) and the activated complex (C$^{\ddagger}$)
-   - Note: This is termed a "pseudo-equilibrium" because the activated complex is dynamically unstable
-   - C$^{\ddagger}$ can either break apart back to A + B or convert to products P
-
+  - Note: This is termed a "pseudo-equilibrium" because the activated complex is dynamically unstable.
+  - C$^{\ddagger}$ can either break apart back to A + B or convert to products P.
 2. There is a characteristic rate constant $k^{\ddagger}$ that describes the conversion of the activated complex to products
-   - This is a first-order process: $\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]$
+  - This is a first-order process: $\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]$.
 
-## Mathematical Development of TST {#sec:tst-math}
+We can represent this process as a two-step scheme:
+\begin{equation}
+\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \xrightarrow{k^{\ddagger}} \mathrm{P}
+(#eq:tst-scheme)
+\end{equation}
+
+## Mathematical Development of Transition State Theory {#sec:tst-math}
 
 To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a pseudo-equilibrium constant:
 
@@ -40,21 +35,22 @@ K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]}{[\mathrm{A}][\mathrm{B}]}
 (\#eq:equilibrium-constant)
 \end{equation}
 
-Therefore:
+This allows us to express the concentration of the activated complex in terms of reactant concentrations:
 
 \begin{equation}
 [\mathrm{C}^{\ddagger}] = K^{\ddagger}[\mathrm{A}][\mathrm{B}]
 (\#eq:activated-complex-conc)
 \end{equation}
 
-We can relate this equilibrium constant to the Gibbs free energy of activation using:
+Like any equilibrium constant, $K^{\ddagger}$ is related to the standard Gibbs free energy change:
 
 \begin{equation}
 \Delta G^{\ddagger} = -RT\ln(K^{\ddagger}c^{\circ})
-(\#eq:gibbs-activation)
+(#eq:gibbs-activation)
 \end{equation}
 
-where $c^{\circ}$ is a reference concentration (typically 1 mol dm$^{-3}$) that is included to make the logarithm argument dimensionless.^[If our reaction takes place under standard conditions, $c^\circ=1\,\mathrm{mol}\,\mathrm{dm}^{-3}$ and has no effect on the numerical value of $k$. Because of this, c$^\circ$ is often omitted in basic treatments of Transition State Theory, so you might see examples where it is missing. Including $c^\circ$, however, ensures that $k$ has the correct units for a second-order rate constant (dm$^3$ mol$^{-1}$ s$^{-1}$).]
+where $c^{\circ}$ is a reference concentration (typically 1 mol dm$^{-3}$).^[If our reaction takes place under standard conditions, $c^\circ=1,\mathrm{mol},\mathrm{dm}^{-3}$ and has no effect on the numerical value of $k$. Because of this, c$^\circ$ is often omitted in basic treatments of Transition State Theory, so you might see examples where it is missing. Including $c^\circ$, however, ensures that $k$ has the correct units for a second-order rate constant (dm$^3$ mol$^{-1}$ s$^{-1}$).]
+
 Since $\Delta G^{\ddagger} = \Delta H^{\ddagger} - T\Delta S^{\ddagger}$, we can write:
 
 \begin{equation}
@@ -62,7 +58,7 @@ K^{\ddagger} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1
 (\#eq:equilibrium-constant-expanded)
 \end{equation}
 
-Substituting our expression for $K^\ddagger$ into the rate equation:
+From our second assumption, the rate of product formation is proportional to the concentration of the activated complex:
 
 \begin{equation}
 \nu = k^{\ddagger}[\mathrm{C}^{\ddagger}] = \frac{k^{\ddagger}}{c^{\circ}}[\mathrm{A}][\mathrm{B}]\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
@@ -76,17 +72,28 @@ k = \frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{
 (\#eq:tst-rate-constant)
 \end{equation}
 
-Comparing this to the empirical Arrhenius equation:
+## Relationship to the Arrhenius Equation {#sec:tst-arrhenius}
 
+We can understand how transition state theory connects to experimental observations by comparing the rate constant expression with the Arrhenius equation:
+
+From transition state theory:
 \begin{equation}
-k = A\mathrm{e}^{-E_\mathrm{a}/RT}
-(\#eq:arrhenius)
+k = \frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
+(#eq:tst-k)
 \end{equation}
 
-We can identify that:
+The Arrhenius equation:
+\begin{equation}
+k = A\mathrm{e}^{-E_\mathrm{a}/RT}
+(#eq:arrhenius)
+\end{equation}
 
-- The $\mathrm{e}^{-\Delta H^{\ddagger}/RT}$ term approximately corresponds to the Arrhenius $\mathrm{e}^{-E_\mathrm{a}/RT}$ term
-- The pre-exponential factor A approximately corresponds to $\frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}$
+This comparison reveals two important correspondences:
+
+- The activation enthalpy $\Delta H^{\ddagger}$ plays a similar role to the Arrhenius activation energy $E_\mathrm{a}$.
+- The pre-exponential factor $A$ corresponds to $\frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}$.
+
+Like collision theory, transition state theory provides a molecular-level interpretation of the Arrhenius parameters. However, transition state theory offers additional insight by separating the activation barrier into enthalpic ($\Delta H^{\ddagger}$) and entropic ($\Delta S^{\ddagger}$) contributions, helping explain systematic variations in reactivity across related compounds.
 
 ## Enthalpy of Activation {#sec:enthalpy-activation}
 

@@ -17,7 +17,7 @@ $$\frac{d[\mathrm{C}]}{dt} = +k_2[\mathrm{A}] - k_{-2}[\mathrm{C}]$$
 
 ## Time Evolution of Product Distributions
 
-### Short-Time Behavior
+### Short-Time Behaviour
 
 At very short times, when [B] ≈ 0 and [C] ≈ 0, the backward reactions can be neglected and the system behaves similarly to the irreversible case we studied previously. The relative yields of products are determined by the ratio of the forward rate constants:
 
@@ -25,7 +25,7 @@ $$\frac{[\mathrm{B}]}{[\mathrm{C}]} \approx \frac{k_1}{k_2}$$
 
 This is often called &ldquo;kinetic control&rdquo;, as the product distribution is determined by the relative rates of the forward reactions.
 
-### Long-Time Behavior
+### Long-Time Behaviour
 
 At long times, the system reaches equilibrium, where:
 
@@ -49,12 +49,13 @@ This is called &ldquo;thermodynamic control&rdquo;, as the product distribution 
 
 ## Kinetic vs Thermodynamic Control
 
-The evolution from kinetic to thermodynamic control can be understood using reaction coordinate diagrams. Consider a system where:
+The evolution from kinetic to thermodynamic control is best understood by visualising how reactions proceed. A reaction coordinate diagram shows how the energy of a molecular system changes as reactants transform into products. The horizontal axis—called the reaction coordinate—represents the progression of the reaction through changes in molecular geometry (bonds breaking and forming). The vertical axis shows the potential energy of the system.
+For our parallel reactions, the diagram shows two paths starting from reactant A: one leading to product B and another to product C. Consider a system where:
 
-1. Product B has the lower activation energy (faster formation, kinetic product)
-2. Product C has the lower free energy (more stable, thermodynamic product)
+- Product B has the lower activation energy (faster formation, kinetic product)
+- Product C has the lower free energy (more stable, thermodynamic product)
 
-At short times, B forms more rapidly due to its lower activation barrier. However, if the reaction is reversible (small enough barriers for reverse reactions), the system will eventually equilibrate to favor the more thermodynamically stable product C.
+At short times, B forms more rapidly due to its lower activation barrier. However, if the reaction is reversible (small enough barriers for reverse reactions), the system will eventually equilibrate to favour the more thermodynamically stable product C.
 
 Important factors that determine whether kinetic or thermodynamic control dominates:
 
@@ -68,7 +69,7 @@ Important factors that determine whether kinetic or thermodynamic control domina
 
 ## Example: Base-Catalyzed Isomerization
 
-A classic example is the base-catalyzed isomerization of substituted cyclohexanones:
+A classic example of kinetic versus thermodynamic control is the base-catalyzed isomerization of substituted cyclohexanones:
 
 - With LDA (strong base) in DME:
   - Product A (kinetic): 99%
