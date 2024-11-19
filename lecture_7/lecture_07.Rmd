@@ -18,7 +18,7 @@ While this idea, that degree to which we lose translational and rotational degre
 
 To analyse molecular freedom systematically, we begin by counting the degrees of freedom available to a molecule containing $N$ atoms. Each atom has three degrees of freedom, corresponding to motion in three dimensions. The total number of atomic degrees of freedom is therefore $3N$.
 
-These atomic motions can be combined to give $3N$ molecular degrees of freedom that describe the collective motion of the molecule.^[The $3N$ molecular degrees of freedom are constructed as orthogonal linear combinations of the $3N$ atomic degrees of freedom that are consistent with molecular symmetry. The details of this transformation from atomic to molecular degrees of freedom is part of Group Theory] Molecular degrees of freedom can be classified into three types:
+These atomic motions can be combined to give $3N$ molecular degrees of freedom that describe the collective motion of the molecule.^[The $3N$ molecular degrees of freedom are constructed as orthogonal linear combinations of the $3N$ atomic degrees of freedom that are consistent with molecular symmetry. The details of this transformation from atomic to molecular degrees of freedom are part of the S2 Group Theory course] Molecular degrees of freedom can be classified into three types:
 
 1. Translational motion of the entire molecule through space.
 2. Rotation of the molecule about its principal axes.
