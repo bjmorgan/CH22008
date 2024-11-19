@@ -253,8 +253,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Let us first consider the case of a single first-order reaction:</p>
 <p><span class="math display">\[\mathrm{A} \xrightarrow{k} \mathrm{B}\]</span></p>
 <p>The rate equations are:</p>
-<p><span class="math display">\[\frac{d[\mathrm{A}]}{dt} = -k[\mathrm{A}]\]</span>
-<span class="math display">\[\frac{d[\mathrm{B}]}{dt} = +k[\mathrm{A}]\]</span></p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]\]</span>
+<span class="math display">\[\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = +k[\mathrm{A}]\]</span></p>
 <p>Integrating these gives:
 <span class="math display">\[[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-kt}\]</span></p>
 <p>And since [B] = [A]<sub>0</sub> - [A] (from conservation of mass):
@@ -266,11 +266,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[\mathrm{A} \xrightarrow{k_1} \mathrm{B}\]</span>
 <span class="math display">\[\mathrm{A} \xrightarrow{k_2} \mathrm{C}\]</span></p>
 <p>The rate of change of A is now:</p>
-<p><span class="math display">\[\frac{d[\mathrm{A}]}{dt} = -(k_1 + k_2)[\mathrm{A}]\]</span></p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -(k_1 + k_2)[\mathrm{A}]\]</span></p>
 <p>Integrating this gives:</p>
 <p><span class="math display">\[[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-(k_1+k_2)t}\]</span></p>
 <p>For product B:</p>
-<p><span class="math display">\[\frac{d[\mathrm{B}]}{dt} = k_1[\mathrm{A}] = k_1[\mathrm{A}]_0\mathrm{e}^{-(k_1+k_2)t}\]</span></p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}] = k_1[\mathrm{A}]_0\mathrm{e}^{-(k_1+k_2)t}\]</span></p>
 <p>Integrating:</p>
 <p><span class="math display">\[[\mathrm{B}] = \frac{k_1}{k_1+k_2}[\mathrm{A}]_0(1-\mathrm{e}^{-(k_1+k_2)t})\]</span></p>
 <p>Similarly for C:</p>
@@ -280,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.4</span> Key Features of Parallel Reactions<a href="lecture2.html#key-features-of-parallel-reactions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Several important points emerge from these expressions:</p>
 <ol style="list-style-type: decimal">
-<li><p>The formation of both products B and C is controlled by the same overall rate constant (k<sub>1</sub>+k<sub>2</sub>)</p></li>
+<li><p>The formation of both products B and C is controlled by the same overall rate constant (<span class="math inline">\(k_1 + k_2\)</span>)</p></li>
 <li><p>The relative yields of products are determined by the ratio of the rate constants:</p>
 <p><span class="math display">\[\frac{[\mathrm{B}]}{[\mathrm{C}]} = \frac{k_1}{k_2}\]</span></p></li>
 </ol>
