@@ -9,11 +9,11 @@ $$\mathrm{A} \mathrel{\mathop{\rightleftarrows}^{k_2}_{k_{-2}}} \mathrm{C}$$
 
 For such systems, the rate equations are:
 
-$$\frac{d[\mathrm{A}]}{dt} = -(k_1 + k_2)[\mathrm{A}] + k_{-1}[\mathrm{B}] + k_{-2}[\mathrm{C}]$$
+$$\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -(k_1 + k_2)[\mathrm{A}] + k_{-1}[\mathrm{B}] + k_{-2}[\mathrm{C}]$$
 
-$$\frac{d[\mathrm{B}]}{dt} = +k_1[\mathrm{A}] - k_{-1}[\mathrm{B}]$$
+$$\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = +k_1[\mathrm{A}] - k_{-1}[\mathrm{B}]$$
 
-$$\frac{d[\mathrm{C}]}{dt} = +k_2[\mathrm{A}] - k_{-2}[\mathrm{C}]$$
+$$\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = +k_2[\mathrm{A}] - k_{-2}[\mathrm{C}]$$
 
 ## Time Evolution of Product Distributions
 
@@ -29,7 +29,7 @@ This is often called &ldquo;kinetic control&rdquo;, as the product distribution 
 
 At long times, the system reaches equilibrium, where:
 
-$$\frac{d[\mathrm{A}]}{dt} = \frac{d[\mathrm{B}]}{dt} = \frac{d[\mathrm{C}]}{dt} = 0$$
+$$\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = \frac{\mathrm{d}d[\mathrm{C}]}{\mathrm{d}t} = 0$$
 
 At equilibrium:
 

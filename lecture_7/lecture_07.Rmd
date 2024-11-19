@@ -1,0 +1,55 @@
+# Molecular Freedom and Entropy of Activation
+
+In Lecture \@ref(lecture6), we began thinking about the entropy of activation $\Delta S^{\ddagger}$ in terms of changes in molecular freedom when forming the activated complex. We can develop this idea to understand systematic variations in the Arrhenius pre-exponential factor between different bimolecular reactions. We begin with a qualitative analysis before examining the molecular details more carefully.
+
+## Qualitative Analysis: Atomic and Molecular Reactions
+
+Consider first a bimolecular reaction between two atoms. As discussed in the previous lecture, forming the activated complex reduces the number of translational degrees of freedom from 6 (3 for each atom) to 3. This loss of translational freedom corresponds to a loss of translational entropy, making $\Delta S^{\ddagger}$ negative.
+
+Now consider a reaction between two diatomic molecules. Each reactant molecule has 3 degrees of translational freedom and 2 degrees of rotational freedom. The activated complex has 3 translational degrees of freedom and 3 rotational degrees of freedom. Forming the activated complex now involves a decrease in the numbers of translational and rotational degrees of freedom. And we, therefore, might expect a larger, more negative, entropy of activation for this reaction than for the simpler case involving two atoms.
+
+## Thermodynamic Origin of the Steric Factor
+
+In our analysis of collision theory, we saw that reactions between more complex molecules typically have smaller steric factors. We interpreted this as reflecting the need for specific molecular orientations during collision. Our analysis thus far provides a thermodynamic perspective on this observation: we can expect more complex reactant molecules lose more molecular freedom when forming the activated complex, leading to a more negative $\Delta S^{\ddagger}$ and consequently a smaller pre-exponential factor $A$.
+
+While this idea, that degree to which we lose translational and rotational degrees of freedom on forming the activated complex, is broadly correct, it is incomplete: we have not considered vibrational degrees of freedom, and we do not have a framework that can predict differences in pre-exponential factor between two molecular reactions. To proceed, we need a more complete accounting of all molecular degrees of freedom in the reactants and activated complex.
+
+## Molecular Degrees of Freedom
+
+To analyse molecular freedom systematically, we begin by counting the degrees of freedom available to a molecule containing $N$ atoms. Each atom has three degrees of freedom, corresponding to motion in three dimensions. The total number of atomic degrees of freedom is therefore $3N$.
+
+These atomic motions can be combined to give $3N$ molecular degrees of freedom that describe the collective motion of the molecule.^[The $3N$ molecular degrees of freedom are constructed as orthogonal linear combinations of the $3N$ atomic degrees of freedom that are consistent with molecular symmetry. The details of this transformation from atomic to molecular degrees of freedom is part of Group Theory] Molecular degrees of freedom can be classified into three types:
+
+1. Translational motion of the entire molecule through space.
+2. Rotation of the molecule about its principal axes.
+3. Vibrational motion where atoms move relative to each other.
+
+A linear molecule has:
+
+- 3 translational degrees of freedom.
+- 2 rotational degrees of freedom.
+- $3N-5$ vibrational degrees of freedom.
+
+A non-linear molecule has:
+
+- 3 translational degrees of freedom.
+- 3 rotational degrees of freedom.
+- $3N-6$ vibrational degrees of freedom.
+
+## Energy Spacings and Entropy
+
+Quantum mechanics tells us that the energy levels for molecular motion are quantised. The spacing between these levels varies significantly with the type of motion:
+
+$$\Delta \epsilon_\mathrm{trans} \ll \Delta \epsilon_\mathrm{rot} < \Delta \epsilon_\mathrm{vib}$$
+
+This hierarchy of energy spacings determines the entropy associated with each type of motion. A smaller energy spacing means more states are thermally accessible, corresponding to higher entropy. Hence:
+
+$$S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} > S^{\ddagger}_\mathrm{vib}$$
+
+## Formation of the Activated Complex
+
+Our initial analysis of the entropy of activation focused on degrees of freedom that are lost when forming the activated complex. While this simple picture correctly predicts that $\Delta S^{\ddagger}$ is negative for bimolecular reactions, it neglects the new degrees of freedom created in the activated complex.
+
+When two molecules combine to form an activated complex, the transformation of molecular motion is better described as a conversion of high-entropy translational and rotational degrees of freedom into low-entropy vibrational degrees of freedom. The hierarchy of molecular entropy contributions ($S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} > S^{\ddagger}_\mathrm{vib}$) means this transformation produces a net decrease in entropy: $\Delta S^{\ddagger} < 0$.
+
+This molecular picture provides a more complete explanation for the systematic variation in steric factors observed in collision theory. More complex molecules not only lose more translational and rotational freedom when forming the activated complex, but also gain more constrained vibrational modes. Both effects contribute to making $\Delta S^{\ddagger}$ more negative, and hence reducing the Arrhenius pre-exponential factor.
