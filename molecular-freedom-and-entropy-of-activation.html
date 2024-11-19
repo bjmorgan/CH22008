@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 5 Collision Theory | CH22008 Lecture Notes</title>
+  <title>Lecture 7 Molecular Freedom and Entropy of Activation | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 5 Collision Theory | CH22008 Lecture Notes" />
+  <meta property="og:title" content="Lecture 7 Molecular Freedom and Entropy of Activation | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 5 Collision Theory | CH22008 Lecture Notes" />
+  <meta name="twitter:title" content="Lecture 7 Molecular Freedom and Entropy of Activation | CH22008 Lecture Notes" />
   
   <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lecture4.html"/>
-<link rel="next" href="lecture6.html"/>
+<link rel="prev" href="lecture6.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -252,151 +252,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lecture5" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Lecture 5</span> Collision Theory<a href="lecture5.html#lecture5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction-to-kinetic-theories" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Introduction to Kinetic Theories<a href="lecture5.html#introduction-to-kinetic-theories" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Up to this point, we have focused on describing and interpreting empirical data—either deriving rate laws from experimental data or proposing reaction mechanisms and comparing their predictions against observations. While this approach allows us to understand the <em>shape</em> of concentration–time profiles, it does not explain <em>quantitative</em> differences in reaction rates.</p>
-<p>Several important questions remain:
-- For two bimolecular reactions, which would we expect to be faster, and by how much?
-- Can we predict rate constants <span class="math inline">\(k\)</span> (and how they vary with temperature) without experimental data?</p>
-<p>While we have discussed the Arrhenius equation, <span class="math inline">\(k = A_0\mathrm{e}^{-\Delta E/RT}\)</span>, this is an approximate empirical relationship that requires experimental data to determine <span class="math inline">\(A_0\)</span> and <span class="math inline">\(\Delta E\)</span>. To move beyond empirical descriptions, we need microscopic theories that can make quantitative predictions of reaction rates.</p>
-<p>In this course, we will examine two such theories:</p>
+<div id="molecular-freedom-and-entropy-of-activation" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Lecture 7</span> Molecular Freedom and Entropy of Activation<a href="molecular-freedom-and-entropy-of-activation.html#molecular-freedom-and-entropy-of-activation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In Lecture <a href="lecture6.html#lecture6">6</a>, we began thinking about the entropy of activation <span class="math inline">\(\Delta S^{\ddagger}\)</span> in terms of changes in molecular freedom when forming the activated complex. We can develop this idea to understand systematic variations in the Arrhenius pre-exponential factor between different bimolecular reactions. We begin with a qualitative analysis before examining the molecular details more carefully.</p>
+<div id="qualitative-analysis-atomic-and-molecular-reactions" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Qualitative Analysis: Atomic and Molecular Reactions<a href="molecular-freedom-and-entropy-of-activation.html#qualitative-analysis-atomic-and-molecular-reactions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider first a bimolecular reaction between two atoms. As discussed in the previous lecture, forming the activated complex reduces the number of translational degrees of freedom from 6 (3 for each atom) to 3. This loss of translational freedom corresponds to a loss of translational entropy, making <span class="math inline">\(\Delta S^{\ddagger}\)</span> negative.</p>
+<p>Now consider a reaction between two diatomic molecules. Each reactant molecule has 3 degrees of translational freedom and 2 degrees of rotational freedom. The activated complex has 3 translational degrees of freedom and 3 rotational degrees of freedom. Forming the activated complex now involves a decrease in the numbers of translational and rotational degrees of freedom. And we, therefore, might expect a larger, more negative, entropy of activation for this reaction than for the simpler case involving two atoms.</p>
+</div>
+<div id="thermodynamic-origin-of-the-steric-factor" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Thermodynamic Origin of the Steric Factor<a href="molecular-freedom-and-entropy-of-activation.html#thermodynamic-origin-of-the-steric-factor" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In our analysis of collision theory, we saw that reactions between more complex molecules typically have smaller steric factors. We interpreted this as reflecting the need for specific molecular orientations during collision. Our analysis thus far provides a thermodynamic perspective on this observation: we can expect more complex reactant molecules lose more molecular freedom when forming the activated complex, leading to a more negative <span class="math inline">\(\Delta S^{\ddagger}\)</span> and consequently a smaller pre-exponential factor <span class="math inline">\(A\)</span>.</p>
+<p>While this idea, that degree to which we lose translational and rotational degrees of freedom on forming the activated complex, is broadly correct, it is incomplete: we have not considered vibrational degrees of freedom, and we do not have a framework that can predict differences in pre-exponential factor between two molecular reactions. To proceed, we need a more complete accounting of all molecular degrees of freedom in the reactants and activated complex.</p>
+</div>
+<div id="molecular-degrees-of-freedom" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Molecular Degrees of Freedom<a href="molecular-freedom-and-entropy-of-activation.html#molecular-degrees-of-freedom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To analyse molecular freedom systematically, we begin by counting the degrees of freedom available to a molecule containing <span class="math inline">\(N\)</span> atoms. Each atom has three degrees of freedom, corresponding to motion in three dimensions. The total number of atomic degrees of freedom is therefore <span class="math inline">\(3N\)</span>.</p>
+<p>These atomic motions can be combined to give <span class="math inline">\(3N\)</span> molecular degrees of freedom that describe the collective motion of the molecule.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Molecular degrees of freedom can be classified into three types:</p>
 <ol style="list-style-type: decimal">
-<li>Collision Theory (this lecture)—focuses on gas-phase bimolecular reactions, treating molecules as hard spheres</li>
-<li>Transition State Theory (lectures 6–9)—considers formation of activated complexes for all types of reactions</li>
+<li>Translational motion of the entire molecule through space.</li>
+<li>Rotation of the molecule about its principal axes.</li>
+<li>Vibrational motion where atoms move relative to each other.</li>
 </ol>
-</div>
-<div id="sec:fundamentals" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Fundamentals of Collision Theory<a href="lecture5.html#sec:fundamentals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Collision theory provides one of the simplest microscopic models of reaction rates, specifically for gas-phase bimolecular reactions of the form:</p>
-<p><span class="math display">\[\mathrm{A} + \mathrm{B} \rightarrow \mathrm{P}\]</span></p>
-<p>For such reactions, we expect a rate law of the form <span class="math inline">\(\nu = k[\mathrm{A}][\mathrm{B}]\)</span>, but what determines the value of <span class="math inline">\(k\)</span>?</p>
-<div id="sec:principles" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Basic Principles and Assumptions<a href="lecture5.html#sec:principles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Building on the kinetic theory of gases, collision theory makes two key assumptions:</p>
-<ol style="list-style-type: decimal">
-<li>Molecules behave as hard spheres</li>
-<li>Molecules must collide to react</li>
-</ol>
-<p>The overall reaction rate is then:</p>
-<p>rate = rate of collisions × fraction of “successful” collisions</p>
-</div>
-<div id="sec:frequency" class="section level3 hasAnchor" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Collision Frequency<a href="lecture5.html#sec:frequency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Consider two molecules A and B with radii <span class="math inline">\(r_\mathrm{A}\)</span> and <span class="math inline">\(r_\mathrm{B}\)</span> and velocities <span class="math inline">\(v_\mathrm{A}\)</span> and <span class="math inline">\(v_\mathrm{B}\)</span>. To analyze their collisions, we can adopt the reference frame of molecule B, where:</p>
+<p>A linear molecule has:</p>
 <ul>
-<li>B appears stationary</li>
-<li>A moves with relative velocity <span class="math inline">\(v = v_\mathrm{B} - v_\mathrm{A}\)</span></li>
+<li>3 translational degrees of freedom.</li>
+<li>2 rotational degrees of freedom.</li>
+<li><span class="math inline">\(3N-5\)</span> vibrational degrees of freedom.</li>
 </ul>
-<p>A collision occurs when the closest distance of approach (the “impact parameter” <span class="math inline">\(b\)</span>) is less than the sum of the molecular radii:</p>
-<p><span class="math display">\[b &lt; (r_\mathrm{A} + r_\mathrm{B}) = d\]</span></p>
-<p>As molecule A moves through space, it sweeps out a cylindrical volume:</p>
+<p>A non-linear molecule has:</p>
 <ul>
-<li>Radius = <span class="math inline">\(d = (r_\mathrm{A} + r_\mathrm{B})\)</span></li>
-<li>Length (per unit time) = <span class="math inline">\(v\)</span> (the relative velocity)</li>
-<li>Volume (per unit time) = <span class="math inline">\(vS = v\pi d^2\)</span></li>
+<li>3 translational degrees of freedom.</li>
+<li>3 rotational degrees of freedom.</li>
+<li><span class="math inline">\(3N-6\)</span> vibrational degrees of freedom.</li>
 </ul>
-<p>The collision frequency per unit volume (<span class="math inline">\(Z&#39;\)</span>) is then:</p>
-<p><span class="math display">\[Z&#39; = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}v\pi d^2\]</span></p>
-<p>where <span class="math inline">\(N_\mathrm{A}\)</span> and <span class="math inline">\(N_\mathrm{B}\)</span> are the numbers of molecules of each species in volume <span class="math inline">\(V\)</span>.</p>
 </div>
-<div id="average-relative-velocity" class="section level3 hasAnchor" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> Average Relative Velocity<a href="lecture5.html#average-relative-velocity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The relative velocity between molecules follows the Maxwell-Boltzmann distribution. The average relative velocity is:</p>
-<p><span class="math display">\[\bar{v} = \left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\]</span></p>
-<p>where <span class="math inline">\(\mu\)</span> is the reduced mass:</p>
-<p><span class="math display">\[\mu = \frac{m_\mathrm{A}m_\mathrm{B}}{m_\mathrm{A} + m_\mathrm{B}}\]</span></p>
-<p>Substituting this into our expression for collision frequency:</p>
-<p><span class="math display">\[Z&#39; = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\]</span></p>
+<div id="energy-spacings-and-entropy" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Energy Spacings and Entropy<a href="molecular-freedom-and-entropy-of-activation.html#energy-spacings-and-entropy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Quantum mechanics tells us that the energy levels for molecular motion are quantised. The spacing between these levels varies significantly with the type of motion:</p>
+<p><span class="math display">\[\Delta \epsilon_\mathrm{trans} \ll \Delta \epsilon_\mathrm{rot} &lt; \Delta \epsilon_\mathrm{vib}\]</span></p>
+<p>This hierarchy of energy spacings determines the entropy associated with each type of motion. A smaller energy spacing means more states are thermally accessible, corresponding to higher entropy. Hence:</p>
+<p><span class="math display">\[S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} &gt; S^{\ddagger}_\mathrm{vib}\]</span></p>
 </div>
-</div>
-<div id="from-collisions-to-reaction-rates" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> From Collisions to Reaction Rates<a href="lecture5.html#from-collisions-to-reaction-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="successful-collisions" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> Successful Collisions<a href="lecture5.html#successful-collisions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Not all collisions lead to reaction. We assume a collision is successful if the relative kinetic energy exceeds a threshold activation energy <span class="math inline">\(E_\mathrm{a}\)</span>. For a Maxwell-Boltzmann distribution, the fraction of collisions with sufficient energy is:</p>
-<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
-<p>This gives a total reaction rate:</p>
-<p><span class="math display">\[\nu = Z&#39; \times P(E \geq E_\mathrm{a}) = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
-<p>This can be written in the familiar form of a second-order rate law:</p>
-<p><span class="math display">\[\begin{equation}
-\nu=k[\mathrm{A}][\mathrm{B}]
-\end{equation}\]</span></p>
-<p>where</p>
-<p><span class="math display">\[\begin{equation}
-k = \pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-\end{equation}\]</span></p>
-</div>
-<div id="sec:steric-factors" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Steric Factors<a href="lecture5.html#sec:steric-factors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When we compare the reaction rates predicted by collision theory with experimental measurements, we typically find that collision theory overestimates reaction rates, sometimes by several orders of magnitude. This discrepancy arises because our model of molecules as hard spheres is an oversimplification—successful reactions often require specific molecular orientations or more complex interactions than simple collisions.
-To account for these effects, we introduce an empirical correction factor <span class="math inline">\(P\)</span>, called the steric factor, that modifies our expression for the rate constant:
-<span class="math display" id="eq:steric-k">\[\begin{equation}
-k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-\tag{5.1}
-\end{equation}\]</span>
-The steric factor <span class="math inline">\(P\)</span> is defined as the ratio of the experimental pre-exponential factor to the theoretical value predicted by collision theory:
-<span class="math display" id="eq:steric-factor">\[\begin{equation}
-P = \frac{A_\mathrm{exp}}{A_\mathrm{th}}
-\tag{5.2}
-\end{equation}\]</span>
-Different types of reactions exhibit characteristic ranges of steric factors. Consider these examples:</p>
-<ol style="list-style-type: decimal">
-<li>For the hydrogenation of ethene: H<sub>2</sub>+C<sub>2</sub>H<sub>4</sub><span class="math inline">\(\longrightarrow\)</span>C<sub>2</sub>H<sub>6</sub>
-<span class="math inline">\(P = 1.7 \times 10^{-6}\)</span>.
-This very small steric factor reflects the strict geometric requirements for reaction—the H<sub>2</sub> molecule must approach the C=C double bond in a specific orientation for reaction to occur.</li>
-<li>For the reaction between potassium and bromine:
-K+Br<sub>2</sub><span class="math inline">\(\longrightarrow\)</span>KBr+Br
-<span class="math inline">\(P = 4.8\)</span>.
-Here the steric factor is greater than unity, indicating that reactions occur more frequently than predicted by simple collision theory. This enhanced reactivity arises from the “harpoon mechanism”, where electron transfer between K and Br<sub>2</sub> creates long-range attractive forces that effectively increase the collision cross-section.</li>
-</ol>
-</div>
-</div>
-<div id="sec:arrhenius-comparison" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> Relationship to the Arrhenius Equation<a href="lecture5.html#sec:arrhenius-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The rate constant derived from collision theory has a remarkably similar form to the empirical Arrhenius equation.
-Let us compare them directly:</p>
-<p>From collision theory:
-<span class="math display" id="eq:collision-k">\[\begin{equation}
-k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-\tag{5.3}
-\end{equation}\]</span></p>
-<p>The Arrhenius equation:
-<span class="math display" id="eq:arrhenius">\[\begin{equation}
-k = A_0\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-\tag{5.4}
-\end{equation}\]</span></p>
-<p>This comparison provides physical insight into the meaning of the Arrhenius parameters:</p>
-<ol style="list-style-type: decimal">
-<li>The activation energy <span class="math inline">\(E_\mathrm{a}\)</span> in the Arrhenius equation can be interpreted as the minimum relative kinetic energy that colliding molecules must possess for reaction to occur. This threshold energy is needed to overcome the potential energy barrier to reaction.</li>
-<li>The pre-exponential factor <span class="math inline">\(A_0\)</span> represents a normalized collision frequency. The collision theory expression shows that this frequency depends on:</li>
-</ol>
-<ul>
-<li>The collision cross-section (<span class="math inline">\(\pi d^2\)</span>)</li>
-<li>The average relative velocity of molecules (<span class="math inline">\(\propto \sqrt{T/\mu}\)</span>)</li>
-<li>A steric factor <span class="math inline">\(P\)</span> that accounts for orientation requirements</li>
-</ul>
-<p>Therefore, while the Arrhenius equation was originally proposed as an empirical relationship, collision theory provides a theoretical foundation for its functional form and offers molecular-level interpretations of its parameters. However, we should note that this interpretation is strictly valid only for gas-phase bimolecular reactions. For more complex reactions, particularly in solution, the physical meaning of the Arrhenius parameters becomes less clear, and we need more sophisticated theories to understand their molecular basis.</p>
-</div>
-<div id="sec:collision-limitations" class="section level2 hasAnchor" number="5.5">
-<h2><span class="header-section-number">5.5</span> Limitations of Collision Theory as a Predictive Framework<a href="lecture5.html#sec:collision-limitations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Collision theory works reasonably well for simple molecules but typically overestimates reaction rates for complex molecules.</p>
-<p>Two key limitations prevent collision theory from serving as a fully predictive framework:</p>
-<ul>
-<li>The activation energy E<span class="math inline">\(\mathrm{a}\)</span> appears as an arbitrary “threshold energy” that molecules must possess to react. While we can measure this energy experimentally, the theory provides no insight into how <span class="math inline">\(E_\mathrm{a}\)</span> varies between different reactions.</li>
-<li>While we can determine the steric factor <span class="math inline">\(P\)</span> by comparing experimental and theoretical rate constants, we have no quantitative theory to predict its value. This means we cannot predict absolute rate constants for new reactions without experimental data.</li>
-</ul>
+<div id="formation-of-the-activated-complex" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Formation of the Activated Complex<a href="molecular-freedom-and-entropy-of-activation.html#formation-of-the-activated-complex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Our initial analysis of the entropy of activation focused on degrees of freedom that are lost when forming the activated complex. While this simple picture correctly predicts that <span class="math inline">\(\Delta S^{\ddagger}\)</span> is negative for bimolecular reactions, it neglects the new degrees of freedom created in the activated complex.</p>
+<p>When two molecules combine to form an activated complex, the transformation of molecular motion is better described as a conversion of high-entropy translational and rotational degrees of freedom into low-entropy vibrational degrees of freedom. The hierarchy of molecular entropy contributions (<span class="math inline">\(S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} &gt; S^{\ddagger}_\mathrm{vib}\)</span>) means this transformation produces a net decrease in entropy: <span class="math inline">\(\Delta S^{\ddagger} &lt; 0\)</span>.</p>
+<p>This molecular picture provides a more complete explanation for the systematic variation in steric factors observed in collision theory. More complex molecules not only lose more translational and rotational freedom when forming the activated complex, but also gain more constrained vibrational modes. Both effects contribute to making <span class="math inline">\(\Delta S^{\ddagger}\)</span> more negative, and hence reducing the Arrhenius pre-exponential factor.</p>
 
 </div>
+</div>
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>The <span class="math inline">\(3N\)</span> molecular degrees of freedom are constructed as orthogonal linear combinations of the <span class="math inline">\(3N\)</span> atomic degrees of freedom that are consistent with molecular symmetry. The details of this transformation from atomic to molecular degrees of freedom is part of Group Theory<a href="molecular-freedom-and-entropy-of-activation.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lecture4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lecture6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lecture6.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -427,7 +352,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bjmorgan/CH22008/main/lecture_5/lecture_05.Rmd",
+"link": "https://github.com/bjmorgan/CH22008/main/lecture_7/lecture_07.Rmd",
 "text": "Edit"
 },
 "history": {

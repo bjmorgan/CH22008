@@ -92,3 +92,9 @@ sec:tst-collision
 sec:entropy-activation
 understanding-molecular-entropy
 entropy-of-activation-for-bimolecular-reactions
+molecular-freedom-and-entropy-of-activation
+qualitative-analysis-atomic-and-molecular-reactions
+thermodynamic-origin-of-the-steric-factor
+molecular-degrees-of-freedom
+energy-spacings-and-entropy
+formation-of-the-activated-complex
