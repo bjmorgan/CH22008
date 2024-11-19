@@ -89,3 +89,6 @@ sec:tst-math
 sec:tst-arrhenius
 sec:enthalpy-activation
 sec:tst-collision
+sec:entropy-activation
+understanding-molecular-entropy
+entropy-of-activation-for-bimolecular-reactions

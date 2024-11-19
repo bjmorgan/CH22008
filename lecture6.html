@@ -220,7 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="lecture6.html"><a href="lecture6.html#sec:tst-math"><i class="fa fa-check"></i><b>6.3</b> Mathematical Development of Transition State Theory</a></li>
 <li class="chapter" data-level="6.4" data-path="lecture6.html"><a href="lecture6.html#sec:tst-arrhenius"><i class="fa fa-check"></i><b>6.4</b> Relationship to the Arrhenius Equation</a></li>
 <li class="chapter" data-level="6.5" data-path="lecture6.html"><a href="lecture6.html#sec:enthalpy-activation"><i class="fa fa-check"></i><b>6.5</b> Enthalpy of Activation</a></li>
-<li class="chapter" data-level="6.6" data-path="lecture6.html"><a href="lecture6.html#sec:tst-collision"><i class="fa fa-check"></i><b>6.6</b> Reconciling TST with Collision Theory</a></li>
+<li class="chapter" data-level="6.6" data-path="lecture6.html"><a href="lecture6.html#sec:tst-collision"><i class="fa fa-check"></i><b>6.6</b> Reconciling Transition State Theory with Collision Theory</a></li>
+<li class="chapter" data-level="6.7" data-path="lecture6.html"><a href="lecture6.html#sec:entropy-activation"><i class="fa fa-check"></i><b>6.7</b> Entropy of Activation</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="lecture6.html"><a href="lecture6.html#understanding-molecular-entropy"><i class="fa fa-check"></i><b>6.7.1</b> Understanding Molecular Entropy</a></li>
+<li class="chapter" data-level="6.7.2" data-path="lecture6.html"><a href="lecture6.html#entropy-of-activation-for-bimolecular-reactions"><i class="fa fa-check"></i><b>6.7.2</b> Entropy of Activation for Bimolecular Reactions</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -243,8 +248,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Lecture 6</span> Transition State Theory<a href="lecture6.html#lecture6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="sec:intro" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> A Molecular Theory of Reaction Rates<a href="lecture6.html#sec:intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Our study of chemical kinetics aims to predict reaction rates from fundamental molecular principles. While collision theory provides some insight into gas-phase bimolecular reactions by modelling molecules as colliding spheres, it leaves key questions unanswered. We cannot predict steric factors without experimental data, and we lack understanding of why activation energies vary systematically within families of reactions.</p>
-<p>Consider a bimolecular reaction A + B → P. The reaction coordinate diagram shows how the energy changes as reactant molecules A and B come together to form product P. At the highest point on this energy profile—the top of the activation barrier—the molecular system passes through what we call the transition state. Molecules at the transition state form what we call an activated complex, which we denote as C<span class="math inline">\(^\ddagger\)</span>.</p>
+<p>Collision theory explains reaction rates using a simple model of colliding spheres. While this works for some gas-phase reactions, it cannot predict steric factors or explain systematic trends in activation energies. We need a more sophisticated approach.</p>
+<p>For a reaction A + B → P, molecules must climb an energy barrier before forming products. The reaction coordinate diagram shows this energy profile, from reactants through to products. The point at the highest point of the energy barrier is called the transition state; at this point the reacting molecules form a specific arrangement called the activated complex, in which bonds are partially broken and new bonds are starting to form. Transition state theory provides a framework for analyzing this activated complex and using it to predict reaction rates.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-tst-reaction-coordinate"></span>
 <img src="lecture_6/figures/reaction_coordinate.png" alt="A reaction coordinate diagram for the reaction A + B → P. The energy profile shows the barrier that must be crossed as reactants are converted to products. The peak of this barrier corresponds to the transition state configuration, and the collection of molecules at the transition state form the activated complex, C$^\ddagger$." width="55%" />
 <p class="caption">
@@ -254,21 +259,10 @@ Figure 6.1: A reaction coordinate diagram for the reaction A + B → P. The ener
 </div>
 <div id="sec:tst-principles" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Basic Principles of Transition State Theory<a href="lecture6.html#sec:tst-principles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Transition state theory makes two fundamental assumptions:</p>
-<ol style="list-style-type: decimal">
-<li>There exists a pseudo-equilibrium between the reactants (A + B) and the activated complex (C<span class="math inline">\(^{\ddagger}\)</span>)</li>
-</ol>
-<ul>
-<li>Note: This is termed a “pseudo-equilibrium” because the activated complex is dynamically unstable.</li>
-<li>C<span class="math inline">\(^{\ddagger}\)</span> can either break apart back to A + B or convert to products P.</li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>There is a characteristic rate constant <span class="math inline">\(k^{\ddagger}\)</span> that describes the conversion of the activated complex to products</li>
-</ol>
-<ul>
-<li>This is a first-order process: <span class="math inline">\(\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]\)</span>.</li>
-</ul>
-<p>We can represent this process as a two-step scheme:
+<p>Transition state theory treats the overall reaction A + B → P as occurring in two steps. First, the reactants A and B combine to form the activated complex C<span class="math inline">\(^{\ddagger}\)</span>. This complex can either fall apart back to reactants or go on to form products. The theory makes a key assumption: we can treat the activated complex as being in equilibrium with the reactants, even though C<span class="math inline">\(^{\ddagger}\)</span> is inherently unstable. We call this a pseudo-equilibrium to reflect this special status.</p>
+<p>The second step is the conversion of C<span class="math inline">\(^{\ddagger}\)</span> to products, which we assume occurs with a characteristic rate constant <span class="math inline">\(k^{\ddagger}\)</span>. This is a first-order process — the rate depends only on the concentration of the activated complex:</p>
+<p><span class="math display">\[\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]\]</span></p>
+<p>We can write the complete process as:
 <span class="math display" id="eq:tst-scheme">\[\begin{equation}
 \mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \xrightarrow{k^{\ddagger}} \mathrm{P}
 \tag{6.1}
@@ -286,13 +280,13 @@ K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]}{[\mathrm{A}][\mathrm{B}]}
 [\mathrm{C}^{\ddagger}] = K^{\ddagger}[\mathrm{A}][\mathrm{B}]
 \tag{6.3}
 \end{equation}\]</span></p>
-<p>Like any equilibrium constant, <span class="math inline">\(K^{\ddagger}\)</span> is related to the standard Gibbs free energy change:</p>
+<p>Since we treat the formation of the activated complex as a pseudo-equilibrium, we can apply standard thermodynamic relationships. The equilibrium constant <span class="math inline">\(K^{\ddagger}\)</span> relates to the activation Gibbs energy through:</p>
 <p><span class="math display" id="eq:gibbs-activation">\[\begin{equation}
 \Delta G^{\ddagger} = -RT\ln(K^{\ddagger}c^{\circ})
 \tag{6.4}
 \end{equation}\]</span></p>
-<p>where <span class="math inline">\(c^{\circ}\)</span> is a reference concentration (typically 1 mol dm<span class="math inline">\(^{-3}\)</span>).<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
-<p>Since <span class="math inline">\(\Delta G^{\ddagger} = \Delta H^{\ddagger} - T\Delta S^{\ddagger}\)</span>, we can write:</p>
+<p>The reference concentration <span class="math inline">\(c^{\circ}\)</span> (1 mol dm<span class="math inline">\(^{-3}\)</span>) ensures our rate constant will have the correct units.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Breaking <span class="math inline">\(\Delta G^{\ddagger}\)</span> into its enthalpic and entropic components:</p>
 <p><span class="math display" id="eq:equilibrium-constant-expanded">\[\begin{equation}
 K^{\ddagger} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
 \tag{6.5}
@@ -330,16 +324,8 @@ k = A\mathrm{e}^{-E_\mathrm{a}/RT}
 </div>
 <div id="sec:enthalpy-activation" class="section level2 hasAnchor" number="6.5">
 <h2><span class="header-section-number">6.5</span> Enthalpy of Activation<a href="lecture6.html#sec:enthalpy-activation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Understanding <span class="math inline">\(\Delta H^{\ddagger}\)</span> provides insight into activation energies and their systematic variation across related reactions. Consider the simple reaction A–B + C → A + B–C. In forming the activated complex:</p>
-<ul>
-<li>The A–B bond is mostly broken</li>
-<li>The B–C bond is partially formed</li>
-<li>Therefore, <span class="math inline">\(\Delta H^{\ddagger}\)</span> is:
-<ul>
-<li>Strongly dependent on the strength of bonds being broken</li>
-<li>Weakly dependent on the strength of bonds being formed</li>
-</ul></li>
-</ul>
+<p>The enthalpy of activation <span class="math inline">\(\Delta H^{\ddagger}\)</span> represents the enthalpic contribution to forming the activated complex. For a simple reaction where C breaks an A–B bond to form B–C, examining what happens at the transition state reveals why this enthalpy change varies systematically between related reactions.</p>
+<p>In the activated complex, the original A–B bond is almost completely broken, while the new B–C bond has only started to form. This means <span class="math inline">\(\Delta H^{\ddagger}\)</span> depends primarily on the strength of the bond being broken. The strength of the bond being formed has much less effect, since this bond is still weak in the transition state.</p>
 <p>This principle helps explain trends in activation energies for a family of related reactions. Consider these examples involving H and Br:</p>
 <p><span class="math display">\[\begin{align*}
 \mathrm{H–H} + \mathrm{H} &amp;\longrightarrow \mathrm{H} + \mathrm{H–H} &amp; E_\mathrm{a} &amp;= +39~\mathrm{kJ~mol^{-1}} \\
@@ -370,36 +356,27 @@ k = A\mathrm{e}^{-E_\mathrm{a}/RT}
 </ol>
 </div>
 <div id="sec:tst-collision" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> Reconciling TST with Collision Theory<a href="lecture6.html#sec:tst-collision" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Our two theories provide different physical interpretations of activation energy:</p>
-<ul>
-<li>Collision theory: <span class="math inline">\(E_\mathrm{a}\)</span> represents a threshold kinetic energy</li>
-<li>TST: <span class="math inline">\(\Delta H^{\ddagger}\)</span> represents energy stored in partially broken/formed bonds</li>
-</ul>
-<p>These interpretations can be reconciled by considering the energy changes during a reactive collision:</p>
-<ol style="list-style-type: decimal">
-<li>Initial state:
-<ul>
-<li>Separated molecules with relative KE ≥ <span class="math inline">\(E_\mathrm{a}\)</span></li>
-<li>Undistorted internal bonds</li>
-</ul></li>
-<li>At the transition state:
-<ul>
-<li>Relative KE has been converted to potential energy</li>
-<li>Energy stored in partially broken/formed bonds</li>
-<li>Distorted molecular geometries</li>
-</ul></li>
-</ol>
-<p>Therefore:</p>
-<ul>
-<li>Collision theory <span class="math inline">\(E_\mathrm{a}\)</span> describes the minimum energy input required.</li>
-<li>TST <span class="math inline">\(\Delta H^{\ddagger}\)</span> describes where that energy ends up.</li>
-<li>These must be approximately equal by energy conservation.</li>
-</ul>
-<p>The two theories thus provide complementary perspectives on the same process:
-- Collision theory focuses on what energy must go in
-- TST focuses on where that energy ends up and how it affects molecular structure</p>
+<h2><span class="header-section-number">6.6</span> Reconciling Transition State Theory with Collision Theory<a href="lecture6.html#sec:tst-collision" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At first glance, Collision theory and transition state theory can seem to give different pictures of activation energy. In collision theory, <span class="math inline">\(E_\mathrm{a}\)</span> represents a minimum kinetic energy molecules must have to react. In transition state theory, <span class="math inline">\(\Delta H^{\ddagger}\)</span> represents the energy needed to distort and partially break bonds bonds in the activated complex.</p>
+<p>We can connect these views by following the energy through a reactive collision. Initially, the molecules approach with kinetic energy at least equal to <span class="math inline">\(E_\mathrm{a}\)</span>. As they collide, this kinetic energy transforms into potential energy, with the molecular geometry distorting to form the activated complex. Here, the initial kinetic energy has become the energy stored in partially broken and formed bonds — our <span class="math inline">\(\Delta H^{\ddagger}\)</span>. By energy conservation, these energies must be approximately equal.</p>
+<p>The two theories thus describe the same process from different perspectives: collision theory focuses on the keinetic energy molecules must have before they collide, while transition state theory considers how this energy is used in making and breaking bonds.</p>
+</div>
+<div id="sec:entropy-activation" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Entropy of Activation<a href="lecture6.html#sec:entropy-activation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have seen that transition state theory provides a molecular interpretation of the Arrhenius pre-exponential factor <span class="math inline">\(A\)</span> in terms of an entropy of activation <span class="math inline">\(\Delta S^{\ddagger}\)</span>. To understand what this entropy term means and what determines its magnitude, we need to think carefully about what entropy means at a molecular level.</p>
+<div id="understanding-molecular-entropy" class="section level3 hasAnchor" number="6.7.1">
+<h3><span class="header-section-number">6.7.1</span> Understanding Molecular Entropy<a href="lecture6.html#understanding-molecular-entropy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>While entropy is often simply described as a measure of “disorder”, this description can be misleading. For many chemical reactions, simple arguments based on relative “disorder” fail to predict even qualitative behaviour. This becomes particularly apparent when considering gas-phase reactions: both reactants and products exist as freely moving molecules, so which state is more “disordered”?</p>
+<p>A more useful framework considers entropy in terms of molecular freedom and statistical likelihood. Systems with greater freedom have higher entropy than more constrained systems, and molecular arrangements that are statistically more likely have higher entropy than less likely arrangements.</p>
+<p>The spontaneous expansion of an ideal gas illustrates these ideas. An ideal gas expands to fill its container despite no change in internal energy (<span class="math inline">\(\Delta U = 0\)</span>) or enthalpy (<span class="math inline">\(\Delta H = 0\)</span>, since <span class="math inline">\(pV = nRT\)</span>). This process occurs spontaneously because the expanded state has higher entropy: gas molecules have more freedom to move through a larger volume, and an even distribution throughout the available space is statistically more likely than having all molecules confined to a smaller region.</p>
+</div>
+<div id="entropy-of-activation-for-bimolecular-reactions" class="section level3 hasAnchor" number="6.7.2">
+<h3><span class="header-section-number">6.7.2</span> Entropy of Activation for Bimolecular Reactions<a href="lecture6.html#entropy-of-activation-for-bimolecular-reactions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For a gas-phase bimolecular reaction, forming the activated complex introduces new constraints on molecular motion:</p>
+<p><span class="math display">\[\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger}\]</span></p>
+<p>Each molecule in the gas phase has three translational degrees of freedom—the molecules are free to move along the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> axes, independently of the motion of the other molecules in the system. The reactants A and B therefore have six translational degrees of freedom between them. When these molecules combine to form the activated complex, however, we have just three translational degrees of freedom, since <span class="math inline">\(\mathrm{C}^{\ddagger}\)</span> moves as a single unit through space. This loss of translational freedom corresponds to a decrease in entropy. For gas-phase bimolecular reactions, <span class="math inline">\(\Delta S^{\ddagger}\)</span> is therefore always negative, reflecting the increased constraints imposed when forming the activated complex.</p>
 
+</div>
 </div>
 </div>
 
@@ -411,7 +388,7 @@ k = A\mathrm{e}^{-E_\mathrm{a}/RT}
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>If our reaction takes place under standard conditions, <span class="math inline">\(c^\circ=1,\mathrm{mol},\mathrm{dm}^{-3}\)</span> and has no effect on the numerical value of <span class="math inline">\(k\)</span>. Because of this, c<span class="math inline">\(^\circ\)</span> is often omitted in basic treatments of Transition State Theory, so you might see examples where it is missing. Including <span class="math inline">\(c^\circ\)</span>, however, ensures that <span class="math inline">\(k\)</span> has the correct units for a second-order rate constant (dm<span class="math inline">\(^3\)</span> mol<span class="math inline">\(^{-1}\)</span> s<span class="math inline">\(^{-1}\)</span>).<a href="lecture6.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Many basic treatments of transition state theory omit <span class="math inline">\(c^{\circ}\)</span> since it equals 1 under standard conditions. Including it ensures that <span class="math inline">\(k\)</span> has the correct units for a second-order rate constant of dm<span class="math inline">\(^3\)</span> mol<span class="math inline">\(^{-1}\)</span> s<span class="math inline">\(^{-1}\)</span>.<a href="lecture6.html#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
