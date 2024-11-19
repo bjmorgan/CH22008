@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2024-11-18" />
+<meta name="date" content="2024-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -183,7 +183,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.2" data-path="lecture3.html"><a href="lecture3.html#long-time-behaviour"><i class="fa fa-check"></i><b>3.2.2</b> Long-Time Behaviour</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="lecture3.html"><a href="lecture3.html#kinetic-vs-thermodynamic-control"><i class="fa fa-check"></i><b>3.3</b> Kinetic vs Thermodynamic Control</a></li>
-<li class="chapter" data-level="3.4" data-path="lecture3.html"><a href="lecture3.html#example-base-catalyzed-isomerization"><i class="fa fa-check"></i><b>3.4</b> Example: Base-Catalyzed Isomerization</a></li>
+<li class="chapter" data-level="3.4" data-path="lecture3.html"><a href="lecture3.html#from-kinetic-to-thermodynamic-control"><i class="fa fa-check"></i><b>3.4</b> From Kinetic to Thermodynamic Control</a></li>
+<li class="chapter" data-level="3.5" data-path="lecture3.html"><a href="lecture3.html#example-base-catalyzed-isomerization"><i class="fa fa-check"></i><b>3.5</b> Example: Base-Catalyzed Isomerization</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="lecture4.html"><a href="lecture4.html"><i class="fa fa-check"></i><b>4</b> Numerical Integration</a>
 <ul>
@@ -276,8 +277,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="kinetic-vs-thermodynamic-control" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Kinetic vs Thermodynamic Control<a href="lecture3.html#kinetic-vs-thermodynamic-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The evolution from kinetic to thermodynamic control is best understood by visualising how reactions proceed. A reaction coordinate diagram shows how the energy of a molecular system changes as reactants transform into products. The horizontal axis—called the reaction coordinate—represents the progression of the reaction through changes in molecular geometry (bonds breaking and forming). The vertical axis shows the potential energy of the system.
-For our parallel reactions, the diagram shows two paths starting from reactant A: one leading to product B and another to product C. Consider a system where:</p>
+</div>
+<div id="from-kinetic-to-thermodynamic-control" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> From Kinetic to Thermodynamic Control<a href="lecture3.html#from-kinetic-to-thermodynamic-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The evolution from kinetic to thermodynamic control can be understood by considering how the energy of a molecular system changes as reactants transform to products.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-reaction-coordinate-diagram"></span>
+<img src="lecture_3/figures/reaction_coordinate_diagram.png" alt="A reaction coordinate diagram showing the free energy profile for a chemical reaction. The reaction coordinate represents the progression through molecular geometric changes (e.g., bonds breaking and forming) as reactants transform into products. The activation energy ($\Delta G_\mathrm{a}$) determines reaction rate, while the reaction free energy ($\Delta G_\mathrm{r}$) determines the position of equilibrium." width="60%" />
+<p class="caption">
+Figure 3.1: A reaction coordinate diagram showing the free energy profile for a chemical reaction. The reaction coordinate represents the progression through molecular geometric changes (e.g., bonds breaking and forming) as reactants transform into products. The activation energy (<span class="math inline">\(\Delta G_\mathrm{a}\)</span>) determines reaction rate, while the reaction free energy (<span class="math inline">\(\Delta G_\mathrm{r}\)</span>) determines the position of equilibrium.
+</p>
+</div>
+<p>Figure <a href="lecture3.html#fig:fig-reaction-coordinate-diagram">3.1</a> shows an example of a reaction coordinate diagram.
+A reaction coordinate diagram is a schematic representation of how the free energy of a molecular system changes as a reaction proceeds. The horizontal axis is called the reaction coordinate, and represents the progression of the reaction along a particular reaction pathway—often this corresponds to a specific change in geometry as atoms rearrange and bonds break and form. The vertical axis shows the Gibbs free energy of the system.</p>
+<p>Two key features of these diagrams help us understand reaction behaviour:</p>
+<ul>
+<li>The activation energy (<span class="math inline">\(\Delta G_\mathrm{a}\)</span>) represents the energy barrier that must be overcome for reaction to occur. This determines reaction rate—lower barriers mean faster reactions.</li>
+<li>The reaction free energy (<span class="math inline">\(\Delta G_\mathrm{r}\)</span>) represents the overall thermodynamic driving force. This determines the position of equilibrium—more negative values mean the products are more favoured at equilibrium.</li>
+</ul>
+<p>For our parallel reactions, the diagram shows two paths starting from reactant A: one leading to product B and another to product C. Consider a system where:</p>
 <ul>
 <li>Product B has the lower activation energy (faster formation, kinetic product)</li>
 <li>Product C has the lower free energy (more stable, thermodynamic product)</li>
@@ -297,8 +314,8 @@ For our parallel reactions, the diagram shows two paths starting from reactant A
 </ul></li>
 </ol>
 </div>
-<div id="example-base-catalyzed-isomerization" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Example: Base-Catalyzed Isomerization<a href="lecture3.html#example-base-catalyzed-isomerization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="example-base-catalyzed-isomerization" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Example: Base-Catalyzed Isomerization<a href="lecture3.html#example-base-catalyzed-isomerization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A classic example of kinetic versus thermodynamic control is the base-catalyzed isomerization of substituted cyclohexanones:</p>
 <ul>
 <li>With LDA (strong base) in DME:

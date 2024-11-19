@@ -11,6 +11,7 @@ eq:secondorderdiff
 fig:fig-second-order-example
 eq:relativerates
 eq:secondorderdiff-alt
+fig:fig-reaction-coordinate-diagram
 eq:first-order
 eq:first-order-int
 eq:lindemann-a
@@ -62,6 +63,7 @@ time-evolution-of-product-distributions
 short-time-behaviour
 long-time-behaviour
 kinetic-vs-thermodynamic-control
+from-kinetic-to-thermodynamic-control
 example-base-catalyzed-isomerization
 lecture4
 sec:mech-to-data
