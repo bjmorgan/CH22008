@@ -6,7 +6,7 @@ Our study of chemical kinetics aims to predict reaction rates from fundamental m
 
 Consider a bimolecular reaction A + B → P. The reaction coordinate diagram shows how the energy changes as reactant molecules A and B come together to form product P. At the highest point on this energy profile—the top of the activation barrier—the molecular system passes through what we call the transition state. Molecules at the transition state form what we call an activated complex, which we denote as C$^\ddagger$.
 
-```{r fig-tst-reaction-coordinate, fig.cap="Figure 6.1: A reaction coordinate diagram for the reaction A + B → P. The energy profile shows the barrier that must be crossed as reactants are converted to products. The peak of this barrier corresponds to the transition state configuration, and the collection of molecules at the transition state form the activated complex, C$^\\ddagger$.", out.width='55%', fig.align='center'}
+```{r fig-tst-reaction-coordinate, fig.cap="A reaction coordinate diagram for the reaction A + B → P. The energy profile shows the barrier that must be crossed as reactants are converted to products. The peak of this barrier corresponds to the transition state configuration, and the collection of molecules at the transition state form the activated complex, C$^\\ddagger$.", out.width='55%', fig.align='center'}
 knitr::include_graphics("lecture_6/figures/reaction_coordinate.png")
 ```
 

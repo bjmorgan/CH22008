@@ -17,8 +17,8 @@ $$\mathrm{A} \xrightarrow{k} \mathrm{B}$$
 
 The rate equations are:
 
-$$\frac{d[\mathrm{A}]}{dt} = -k[\mathrm{A}]$$
-$$\frac{d[\mathrm{B}]}{dt} = +k[\mathrm{A}]$$
+$$\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]$$
+$$\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = +k[\mathrm{A}]$$
 
 Integrating these gives:
 $$[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-kt}$$
@@ -35,7 +35,7 @@ $$\mathrm{A} \xrightarrow{k_2} \mathrm{C}$$
 
 The rate of change of A is now:
 
-$$\frac{d[\mathrm{A}]}{dt} = -(k_1 + k_2)[\mathrm{A}]$$
+$$\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -(k_1 + k_2)[\mathrm{A}]$$
 
 Integrating this gives:
 
@@ -43,7 +43,7 @@ $$[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-(k_1+k_2)t}$$
 
 For product B:
 
-$$\frac{d[\mathrm{B}]}{dt} = k_1[\mathrm{A}] = k_1[\mathrm{A}]_0\mathrm{e}^{-(k_1+k_2)t}$$
+$$\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}] = k_1[\mathrm{A}]_0\mathrm{e}^{-(k_1+k_2)t}$$
 
 Integrating:
 
@@ -57,7 +57,7 @@ $$[\mathrm{C}] = \frac{k_2}{k_1+k_2}[\mathrm{A}]_0(1-\mathrm{e}^{-(k_1+k_2)t})$$
 
 Several important points emerge from these expressions:
 
-1. The formation of both products B and C is controlled by the same overall rate constant (k~1~+k~2~)
+1. The formation of both products B and C is controlled by the same overall rate constant ($k_1 + k_2$)
 
 2. The relative yields of products are determined by the ratio of the rate constants:
 
