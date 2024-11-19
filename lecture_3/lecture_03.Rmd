@@ -49,8 +49,6 @@ This is called &ldquo;thermodynamic control&rdquo;, as the product distribution 
 
 ## Kinetic vs Thermodynamic Control
 
-## From Kinetic to Thermodynamic Control
-
 The evolution from kinetic to thermodynamic control can be understood by considering how the energy of a molecular system changes as reactants transform to products.
 
 ```{r fig-reaction-coordinate-diagram, fig.cap="A reaction coordinate diagram showing the free energy profile for a chemical reaction. The reaction coordinate represents the progression through molecular geometric changes (e.g., bonds breaking and forming) as reactants transform into products. The activation energy ($\\Delta G_\\mathrm{a}$) determines reaction rate, while the reaction free energy ($\\Delta G_\\mathrm{r}$) determines the position of equilibrium.", out.width='60%', fig.align='center'}
