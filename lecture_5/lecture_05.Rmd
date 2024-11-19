@@ -147,7 +147,7 @@ Therefore, while the Arrhenius equation was originally proposed as an empirical 
 
 ## Limitations of Collision Theory as a Predictive Framework {#sec:collision-limitations}
 
-While collision theory provides our first microscopic model for reaction rates, its utility as a predictive framework is limited. For reactions between small simple molecules, it works reasonably well. However, for more complex molecules, it typically overestimates reaction rates significantly.
+Collision theory works reasonably well for simple molecules but typically overestimates reaction rates for complex molecules.
 
 Two key limitations prevent collision theory from serving as a fully predictive framework:
 

@@ -2,9 +2,9 @@
 
 ## A Molecular Theory of Reaction Rates {#sec:intro}
 
-Our study of chemical kinetics aims to predict reaction rates from fundamental molecular principles. While collision theory provides some insight into gas-phase bimolecular reactions by modelling molecules as colliding spheres, it leaves key questions unanswered. We cannot predict steric factors without experimental data, and we lack understanding of why activation energies vary systematically within families of reactions.
+Collision theory explains reaction rates using a simple model of colliding spheres. While this works for some gas-phase reactions, it cannot predict steric factors or explain systematic trends in activation energies. We need a more sophisticated approach.
 
-Consider a bimolecular reaction A + B → P. The reaction coordinate diagram shows how the energy changes as reactant molecules A and B come together to form product P. At the highest point on this energy profile—the top of the activation barrier—the molecular system passes through what we call the transition state. Molecules at the transition state form what we call an activated complex, which we denote as C$^\ddagger$.
+For a reaction A + B → P, molecules must climb an energy barrier before forming products. The reaction coordinate diagram shows this energy profile, from reactants through to products. The point at the highest point of the energy barrier is called the transition state; at this point the reacting molecules form a specific arrangement called the activated complex, in which bonds are partially broken and new bonds are starting to form. Transition state theory provides a framework for analyzing this activated complex and using it to predict reaction rates.
 
 ```{r fig-tst-reaction-coordinate, fig.cap="A reaction coordinate diagram for the reaction A + B → P. The energy profile shows the barrier that must be crossed as reactants are converted to products. The peak of this barrier corresponds to the transition state configuration, and the collection of molecules at the transition state form the activated complex, C$^\\ddagger$.", out.width='55%', fig.align='center'}
 knitr::include_graphics("lecture_6/figures/reaction_coordinate.png")
@@ -12,18 +12,16 @@ knitr::include_graphics("lecture_6/figures/reaction_coordinate.png")
 
 ## Basic Principles of Transition State Theory {#sec:tst-principles}
 
-Transition state theory makes two fundamental assumptions:
+Transition state theory treats the overall reaction A + B → P as occurring in two steps. First, the reactants A and B combine to form the activated complex C$^{\ddagger}$. This complex can either fall apart back to reactants or go on to form products. The theory makes a key assumption: we can treat the activated complex as being in equilibrium with the reactants, even though C$^{\ddagger}$ is inherently unstable. We call this a pseudo-equilibrium to reflect this special status.
 
-1. There exists a pseudo-equilibrium between the reactants (A + B) and the activated complex (C$^{\ddagger}$)
-  - Note: This is termed a "pseudo-equilibrium" because the activated complex is dynamically unstable.
-  - C$^{\ddagger}$ can either break apart back to A + B or convert to products P.
-2. There is a characteristic rate constant $k^{\ddagger}$ that describes the conversion of the activated complex to products
-  - This is a first-order process: $\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]$.
+The second step is the conversion of C$^{\ddagger}$ to products, which we assume occurs with a characteristic rate constant $k^{\ddagger}$. This is a first-order process &mdash; the rate depends only on the concentration of the activated complex:
 
-We can represent this process as a two-step scheme:
+$$\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]$$
+
+We can write the complete process as:
 \begin{equation}
 \mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \xrightarrow{k^{\ddagger}} \mathrm{P}
-(#eq:tst-scheme)
+(\#eq:tst-scheme)
 \end{equation}
 
 ## Mathematical Development of Transition State Theory {#sec:tst-math}
@@ -42,16 +40,16 @@ This allows us to express the concentration of the activated complex in terms of
 (\#eq:activated-complex-conc)
 \end{equation}
 
-Like any equilibrium constant, $K^{\ddagger}$ is related to the standard Gibbs free energy change:
+Since we treat the formation of the activated complex as a pseudo-equilibrium, we can apply standard thermodynamic relationships. The equilibrium constant $K^{\ddagger}$ relates to the activation Gibbs energy through:
 
 \begin{equation}
 \Delta G^{\ddagger} = -RT\ln(K^{\ddagger}c^{\circ})
 (#eq:gibbs-activation)
 \end{equation}
 
-where $c^{\circ}$ is a reference concentration (typically 1 mol dm$^{-3}$).^[If our reaction takes place under standard conditions, $c^\circ=1,\mathrm{mol},\mathrm{dm}^{-3}$ and has no effect on the numerical value of $k$. Because of this, c$^\circ$ is often omitted in basic treatments of Transition State Theory, so you might see examples where it is missing. Including $c^\circ$, however, ensures that $k$ has the correct units for a second-order rate constant (dm$^3$ mol$^{-1}$ s$^{-1}$).]
+The reference concentration $c^{\circ}$ (1 mol dm$^{-3}$) ensures our rate constant will have the correct units.^[Many basic treatments of transition state theory omit $c^{\circ}$ since it equals 1 under standard conditions. Including it ensures that $k$ has the correct units for a second-order rate constant of dm$^3$ mol$^{-1}$ s$^{-1}$.]
 
-Since $\Delta G^{\ddagger} = \Delta H^{\ddagger} - T\Delta S^{\ddagger}$, we can write:
+Breaking $\Delta G^{\ddagger}$ into its enthalpic and entropic components:
 
 \begin{equation}
 K^{\ddagger} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
@@ -97,13 +95,9 @@ Like collision theory, transition state theory provides a molecular-level interp
 
 ## Enthalpy of Activation {#sec:enthalpy-activation}
 
-Understanding $\Delta H^{\ddagger}$ provides insight into activation energies and their systematic variation across related reactions. Consider the simple reaction A–B + C → A + B–C. In forming the activated complex:
+The enthalpy of activation $\Delta H^{\ddagger}$ represents the enthalpic contribution to forming the activated complex. For a simple reaction where C breaks an A–B bond to form B–C, examining what happens at the transition state reveals why this enthalpy change varies systematically between related reactions.
 
-- The A–B bond is mostly broken
-- The B–C bond is partially formed
-- Therefore, $\Delta H^{\ddagger}$ is:
-  - Strongly dependent on the strength of bonds being broken
-  - Weakly dependent on the strength of bonds being formed
+In the activated complex, the original A–B bond is almost completely broken, while the new B–C bond has only started to form. This means $\Delta H^{\ddagger}$ depends primarily on the strength of the bond being broken. The strength of the bond being formed has much less effect, since this bond is still weak in the transition state.
 
 This principle helps explain trends in activation energies for a family of related reactions. Consider these examples involving H and Br:
 
@@ -134,30 +128,30 @@ The trends in activation energy can be explained by:
    - Breaking H–Br ($E_\mathrm{a} = +12~\mathrm{kJ~mol^{-1}}$)
    - Breaking Br–Br ($E_\mathrm{a} = +4~\mathrm{kJ~mol^{-1}}$)
 
-## Reconciling TST with Collision Theory {#sec:tst-collision}
+## Reconciling Transition State Theory  with Collision Theory {#sec:tst-collision}
 
-Our two theories provide different physical interpretations of activation energy:
+At first glance, Collision theory and transition state theory can seem to give different pictures of activation energy. In collision theory, $E_\mathrm{a}$ represents a minimum kinetic energy molecules must have to react. In transition state theory, $\Delta H^{\ddagger}$ represents the energy needed to distort and partially break bonds bonds in the activated complex.
 
-- Collision theory: $E_\mathrm{a}$ represents a threshold kinetic energy
-- TST: $\Delta H^{\ddagger}$ represents energy stored in partially broken/formed bonds
+We can connect these views by following the energy through a reactive collision. Initially, the molecules approach with kinetic energy at least equal to $E_\mathrm{a}$. As they collide, this kinetic energy transforms into potential energy, with the molecular geometry distorting to form the activated complex. Here, the initial kinetic energy has become the energy stored in partially broken and formed bonds &mdash; our $\Delta H^{\ddagger}$. By energy conservation, these energies must be approximately equal.
 
-These interpretations can be reconciled by considering the energy changes during a reactive collision:
+The two theories thus describe the same process from different perspectives: collision theory focuses on the keinetic energy molecules must have before they collide, while transition state theory considers how this energy is used in making and breaking bonds.
 
-1. Initial state:
-   - Separated molecules with relative KE ≥ $E_\mathrm{a}$
-   - Undistorted internal bonds
+## Entropy of Activation {#sec:entropy-activation}
 
-2. At the transition state:
-   - Relative KE has been converted to potential energy
-   - Energy stored in partially broken/formed bonds
-   - Distorted molecular geometries
+We have seen that transition state theory provides a molecular interpretation of the Arrhenius pre-exponential factor $A$ in terms of an entropy of activation $\Delta S^{\ddagger}$. To understand what this entropy term means and what determines its magnitude, we need to think carefully about what entropy means at a molecular level.
 
-Therefore:
+### Understanding Molecular Entropy
 
-- Collision theory $E_\mathrm{a}$ describes the minimum energy input required.
-- TST $\Delta H^{\ddagger}$ describes where that energy ends up.
-- These must be approximately equal by energy conservation.
+While entropy is often simply described as a measure of "disorder", this description can be misleading. For many chemical reactions, simple arguments based on relative "disorder" fail to predict even qualitative behaviour. This becomes particularly apparent when considering gas-phase reactions: both reactants and products exist as freely moving molecules, so which state is more "disordered"?
 
-The two theories thus provide complementary perspectives on the same process:
-- Collision theory focuses on what energy must go in
-- TST focuses on where that energy ends up and how it affects molecular structure
+A more useful framework considers entropy in terms of molecular freedom and statistical likelihood. Systems with greater freedom have higher entropy than more constrained systems, and molecular arrangements that are statistically more likely have higher entropy than less likely arrangements.
+
+The spontaneous expansion of an ideal gas illustrates these ideas. An ideal gas expands to fill its container despite no change in internal energy ($\Delta U = 0$) or enthalpy ($\Delta H = 0$, since $pV = nRT$). This process occurs spontaneously because the expanded state has higher entropy: gas molecules have more freedom to move through a larger volume, and an even distribution throughout the available space is statistically more likely than having all molecules confined to a smaller region.
+
+### Entropy of Activation for Bimolecular Reactions
+
+For a gas-phase bimolecular reaction, forming the activated complex introduces new constraints on molecular motion:
+
+$$\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger}$$
+
+Each molecule in the gas phase has three translational degrees of freedom&mdash;the molecules are free to move along the $x$, $y$, and $z$ axes, independently of the motion of the other molecules in the system. The reactants A and B therefore have six translational degrees of freedom between them. When these molecules combine to form the activated complex, however, we have just three translational degrees of freedom, since $\mathrm{C}^{\ddagger}$ moves as a single unit through space. This loss of translational freedom corresponds to a decrease in entropy. For gas-phase bimolecular reactions, $\Delta S^{\ddagger}$ is therefore always negative, reflecting the increased constraints imposed when forming the activated complex.

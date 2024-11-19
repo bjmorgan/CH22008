@@ -10,16 +10,13 @@ knitr::opts_knit$set(process_pdf = TRUE)
 
 ## Why Study Chemical Kinetics?
 
-Chemical kinetics addresses the fundamental question of how chemical reactions proceed through time.
-While thermodynamics tells us about the driving forces and ultimate endpoints of reactions, kinetics reveals the pathways and speeds by which these endpoints are reached.
+Chemical kinetics describes how reactions happen. While thermodynamics tells us whether a reaction will occur and what the final state will be, kinetics reveals how fast it happens and what steps are involved.
 
-Understanding chemical kinetics helps us to answer practical questions. For a given reaction, A $\longrightarrow$ B, we might want to predict how much product B will be present after a given time, or how long it will take to achieve a desired conversion percentage from A to B.
+For any reaction A $\longrightarrow$ B, kinetics lets us predict how much B we'll have after a given time, or how long we need to wait for a desired yield. Beyond this, understanding kinetics helps us control and optimize reactions by changing conditions like temperature and pressure.
 
 ```{r fig-yield, fig.cap="A plot of concentrations of reactant A and product B for a generic reaction A $\\longrightarrow$ B as a function of time. Over time, A is converted to B. How long will it take to obtain 90% yield?", out.width='35%', fig.align='center'}
 knitr::include_graphics("lecture_1/figures/time_to_yield.png")
 ```
-
-Going beyond this, can we optimise our reaction by changing the conditions (e.g., pressure or temperature)? How would these changes affect the overall rate of our reaction or the reaction yield?
 
 ```{r fig-changingconditions, fig.cap="If we increase the temperature we (usually) expect our reaction to speed up. But by how much? If we increase the reaction temperature by 10 K, how much faster can we reach 90% yield?", out.width='35%', fig.align='center'}
 knitr::include_graphics("lecture_1/figures/changing_conditions.png")
