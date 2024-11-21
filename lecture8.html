@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lecture 8 Estimating Pre-exponential Factors | CH22008 Lecture Notes</title>
+  <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lecture 8 Estimating Pre-exponential Factors | CH22008 Lecture Notes" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lecture 8 Estimating Pre-exponential Factors | CH22008 Lecture Notes" />
+  
+  <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
+  
+
+<meta name="author" content="Benjamin J. Morgan" />
+
+
+<meta name="date" content="2024-11-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lecture7.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">CH22008</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="lecture1.html"><a href="lecture1.html"><i class="fa fa-check"></i><b>1</b> Chemical Kinetics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="lecture1.html"><a href="lecture1.html#why-study-chemical-kinetics"><i class="fa fa-check"></i><b>1.1</b> Why Study Chemical Kinetics?</a></li>
+<li class="chapter" data-level="1.2" data-path="lecture1.html"><a href="lecture1.html#sec:reaction-rates"><i class="fa fa-check"></i><b>1.2</b> Reaction Rates</a></li>
+<li class="chapter" data-level="1.3" data-path="lecture1.html"><a href="lecture1.html#simple-rate-equations"><i class="fa fa-check"></i><b>1.3</b> Simple Rate Equations</a></li>
+<li class="chapter" data-level="1.4" data-path="lecture1.html"><a href="lecture1.html#elementary-processes"><i class="fa fa-check"></i><b>1.4</b> Elementary Processes</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="lecture1.html"><a href="lecture1.html#molecularity"><i class="fa fa-check"></i><b>1.4.1</b> Molecularity</a></li>
+<li class="chapter" data-level="1.4.2" data-path="lecture1.html"><a href="lecture1.html#rate-laws-for-elementary-processes"><i class="fa fa-check"></i><b>1.4.2</b> Rate Laws for Elementary Processes</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="lecture1.html"><a href="lecture1.html#moving-between-concentration-and-rate-perspectives"><i class="fa fa-check"></i><b>1.5</b> Moving Between Concentration and Rate Perspectives</a></li>
+<li class="chapter" data-level="1.6" data-path="lecture1.html"><a href="lecture1.html#sec:simpleint"><i class="fa fa-check"></i><b>1.6</b> Integrating Simple Rate Laws</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="lecture1.html"><a href="lecture1.html#first-order-reactions"><i class="fa fa-check"></i><b>1.6.1</b> First-Order Reactions</a></li>
+<li class="chapter" data-level="1.6.2" data-path="lecture1.html"><a href="lecture1.html#second-order-reactions"><i class="fa fa-check"></i><b>1.6.2</b> Second-Order Reactions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="lecture1.html"><a href="lecture1.html#from-mechanisms-to-rate-laws"><i class="fa fa-check"></i><b>1.7</b> From Mechanisms to Rate Laws</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="lecture1.html"><a href="lecture1.html#exact-solutions"><i class="fa fa-check"></i><b>1.7.1</b> Exact Solutions</a></li>
+<li class="chapter" data-level="1.7.2" data-path="lecture1.html"><a href="lecture1.html#approximate-analytical-solutions"><i class="fa fa-check"></i><b>1.7.2</b> Approximate Analytical Solutions</a></li>
+<li class="chapter" data-level="1.7.3" data-path="lecture1.html"><a href="lecture1.html#numerical-integration"><i class="fa fa-check"></i><b>1.7.3</b> Numerical Integration</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lecture2.html"><a href="lecture2.html"><i class="fa fa-check"></i><b>2</b> Parallel Irreversible Reactions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="lecture2.html"><a href="lecture2.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="lecture2.html"><a href="lecture2.html#simple-first-order-parallel-reactions"><i class="fa fa-check"></i><b>2.2</b> Simple First-Order Parallel Reactions</a></li>
+<li class="chapter" data-level="2.3" data-path="lecture2.html"><a href="lecture2.html#first-order-parallel-reactions"><i class="fa fa-check"></i><b>2.3</b> First-Order Parallel Reactions</a></li>
+<li class="chapter" data-level="2.4" data-path="lecture2.html"><a href="lecture2.html#key-features-of-parallel-reactions"><i class="fa fa-check"></i><b>2.4</b> Key Features of Parallel Reactions</a></li>
+<li class="chapter" data-level="2.5" data-path="lecture2.html"><a href="lecture2.html#temperature-effects-on-selectivity"><i class="fa fa-check"></i><b>2.5</b> Temperature Effects on Selectivity</a></li>
+<li class="chapter" data-level="2.6" data-path="lecture2.html"><a href="lecture2.html#pressure-effects-on-selectivity"><i class="fa fa-check"></i><b>2.6</b> Pressure Effects on Selectivity</a></li>
+<li class="chapter" data-level="2.7" data-path="lecture2.html"><a href="lecture2.html#applications"><i class="fa fa-check"></i><b>2.7</b> Applications</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="lecture3.html"><a href="lecture3.html"><i class="fa fa-check"></i><b>3</b> Parallel Reversibile Reactions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="lecture3.html"><a href="lecture3.html#introduction-to-parallel-reversible-reactions"><i class="fa fa-check"></i><b>3.1</b> Introduction to Parallel Reversible Reactions</a></li>
+<li class="chapter" data-level="3.2" data-path="lecture3.html"><a href="lecture3.html#time-evolution-of-product-distributions"><i class="fa fa-check"></i><b>3.2</b> Time Evolution of Product Distributions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="lecture3.html"><a href="lecture3.html#short-time-behaviour"><i class="fa fa-check"></i><b>3.2.1</b> Short-Time Behaviour</a></li>
+<li class="chapter" data-level="3.2.2" data-path="lecture3.html"><a href="lecture3.html#long-time-behaviour"><i class="fa fa-check"></i><b>3.2.2</b> Long-Time Behaviour</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="lecture3.html"><a href="lecture3.html#kinetic-vs-thermodynamic-control"><i class="fa fa-check"></i><b>3.3</b> Kinetic vs Thermodynamic Control</a></li>
+<li class="chapter" data-level="3.4" data-path="lecture3.html"><a href="lecture3.html#example-base-catalyzed-isomerization"><i class="fa fa-check"></i><b>3.4</b> Example: Base-Catalyzed Isomerization</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lecture4.html"><a href="lecture4.html"><i class="fa fa-check"></i><b>4</b> Numerical Integration</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="lecture4.html"><a href="lecture4.html#sec:mech-to-data"><i class="fa fa-check"></i><b>4.1</b> From Mechanisms to Kinetic Data</a></li>
+<li class="chapter" data-level="4.2" data-path="lecture4.html"><a href="lecture4.html#sec:integration-role"><i class="fa fa-check"></i><b>4.2</b> The Role of Integration in Chemical Kinetics</a></li>
+<li class="chapter" data-level="4.3" data-path="lecture4.html"><a href="lecture4.html#sec:num-principles"><i class="fa fa-check"></i><b>4.3</b> Principles of Numerical Integration</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="lecture4.html"><a href="lecture4.html#sec:simple-example"><i class="fa fa-check"></i><b>4.3.1</b> A Simple Example</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="lecture4.html"><a href="lecture4.html#sec:error-sources"><i class="fa fa-check"></i><b>4.4</b> Sources of Error</a></li>
+<li class="chapter" data-level="4.5" data-path="lecture4.html"><a href="lecture4.html#practical-implementation"><i class="fa fa-check"></i><b>4.5</b> Practical Implementation</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lecture5.html"><a href="lecture5.html"><i class="fa fa-check"></i><b>5</b> Collision Theory</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="lecture5.html"><a href="lecture5.html#introduction-to-kinetic-theories"><i class="fa fa-check"></i><b>5.1</b> Introduction to Kinetic Theories</a></li>
+<li class="chapter" data-level="5.2" data-path="lecture5.html"><a href="lecture5.html#sec:fundamentals"><i class="fa fa-check"></i><b>5.2</b> Fundamentals of Collision Theory</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="lecture5.html"><a href="lecture5.html#sec:principles"><i class="fa fa-check"></i><b>5.2.1</b> Basic Principles and Assumptions</a></li>
+<li class="chapter" data-level="5.2.2" data-path="lecture5.html"><a href="lecture5.html#sec:frequency"><i class="fa fa-check"></i><b>5.2.2</b> Collision Frequency</a></li>
+<li class="chapter" data-level="5.2.3" data-path="lecture5.html"><a href="lecture5.html#average-relative-velocity"><i class="fa fa-check"></i><b>5.2.3</b> Average Relative Velocity</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="lecture5.html"><a href="lecture5.html#from-collisions-to-reaction-rates"><i class="fa fa-check"></i><b>5.3</b> From Collisions to Reaction Rates</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="lecture5.html"><a href="lecture5.html#successful-collisions"><i class="fa fa-check"></i><b>5.3.1</b> Successful Collisions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="lecture5.html"><a href="lecture5.html#sec:steric-factors"><i class="fa fa-check"></i><b>5.3.2</b> Steric Factors</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="lecture5.html"><a href="lecture5.html#sec:arrhenius-comparison"><i class="fa fa-check"></i><b>5.4</b> Relationship to the Arrhenius Equation</a></li>
+<li class="chapter" data-level="5.5" data-path="lecture5.html"><a href="lecture5.html#sec:collision-limitations"><i class="fa fa-check"></i><b>5.5</b> Limitations of Collision Theory as a Predictive Framework</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lecture6.html"><a href="lecture6.html"><i class="fa fa-check"></i><b>6</b> Transition State Theory</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="lecture6.html"><a href="lecture6.html#sec:intro"><i class="fa fa-check"></i><b>6.1</b> A Molecular Theory of Reaction Rates</a></li>
+<li class="chapter" data-level="6.2" data-path="lecture6.html"><a href="lecture6.html#sec:tst-principles"><i class="fa fa-check"></i><b>6.2</b> Basic Principles of Transition State Theory</a></li>
+<li class="chapter" data-level="6.3" data-path="lecture6.html"><a href="lecture6.html#sec:tst-math"><i class="fa fa-check"></i><b>6.3</b> Mathematical Development of Transition State Theory</a></li>
+<li class="chapter" data-level="6.4" data-path="lecture6.html"><a href="lecture6.html#sec:tst-arrhenius"><i class="fa fa-check"></i><b>6.4</b> Relationship to the Arrhenius Equation</a></li>
+<li class="chapter" data-level="6.5" data-path="lecture6.html"><a href="lecture6.html#sec:enthalpy-activation"><i class="fa fa-check"></i><b>6.5</b> Enthalpy of Activation</a></li>
+<li class="chapter" data-level="6.6" data-path="lecture6.html"><a href="lecture6.html#sec:tst-collision"><i class="fa fa-check"></i><b>6.6</b> Reconciling Transition State Theory with Collision Theory</a></li>
+<li class="chapter" data-level="6.7" data-path="lecture6.html"><a href="lecture6.html#sec:entropy-activation"><i class="fa fa-check"></i><b>6.7</b> Entropy of Activation</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="lecture6.html"><a href="lecture6.html#understanding-molecular-entropy"><i class="fa fa-check"></i><b>6.7.1</b> Understanding Molecular Entropy</a></li>
+<li class="chapter" data-level="6.7.2" data-path="lecture6.html"><a href="lecture6.html#entropy-of-activation-for-bimolecular-reactions"><i class="fa fa-check"></i><b>6.7.2</b> Entropy of Activation for Bimolecular Reactions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="lecture7.html"><a href="lecture7.html"><i class="fa fa-check"></i><b>7</b> Molecular Freedom and Entropy of Activation</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="lecture7.html"><a href="lecture7.html#qualitative-analysis-atomic-and-molecular-reactions"><i class="fa fa-check"></i><b>7.1</b> Qualitative Analysis: Atomic and Molecular Reactions</a></li>
+<li class="chapter" data-level="7.2" data-path="lecture7.html"><a href="lecture7.html#thermodynamic-origin-of-the-steric-factor"><i class="fa fa-check"></i><b>7.2</b> Thermodynamic Origin of the Steric Factor</a></li>
+<li class="chapter" data-level="7.3" data-path="lecture7.html"><a href="lecture7.html#molecular-degrees-of-freedom"><i class="fa fa-check"></i><b>7.3</b> Molecular Degrees of Freedom</a></li>
+<li class="chapter" data-level="7.4" data-path="lecture7.html"><a href="lecture7.html#energy-spacings-and-entropy"><i class="fa fa-check"></i><b>7.4</b> Energy Spacings and Entropy</a></li>
+<li class="chapter" data-level="7.5" data-path="lecture7.html"><a href="lecture7.html#formation-of-the-activated-complex"><i class="fa fa-check"></i><b>7.5</b> Formation of the Activated Complex</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="lecture8.html"><a href="lecture8.html"><i class="fa fa-check"></i><b>8</b> Estimating Pre-exponential Factors</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="lecture8.html"><a href="lecture8.html#from-molecular-freedom-to-reaction-rates"><i class="fa fa-check"></i><b>8.1</b> From Molecular Freedom to Reaction Rates</a></li>
+<li class="chapter" data-level="8.2" data-path="lecture8.html"><a href="lecture8.html#the-reaction-coordinate"><i class="fa fa-check"></i><b>8.2</b> The Reaction Coordinate</a></li>
+<li class="chapter" data-level="8.3" data-path="lecture8.html"><a href="lecture8.html#the-rate-of-barrier-crossing"><i class="fa fa-check"></i><b>8.3</b> The Rate of Barrier Crossing</a></li>
+<li class="chapter" data-level="8.4" data-path="lecture8.html"><a href="lecture8.html#mathematical-development"><i class="fa fa-check"></i><b>8.4</b> Mathematical Development</a></li>
+<li class="chapter" data-level="8.5" data-path="lecture8.html"><a href="lecture8.html#analysis-of-molecular-systems"><i class="fa fa-check"></i><b>8.5</b> Analysis of Molecular Systems</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="lecture8.html"><a href="lecture8.html#atomic-reactions"><i class="fa fa-check"></i><b>8.5.1</b> Atomic Reactions</a></li>
+<li class="chapter" data-level="8.5.2" data-path="lecture8.html"><a href="lecture8.html#polyatomic-systems"><i class="fa fa-check"></i><b>8.5.2</b> Polyatomic Systems</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="lecture8.html"><a href="lecture8.html#limitations-in-pre-exponential-factor-estimation"><i class="fa fa-check"></i><b>8.6</b> Limitations in Pre-exponential Factor Estimation</a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="lecture8.html"><a href="lecture8.html#statistical-entropy-approximations"><i class="fa fa-check"></i><b>8.6.1</b> Statistical Entropy Approximations</a></li>
+<li class="chapter" data-level="8.6.2" data-path="lecture8.html"><a href="lecture8.html#effects-of-molecular-symmetry"><i class="fa fa-check"></i><b>8.6.2</b> Effects of Molecular Symmetry</a></li>
+<li class="chapter" data-level="8.6.3" data-path="lecture8.html"><a href="lecture8.html#internal-molecular-motion"><i class="fa fa-check"></i><b>8.6.3</b> Internal Molecular Motion</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="lecture8.html"><a href="lecture8.html#applications-and-predictive-power"><i class="fa fa-check"></i><b>8.7</b> Applications and Predictive Power</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">CH22008 Lecture Notes</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lecture8" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Lecture 8</span> Estimating Pre-exponential Factors<a href="lecture8.html#lecture8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="from-molecular-freedom-to-reaction-rates" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> From Molecular Freedom to Reaction Rates<a href="lecture8.html#from-molecular-freedom-to-reaction-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In Lecture <a href="lecture7.html#lecture7">7</a>, we examined how molecular degrees of freedom change when forming the activated complex, and how these changes determine the entropy of activation, <span class="math inline">\(\Delta S^\ddagger\)</span>. We saw that forming the activated complex typically transforms high-entropy translational and rotational degrees of freedom into more constrained rotational and vibrational modes. Let us now develop this molecular-level picture into a quantitative framework for predicting reaction rates.</p>
+</div>
+<div id="the-reaction-coordinate" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> The Reaction Coordinate<a href="lecture8.html#the-reaction-coordinate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To understand how molecular motion leads to reaction, we must look more carefully at what the reaction coordinate means. Consider a simple atom-transfer reaction A–B + C → A + B–C. We can describe the relative positions of these three atoms using two coordinates: the A–B distance (<span class="math inline">\(r_\mathrm{AB}\)</span>) and the B–C distance (<span class="math inline">\(r_\mathrm{BC}\)</span>).</p>
+<p>At the start of the reaction:</p>
+<ul>
+<li><span class="math inline">\(r_\mathrm{AB}\)</span> is small (strong A–B bond)</li>
+<li><span class="math inline">\(r_\mathrm{BC}\)</span> is large (C far from AB)</li>
+</ul>
+<p>At the end of the reaction:</p>
+<ul>
+<li><span class="math inline">\(r_\mathrm{AB}\)</span> is large (A separated from BC)</li>
+<li><span class="math inline">\(r_\mathrm{BC}\)</span> is small (strong B–C bond)</li>
+</ul>
+<p>The reaction coordinate traces the lowest-energy path between reactants and products on this two-dimensional potential energy surface. This path must cross a “dividing surface” that separates reactant-like and product-like geometries. The transition state corresponds to the lowest-energy point on this dividing surface, where typically <span class="math inline">\(r_\mathrm{AB}\)</span> ≈ <span class="math inline">\(r_\mathrm{BC}\)</span>.</p>
+</div>
+<div id="the-rate-of-barrier-crossing" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> The Rate of Barrier Crossing<a href="lecture8.html#the-rate-of-barrier-crossing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To describe how fast activated complexes convert to products (<span class="math inline">\(k^\ddagger\)</span>), we need to think carefully about what happens at the transition state. Consider our simple atom-transfer reaction A–B + C → A + B–C. At the transition state, we have an activated complex [A<span class="math inline">\(\cdots\)</span>B<span class="math inline">\(\cdots\)</span>C]<span class="math inline">\(^\ddagger\)</span>.</p>
+<p>What happens if we move a small distance along the reaction coordinate? If we move towards reactants, <span class="math inline">\(r_\mathrm{AB}\)</span> gets smaller and <span class="math inline">\(r_\mathrm{BC}\)</span> gets larger. If we move towards products, <span class="math inline">\(r_\mathrm{AB}\)</span> gets larger and <span class="math inline">\(r_\mathrm{BC}\)</span> gets smaller. This motion through the transition state looks like an asymmetric stretch of our activated complex. By modeling this as a loose molecular vibration, we can derive the expression:</p>
+<p><span class="math display">\[k^\ddagger = \frac{k_\mathrm{B}T}{h}\]</span></p>
+<p>where <span class="math inline">\(k_\mathrm{B}\)</span> is Boltzmann’s constant, <span class="math inline">\(h\)</span> is Planck’s constant, and <span class="math inline">\(T\)</span> is temperature.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Because this expression accounts for motion along the reaction coordinate, we must take care when counting vibrational modes in the activated complex: we count only <span class="math inline">\(3N-7\)</span> vibrational modes for a non-linear activated complex (one fewer than the usual <span class="math inline">\(3N-6\)</span>), as the reaction coordinate “vibration” is already included in the <span class="math inline">\(k^\ddagger\)</span> term.</p>
+</div>
+<div id="mathematical-development" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> Mathematical Development<a href="lecture8.html#mathematical-development" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The complete transition state theory rate equation can be written as:</p>
+<p><span class="math display">\[\nu = k^{\ddagger}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}[\mathrm{A}][\mathrm{B}]\]</span></p>
+<p>Comparison with the Arrhenius equation:</p>
+<p><span class="math display">\[\nu = A\mathrm{e}^{-E_\mathrm{a}/RT}[\mathrm{A}][\mathrm{B}]\]</span></p>
+<p>reveals that the pre-exponential factor corresponds to:</p>
+<p><span class="math display">\[A \approx k^{\ddagger}\mathrm{e}^{\Delta S^{\ddagger}/R}\]</span></p>
+<p>By separating the entropy of activation into contributions from different types of molecular motion, we arrive at the complete transition state theory expression:</p>
+<p><span class="math display">\[A = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}_\mathrm{trans}/R}\mathrm{e}^{\Delta S^{\ddagger}_\mathrm{rot}/R}\mathrm{e}^{\Delta S^{\ddagger,(n-1)}_\mathrm{vib}/R}\]</span></p>
+<p>where the superscript <span class="math inline">\((n-1)\)</span> on the vibrational entropy term indicates that we consider one fewer vibrational mode than might be expected, since motion along the reaction coordinate is already accounted for in the frequency prefactor <span class="math inline">\(\frac{k_\mathrm{B}T}{h}\)</span>. This expression is particularly powerful because it allows us to make quantitative predictions of the Arrhenius pre-exponential factor if we can evaluate (or estimate) the changes in translational, rotational, and vibrational entropy when forming the activated complex. For gas-phase reactions, these contributions can be estimated using characteristic values:</p>
+<ul>
+<li>Translational motion: <span class="math inline">\(S^{\ddagger}_\mathrm{trans} \approx 195~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}\)</span></li>
+<li>Rotational modes: <span class="math inline">\(S^{\ddagger}_\mathrm{rot} \approx 20~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}\)</span></li>
+<li>Vibrational modes: <span class="math inline">\(S^{\ddagger}_\mathrm{vib} \approx 5~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}\)</span></li>
+</ul>
+</div>
+<div id="analysis-of-molecular-systems" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> Analysis of Molecular Systems<a href="lecture8.html#analysis-of-molecular-systems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="atomic-reactions" class="section level3 hasAnchor" number="8.5.1">
+<h3><span class="header-section-number">8.5.1</span> Atomic Reactions<a href="lecture8.html#atomic-reactions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The simplest case to analyse is a reaction between two atoms, A + B. Initially, the system possesses:</p>
+<ul>
+<li>Three translational degrees of freedom for atom A</li>
+<li>Three translational degrees of freedom for atom B</li>
+<li>No rotational or vibrational modes</li>
+</ul>
+<p>Formation of the activated complex [A<span class="math inline">\(\cdots\)</span>B]<span class="math inline">\(^\ddagger\)</span> results in:</p>
+<ul>
+<li>Three translational degrees of freedom (complex motion)</li>
+<li>Two rotational degrees of freedom</li>
+<li>One vibrational degree of freedom (motion through the transition state)</li>
+</ul>
+<p>This transformation leads to specific entropy changes:</p>
+<p><span class="math display">\[\Delta S^\ddagger_\mathrm{trans} = -3 \times 195 = -585~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}\]</span>
+<span class="math display">\[\Delta S^\ddagger_\mathrm{rot} = +2 \times 20 = +40~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}\]</span>
+<span class="math display">\[\Delta S^\ddagger_\mathrm{vib} = 0 \times 5 = 0~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}\]</span></p>
+<p>We can now calculate the pre-exponential factor explicitly:</p>
+<p><span class="math display">\[A = 10^{13} \times \mathrm{e}^{-3 \times 195/8.314} \times \mathrm{e}^{2 \times 20/8.314} \times \mathrm{e}^{0 \times 5/8.314} \times (N_\mathrm{A} \times 10^3)~\mathrm{dm^3~mol^{-1}~s^{-1}}\]</span></p>
+<p><span class="math display">\[= 2 \times 10^{11}~\mathrm{dm^3~mol^{-1}~s^{-1}}\]</span></p>
+<p>The factor of <span class="math inline">\(N_\mathrm{A}\)</span> (Avogadro’s number) is needed to convert from a per-molecule basis to a per-mole basis, since our rate constant needs to work with concentrations in mol dm<span class="math inline">\(^{-3}\)</span>. The factor of <span class="math inline">\(10^3\)</span> converts volumes from m<span class="math inline">\(^3\)</span> to dm<span class="math inline">\(^3\)</span>, ensuring our final rate constant has the correct units of dm<span class="math inline">\(^3\)</span> mol<span class="math inline">\(^{-1}\)</span> s<span class="math inline">\(^{-1}\)</span>.</p>
+</div>
+<div id="polyatomic-systems" class="section level3 hasAnchor" number="8.5.2">
+<h3><span class="header-section-number">8.5.2</span> Polyatomic Systems<a href="lecture8.html#polyatomic-systems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For a reaction between a diatomic molecule and a four-atom molecule, the analysis becomes more complex. Consider the initial degrees of freedom:</p>
+<p>Diatomic molecule (<span class="math inline">\(N = 2\)</span>):</p>
+<ul>
+<li>Three translational modes</li>
+<li>Two rotational modes</li>
+<li>One vibrational mode (<span class="math inline">\(3N - 5 = 1\)</span> for linear molecule)</li>
+</ul>
+<p>Four-atom molecule (<span class="math inline">\(N = 4\)</span>):</p>
+<ul>
+<li>Three translational modes</li>
+<li>Three rotational modes (non-linear molecule)</li>
+<li>Six vibrational modes (<span class="math inline">\(3N - 6 = 6\)</span> for non-linear molecule)</li>
+</ul>
+<p>The six-atom activated complex (<span class="math inline">\(N = 6\)</span>) possesses:
+- Three translational modes
+- Three rotational modes
+- Eleven vibrational modes (<span class="math inline">\(3N - 7\)</span> for non-linear molecule, as one vibrational mode corresponds to motion along the reaction coordinate and is accounted for in <span class="math inline">\(k^\ddagger\)</span>)</p>
+<p>Let us calculate the entropy changes systematically:</p>
+<p>For translational motion:</p>
+<ul>
+<li>Initially: six independent translational modes (three per molecule)</li>
+<li>Final: three translational modes in the complex</li>
+<li>Net loss: three translational degrees of freedom</li>
+<li><span class="math inline">\(\Delta S^\ddagger_\mathrm{trans} = -3 \times 195 = -585\)</span> J K<span class="math inline">\(^{-1}\)</span> mol<span class="math inline">\(^{-1}\)</span></li>
+</ul>
+<p>For rotational motion:</p>
+<ul>
+<li>Initially: five rotational modes (two from diatomic + three from four-atom molecule)</li>
+<li>Final: three rotational modes in the complex</li>
+<li>Net loss: two rotational degrees of freedom</li>
+<li><span class="math inline">\(\Delta S^\ddagger_\mathrm{rot} = -2 \times 20 = -40\)</span> J K<span class="math inline">\(^{-1}\)</span> mol<span class="math inline">\(^{-1}\)</span></li>
+</ul>
+<p>For vibrational motion:</p>
+<ul>
+<li>Initially: seven vibrational modes (one from diatomic + six from four-atom molecule)</li>
+<li>Final: eleven vibrational modes in the complex</li>
+<li>Net gain: four vibrational modes</li>
+<li><span class="math inline">\(\Delta S^\ddagger_\mathrm{vib} = +5 \times 4 = +20\)</span> J K<span class="math inline">\(^{-1}\)</span> mol<span class="math inline">\(^{-1}\)</span></li>
+</ul>
+<p>We can now calculate the pre-exponential factor explicitly:</p>
+<p><span class="math display">\[A = 10^{13} \times \mathrm{e}^{-3 \times 195/8.314} \times \mathrm{e}^{-2 \times 20/8.314} \times \mathrm{e}^{4 \times 5/8.314} \times (N_\mathrm{A} \times 10^3)~\mathrm{dm^3~mol^{-1}~s^{-1}}\]</span></p>
+<p><span class="math display">\[= 1 \times 10^8~\mathrm{dm^3~mol^{-1}~s^{-1}}\]</span></p>
+<p>As before, the <span class="math inline">\(N_\mathrm{A}\)</span> factor converts from per-molecule to per-mole basis, while the <span class="math inline">\(10^3\)</span> factor handles the conversion from m<span class="math inline">\(^3\)</span> to dm<span class="math inline">\(^3\)</span> units.</p>
+</div>
+</div>
+<div id="limitations-in-pre-exponential-factor-estimation" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Limitations in Pre-exponential Factor Estimation<a href="lecture8.html#limitations-in-pre-exponential-factor-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The estimation of pre-exponential factors using molecular degrees of freedom, while powerful, involves several important approximations and limitations that must be carefully considered. Understanding these limitations helps us recognise when our predictions are likely to be reliable and when we need more sophisticated approaches.</p>
+<div id="statistical-entropy-approximations" class="section level3 hasAnchor" number="8.6.1">
+<h3><span class="header-section-number">8.6.1</span> Statistical Entropy Approximations<a href="lecture8.html#statistical-entropy-approximations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Our method employs characteristic entropy values for different types of molecular motion: approximately 195 J K<span class="math inline">\(^{-1}\)</span> mol<span class="math inline">\(^{-1}\)</span> for translational modes, 20 J K<span class="math inline">\(^{-1}\)</span> mol<span class="math inline">\(^{-1}\)</span> for rotational modes, and 5 J K<span class="math inline">\(^{-1}\)</span> mol<span class="math inline">\(^{-1}\)</span> for vibrational modes. These values represent statistical averages derived from typical molecular behaviour, but they do not account for the specific properties of individual molecules.</p>
+<p>More accurate predictions require detailed quantum mechanical calculations of molecular energy levels. These calculations can determine precise values for <span class="math inline">\(S^\ddagger_\mathrm{dof}\)</span> based on the actual energy spacing between quantum states for each degree of freedom. While such calculations are more rigorous, they also require significantly more computational effort. For many practical purposes, our simpler approach using characteristic values provides useful insights into relative reaction rates and trends in reactivity.</p>
+</div>
+<div id="effects-of-molecular-symmetry" class="section level3 hasAnchor" number="8.6.2">
+<h3><span class="header-section-number">8.6.2</span> Effects of Molecular Symmetry<a href="lecture8.html#effects-of-molecular-symmetry" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Molecular symmetry introduces subtle but important effects that our simple counting of degrees of freedom does not capture. A particularly instructive example involves comparing the reactions:</p>
+<p><span class="math display">\[\mathrm{CH}_4 + \mathrm{Br}^\bullet \longrightarrow \mathrm{HBr} + \mathrm{CH}_3^\bullet\]</span>
+<span class="math display">\[\mathrm{CD}_3\mathrm{H} + \mathrm{Br}^\bullet \longrightarrow \mathrm{HBr} + \mathrm{CD}_3^\bullet\]</span></p>
+<p>At first glance, these reactions appear very similar. Both involve breaking a C–H bond through abstraction by a bromine radical. Our molecular freedom counting method predicts identical <span class="math inline">\(A\)</span>-factors for both reactions, since the numbers and types of degrees of freedom appear the same. However, experimental measurements reveal that the CH<sub>4</sub> reaction proceeds approximately four times faster than the CD<sub>3</sub>H reaction.</p>
+<p>This difference arises from molecular symmetry. In CH<sub>4</sub>, all four hydrogen atoms are equivalent—the bromine radical can abstract any of the four hydrogens to give the same product. In CD<sub>3</sub>H, only one hydrogen is available for abstraction. This symmetry difference contributes an additional term to the entropy of activation, called the configurational entropy:</p>
+<ul>
+<li>For CH<sub>4</sub>: <span class="math inline">\(\Delta S^\ddagger_\mathrm{conf} = R\ln 4\)</span></li>
+<li>For CD<sub>3</sub>H: <span class="math inline">\(\Delta S^\ddagger_\mathrm{conf} = R\ln 1 = 0\)</span></li>
+</ul>
+<p>The ratio of pre-exponential factors therefore includes this symmetry contribution:</p>
+<p><span class="math display">\[\frac{A_\mathrm{CH_4}}{A_\mathrm{CD_3H}} = \mathrm{e}^{R\ln 4/R} = 4\]</span></p>
+</div>
+<div id="internal-molecular-motion" class="section level3 hasAnchor" number="8.6.3">
+<h3><span class="header-section-number">8.6.3</span> Internal Molecular Motion<a href="lecture8.html#internal-molecular-motion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The treatment of internal molecular motions reveals additional complexity in our theoretical framework. These motions often exhibit behaviour intermediate between pure rotation and pure vibration, making their entropic contributions particularly challenging to estimate. The molecule ethane (C<sub>2</sub>H<sub>6</sub>) provides an excellent illustration of this complexity.</p>
+<p>Consider the two distinct types of motion possible around the C–C bond in ethane:</p>
+<ol style="list-style-type: decimal">
+<li>The C–C stretching vibration involves direct compression and extension of the strong carbon-carbon single bond. This represents a true vibrational mode:</li>
+</ol>
+<ul>
+<li>The motion directly distorts the strong C–C bond</li>
+<li>This requires significant energy</li>
+<li>The resulting quantum energy levels are widely spaced</li>
+<li>Consequently, this mode makes only a small contribution to the vibrational entropy</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>The C–C torsional motion involves rotation of one CH<sub>3</sub> group relative to the other around the C–C bond axis:</li>
+</ol>
+<ul>
+<li>This motion does not significantly distort the C–C bond length</li>
+<li>The energy barrier is much lower than for the stretching mode</li>
+<li>The quantum energy levels lie much closer together</li>
+<li>This results in a larger contribution to the entropy</li>
+</ul>
+<p>When such molecules form activated complexes, the effect on <span class="math inline">\(\Delta S^\ddagger\)</span> depends strongly on how these internal motions change. Two scenarios commonly arise:</p>
+<ol style="list-style-type: decimal">
+<li>If forming the transition state restricts internal rotation (for example, by requiring specific molecular alignments), we observe:</li>
+</ol>
+<ul>
+<li>A decrease in the freedom of internal motion</li>
+<li>A corresponding negative contribution to <span class="math inline">\(\Delta S^\ddagger\)</span></li>
+<li>Lower pre-exponential factors than predicted by simple counting</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>If the transition state involves bond lengthening that makes internal rotation easier:</li>
+</ol>
+<ul>
+<li>The freedom of internal motion increases</li>
+<li>This provides a positive contribution to <span class="math inline">\(\Delta S^\ddagger\)</span></li>
+<li>The pre-exponential factors exceed simple counting predictions</li>
+</ul>
+</div>
+</div>
+<div id="applications-and-predictive-power" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">8.7</span> Applications and Predictive Power<a href="lecture8.html#applications-and-predictive-power" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Despite these limitations, our molecular freedom approach successfully explains systematic trends in experimental pre-exponential factors. Consider these representative reactions:</p>
+<p><span class="math display">\[\mathrm{Br}^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{HBr} + \mathrm{H}^\bullet \qquad A = 3 \times 10^{10}~\mathrm{dm^3~mol^{-1}~s^{-1}}\]</span>
+<span class="math display">\[\mathrm{CD}_3^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{D_3CH} + \mathrm{H}^\bullet \qquad A = 3 \times 10^8~\mathrm{dm^3~mol^{-1}~s^{-1}}\]</span>
+<span class="math display">\[\text{Diels-Alder cycloaddition} \qquad A = 1 \times 10^7~\mathrm{dm^3~mol^{-1}~s^{-1}}\]</span></p>
+<p>The systematic decrease in pre-exponential factors reflects three key factors:</p>
+<ol style="list-style-type: decimal">
+<li>Increasing molecular complexity in the reactants</li>
+<li>Greater loss of molecular freedom in forming the activated complex</li>
+<li>Increasingly negative values of <span class="math inline">\(\Delta S^\ddagger_\mathrm{rot+vib}\)</span>: +15, -20, and -35 kJ mol<span class="math inline">\(^{-1}\)</span> respectively</li>
+</ol>
+<p>Our estimation method correctly predicts both the magnitude and ordering of these pre-exponential factors, giving values of <span class="math inline">\(4 \times 10^9\)</span>, <span class="math inline">\(1 \times 10^8\)</span>, and <span class="math inline">\(2 \times 10^7~\mathrm{dm^3~mol^{-1}~s^{-1}}\)</span> respectively.</p>
+<p>The Diels-Alder cycloaddition presents a particularly interesting case. Our predictions typically overestimate the experimental pre-exponential factors for these reactions. Careful analysis reveals why: the transition state requires precise alignment of the diene and alkene components, severely restricting rotation around bonds that were previously relatively free. This additional constraint on molecular motion gives a more negative <span class="math inline">\(\Delta S^\ddagger\)</span> than our simple counting method predicts, explaining the lower experimental values.</p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>The derivation of this expression for <span class="math inline">\(k^\ddagger\)</span> requires a statistical mechanical treatment of transition state theory. You will cover statistical mechanics in the third year of your course.<a href="lecture8.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lecture7.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/bjmorgan/CH22008/main/lecture_8/lecture_08.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+},
+"mathjax": {
+"extensions": "mhchem.js"
+},
+"mathjax_config": {
+"TeX": {
+"Macros": {
+"conc": ["[\mathrm{#1}]", 1],
+"diffc": ["\frac{\mathrm{d}\conc{#1}}{\mathrm{d}t}", 1]
+}
+}
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
