@@ -1,4 +1,4 @@
-# Molecular Freedom and Entropy of Activation
+# Molecular Freedom and Entropy of Activation {#lecture7}
 
 In Lecture \@ref(lecture6), we began thinking about the entropy of activation $\Delta S^{\ddagger}$ in terms of changes in molecular freedom when forming the activated complex. We can develop this idea to understand systematic variations in the Arrhenius pre-exponential factor between different bimolecular reactions. We begin with a qualitative analysis before examining the molecular details more carefully.
 
