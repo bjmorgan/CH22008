@@ -70,7 +70,7 @@ sec:integration-role
 sec:num-principles
 sec:simple-example
 sec:error-sources
-practical-implementation
+the-role-of-numerical-integration-in-chemical-kinetics
 lecture5
 introduction-to-kinetic-theories
 sec:fundamentals
@@ -111,3 +111,7 @@ statistical-entropy-approximations
 effects-of-molecular-symmetry
 internal-molecular-motion
 applications-and-predictive-power
+lecture9
+the-logarithmic-form-of-tst
+effect-of-pressure-on-rate-coefficients
+kinetic-isotope-effects

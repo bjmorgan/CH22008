@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 5 Collision Theory | CH22008 Lecture Notes</title>
+  <title>Lecture 9 Applications of Transition State Theory | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 5 Collision Theory | CH22008 Lecture Notes" />
+  <meta property="og:title" content="Lecture 9 Applications of Transition State Theory | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 5 Collision Theory | CH22008 Lecture Notes" />
+  <meta name="twitter:title" content="Lecture 9 Applications of Transition State Theory | CH22008 Lecture Notes" />
   
   <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lecture4.html"/>
-<link rel="next" href="lecture6.html"/>
+<link rel="prev" href="lecture8.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -213,151 +213,99 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lecture5" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Lecture 5</span> Collision Theory<a href="lecture5.html#lecture5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction-to-kinetic-theories" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Introduction to Kinetic Theories<a href="lecture5.html#introduction-to-kinetic-theories" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Up to this point, we have focused on describing and interpreting empirical data—either deriving rate laws from experimental data or proposing reaction mechanisms and comparing their predictions against observations. While this approach allows us to understand the <em>shape</em> of concentration–time profiles, it does not explain <em>quantitative</em> differences in reaction rates.</p>
-<p>Several important questions remain:
-- For two bimolecular reactions, which would we expect to be faster, and by how much?
-- Can we predict rate constants <span class="math inline">\(k\)</span> (and how they vary with temperature) without experimental data?</p>
-<p>While we have discussed the Arrhenius equation, <span class="math inline">\(k = A_0\mathrm{e}^{-\Delta E/RT}\)</span>, this is an approximate empirical relationship that requires experimental data to determine <span class="math inline">\(A_0\)</span> and <span class="math inline">\(\Delta E\)</span>. To move beyond empirical descriptions, we need microscopic theories that can make quantitative predictions of reaction rates.</p>
-<p>In this course, we will examine two such theories:</p>
-<ol style="list-style-type: decimal">
-<li>Collision Theory (this lecture)—focuses on gas-phase bimolecular reactions, treating molecules as hard spheres</li>
-<li>Transition State Theory (lectures 6–9)—considers formation of activated complexes for all types of reactions</li>
-</ol>
-</div>
-<div id="sec:fundamentals" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Fundamentals of Collision Theory<a href="lecture5.html#sec:fundamentals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Collision theory provides one of the simplest microscopic models of reaction rates, specifically for gas-phase bimolecular reactions of the form:</p>
-<p><span class="math display">\[\mathrm{A} + \mathrm{B} \rightarrow \mathrm{P}\]</span></p>
-<p>For such reactions, we expect a rate law of the form <span class="math inline">\(\nu = k[\mathrm{A}][\mathrm{B}]\)</span>, but what determines the value of <span class="math inline">\(k\)</span>?</p>
-<div id="sec:principles" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Basic Principles and Assumptions<a href="lecture5.html#sec:principles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Building on the kinetic theory of gases, collision theory makes two key assumptions:</p>
-<ol style="list-style-type: decimal">
-<li>Molecules behave as hard spheres</li>
-<li>Molecules must collide to react</li>
-</ol>
-<p>The overall reaction rate is then:</p>
-<p>rate = rate of collisions × fraction of “successful” collisions</p>
-</div>
-<div id="sec:frequency" class="section level3 hasAnchor" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Collision Frequency<a href="lecture5.html#sec:frequency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Consider two molecules A and B with radii <span class="math inline">\(r_\mathrm{A}\)</span> and <span class="math inline">\(r_\mathrm{B}\)</span> and velocities <span class="math inline">\(v_\mathrm{A}\)</span> and <span class="math inline">\(v_\mathrm{B}\)</span>. To analyze their collisions, we can adopt the reference frame of molecule B, where:</p>
+<div id="lecture9" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Lecture 9</span> Applications of Transition State Theory<a href="lecture9.html#lecture9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In previous lectures we developed transition state theory to explain how molecular properties control reaction rates. The theory shows that reaction rates depend on both the energy barrier molecules must climb (the enthalpy of activation) and changes in molecular freedom when forming the activated complex (the entropy of activation). To test these ideas against experimental data and make quantitative predictions, we need mathematical tools that connect our theoretical framework with measurable quantities.</p>
+<div id="the-logarithmic-form-of-tst" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> The Logarithmic Form of TST<a href="lecture9.html#the-logarithmic-form-of-tst" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Eyring equation provides our starting point for analysing experimental data:</p>
+<p><span class="math display">\[k_\mathrm{theory} = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\]</span></p>
+<p>While this equation captures the key features of how entropy and enthalpy of activation determine reaction rates, its exponential form makes it awkward to use with experimental data. We can transform it into a more practical linear form through a simple mathematical manipulation.</p>
+<p>First, dividing both sides by temperature <span class="math inline">\(T\)</span>:</p>
+<p><span class="math display">\[\frac{k_\mathrm{theory}}{T} = \frac{k_\mathrm{B}}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\]</span></p>
+<p>Taking the natural logarithm gives:</p>
+<p><span class="math display">\[\ln\left(\frac{k_\mathrm{theory}}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}\]</span></p>
+<p>This has the form of a straight line <span class="math inline">\(y = c + mx\)</span> where:</p>
 <ul>
-<li>B appears stationary</li>
-<li>A moves with relative velocity <span class="math inline">\(v = v_\mathrm{B} - v_\mathrm{A}\)</span></li>
+<li><span class="math inline">\(y = \ln(k_\mathrm{theory}/T)\)</span></li>
+<li><span class="math inline">\(x = 1/T\)</span></li>
+<li><span class="math inline">\(c = \ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R\)</span></li>
+<li><span class="math inline">\(m = -\Delta H^{\ddagger}/R\)</span></li>
 </ul>
-<p>A collision occurs when the closest distance of approach (the “impact parameter” <span class="math inline">\(b\)</span>) is less than the sum of the molecular radii:</p>
-<p><span class="math display">\[b &lt; (r_\mathrm{A} + r_\mathrm{B}) = d\]</span></p>
-<p>As molecule A moves through space, it sweeps out a cylindrical volume:</p>
+<p>A plot of <span class="math inline">\(\ln(k_\mathrm{theory}/T)\)</span> versus <span class="math inline">\(1/T\)</span> therefore gives:</p>
 <ul>
-<li>Radius = <span class="math inline">\(d = (r_\mathrm{A} + r_\mathrm{B})\)</span></li>
-<li>Length (per unit time) = <span class="math inline">\(v\)</span> (the relative velocity)</li>
-<li>Volume (per unit time) = <span class="math inline">\(vS = v\pi d^2\)</span></li>
+<li>Slope = <span class="math inline">\(-\Delta H^{\ddagger}/R\)</span></li>
+<li>Intercept = <span class="math inline">\(\ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R\)</span></li>
 </ul>
-<p>The collision frequency per unit volume (<span class="math inline">\(Z&#39;\)</span>) is then:</p>
-<p><span class="math display">\[Z&#39; = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}v\pi d^2\]</span></p>
-<p>where <span class="math inline">\(N_\mathrm{A}\)</span> and <span class="math inline">\(N_\mathrm{B}\)</span> are the numbers of molecules of each species in volume <span class="math inline">\(V\)</span>.</p>
+<p>From these, we can determine both <span class="math inline">\(\Delta H^{\ddagger}\)</span> and <span class="math inline">\(\Delta S^{\ddagger}\)</span> for the reaction.</p>
 </div>
-<div id="average-relative-velocity" class="section level3 hasAnchor" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> Average Relative Velocity<a href="lecture5.html#average-relative-velocity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The relative velocity between molecules follows the Maxwell-Boltzmann distribution. The average relative velocity is:</p>
-<p><span class="math display">\[\bar{v} = \left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\]</span></p>
-<p>where <span class="math inline">\(\mu\)</span> is the reduced mass:</p>
-<p><span class="math display">\[\mu = \frac{m_\mathrm{A}m_\mathrm{B}}{m_\mathrm{A} + m_\mathrm{B}}\]</span></p>
-<p>Substituting this into our expression for collision frequency:</p>
-<p><span class="math display">\[Z&#39; = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\]</span></p>
+<div id="effect-of-pressure-on-rate-coefficients" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Effect of Pressure on Rate Coefficients<a href="lecture9.html#effect-of-pressure-on-rate-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For reactions in solution or the solid state, pressure can have a significant effect on reaction rates. We can understand this by considering how pressure affects the pre-equilibrium between reactants and the activated complex:</p>
+<p><span class="math display">\[\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}\]</span></p>
+<p>The key question is whether the volume changes when reactants combine to form the activated complex. We define the volume of activation <span class="math inline">\(\Delta V^{\ddagger}\)</span> as the difference in partial molar volume between the activated complex and the reactants. Where <span class="math inline">\(\Delta V^{\ddagger}\)</span> is negative (the activated complex occupies less volume than the reactants), Le Chatelier’s principle tells us that increasing pressure will shift the pre-equilibrium towards the activated complex. Since the overall reaction rate is proportional to the concentration of activated complex,</p>
+<p><span class="math display">\[\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]\]</span></p>
+<p>this leads to an increase in reaction rate.</p>
+<p>We can develop this idea quantitatively by considering how pressure affects the Gibbs energy of activation. The enthalpy of activation depends on pressure through:</p>
+<p><span class="math display">\[\Delta H^{\ddagger} = \Delta U^{\ddagger} + p\Delta V^{\ddagger}\]</span></p>
+<p>Substituting this into our equation for the rate constant:</p>
+<p><span class="math display">\[\ln k = \ln \frac{k_\mathrm{B}T}{h} + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta U^{\ddagger} + p\Delta V^{\ddagger}}{RT}\]</span></p>
+<p>Differentiating with respect to pressure at constant temperature:</p>
+<p><span class="math display">\[\left(\frac{\partial \ln k}{\partial p}\right)_T = -\frac{\Delta V^{\ddagger}}{RT}\]</span></p>
+<p>This tells us that plotting <span class="math inline">\(\ln k\)</span> versus pressure gives a straight line with slope <span class="math inline">\(-\Delta V^{\ddagger}/RT\)</span>. The volume of activation can therefore be determined from experimental measurements of how reaction rates vary with pressure:</p>
+<p><span class="math display">\[\Delta V^{\ddagger} = -RT\left(\frac{\partial \ln k}{\partial p}\right)_T\]</span></p>
+<p>As an example, consider the decomposition of dibutyl peroxide:</p>
+<p><span class="math display">\[[(\mathrm{CH}_3)_3\mathrm{CCO}_2]_2 \longrightarrow 2(\mathrm{CH}_3)_3\mathrm{CO}^\bullet\]</span></p>
+<p>Experimental data shows <span class="math inline">\(\Delta V^{\ddagger} = (5.24 \pm 0.24) \times 10^{-6}~\mathrm{m^3~mol^{-1}}\)</span>. This positive volume of activation tells us that in the transition state the O–O bond has started to break but no new bonds have yet formed, requiring a larger volume than the initial reactant.</p>
 </div>
-</div>
-<div id="from-collisions-to-reaction-rates" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> From Collisions to Reaction Rates<a href="lecture5.html#from-collisions-to-reaction-rates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="successful-collisions" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> Successful Collisions<a href="lecture5.html#successful-collisions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Not all collisions lead to reaction. We assume a collision is successful if the relative kinetic energy exceeds a threshold activation energy <span class="math inline">\(E_\mathrm{a}\)</span>. For a Maxwell-Boltzmann distribution, the fraction of collisions with sufficient energy is:</p>
-<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
-<p>This gives a total reaction rate:</p>
-<p><span class="math display">\[\nu = Z&#39; \times P(E \geq E_\mathrm{a}) = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
-<p>This can be written in the familiar form of a second-order rate law:</p>
-<p><span class="math display">\[\begin{equation}
-\nu=k[\mathrm{A}][\mathrm{B}]
-\end{equation}\]</span></p>
-<p>where</p>
-<p><span class="math display">\[\begin{equation}
-k = \pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-\end{equation}\]</span></p>
-</div>
-<div id="sec:steric-factors" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Steric Factors<a href="lecture5.html#sec:steric-factors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>When we compare the reaction rates predicted by collision theory with experimental measurements, we typically find that collision theory overestimates reaction rates, sometimes by several orders of magnitude. This discrepancy arises because our model of molecules as hard spheres is an oversimplification—successful reactions often require specific molecular orientations or more complex interactions than simple collisions.
-To account for these effects, we introduce an empirical correction factor <span class="math inline">\(P\)</span>, called the steric factor, that modifies our expression for the rate constant:
-<span class="math display" id="eq:steric-k">\[\begin{equation}
-k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-\tag{5.1}
-\end{equation}\]</span>
-The steric factor <span class="math inline">\(P\)</span> is defined as the ratio of the experimental pre-exponential factor to the theoretical value predicted by collision theory:
-<span class="math display" id="eq:steric-factor">\[\begin{equation}
-P = \frac{A_\mathrm{exp}}{A_\mathrm{th}}
-\tag{5.2}
-\end{equation}\]</span>
-Different types of reactions exhibit characteristic ranges of steric factors. Consider these examples:</p>
+<div id="kinetic-isotope-effects" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Kinetic Isotope Effects<a href="lecture9.html#kinetic-isotope-effects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many reactions show slower rates when hydrogen is substituted by deuterium. This kinetic isotope effect cannot be explained by classical theories—both isotopes have identical potential energy surfaces and would therefore be predicted to have identical reaction rates. The origin of this effect lies in quantum mechanical zero-point energy.</p>
+<p>For a simple harmonic oscillator, the allowed energy levels are given by:</p>
+<p><span class="math display">\[E_v = \left(v + \frac{1}{2}\right)\sqrt{\frac{k}{\mu}}\]</span></p>
+<p>where <span class="math inline">\(v\)</span> is the vibrational quantum number, <span class="math inline">\(k\)</span> is the force constant, and <span class="math inline">\(\mu\)</span> is the reduced mass:</p>
+<p><span class="math display">\[\mu = \frac{m_1m_2}{m_1 + m_2}\]</span></p>
+<p>For an X–H bond (where X is much heavier than H), <span class="math inline">\(\mu \approx m_\mathrm{H}\)</span>. The zero-point energy is then:</p>
+<p><span class="math display">\[E_\mathrm{ZPE} \approx \frac{1}{2}\sqrt{\frac{k}{m_\mathrm{H}}}\]</span></p>
+<p>Substituting H with D approximately doubles the reduced mass, giving:</p>
+<p><span class="math display">\[\frac{E_\mathrm{ZPE}(\mathrm{D})}{E_\mathrm{ZPE}(\mathrm{H})} \approx \frac{1}{\sqrt{2}}\]</span></p>
+<p>This difference in zero-point energy means that C–D bonds start from a lower energy than C–H bonds. If the reaction involves breaking this bond, the activation energy will be higher for the deuterated compound, leading to a slower reaction rate:</p>
+<p><span class="math display">\[\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(E_\mathrm{ZPE}(\mathrm{H})-E_\mathrm{ZPE}(\mathrm{D}))/RT}\]</span></p>
+<p>For a typical C–H stretching mode:</p>
+<ul>
+<li><span class="math inline">\(E_\mathrm{ZPE}(\mathrm{C-H}) = 18.0~\mathrm{kJ~mol^{-1}}\)</span></li>
+<li><span class="math inline">\(E_\mathrm{ZPE}(\mathrm{C-D}) = 13.2~\mathrm{kJ~mol^{-1}}\)</span></li>
+</ul>
+<p>At room temperature this predicts:</p>
+<p><span class="math display">\[\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(18.0-13.2)\times 10^3/(8.314 \times 298)} = 6.9\]</span></p>
+<p>The magnitude of the kinetic isotope effect depends on the extent to which the C–H/D bond is broken in the transition state:</p>
 <ol style="list-style-type: decimal">
-<li>For the hydrogenation of ethene: H<sub>2</sub>+C<sub>2</sub>H<sub>4</sub><span class="math inline">\(\longrightarrow\)</span>C<sub>2</sub>H<sub>6</sub>
-<span class="math inline">\(P = 1.7 \times 10^{-6}\)</span>.
-This very small steric factor reflects the strict geometric requirements for reaction—the H<sub>2</sub> molecule must approach the C=C double bond in a specific orientation for reaction to occur.</li>
-<li>For the reaction between potassium and bromine:
-K+Br<sub>2</sub><span class="math inline">\(\longrightarrow\)</span>KBr+Br
-<span class="math inline">\(P = 4.8\)</span>.
-Here the steric factor is greater than unity, indicating that reactions occur more frequently than predicted by simple collision theory. This enhanced reactivity arises from the “harpoon mechanism”, where electron transfer between K and Br<sub>2</sub> creates long-range attractive forces that effectively increase the collision cross-section.</li>
+<li>If the bond is completely broken, we expect <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} \approx 7\)</span></li>
+<li>If the bond is partially broken, we expect <span class="math inline">\(1 &lt; k_\mathrm{H}/k_\mathrm{D} &lt; 7\)</span></li>
+<li>If the bond is unaffected, we expect <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} \approx 1\)</span></li>
 </ol>
-</div>
-</div>
-<div id="sec:arrhenius-comparison" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> Relationship to the Arrhenius Equation<a href="lecture5.html#sec:arrhenius-comparison" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The rate constant derived from collision theory has a remarkably similar form to the empirical Arrhenius equation.
-Let us compare them directly:</p>
-<p>From collision theory:
-<span class="math display" id="eq:collision-k">\[\begin{equation}
-k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-\tag{5.3}
-\end{equation}\]</span></p>
-<p>The Arrhenius equation:
-<span class="math display" id="eq:arrhenius">\[\begin{equation}
-k = A_0\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-\tag{5.4}
-\end{equation}\]</span></p>
-<p>This comparison provides physical insight into the meaning of the Arrhenius parameters:</p>
-<ol style="list-style-type: decimal">
-<li>The activation energy <span class="math inline">\(E_\mathrm{a}\)</span> in the Arrhenius equation can be interpreted as the minimum relative kinetic energy that colliding molecules must possess for reaction to occur. This threshold energy is needed to overcome the potential energy barrier to reaction.</li>
-<li>The pre-exponential factor <span class="math inline">\(A_0\)</span> represents a normalized collision frequency. The collision theory expression shows that this frequency depends on:</li>
-</ol>
-<ul>
-<li>The collision cross-section (<span class="math inline">\(\pi d^2\)</span>)</li>
-<li>The average relative velocity of molecules (<span class="math inline">\(\propto \sqrt{T/\mu}\)</span>)</li>
-<li>A steric factor <span class="math inline">\(P\)</span> that accounts for orientation requirements</li>
-</ul>
-<p>Therefore, while the Arrhenius equation was originally proposed as an empirical relationship, collision theory provides a theoretical foundation for its functional form and offers molecular-level interpretations of its parameters. However, we should note that this interpretation is strictly valid only for gas-phase bimolecular reactions. For more complex reactions, particularly in solution, the physical meaning of the Arrhenius parameters becomes less clear, and we need more sophisticated theories to understand their molecular basis.</p>
-</div>
-<div id="sec:collision-limitations" class="section level2 hasAnchor" number="5.5">
-<h2><span class="header-section-number">5.5</span> Limitations of Collision Theory as a Predictive Framework<a href="lecture5.html#sec:collision-limitations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Collision theory works reasonably well for simple molecules but typically overestimates reaction rates for complex molecules.</p>
-<p>Two key limitations prevent collision theory from serving as a fully predictive framework:</p>
-<ul>
-<li>The activation energy E<span class="math inline">\(\mathrm{a}\)</span> appears as an arbitrary “threshold energy” that molecules must possess to react. While we can measure this energy experimentally, the theory provides no insight into how <span class="math inline">\(E_\mathrm{a}\)</span> varies between different reactions.</li>
-<li>While we can determine the steric factor <span class="math inline">\(P\)</span> by comparing experimental and theoretical rate constants, we have no quantitative theory to predict its value. This means we cannot predict absolute rate constants for new reactions without experimental data.</li>
-</ul>
+<p>This makes kinetic isotope effects a valuable probe of reaction mechanisms. For example, compare these two reactions:</p>
+<p><span class="math display">\[\mathrm{Ph-CH(D)-CH_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 7.8\]</span>
+<span class="math display">\[\mathrm{Ph-CH_2-CD_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 1.09\]</span></p>
+<p>The large isotope effect in the first reaction shows that the C–H bond is almost completely broken in the transition state. The negligible isotope effect in the second reaction tells us the C–H bonds are spectators—they remain essentially unchanged as the reaction proceeds.</p>
 
 </div>
 </div>
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="lecture4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lecture6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lecture8.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -388,7 +336,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bjmorgan/CH22008/main/lecture_5/lecture_05.Rmd",
+"link": "https://github.com/bjmorgan/CH22008/main/lecture_9/lecture_09.Rmd",
 "text": "Edit"
 },
 "history": {
