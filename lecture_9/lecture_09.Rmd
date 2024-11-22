@@ -1,0 +1,113 @@
+# Applications of Transition State Theory {#lecture9}
+
+In previous lectures we developed transition state theory to explain how molecular properties control reaction rates. The theory shows that reaction rates depend on both the energy barrier molecules must climb (the enthalpy of activation) and changes in molecular freedom when forming the activated complex (the entropy of activation). To test these ideas against experimental data and make quantitative predictions, we need mathematical tools that connect our theoretical framework with measurable quantities.
+
+## The Logarithmic Form of TST
+
+The Eyring equation provides our starting point for analysing experimental data:
+
+$$k_\mathrm{theory} = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}$$
+
+While this equation captures the key features of how entropy and enthalpy of activation determine reaction rates, its exponential form makes it awkward to use with experimental data. We can transform it into a more practical linear form through a simple mathematical manipulation.
+
+First, dividing both sides by temperature $T$:
+
+$$\frac{k_\mathrm{theory}}{T} = \frac{k_\mathrm{B}}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}$$
+
+Taking the natural logarithm gives:
+
+$$\ln\left(\frac{k_\mathrm{theory}}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}$$
+
+This has the form of a straight line $y = c + mx$ where:
+
+- $y = \ln(k_\mathrm{theory}/T)$
+- $x = 1/T$
+- $c = \ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R$
+- $m = -\Delta H^{\ddagger}/R$
+
+A plot of $\ln(k_\mathrm{theory}/T)$ versus $1/T$ therefore gives:
+
+- Slope = $-\Delta H^{\ddagger}/R$
+- Intercept = $\ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R$
+
+From these, we can determine both $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$ for the reaction.
+
+## Effect of Pressure on Rate Coefficients
+
+For reactions in solution or the solid state, pressure can have a significant effect on reaction rates. We can understand this by considering how pressure affects the pre-equilibrium between reactants and the activated complex:
+
+$$\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}$$
+
+The key question is whether the volume changes when reactants combine to form the activated complex. We define the volume of activation $\Delta V^{\ddagger}$ as the difference in partial molar volume between the activated complex and the reactants. Where $\Delta V^{\ddagger}$ is negative (the activated complex occupies less volume than the reactants), Le Chatelier's principle tells us that increasing pressure will shift the pre-equilibrium towards the activated complex. Since the overall reaction rate is proportional to the concentration of activated complex,
+
+$$\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]$$
+
+this leads to an increase in reaction rate.
+
+We can develop this idea quantitatively by considering how pressure affects the Gibbs energy of activation. The enthalpy of activation depends on pressure through:
+
+$$\Delta H^{\ddagger} = \Delta U^{\ddagger} + p\Delta V^{\ddagger}$$
+
+Substituting this into our equation for the rate constant:
+
+$$\ln k = \ln \frac{k_\mathrm{B}T}{h} + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta U^{\ddagger} + p\Delta V^{\ddagger}}{RT}$$
+
+Differentiating with respect to pressure at constant temperature:
+
+$$\left(\frac{\partial \ln k}{\partial p}\right)_T = -\frac{\Delta V^{\ddagger}}{RT}$$
+
+This tells us that plotting $\ln k$ versus pressure gives a straight line with slope $-\Delta V^{\ddagger}/RT$. The volume of activation can therefore be determined from experimental measurements of how reaction rates vary with pressure:
+
+$$\Delta V^{\ddagger} = -RT\left(\frac{\partial \ln k}{\partial p}\right)_T$$
+
+As an example, consider the decomposition of dibutyl peroxide:
+
+$$[(\mathrm{CH}_3)_3\mathrm{CCO}_2]_2 \longrightarrow 2(\mathrm{CH}_3)_3\mathrm{CO}^\bullet$$
+
+Experimental data shows $\Delta V^{\ddagger} = (5.24 \pm 0.24) \times 10^{-6}~\mathrm{m^3~mol^{-1}}$. This positive volume of activation tells us that in the transition state the O–O bond has started to break but no new bonds have yet formed, requiring a larger volume than the initial reactant.
+
+## Kinetic Isotope Effects
+
+Many reactions show slower rates when hydrogen is substituted by deuterium. This kinetic isotope effect cannot be explained by classical theories—both isotopes have identical potential energy surfaces and would therefore be predicted to have identical reaction rates. The origin of this effect lies in quantum mechanical zero-point energy.
+
+For a simple harmonic oscillator, the allowed energy levels are given by:
+
+$$E_v = \left(v + \frac{1}{2}\right)\sqrt{\frac{k}{\mu}}$$
+
+where $v$ is the vibrational quantum number, $k$ is the force constant, and $\mu$ is the reduced mass:
+
+$$\mu = \frac{m_1m_2}{m_1 + m_2}$$
+
+For an X–H bond (where X is much heavier than H), $\mu \approx m_\mathrm{H}$. The zero-point energy is then:
+
+$$E_\mathrm{ZPE} \approx \frac{1}{2}\sqrt{\frac{k}{m_\mathrm{H}}}$$
+
+Substituting H with D approximately doubles the reduced mass, giving:
+
+$$\frac{E_\mathrm{ZPE}(\mathrm{D})}{E_\mathrm{ZPE}(\mathrm{H})} \approx \frac{1}{\sqrt{2}}$$
+
+This difference in zero-point energy means that C–D bonds start from a lower energy than C–H bonds. If the reaction involves breaking this bond, the activation energy will be higher for the deuterated compound, leading to a slower reaction rate:
+
+$$\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(E_\mathrm{ZPE}(\mathrm{H})-E_\mathrm{ZPE}(\mathrm{D}))/RT}$$
+
+For a typical C–H stretching mode:
+
+- $E_\mathrm{ZPE}(\mathrm{C-H}) = 18.0~\mathrm{kJ~mol^{-1}}$
+- $E_\mathrm{ZPE}(\mathrm{C-D}) = 13.2~\mathrm{kJ~mol^{-1}}$
+
+At room temperature this predicts:
+
+$$\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(18.0-13.2)\times 10^3/(8.314 \times 298)} = 6.9$$
+
+The magnitude of the kinetic isotope effect depends on the extent to which the C–H/D bond is broken in the transition state:
+
+1. If the bond is completely broken, we expect $k_\mathrm{H}/k_\mathrm{D} \approx 7$
+2. If the bond is partially broken, we expect $1 < k_\mathrm{H}/k_\mathrm{D} < 7$
+3. If the bond is unaffected, we expect $k_\mathrm{H}/k_\mathrm{D} \approx 1$
+
+This makes kinetic isotope effects a valuable probe of reaction mechanisms. For example, compare these two reactions:
+
+$$\mathrm{Ph-CH(D)-CH_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 7.8$$
+$$\mathrm{Ph-CH_2-CD_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 1.09$$
+
+The large isotope effect in the first reaction shows that the C–H bond is almost completely broken in the transition state. The negligible isotope effect in the second reaction tells us the C–H bonds are spectators—they remain essentially unchanged as the reaction proceeds.

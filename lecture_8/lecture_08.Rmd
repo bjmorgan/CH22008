@@ -64,150 +64,163 @@ The simplest case to analyse is a reaction between two atoms, A + B. Initially, 
 - Three translational degrees of freedom for atom B
 - No rotational or vibrational modes
 
-Formation of the activated complex [A$\cdots$B]$^\ddagger$ results in:
+When these atoms combine to form the activated complex [A⋯B]$^\ddagger$, this transforms into:
 
-- Three translational degrees of freedom (complex motion)
-- Two rotational degrees of freedom
-- One vibrational degree of freedom (motion through the transition state)
+- Three translational degrees of freedom (describing motion of the complex as a whole)
+- Two rotational degrees of freedom (the complex can rotate about two axes)
+- One vibrational degree of freedom (corresponding to motion through the transition state)
 
-This transformation leads to specific entropy changes:
+From these changes in molecular freedom, we can calculate the entropy changes systematically. For translational motion, we lose three degrees of freedom when forming the complex, giving:
 
 $$\Delta S^\ddagger_\mathrm{trans} = -3 \times 195 = -585~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
+
+The activated complex gains two rotational degrees of freedom:
+
 $$\Delta S^\ddagger_\mathrm{rot} = +2 \times 20 = +40~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
+
+The vibration through the transition state is already accounted for in our $k^\ddagger$ term, so:
+
 $$\Delta S^\ddagger_\mathrm{vib} = 0 \times 5 = 0~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
 
-We can now calculate the pre-exponential factor explicitly:
+With these entropy changes calculated, we can now determine the pre-exponential factor:
 
 $$A = 10^{13} \times \mathrm{e}^{-3 \times 195/8.314} \times \mathrm{e}^{2 \times 20/8.314} \times \mathrm{e}^{0 \times 5/8.314} \times (N_\mathrm{A} \times 10^3)~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
 
 $$= 2 \times 10^{11}~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
 
-The factor of $N_\mathrm{A}$ (Avogadro's number) is needed to convert from a per-molecule basis to a per-mole basis, since our rate constant needs to work with concentrations in mol dm$^{-3}$. The factor of $10^3$ converts volumes from m$^3$ to dm$^3$, ensuring our final rate constant has the correct units of dm$^3$ mol$^{-1}$ s$^{-1}$.
+The factor of $N_\mathrm{A}$ (Avogadro's number) converts from a per-molecule basis to a per-mole basis, since our rate constant needs to work with concentrations in mol dm$^{-3}$. The factor of $10^3$ converts volumes from m$^3$ to dm$^3$, ensuring our final rate constant has the correct units of dm$^3$ mol$^{-1}$ s$^{-1}$.
 
 ### Polyatomic Systems
 
-For a reaction between a diatomic molecule and a four-atom molecule, the analysis becomes more complex. Consider the initial degrees of freedom:
+For a reaction between a diatomic molecule and a four-atom molecule, we must account for additional molecular freedom in both reactants and the activated complex. Let us examine the initial degrees of freedom systematically.
 
-Diatomic molecule ($N = 2$):
+For the diatomic molecule ($N = 2$), being linear, we have:
 
-- Three translational modes
-- Two rotational modes
-- One vibrational mode ($3N - 5 = 1$ for linear molecule)
+- Three translational modes (motion through space)
+- Two rotational modes (rotation about axes perpendicular to the bond)
+- One vibrational mode ($3N - 5 = 1$ for a linear molecule)
 
-Four-atom molecule ($N = 4$):
+The four-atom molecule ($N = 4$), being non-linear, possesses:
 
-- Three translational modes
-- Three rotational modes (non-linear molecule)
-- Six vibrational modes ($3N - 6 = 6$ for non-linear molecule)
-
-The six-atom activated complex ($N = 6$) possesses:
 - Three translational modes
 - Three rotational modes
-- Eleven vibrational modes ($3N - 7$ for non-linear molecule, as one vibrational mode corresponds to motion along the reaction coordinate and is accounted for in $k^\ddagger$)
+- Six vibrational modes ($3N - 6 = 6$ for a non-linear molecule)
 
-Let us calculate the entropy changes systematically:
+When these molecules combine, they form a six-atom activated complex ($N = 6$) with:
+
+- Three translational modes
+- Three rotational modes (non-linear complex)
+- Eleven vibrational modes ($3N - 7$ for a non-linear activated complex, as one vibrational mode corresponds to motion along the reaction coordinate)
+
+From these molecular properties, we can determine the entropy changes systematically.
 
 For translational motion:
 
 - Initially: six independent translational modes (three per molecule)
-- Final: three translational modes in the complex
+- Finally: three translational modes in the complex
 - Net loss: three translational degrees of freedom
-- $\Delta S^\ddagger_\mathrm{trans} = -3 \times 195 = -585$ J K$^{-1}$ mol$^{-1}$
+$$\Delta S^\ddagger_\mathrm{trans} = -3 \times 195 = -585~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
 
 For rotational motion:
 
 - Initially: five rotational modes (two from diatomic + three from four-atom molecule)
-- Final: three rotational modes in the complex
+- Finally: three rotational modes in the complex
 - Net loss: two rotational degrees of freedom
-- $\Delta S^\ddagger_\mathrm{rot} = -2 \times 20 = -40$ J K$^{-1}$ mol$^{-1}$
+$$\Delta S^\ddagger_\mathrm{rot} = -2 \times 20 = -40~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
 
 For vibrational motion:
 
 - Initially: seven vibrational modes (one from diatomic + six from four-atom molecule)
-- Final: eleven vibrational modes in the complex
+- Finally: eleven vibrational modes in the complex
 - Net gain: four vibrational modes
-- $\Delta S^\ddagger_\mathrm{vib} = +5 \times 4 = +20$ J K$^{-1}$ mol$^{-1}$
+$$\Delta S^\ddagger_\mathrm{vib} = +4 \times 5 = +20~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
 
-We can now calculate the pre-exponential factor explicitly:
+With these entropy changes determined, we can calculate the pre-exponential factor:
 
 $$A = 10^{13} \times \mathrm{e}^{-3 \times 195/8.314} \times \mathrm{e}^{-2 \times 20/8.314} \times \mathrm{e}^{4 \times 5/8.314} \times (N_\mathrm{A} \times 10^3)~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
 
 $$= 1 \times 10^8~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
 
-As before, the $N_\mathrm{A}$ factor converts from per-molecule to per-mole basis, while the $10^3$ factor handles the conversion from m$^3$ to dm$^3$ units.
+As in our atomic example, the factor of $N_\mathrm{A}$ converts to a per-mole basis, while the factor of $10^3$ handles the conversion from m$^3$ to dm$^3$ units.
+
+This more complex example reveals a key feature of molecular reactions: as molecular complexity increases, we typically observe larger decreases in molecular freedom when forming the activated complex. This systematically leads to more negative values of $\Delta S^\ddagger$ and correspondingly smaller pre-exponential factors.
 
 ## Limitations in Pre-exponential Factor Estimation
 
-The estimation of pre-exponential factors using molecular degrees of freedom, while powerful, involves several important approximations and limitations that must be carefully considered. Understanding these limitations helps us recognise when our predictions are likely to be reliable and when we need more sophisticated approaches.
+While our molecular freedom approach successfully predicts systematic trends in reaction rates, several important approximations underpin these calculations. Understanding these limitations helps us recognise both the power and constraints of our theoretical framework.
 
 ### Statistical Entropy Approximations
 
-Our method employs characteristic entropy values for different types of molecular motion: approximately 195 J K$^{-1}$ mol$^{-1}$ for translational modes, 20 J K$^{-1}$ mol$^{-1}$ for rotational modes, and 5 J K$^{-1}$ mol$^{-1}$ for vibrational modes. These values represent statistical averages derived from typical molecular behaviour, but they do not account for the specific properties of individual molecules.
+Our calculations employ characteristic entropy values for different types of molecular motion:
 
-More accurate predictions require detailed quantum mechanical calculations of molecular energy levels. These calculations can determine precise values for $S^\ddagger_\mathrm{dof}$ based on the actual energy spacing between quantum states for each degree of freedom. While such calculations are more rigorous, they also require significantly more computational effort. For many practical purposes, our simpler approach using characteristic values provides useful insights into relative reaction rates and trends in reactivity.
+- Translational motion: 195 J K$^{-1}$ mol$^{-1}$
+- Rotational modes: 20 J K$^{-1}$ mol$^{-1}$
+- Vibrational modes: 5 J K$^{-1}$ mol$^{-1}$
+
+These values represent statistical averages derived from typical molecular behaviour. For more precise predictions, we require detailed quantum mechanical calculations of molecular energy levels, which can determine specific values for $S^\ddagger_\mathrm{dof}$ based on the actual energy spacing between quantum states. While such calculations provide greater accuracy, our simpler approach using characteristic values remains valuable for understanding trends in reactivity.
 
 ### Effects of Molecular Symmetry
 
-Molecular symmetry introduces subtle but important effects that our simple counting of degrees of freedom does not capture. A particularly instructive example involves comparing the reactions:
+Molecular symmetry introduces additional complexity beyond simple counting of degrees of freedom. Consider these parallel reactions:
 
 $$\mathrm{CH}_4 + \mathrm{Br}^\bullet \longrightarrow \mathrm{HBr} + \mathrm{CH}_3^\bullet$$
 $$\mathrm{CD}_3\mathrm{H} + \mathrm{Br}^\bullet \longrightarrow \mathrm{HBr} + \mathrm{CD}_3^\bullet$$
 
-At first glance, these reactions appear very similar. Both involve breaking a C–H bond through abstraction by a bromine radical. Our molecular freedom counting method predicts identical $A$-factors for both reactions, since the numbers and types of degrees of freedom appear the same. However, experimental measurements reveal that the CH~4~ reaction proceeds approximately four times faster than the CD~3~H reaction.
+Our previous analysis, based purely on counting molecular degrees of freedom, predicts identical pre-exponential factors for both reactions. However, experimental measurements reveal that the CH~4~ reaction proceeds approximately four times faster than the CD~3~H reaction.
 
-This difference arises from molecular symmetry. In CH~4~, all four hydrogen atoms are equivalent—the bromine radical can abstract any of the four hydrogens to give the same product. In CD~3~H, only one hydrogen is available for abstraction. This symmetry difference contributes an additional term to the entropy of activation, called the configurational entropy:
+This difference arises from molecular symmetry. In CH~4~, all four hydrogen atoms are equivalent—the bromine radical can abstract any hydrogen to form the same product. In CD~3~H, only one hydrogen is available for abstraction. We account for this effect by introducing a statistical factor, $l$, into our transition state theory expression:
 
-- For CH~4~: $\Delta S^\ddagger_\mathrm{conf} = R\ln 4$
-- For CD~3~H: $\Delta S^\ddagger_\mathrm{conf} = R\ln 1 = 0$
+$$A = l\frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^\ddagger/RT}$$
 
-The ratio of pre-exponential factors therefore includes this symmetry contribution:
+Here $l$ represents the number of different chemically plausible products that can be formed when identical atoms in the reactant molecules are labeled. For our example reactions:
 
-$$\frac{A_\mathrm{CH_4}}{A_\mathrm{CD_3H}} = \mathrm{e}^{R\ln 4/R} = 4$$
+- CH~4~ reaction: $l = 4$ (four equivalent hydrogens)
+- CD~3~H reaction: $l = 1$ (single abstractable hydrogen)
 
 ### Internal Molecular Motion
 
-The treatment of internal molecular motions reveals additional complexity in our theoretical framework. These motions often exhibit behaviour intermediate between pure rotation and pure vibration, making their entropic contributions particularly challenging to estimate. The molecule ethane (C~2~H~6~) provides an excellent illustration of this complexity.
+The treatment of internal molecular motions reveals additional subtlety in our theoretical framework. Consider the ethane molecule (C~2~H~6~), which exhibits two distinct types of motion around its C–C bond:
 
-Consider the two distinct types of motion possible around the C–C bond in ethane:
+1. C–C stretching vibration:
+   - Involves direct compression and extension of the C–C bond
+   - Requires significant energy
+   - Shows widely spaced quantum energy levels
+   - Makes small contributions to vibrational entropy
 
-1. The C–C stretching vibration involves direct compression and extension of the strong carbon-carbon single bond. This represents a true vibrational mode:
-  - The motion directly distorts the strong C–C bond
-  - This requires significant energy
-  - The resulting quantum energy levels are widely spaced
-  - Consequently, this mode makes only a small contribution to the vibrational entropy
+2. C–C torsional motion:
+   - Involves rotation of CH~3~ groups about the C–C axis
+   - Requires much less energy
+   - Shows more closely spaced energy levels
+   - Makes larger contributions to entropy
 
-2. The C–C torsional motion involves rotation of one CH~3~ group relative to the other around the C–C bond axis:
-  - This motion does not significantly distort the C–C bond length
-  - The energy barrier is much lower than for the stretching mode
-  - The quantum energy levels lie much closer together
-  - This results in a larger contribution to the entropy
+When such molecules form activated complexes, two scenarios commonly arise:
 
-When such molecules form activated complexes, the effect on $\Delta S^\ddagger$ depends strongly on how these internal motions change. Two scenarios commonly arise:
+1. Restricted internal rotation:
+   - Occurs when specific molecular alignments are required
+   - Reduces freedom of internal motion
+   - Produces more negative $\Delta S^\ddagger$ values
+   - Leads to lower pre-exponential factors than predicted by simple counting
 
-1. If forming the transition state restricts internal rotation (for example, by requiring specific molecular alignments), we observe:
-  - A decrease in the freedom of internal motion
-  - A corresponding negative contribution to $\Delta S^\ddagger$
-  - Lower pre-exponential factors than predicted by simple counting
-
-2. If the transition state involves bond lengthening that makes internal rotation easier:
-  - The freedom of internal motion increases
-  - This provides a positive contribution to $\Delta S^\ddagger$
-  - The pre-exponential factors exceed simple counting predictions
+2. Enhanced internal rotation:
+   - Occurs when bond lengthening makes rotation easier
+   - Increases freedom of internal motion
+   - Produces less negative $\Delta S^\ddagger$ values
+   - Leads to higher pre-exponential factors than predicted
 
 ## Applications and Predictive Power
 
 Despite these limitations, our molecular freedom approach successfully explains systematic trends in experimental pre-exponential factors. Consider these representative reactions:
 
 $$\mathrm{Br}^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{HBr} + \mathrm{H}^\bullet \qquad A = 3 \times 10^{10}~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
-$$\mathrm{CD}_3^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{D_3CH} + \mathrm{H}^\bullet \qquad A = 3 \times 10^8~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
+$$\mathrm{CD}_3^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{CD}_3\mathrm{H} + \mathrm{H}^\bullet \qquad A = 3 \times 10^8~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
 $$\text{Diels-Alder cycloaddition} \qquad A = 1 \times 10^7~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
 
-The systematic decrease in pre-exponential factors reflects three key factors:
+The systematic decrease in pre-exponential factors reflects three key features:
 
 1. Increasing molecular complexity in the reactants
 2. Greater loss of molecular freedom in forming the activated complex
-3. Increasingly negative values of $\Delta S^\ddagger_\mathrm{rot+vib}$: +15, -20, and -35 kJ mol$^{-1}$ respectively
+3. Increasingly negative values of $\Delta S^\ddagger_\mathrm{rot+vib}$: +15, -20, and -35 J K$^{-1}$ mol$^{-1}$ respectively
 
 Our estimation method correctly predicts both the magnitude and ordering of these pre-exponential factors, giving values of $4 \times 10^9$, $1 \times 10^8$, and $2 \times 10^7~\mathrm{dm^3~mol^{-1}~s^{-1}}$ respectively.
 
-The Diels-Alder cycloaddition presents a particularly interesting case. Our predictions typically overestimate the experimental pre-exponential factors for these reactions. Careful analysis reveals why: the transition state requires precise alignment of the diene and alkene components, severely restricting rotation around bonds that were previously relatively free. This additional constraint on molecular motion gives a more negative $\Delta S^\ddagger$ than our simple counting method predicts, explaining the lower experimental values.
+The Diels-Alder cycloaddition provides particularly valuable insight into the limitations of our simple counting approach. Our predictions typically overestimate the experimental pre-exponential factors for these reactions because the transition state requires precise alignment of the diene and dienophile components. This geometric constraint introduces additional restrictions on molecular motion beyond those captured by simple counting of degrees of freedom, leading to more negative $\Delta S^\ddagger$ values than predicted.

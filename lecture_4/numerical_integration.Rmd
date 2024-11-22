@@ -105,42 +105,12 @@ We can improve accuracy by:
 - Using a smaller time step (at the cost of more computational steps)
 - Using more sophisticated algorithms (e.g., Runge-Kutta methods) that better approximate the changing reaction rates
 
-## Practical Implementation
+## The Role of Numerical Integration in Chemical Kinetics
 
-The basic method described above is easily implemented in Python:
+Numerical integration is an essential tool for modern studies of complex reaction mechanisms. The methods outlined above can handle mechanisms of arbitrary complexity, from simple decomposition reactions through to complex biochemical networks. Where analytical solutions become intractable, numerical methods remain practical and reliable.
 
-```python
-def dA_by_dt(k1, A):
-    return -k1 * A
+The accuracy of numerical solutions depends primarily on the chosen time step. While the simple Euler method presented here illustrates the key principles, modern numerical integration routines use more sophisticated algorithms. These "adaptive" methods automatically adjust their time steps based on how rapidly concentrations change. Small time steps maintain accuracy during periods of rapid change, while larger steps efficiently handle slower phases of the reaction. This automatic adaptation makes numerical integration both more reliable and more computationally efficient than fixed-step methods.
 
-def dB_by_dt(k1, A):
-    return +k1 * A
+The real power of numerical integration emerges when comparing theoretical predictions with experimental data. Given a proposed mechanism, we can calculate concentration profiles and compare these directly with measurements. Agreement between calculation and experiment supports the proposed mechanism, while significant discrepancies suggest the mechanism needs revision. This approach proves especially valuable for complex mechanisms where analytical solutions cannot guide our intuition about expected behavior.
 
-# Initial conditions and parameters
-A0, B0 = 1.0, 0.0  # Initial concentrations (M)
-k1 = 1.0           # Rate constant (s⁻¹)
-dt = 0.1           # Time step (s)
-
-# Arrays to store results
-A_stored = [A0]
-B_stored = [B0]
-timesteps = [0]
-
-# Main integration loop
-t = 0
-A = A0
-B = B0
-
-simulation_time = 5.0
-
-while t < simulation_time:
-    dA = dA_by_dt(k1, A) * dt
-    dB = dB_by_dt(k1, A) * dt
-
-    A += dA
-    B += dB
-
-    A_stored.append(A)
-    B_stored.append(B)
-    t += dt
-```
+Beyond testing mechanisms, numerical methods help extract rate constants from experimental data and explore how changing conditions affects reaction outcomes. The principles developed in this chapter underpin much of modern chemical kinetics, complementing the analytical methods examined in earlier lectures.
