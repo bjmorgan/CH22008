@@ -44,7 +44,7 @@ knitr::include_graphics("lecture_1/figures/consecutive_reactions.png")
 
 The kinetics of consecutive reactions can be simplified when one step is much slower than the other. This slower step becomes rate-determining for the overall reaction.
 
-#### Case 1: k₁ << k₂
+#### Case 1: $k_1 \ll k_2$
 When the first step is much slower than the second:
 
 - B is consumed almost as soon as it is formed
@@ -53,7 +53,7 @@ When the first step is much slower than the second:
 
 $$[\mathrm{C}] \approx [\mathrm{A}]_0(1-\mathrm{e}^{-k_1t})$$
 
-#### Case 2: k₁ >> k₂
+#### Case 2: $k_1 \gg k_2$
 When the first step is much faster than the second:
 
 - A is rapidly converted to B

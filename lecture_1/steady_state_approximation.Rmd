@@ -20,11 +20,11 @@ The rate equations are:
 \frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} &= k_2[\mathrm{B}]
 \end{align}
 
-When k₂ >> k₁, B is consumed much faster than it is formed, and we can apply the steady-state approximation:
+When $k_2 \gg k_1$, B is consumed much faster than it is formed, and we can apply the steady-state approximation:
 
 $$\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}] - k_2[\mathrm{B}] \approx 0$$
 
-This allows us to solve for [B]:
+This allows us to solve for $[\mathrm{B}]$:
 
 $$[\mathrm{B}] \approx \frac{k_1}{k_2}[\mathrm{A}]$$
 
@@ -32,7 +32,7 @@ Substituting this expression into our rate equation for C:
 
 $$\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = k_2[\mathrm{B}] = k_1[\mathrm{A}]$$
 
-From conservation of mass, [A]₀ = [A] + [B] + [C]. Under the condition k₂ >> k₁, the concentration of B remains small, so [A]₀ ≈ [A] + [C]. Therefore:
+From conservation of mass, $[\mathrm{A}]_0 = [\mathrm{A}] + [\mathrm{B}] + [\mathrm{C}]$. Under the condition $k_2 \gg k_1$, the concentration of B remains small, so $[\mathrm{A}]_0 ≈ [\mathrm{A}] + [\mathrm{C}]$. Therefore:
 
 $$\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = k_1[\mathrm{A}] = k_1([A]_0 - [C])$$
 
@@ -40,7 +40,7 @@ This first-order differential equation can be directly integrated to give:
 
 $$[\mathrm{C}] = [\mathrm{A}]_0(1-\mathrm{e}^{-k_1t})$$
 
-This is the same result we obtained in our analysis of consecutive reactions in the limit where k₁ << k₂.
+This is the same result we obtained in our analysis of consecutive reactions in the limit where $k_1 \ll k_2$.
 
 ### Validity of the Steady-State Approximation
 
