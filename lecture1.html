@@ -500,8 +500,8 @@ Figure 1.6: Concentration profiles for a consecutive reaction A → B → C. The
 <div id="limiting-cases-and-the-rate-determining-step" class="section level3 hasAnchor" number="1.8.3">
 <h3><span class="header-section-number">1.8.3</span> Limiting Cases and the Rate-Determining Step<a href="lecture1.html#limiting-cases-and-the-rate-determining-step" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The kinetics of consecutive reactions can be simplified when one step is much slower than the other. This slower step becomes rate-determining for the overall reaction.</p>
-<div id="case-1-k₁-k₂" class="section level4 hasAnchor" number="1.8.3.1">
-<h4><span class="header-section-number">1.8.3.1</span> Case 1: k₁ &lt;&lt; k₂<a href="lecture1.html#case-1-k₁-k₂" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="case-1-k_1-ll-k_2" class="section level4 hasAnchor" number="1.8.3.1">
+<h4><span class="header-section-number">1.8.3.1</span> Case 1: <span class="math inline">\(k_1 \ll k_2\)</span><a href="lecture1.html#case-1-k_1-ll-k_2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When the first step is much slower than the second:</p>
 <ul>
 <li>B is consumed almost as soon as it is formed</li>
@@ -510,8 +510,8 @@ Figure 1.6: Concentration profiles for a consecutive reaction A → B → C. The
 </ul>
 <p><span class="math display">\[[\mathrm{C}] \approx [\mathrm{A}]_0(1-\mathrm{e}^{-k_1t})\]</span></p>
 </div>
-<div id="case-2-k₁-k₂" class="section level4 hasAnchor" number="1.8.3.2">
-<h4><span class="header-section-number">1.8.3.2</span> Case 2: k₁ &gt;&gt; k₂<a href="lecture1.html#case-2-k₁-k₂" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="case-2-k_1-gg-k_2" class="section level4 hasAnchor" number="1.8.3.2">
+<h4><span class="header-section-number">1.8.3.2</span> Case 2: <span class="math inline">\(k_1 \gg k_2\)</span><a href="lecture1.html#case-2-k_1-gg-k_2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>When the first step is much faster than the second:</p>
 <ul>
 <li>A is rapidly converted to B</li>
@@ -545,17 +545,17 @@ Figure 1.7: Concentration profiles for consecutive reactions in limiting cases. 
 \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} &amp;= k_1[\mathrm{A}] - k_2[\mathrm{B}] \\
 \frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} &amp;= k_2[\mathrm{B}]
 \end{align}\]</span></p>
-<p>When k₂ &gt;&gt; k₁, B is consumed much faster than it is formed, and we can apply the steady-state approximation:</p>
+<p>When <span class="math inline">\(k_2 \gg k_1\)</span>, B is consumed much faster than it is formed, and we can apply the steady-state approximation:</p>
 <p><span class="math display">\[\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}] - k_2[\mathrm{B}] \approx 0\]</span></p>
-<p>This allows us to solve for [B]:</p>
+<p>This allows us to solve for <span class="math inline">\([\mathrm{B}]\)</span>:</p>
 <p><span class="math display">\[[\mathrm{B}] \approx \frac{k_1}{k_2}[\mathrm{A}]\]</span></p>
 <p>Substituting this expression into our rate equation for C:</p>
 <p><span class="math display">\[\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = k_2[\mathrm{B}] = k_1[\mathrm{A}]\]</span></p>
-<p>From conservation of mass, [A]₀ = [A] + [B] + [C]. Under the condition k₂ &gt;&gt; k₁, the concentration of B remains small, so [A]₀ ≈ [A] + [C]. Therefore:</p>
+<p>From conservation of mass, <span class="math inline">\([\mathrm{A}]_0 = [\mathrm{A}] + [\mathrm{B}] + [\mathrm{C}]\)</span>. Under the condition <span class="math inline">\(k_2 \gg k_1\)</span>, the concentration of B remains small, so <span class="math inline">\([\mathrm{A}]_0 ≈ [\mathrm{A}] + [\mathrm{C}]\)</span>. Therefore:</p>
 <p><span class="math display">\[\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = k_1[\mathrm{A}] = k_1([A]_0 - [C])\]</span></p>
 <p>This first-order differential equation can be directly integrated to give:</p>
 <p><span class="math display">\[[\mathrm{C}] = [\mathrm{A}]_0(1-\mathrm{e}^{-k_1t})\]</span></p>
-<p>This is the same result we obtained in our analysis of consecutive reactions in the limit where k₁ &lt;&lt; k₂.</p>
+<p>This is the same result we obtained in our analysis of consecutive reactions in the limit where <span class="math inline">\(k_1 \ll k_2\)</span>.</p>
 </div>
 <div id="validity-of-the-steady-state-approximation" class="section level3 hasAnchor" number="1.9.2">
 <h3><span class="header-section-number">1.9.2</span> Validity of the Steady-State Approximation<a href="lecture1.html#validity-of-the-steady-state-approximation" class="anchor-section" aria-label="Anchor link to header"></a></h3>

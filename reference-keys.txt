@@ -55,8 +55,8 @@ consecutive-reactions
 rate-equations
 integrated-rate-laws
 limiting-cases-and-the-rate-determining-step
-case-1-k₁-k₂
-case-2-k₁-k₂
+case-1-k_1-ll-k_2
+case-2-k_1-gg-k_2
 the-steady-state-approximation
 basic-principles
 validity-of-the-steady-state-approximation
