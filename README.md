@@ -1,13 +1,6 @@
-Welcome! 
+# CH22008 Advanced Kinetics
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
+This is the source code for the bookdown book of lecture notes to accompany the CH22008 Advanced Kinetics course at the University of Bath.
 
-This template provides a skeleton file structure that you can edit to create your book. 
+https://bjmorgan.github.io/CH22008/index.html
 
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
-
-Additional resources:
-
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
-
-The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown
