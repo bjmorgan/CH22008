@@ -11,6 +11,8 @@ eq:secondorderdiff
 fig:fig-second-order-example
 eq:relativerates
 eq:secondorderdiff-alt
+fig:fig-consecutive-reactions
+fig:fig-consecutive-limiting
 fig:fig-reaction-coordinate-diagram
 eq:first-order
 eq:first-order-int
@@ -49,6 +51,15 @@ from-mechanisms-to-rate-laws
 exact-solutions
 approximate-analytical-solutions
 numerical-integration
+consecutive-reactions
+rate-equations
+integrated-rate-laws
+limiting-cases-and-the-rate-determining-step
+case-1-k₁-k₂
+case-2-k₁-k₂
+the-steady-state-approximation
+basic-principles
+validity-of-the-steady-state-approximation
 lecture2
 introduction
 simple-first-order-parallel-reactions
@@ -112,6 +123,7 @@ effects-of-molecular-symmetry
 internal-molecular-motion
 applications-and-predictive-power
 lecture9
-the-logarithmic-form-of-tst
+the-logarithmic-form-of-the-eyring-equation
 effect-of-pressure-on-rate-coefficients
 kinetic-isotope-effects
+integrating-factor

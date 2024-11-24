@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2024-11-22" />
+<meta name="date" content="2024-11-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="lecture8.html"/>
-
+<link rel="next" href="integrating-factor.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -98,6 +98,17 @@
 <li class="chapter" data-level="1.7.1" data-path="lecture1.html"><a href="lecture1.html#exact-solutions"><i class="fa fa-check"></i><b>1.7.1</b> Exact Solutions</a></li>
 <li class="chapter" data-level="1.7.2" data-path="lecture1.html"><a href="lecture1.html#approximate-analytical-solutions"><i class="fa fa-check"></i><b>1.7.2</b> Approximate Analytical Solutions</a></li>
 <li class="chapter" data-level="1.7.3" data-path="lecture1.html"><a href="lecture1.html#numerical-integration"><i class="fa fa-check"></i><b>1.7.3</b> Numerical Integration</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="lecture1.html"><a href="lecture1.html#consecutive-reactions"><i class="fa fa-check"></i><b>1.8</b> Consecutive Reactions</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="lecture1.html"><a href="lecture1.html#rate-equations"><i class="fa fa-check"></i><b>1.8.1</b> Rate Equations</a></li>
+<li class="chapter" data-level="1.8.2" data-path="lecture1.html"><a href="lecture1.html#integrated-rate-laws"><i class="fa fa-check"></i><b>1.8.2</b> Integrated Rate Laws</a></li>
+<li class="chapter" data-level="1.8.3" data-path="lecture1.html"><a href="lecture1.html#limiting-cases-and-the-rate-determining-step"><i class="fa fa-check"></i><b>1.8.3</b> Limiting Cases and the Rate-Determining Step</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="lecture1.html"><a href="lecture1.html#the-steady-state-approximation"><i class="fa fa-check"></i><b>1.9</b> The Steady-State Approximation</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="lecture1.html"><a href="lecture1.html#basic-principles"><i class="fa fa-check"></i><b>1.9.1</b> Basic Principles</a></li>
+<li class="chapter" data-level="1.9.2" data-path="lecture1.html"><a href="lecture1.html#validity-of-the-steady-state-approximation"><i class="fa fa-check"></i><b>1.9.2</b> Validity of the Steady-State Approximation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lecture2.html"><a href="lecture2.html"><i class="fa fa-check"></i><b>2</b> Parallel Irreversible Reactions</a>
@@ -192,10 +203,12 @@
 </ul></li>
 <li class="chapter" data-level="9" data-path="lecture9.html"><a href="lecture9.html"><i class="fa fa-check"></i><b>9</b> Applications of Transition State Theory</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-logarithmic-form-of-tst"><i class="fa fa-check"></i><b>9.1</b> The Logarithmic Form of TST</a></li>
+<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-logarithmic-form-of-the-eyring-equation"><i class="fa fa-check"></i><b>9.1</b> The Logarithmic Form of the Eyring Equation</a></li>
 <li class="chapter" data-level="9.2" data-path="lecture9.html"><a href="lecture9.html#effect-of-pressure-on-rate-coefficients"><i class="fa fa-check"></i><b>9.2</b> Effect of Pressure on Rate Coefficients</a></li>
 <li class="chapter" data-level="9.3" data-path="lecture9.html"><a href="lecture9.html#kinetic-isotope-effects"><i class="fa fa-check"></i><b>9.3</b> Kinetic Isotope Effects</a></li>
 </ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="integrating-factor.html"><a href="integrating-factor.html"><i class="fa fa-check"></i><b>A</b> Integrating Factor Method for Consecutive Reactions</a></li>
 </ul>
 
       </nav>
@@ -216,8 +229,8 @@
 <div id="lecture9" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">Lecture 9</span> Applications of Transition State Theory<a href="lecture9.html#lecture9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In previous lectures we developed transition state theory to explain how molecular properties control reaction rates. The theory shows that reaction rates depend on both the energy barrier molecules must climb (the enthalpy of activation) and changes in molecular freedom when forming the activated complex (the entropy of activation). To test these ideas against experimental data and make quantitative predictions, we need mathematical tools that connect our theoretical framework with measurable quantities.</p>
-<div id="the-logarithmic-form-of-tst" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> The Logarithmic Form of TST<a href="lecture9.html#the-logarithmic-form-of-tst" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-logarithmic-form-of-the-eyring-equation" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> The Logarithmic Form of the Eyring Equation<a href="lecture9.html#the-logarithmic-form-of-the-eyring-equation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Eyring equation provides our starting point for analysing experimental data:</p>
 <p><span class="math display">\[k_\mathrm{theory} = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\]</span></p>
 <p>While this equation captures the key features of how entropy and enthalpy of activation determine reaction rates, its exponential form makes it awkward to use with experimental data. We can transform it into a more practical linear form through a simple mathematical manipulation.</p>
@@ -294,18 +307,13 @@
 
 
 
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="lecture8.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="lecture8.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="integrating-factor.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -353,7 +361,7 @@ gitbook.start({
 "options": null
 },
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 },
 "mathjax": {
 "extensions": "mhchem.js"

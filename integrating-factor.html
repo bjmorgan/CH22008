@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 4 Numerical Integration | CH22008 Lecture Notes</title>
+  <title>A Integrating Factor Method for Consecutive Reactions | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 4 Numerical Integration | CH22008 Lecture Notes" />
+  <meta property="og:title" content="A Integrating Factor Method for Consecutive Reactions | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 4 Numerical Integration | CH22008 Lecture Notes" />
+  <meta name="twitter:title" content="A Integrating Factor Method for Consecutive Reactions | CH22008 Lecture Notes" />
   
   <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lecture3.html"/>
-<link rel="next" href="lecture5.html"/>
+<link rel="prev" href="lecture9.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -226,116 +226,47 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lecture4" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Lecture 4</span> Numerical Integration<a href="lecture4.html#lecture4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-
-<div id="sec:mech-to-data" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> From Mechanisms to Kinetic Data<a href="lecture4.html#sec:mech-to-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>One reason to study the kinetics of reactions is beacause kinetic data can provide us with information about reaction mechanisms.
-Often, we start by collecting experimental concentration-time data for some reaction, and using this to deduce an empirical rate law (see CH12002 Lecture 4). Once we have an empirical rate law, this can inform our thinking around possible reaction mechanisms. The rate law may be of the same form as for another reaction where we know the mechanism, and so we propose that our current reaction proceeds by an equivalent mechanism. Or our empirical rate law simply acts as a constraint: any proposed mechanisms must give a theoretical rate law that is consistent with out experimentally deduced rate law.
-Alternatively, we might start from some hypothetical reaction mechanism: perhaps proposed on the basis of some prior chemical knowledge we have about our specific reaction. From this proposed mechanism, we can predict the shape of concentration-time profiles we would expect in experiments, given that our mechanism is correct, and then compare our predicted concentration-time profiles to those obtained from experiments. If we find good agreement between our predicted concetration-time data and those recorded experimentally then this provides support for our proposed mechanism being correct. If our predicted concentration-time data, however, do not agree with our experimental results — in particular, if the predicted and experimental concentration-time profiles have qualitatively different shapes — then we can reject the proposed mechanism on the basis that it is inconsistent with experiment.</p>
-</div>
-<div id="sec:integration-role" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> The Role of Integration in Chemical Kinetics<a href="lecture4.html#sec:integration-role" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For simple reaction mechanisms, we can often derive analytical expressions for how concentrations change with time. Consider a first-order reaction <span class="math inline">\(\mathrm{A} \longrightarrow \mathrm{B}\)</span>. The differential rate equation is</p>
-<p><span class="math display" id="eq:first-order">\[\begin{equation}
-\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
-\tag{4.1}
-\end{equation}\]</span></p>
-<p>and we can solve this by integration to obtain</p>
-<p><span class="math display" id="eq:first-order-int">\[\begin{equation}
-[\mathrm{A}]_t = [\mathrm{A}]_0\mathrm{e}^{-kt}
-\tag{4.2}
-\end{equation}\]</span></p>
-<p>However, for many reaction mechanisms, deriving analytical solutions becomes either extremely difficult or impossible. Consider, for example, the Lindemann mechanism for a unimolecular reaction:</p>
-<p><span class="math display">\[\begin{align*}
-\mathrm{A} + \mathrm{M} &amp;\rightleftharpoons \mathrm{A}^* + \mathrm{M} &amp; k_1,\, k_{-1} \\
-\mathrm{A}^* &amp;\longrightarrow \mathrm{P} &amp; k_2
-\end{align*}\]</span></p>
-<p>The corresponding differential rate equations are:</p>
-<p><span class="math display" id="eq:lindemann-a">\[\begin{equation}
-\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k_1[\mathrm{A}][\mathrm{M}] + k_{-1}[\mathrm{A}^*][\mathrm{M}]
-\tag{4.3}
-\end{equation}\]</span></p>
-<p><span class="math display" id="eq:lindemann-astar">\[\begin{equation}
-\frac{\mathrm{d}[\mathrm{A}^*]}{\mathrm{d}t} = k_1[\mathrm{A}][\mathrm{M}] - k_{-1}[\mathrm{A}^*][\mathrm{M}] - k_2[\mathrm{A}^*]
-\tag{4.4}
-\end{equation}\]</span></p>
-<p><span class="math display" id="eq:lindemann-p">\[\begin{equation}
-\frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k_2[\mathrm{A}^*]
-\tag{4.5}
-\end{equation}\]</span></p>
-<p>While we can make approximations (such as the steady-state approximation) to derive approximate analytical solutions under certain conditions, numerical integration provides a general approach that can be applied to any mechanism, regardless of its complexity.</p>
-</div>
-<div id="sec:num-principles" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Principles of Numerical Integration<a href="lecture4.html#sec:num-principles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To understand how numerical integration works, let us return to our simple first-order reaction <span class="math inline">\(\mathrm{A} \longrightarrow \mathrm{B}\)</span>. The differential rate equations are:</p>
-<p><span class="math display" id="eq:num-example-a">\[\begin{equation}
-\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]
-\tag{4.6}
-\end{equation}\]</span></p>
-<p><span class="math display" id="eq:num-example-b">\[\begin{equation}
-\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = +k[\mathrm{A}]
-\tag{4.7}
-\end{equation}\]</span></p>
-<p>The numerical integration approach recognises that these equations tell us the instantaneous rates of change of <span class="math inline">\([\mathrm{A}]\)</span> and <span class="math inline">\([\mathrm{B}]\)</span> at any point in time. If we know these rates at time <span class="math inline">\(t\)</span>, we can estimate the concentrations a short time later, at <span class="math inline">\(t + \Delta t\)</span>:</p>
-<p><span class="math display" id="eq:num-step-a">\[\begin{equation}
-[\mathrm{A}]_{t+\Delta t} = [\mathrm{A}]_t + \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\Delta t
-\tag{4.8}
-\end{equation}\]</span></p>
-<p><span class="math display" id="eq:num-step-b">\[\begin{equation}
-[\mathrm{B}]_{t+\Delta t} = [\mathrm{B}]_t + \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\Delta t
-\tag{4.9}
-\end{equation}\]</span></p>
-<p>where <span class="math inline">\(\Delta t\)</span> is called the time step. Starting with known initial concentrations at <span class="math inline">\(t = 0\)</span>, we can use these equations to “step forward” in time, calculating new concentrations at each step.</p>
-<div id="sec:simple-example" class="section level3 hasAnchor" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> A Simple Example<a href="lecture4.html#sec:simple-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Let us work through a specific example. Consider the first-order reaction above with <span class="math inline">\(k = 1\,\mathrm{s}^{-1}\)</span> and initial conditions <span class="math inline">\([\mathrm{A}]_0 = 1\,\mathrm{M}\)</span> and <span class="math inline">\([\mathrm{B}]_0 = 0\,\mathrm{M}\)</span>. Using a time step <span class="math inline">\(\Delta t = 0.1\,\mathrm{s}\)</span>:</p>
-<p>At <span class="math inline">\(t = 0~\mathrm{s}\)</span>:</p>
-<ul>
-<li><span class="math inline">\([\mathrm{A}]_0 = 1~\mathrm{M}\)</span></li>
-<li><span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -(1~\mathrm{s}^{-1})(1~\mathrm{M}) = -1~\mathrm{M}~\mathrm{s}^{-1}\)</span></li>
-<li><span class="math inline">\([\mathrm{A}]_{0.1} = 1~\mathrm{M} + (-1~\mathrm{M}\mathrm{s}^{-1})(0.1\mathrm{s}) = 0.9~\mathrm{M}\)</span></li>
-<li>Similarly, <span class="math inline">\([\mathrm{B}]_{0.1} = 0~\mathrm{M} + (1~\mathrm{M}\mathrm{s}^{-1})(0.1\mathrm{s}) = 0.1~\mathrm{M}\)</span></li>
-</ul>
-<p>At <span class="math inline">\(t = 0.1~\mathrm{s}\)</span>:</p>
-<ul>
-<li><span class="math inline">\([\mathrm{A}]_{0.1} = 0.9~\mathrm{M}\)</span></li>
-<li><span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -(1~\mathrm{s}^{-1})(0.9~\mathrm{M}) = -0.9~\mathrm{M}~\mathrm{s}^{-1}\)</span></li>
-<li><span class="math inline">\([\mathrm{A}]_{0.2} = 0.9~\mathrm{M} + (-0.9~\mathrm{M}\mathrm{s}^{-1})(0.1\mathrm{s}) = 0.81~\mathrm{M}\)</span></li>
-</ul>
-<p>This process continues, giving us approximate values for <span class="math inline">\([\mathrm{A}]_t\)</span> and <span class="math inline">\([\mathrm{B}]_t\)</span> at discrete time points.</p>
-</div>
-</div>
-<div id="sec:error-sources" class="section level2 hasAnchor" number="4.4">
-<h2><span class="header-section-number">4.4</span> Sources of Error<a href="lecture4.html#sec:error-sources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The numerical integration method makes one key approximation: it assumes the reaction rates remain constant over each time step. In reality, rates change continuously as concentrations change. This approximation introduces systematic errors that become larger when:</p>
-<ul>
-<li>The time step <span class="math inline">\(\Delta t\)</span> is increased</li>
-<li>Reaction rates change more rapidly within each time step</li>
-</ul>
-<p>We can improve accuracy by:</p>
-<ul>
-<li>Using a smaller time step (at the cost of more computational steps)</li>
-<li>Using more sophisticated algorithms (e.g., Runge-Kutta methods) that better approximate the changing reaction rates</li>
-</ul>
-</div>
-<div id="the-role-of-numerical-integration-in-chemical-kinetics" class="section level2 hasAnchor" number="4.5">
-<h2><span class="header-section-number">4.5</span> The Role of Numerical Integration in Chemical Kinetics<a href="lecture4.html#the-role-of-numerical-integration-in-chemical-kinetics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Numerical integration is an essential tool for modern studies of complex reaction mechanisms. The methods outlined above can handle mechanisms of arbitrary complexity, from simple decomposition reactions through to complex biochemical networks. Where analytical solutions become intractable, numerical methods remain practical and reliable.</p>
-<p>The accuracy of numerical solutions depends primarily on the chosen time step. While the simple Euler method presented here illustrates the key principles, modern numerical integration routines use more sophisticated algorithms. These “adaptive” methods automatically adjust their time steps based on how rapidly concentrations change. Small time steps maintain accuracy during periods of rapid change, while larger steps efficiently handle slower phases of the reaction. This automatic adaptation makes numerical integration both more reliable and more computationally efficient than fixed-step methods.</p>
-<p>The real power of numerical integration emerges when comparing theoretical predictions with experimental data. Given a proposed mechanism, we can calculate concentration profiles and compare these directly with measurements. Agreement between calculation and experiment supports the proposed mechanism, while significant discrepancies suggest the mechanism needs revision. This approach proves especially valuable for complex mechanisms where analytical solutions cannot guide our intuition about expected behavior.</p>
-<p>Beyond testing mechanisms, numerical methods help extract rate constants from experimental data and explore how changing conditions affects reaction outcomes. The principles developed in this chapter underpin much of modern chemical kinetics, complementing the analytical methods examined in earlier lectures.</p>
+<div id="integrating-factor" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">A</span> Integrating Factor Method for Consecutive Reactions<a href="integrating-factor.html#integrating-factor" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In analyzing consecutive reactions, we encounter the following differential equation for the intermediate species B:</p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t} - k_2[\mathrm{B}]\]</span></p>
+<p>This is a first-order linear differential equation of the form:</p>
+<p><span class="math display">\[\frac{\mathrm{d}y}{\mathrm{d}t} + P(t)y = Q(t)\]</span></p>
+<p>where <span class="math inline">\(y = [\mathrm{B}]\)</span>, <span class="math inline">\(P(t) = k_2\)</span>, and <span class="math inline">\(Q(t) = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t}\)</span>.</p>
+<p>The integrating factor method involves multiplying both sides by <span class="math inline">\(\mathrm{e}^{\int P(t)\mathrm{d}t}\)</span>. Here:</p>
+<p><span class="math display">\[\int P(t)\mathrm{d}t = \int k_2\mathrm{d}t = k_2t\]</span></p>
+<p>So our integrating factor is <span class="math inline">\(\mathrm{e}^{k_2t}\)</span>. Multiplying both sides of our original equation:</p>
+<p><span class="math display">\[\mathrm{e}^{k_2t}\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} + k_2[\mathrm{B}]\mathrm{e}^{k_2t} = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t}\mathrm{e}^{k_2t}\]</span></p>
+<p>The left side is now the derivative of <span class="math inline">\([\mathrm{B}]\mathrm{e}^{k_2t}\)</span>:</p>
+<p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}([\mathrm{B}]\mathrm{e}^{k_2t}) = k_1[\mathrm{A}]_0\mathrm{e}^{(k_2-k_1)t}\]</span></p>
+<p>Integrating both sides:</p>
+<p><span class="math display">\[[\mathrm{B}]\mathrm{e}^{k_2t} = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}\mathrm{e}^{(k_2-k_1)t} + C\]</span></p>
+<p>Solving for [B]:</p>
+<p><span class="math display">\[[\mathrm{B}] = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}\mathrm{e}^{-k_1t} + C\mathrm{e}^{-k_2t}\]</span></p>
+<p>Using the initial condition [B]₀ = 0 at t = 0:</p>
+<p><span class="math display">\[0 = \frac{k_1[\mathrm{A}]_0}{k_2-k_1} + C\]</span></p>
+<p>Therefore:</p>
+<p><span class="math display">\[C = -\frac{k_1[\mathrm{A}]_0}{k_2-k_1}\]</span></p>
+<p>And our final solution is:</p>
+<p><span class="math display">\[[\mathrm{B}] = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}(\mathrm{e}^{-k_1t} - \mathrm{e}^{-k_2t})\]</span></p>
+<p>This method of solution is generally applicable to first-order linear differential equations that arise in chemical kinetics.</p>
 
 </div>
-</div>
+
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="lecture3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lecture5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lecture9.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -366,7 +297,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bjmorgan/CH22008/main/lecture_4/lecture_04.Rmd",
+"link": "https://github.com/bjmorgan/CH22008/main/appendices/appendices.Rmd",
 "text": "Edit"
 },
 "history": {

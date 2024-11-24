@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2024-11-22" />
+<meta name="date" content="2024-11-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -98,6 +98,17 @@
 <li class="chapter" data-level="1.7.1" data-path="lecture1.html"><a href="lecture1.html#exact-solutions"><i class="fa fa-check"></i><b>1.7.1</b> Exact Solutions</a></li>
 <li class="chapter" data-level="1.7.2" data-path="lecture1.html"><a href="lecture1.html#approximate-analytical-solutions"><i class="fa fa-check"></i><b>1.7.2</b> Approximate Analytical Solutions</a></li>
 <li class="chapter" data-level="1.7.3" data-path="lecture1.html"><a href="lecture1.html#numerical-integration"><i class="fa fa-check"></i><b>1.7.3</b> Numerical Integration</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="lecture1.html"><a href="lecture1.html#consecutive-reactions"><i class="fa fa-check"></i><b>1.8</b> Consecutive Reactions</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="lecture1.html"><a href="lecture1.html#rate-equations"><i class="fa fa-check"></i><b>1.8.1</b> Rate Equations</a></li>
+<li class="chapter" data-level="1.8.2" data-path="lecture1.html"><a href="lecture1.html#integrated-rate-laws"><i class="fa fa-check"></i><b>1.8.2</b> Integrated Rate Laws</a></li>
+<li class="chapter" data-level="1.8.3" data-path="lecture1.html"><a href="lecture1.html#limiting-cases-and-the-rate-determining-step"><i class="fa fa-check"></i><b>1.8.3</b> Limiting Cases and the Rate-Determining Step</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="lecture1.html"><a href="lecture1.html#the-steady-state-approximation"><i class="fa fa-check"></i><b>1.9</b> The Steady-State Approximation</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="lecture1.html"><a href="lecture1.html#basic-principles"><i class="fa fa-check"></i><b>1.9.1</b> Basic Principles</a></li>
+<li class="chapter" data-level="1.9.2" data-path="lecture1.html"><a href="lecture1.html#validity-of-the-steady-state-approximation"><i class="fa fa-check"></i><b>1.9.2</b> Validity of the Steady-State Approximation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lecture2.html"><a href="lecture2.html"><i class="fa fa-check"></i><b>2</b> Parallel Irreversible Reactions</a>
@@ -192,10 +203,12 @@
 </ul></li>
 <li class="chapter" data-level="9" data-path="lecture9.html"><a href="lecture9.html"><i class="fa fa-check"></i><b>9</b> Applications of Transition State Theory</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-logarithmic-form-of-tst"><i class="fa fa-check"></i><b>9.1</b> The Logarithmic Form of TST</a></li>
+<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-logarithmic-form-of-the-eyring-equation"><i class="fa fa-check"></i><b>9.1</b> The Logarithmic Form of the Eyring Equation</a></li>
 <li class="chapter" data-level="9.2" data-path="lecture9.html"><a href="lecture9.html#effect-of-pressure-on-rate-coefficients"><i class="fa fa-check"></i><b>9.2</b> Effect of Pressure on Rate Coefficients</a></li>
 <li class="chapter" data-level="9.3" data-path="lecture9.html"><a href="lecture9.html#kinetic-isotope-effects"><i class="fa fa-check"></i><b>9.3</b> Kinetic Isotope Effects</a></li>
 </ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="integrating-factor.html"><a href="integrating-factor.html"><i class="fa fa-check"></i><b>A</b> Integrating Factor Method for Consecutive Reactions</a></li>
 </ul>
 
       </nav>
@@ -452,6 +465,109 @@ Although numerical integration provides a reliable method of last resort, there 
 
 </div>
 </div>
+<div id="consecutive-reactions" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Consecutive Reactions<a href="lecture1.html#consecutive-reactions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Having examined simple rate laws and elementary processes, we now consider how to analyze reactions that occur in multiple steps. One important class of such reactions are consecutive (or sequential) reactions, where products are formed through a series of steps:</p>
+<p><span class="math display">\[\mathrm{A} \xrightarrow{k_1} \mathrm{B} \xrightarrow{k_2} \mathrm{C}\]</span></p>
+<p>Such reaction sequences are common in both chemical and biochemical systems. For example, the decomposition of many organic compounds proceeds through multiple intermediates, and many metabolic pathways involve sequences of enzyme-catalyzed reactions.</p>
+<div id="rate-equations" class="section level3 hasAnchor" number="1.8.1">
+<h3><span class="header-section-number">1.8.1</span> Rate Equations<a href="lecture1.html#rate-equations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Following our approach from Section <a href="lecture1.html#sec:reaction-rates">1.2</a>, we can write differential rate equations for each species:</p>
+<p><span class="math display">\[\begin{align}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} &amp;= -k_1[\mathrm{A}] \\
+\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} &amp;= +k_1[\mathrm{A}] - k_2[\mathrm{B}] \\
+\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} &amp;= +k_2[\mathrm{B}]
+\end{align}\]</span></p>
+<p>Note that species B appears both as a product (in the first step) and as a reactant (in the second step). This is characteristic of reaction intermediates.</p>
+</div>
+<div id="integrated-rate-laws" class="section level3 hasAnchor" number="1.8.2">
+<h3><span class="header-section-number">1.8.2</span> Integrated Rate Laws<a href="lecture1.html#integrated-rate-laws" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can solve these coupled differential equations sequentially. First, the equation for [A] is a simple first-order decay (see Section <a href="lecture1.html#sec:simpleint">1.6</a>):</p>
+<p><span class="math display">\[[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-k_1t}\]</span></p>
+<p>To solve for [B], we substitute this expression into the second differential equation:</p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t} - k_2[\mathrm{B}]\]</span></p>
+<p>Integrating this linear first-order differential equation (see Appendix <a href="integrating-factor.html#integrating-factor">A</a>) gives:</p>
+<p><span class="math display">\[[\mathrm{B}] = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}(\mathrm{e}^{-k_1t} - \mathrm{e}^{-k_2t})\]</span></p>
+<p>Finally, we can find [C] using conservation of mass ([A] + [B] + [C] = [A]₀):</p>
+<p><span class="math display">\[[\mathrm{C}] = [\mathrm{A}]_0\left[1 + \frac{k_1\mathrm{e}^{-k_2t} - k_2\mathrm{e}^{-k_1t}}{k_1-k_2}\right]\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-consecutive-reactions"></span>
+<img src="lecture_1/figures/consecutive_reactions.png" alt="Concentration profiles for a consecutive reaction A → B → C. The intermediate B exhibits a maximum concentration at intermediate times." width="45%" />
+<p class="caption">
+Figure 1.6: Concentration profiles for a consecutive reaction A → B → C. The intermediate B exhibits a maximum concentration at intermediate times.
+</p>
+</div>
+</div>
+<div id="limiting-cases-and-the-rate-determining-step" class="section level3 hasAnchor" number="1.8.3">
+<h3><span class="header-section-number">1.8.3</span> Limiting Cases and the Rate-Determining Step<a href="lecture1.html#limiting-cases-and-the-rate-determining-step" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The kinetics of consecutive reactions can be simplified when one step is much slower than the other. This slower step becomes rate-determining for the overall reaction.</p>
+<div id="case-1-k₁-k₂" class="section level4 hasAnchor" number="1.8.3.1">
+<h4><span class="header-section-number">1.8.3.1</span> Case 1: k₁ &lt;&lt; k₂<a href="lecture1.html#case-1-k₁-k₂" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>When the first step is much slower than the second:</p>
+<ul>
+<li>B is consumed almost as soon as it is formed</li>
+<li>[B] remains very small throughout the reaction</li>
+<li>Formation of C follows approximately first-order kinetics:</li>
+</ul>
+<p><span class="math display">\[[\mathrm{C}] \approx [\mathrm{A}]_0(1-\mathrm{e}^{-k_1t})\]</span></p>
+</div>
+<div id="case-2-k₁-k₂" class="section level4 hasAnchor" number="1.8.3.2">
+<h4><span class="header-section-number">1.8.3.2</span> Case 2: k₁ &gt;&gt; k₂<a href="lecture1.html#case-2-k₁-k₂" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>When the first step is much faster than the second:</p>
+<ul>
+<li>A is rapidly converted to B</li>
+<li>B accumulates before slowly converting to C</li>
+<li>After an initial rapid phase, formation of C follows approximately first-order kinetics:</li>
+</ul>
+<p><span class="math display">\[[\mathrm{C}] \approx [\mathrm{A}]_0(1-\mathrm{e}^{-k_2t})\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-consecutive-limiting"></span>
+<img src="lecture_1/figures/consecutive_limiting_cases.png" alt="Concentration profiles for consecutive reactions in limiting cases. Left: k₁ &lt;&lt; k₂, where the first step is rate-determining. Right: k₁ &gt;&gt; k₂, where the second step is rate-determining." width="90%" />
+<p class="caption">
+Figure 1.7: Concentration profiles for consecutive reactions in limiting cases. Left: k₁ &lt;&lt; k₂, where the first step is rate-determining. Right: k₁ &gt;&gt; k₂, where the second step is rate-determining.
+</p>
+</div>
+<p>The concept of a rate-determining step is particularly valuable when analyzing complex reaction mechanisms. When one step in a reaction sequence is much slower than the others, it becomes the “bottleneck” that controls the overall reaction rate. This principle helps explain why many complex reactions show simple kinetic behavior—the observed kinetics often reflect just the rate-determining step.</p>
+
+</div>
+</div>
+</div>
+<div id="the-steady-state-approximation" class="section level2 hasAnchor" number="1.9">
+<h2><span class="header-section-number">1.9</span> The Steady-State Approximation<a href="lecture1.html#the-steady-state-approximation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When analyzing complex reaction mechanisms, we can often simplify our analysis using the steady-state approximation. This approximation applies to reaction intermediates that are consumed much faster than they are formed, leading to a “steady state” where the rate of change of the intermediate’s concentration is approximately zero.</p>
+<div id="basic-principles" class="section level3 hasAnchor" number="1.9.1">
+<h3><span class="header-section-number">1.9.1</span> Basic Principles<a href="lecture1.html#basic-principles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The steady-state approximation assumes that after a brief initial period, the concentration of a reactive intermediate B reaches a “steady state” where:</p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} \approx 0\]</span></p>
+<p>Consider our consecutive reaction mechanism from the previous section:</p>
+<p><span class="math display">\[\mathrm{A} \xrightarrow{k_1} \mathrm{B} \xrightarrow{k_2} \mathrm{C}\]</span></p>
+<p>The rate equations are:</p>
+<p><span class="math display">\[\begin{align}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} &amp;= -k_1[\mathrm{A}] \\
+\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} &amp;= k_1[\mathrm{A}] - k_2[\mathrm{B}] \\
+\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} &amp;= k_2[\mathrm{B}]
+\end{align}\]</span></p>
+<p>When k₂ &gt;&gt; k₁, B is consumed much faster than it is formed, and we can apply the steady-state approximation:</p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}] - k_2[\mathrm{B}] \approx 0\]</span></p>
+<p>This allows us to solve for [B]:</p>
+<p><span class="math display">\[[\mathrm{B}] \approx \frac{k_1}{k_2}[\mathrm{A}]\]</span></p>
+<p>Substituting this expression into our rate equation for C:</p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = k_2[\mathrm{B}] = k_1[\mathrm{A}]\]</span></p>
+<p>From conservation of mass, [A]₀ = [A] + [B] + [C]. Under the condition k₂ &gt;&gt; k₁, the concentration of B remains small, so [A]₀ ≈ [A] + [C]. Therefore:</p>
+<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = k_1[\mathrm{A}] = k_1([A]_0 - [C])\]</span></p>
+<p>This first-order differential equation can be directly integrated to give:</p>
+<p><span class="math display">\[[\mathrm{C}] = [\mathrm{A}]_0(1-\mathrm{e}^{-k_1t})\]</span></p>
+<p>This is the same result we obtained in our analysis of consecutive reactions in the limit where k₁ &lt;&lt; k₂.</p>
+</div>
+<div id="validity-of-the-steady-state-approximation" class="section level3 hasAnchor" number="1.9.2">
+<h3><span class="header-section-number">1.9.2</span> Validity of the Steady-State Approximation<a href="lecture1.html#validity-of-the-steady-state-approximation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The steady-state approximation is valid when:</p>
+<ul>
+<li>The intermediate is consumed much faster than it is formed</li>
+<li>We are not interested in the initial period before steady state is established</li>
+</ul>
+<p>These conditions are often met for reactive intermediates in chemical reactions. The approximation can be tested by comparing solutions of the complete rate equations with predictions from the steady-state analysis.</p>
+
+</div>
+</div>
 </div>
             </section>
 
@@ -507,7 +623,7 @@ gitbook.start({
 "options": null
 },
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 },
 "mathjax": {
 "extensions": "mhchem.js"

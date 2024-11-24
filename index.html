@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2024-11-22" />
+<meta name="date" content="2024-11-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -98,6 +98,17 @@
 <li class="chapter" data-level="1.7.1" data-path="lecture1.html"><a href="lecture1.html#exact-solutions"><i class="fa fa-check"></i><b>1.7.1</b> Exact Solutions</a></li>
 <li class="chapter" data-level="1.7.2" data-path="lecture1.html"><a href="lecture1.html#approximate-analytical-solutions"><i class="fa fa-check"></i><b>1.7.2</b> Approximate Analytical Solutions</a></li>
 <li class="chapter" data-level="1.7.3" data-path="lecture1.html"><a href="lecture1.html#numerical-integration"><i class="fa fa-check"></i><b>1.7.3</b> Numerical Integration</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="lecture1.html"><a href="lecture1.html#consecutive-reactions"><i class="fa fa-check"></i><b>1.8</b> Consecutive Reactions</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="lecture1.html"><a href="lecture1.html#rate-equations"><i class="fa fa-check"></i><b>1.8.1</b> Rate Equations</a></li>
+<li class="chapter" data-level="1.8.2" data-path="lecture1.html"><a href="lecture1.html#integrated-rate-laws"><i class="fa fa-check"></i><b>1.8.2</b> Integrated Rate Laws</a></li>
+<li class="chapter" data-level="1.8.3" data-path="lecture1.html"><a href="lecture1.html#limiting-cases-and-the-rate-determining-step"><i class="fa fa-check"></i><b>1.8.3</b> Limiting Cases and the Rate-Determining Step</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="lecture1.html"><a href="lecture1.html#the-steady-state-approximation"><i class="fa fa-check"></i><b>1.9</b> The Steady-State Approximation</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="lecture1.html"><a href="lecture1.html#basic-principles"><i class="fa fa-check"></i><b>1.9.1</b> Basic Principles</a></li>
+<li class="chapter" data-level="1.9.2" data-path="lecture1.html"><a href="lecture1.html#validity-of-the-steady-state-approximation"><i class="fa fa-check"></i><b>1.9.2</b> Validity of the Steady-State Approximation</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="lecture2.html"><a href="lecture2.html"><i class="fa fa-check"></i><b>2</b> Parallel Irreversible Reactions</a>
@@ -192,10 +203,12 @@
 </ul></li>
 <li class="chapter" data-level="9" data-path="lecture9.html"><a href="lecture9.html"><i class="fa fa-check"></i><b>9</b> Applications of Transition State Theory</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-logarithmic-form-of-tst"><i class="fa fa-check"></i><b>9.1</b> The Logarithmic Form of TST</a></li>
+<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-logarithmic-form-of-the-eyring-equation"><i class="fa fa-check"></i><b>9.1</b> The Logarithmic Form of the Eyring Equation</a></li>
 <li class="chapter" data-level="9.2" data-path="lecture9.html"><a href="lecture9.html#effect-of-pressure-on-rate-coefficients"><i class="fa fa-check"></i><b>9.2</b> Effect of Pressure on Rate Coefficients</a></li>
 <li class="chapter" data-level="9.3" data-path="lecture9.html"><a href="lecture9.html#kinetic-isotope-effects"><i class="fa fa-check"></i><b>9.3</b> Kinetic Isotope Effects</a></li>
 </ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="integrating-factor.html"><a href="integrating-factor.html"><i class="fa fa-check"></i><b>A</b> Integrating Factor Method for Consecutive Reactions</a></li>
 </ul>
 
       </nav>
@@ -216,7 +229,7 @@
 <div id="header">
 <h1 class="title">CH22008 Lecture Notes</h1>
 <p class="author"><em>Benjamin J. Morgan</em></p>
-<p class="date"><em>2024-11-22</em></p>
+<p class="date"><em>2024-11-24</em></p>
 </div>
 <div id="about" class="section level1 unnumbered hasAnchor">
 <h1>About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -277,7 +290,7 @@ gitbook.start({
 "options": null
 },
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 },
 "mathjax": {
 "extensions": "mhchem.js"
