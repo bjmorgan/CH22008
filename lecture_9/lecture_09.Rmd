@@ -2,7 +2,7 @@
 
 In previous lectures we developed transition state theory to explain how molecular properties control reaction rates. The theory shows that reaction rates depend on both the energy barrier molecules must climb (the enthalpy of activation) and changes in molecular freedom when forming the activated complex (the entropy of activation). To test these ideas against experimental data and make quantitative predictions, we need mathematical tools that connect our theoretical framework with measurable quantities.
 
-## The Logarithmic Form of TST
+## The Logarithmic Form of the Eyring Equation
 
 The Eyring equation provides our starting point for analysing experimental data:
 

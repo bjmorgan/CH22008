@@ -63,7 +63,7 @@ From our second assumption, the rate of product formation is proportional to the
 (\#eq:tst-rate)
 \end{equation}
 
-This has the form of a second-order rate law with rate constant:
+This expression is known as the Eyring equation, and has the form of a second-order rate law with rate constant:
 
 \begin{equation}
 k = \frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}

@@ -1,0 +1,69 @@
+## Consecutive Reactions
+
+Having examined simple rate laws and elementary processes, we now consider how to analyze reactions that occur in multiple steps. One important class of such reactions are consecutive (or sequential) reactions, where products are formed through a series of steps:
+
+$$\mathrm{A} \xrightarrow{k_1} \mathrm{B} \xrightarrow{k_2} \mathrm{C}$$
+
+Such reaction sequences are common in both chemical and biochemical systems. For example, the decomposition of many organic compounds proceeds through multiple intermediates, and many metabolic pathways involve sequences of enzyme-catalyzed reactions.
+
+### Rate Equations
+
+Following our approach from Section \@ref(sec:reaction-rates), we can write differential rate equations for each species:
+
+\begin{align}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} &= -k_1[\mathrm{A}] \\
+\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} &= +k_1[\mathrm{A}] - k_2[\mathrm{B}] \\
+\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} &= +k_2[\mathrm{B}]
+\end{align}
+
+Note that species B appears both as a product (in the first step) and as a reactant (in the second step). This is characteristic of reaction intermediates.
+
+### Integrated Rate Laws
+
+We can solve these coupled differential equations sequentially. First, the equation for [A] is a simple first-order decay (see Section \@ref(sec:simpleint)):
+
+$$[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-k_1t}$$
+
+To solve for [B], we substitute this expression into the second differential equation:
+
+$$\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t} - k_2[\mathrm{B}]$$
+
+Integrating this linear first-order differential equation (see Appendix \@ref(integrating-factor)) gives:
+
+$$[\mathrm{B}] = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}(\mathrm{e}^{-k_1t} - \mathrm{e}^{-k_2t})$$
+
+Finally, we can find [C] using conservation of mass ([A] + [B] + [C] = [A]₀):
+
+$$[\mathrm{C}] = [\mathrm{A}]_0\left[1 + \frac{k_1\mathrm{e}^{-k_2t} - k_2\mathrm{e}^{-k_1t}}{k_1-k_2}\right]$$
+
+```{r fig-consecutive-reactions, fig.cap="Concentration profiles for a consecutive reaction A → B → C. The intermediate B exhibits a maximum concentration at intermediate times.", out.width='45%', fig.align='center'}
+knitr::include_graphics("lecture_1/figures/consecutive_reactions.png")
+```
+
+### Limiting Cases and the Rate-Determining Step
+
+The kinetics of consecutive reactions can be simplified when one step is much slower than the other. This slower step becomes rate-determining for the overall reaction.
+
+#### Case 1: k₁ << k₂
+When the first step is much slower than the second:
+
+- B is consumed almost as soon as it is formed
+- [B] remains very small throughout the reaction
+- Formation of C follows approximately first-order kinetics:
+
+$$[\mathrm{C}] \approx [\mathrm{A}]_0(1-\mathrm{e}^{-k_1t})$$
+
+#### Case 2: k₁ >> k₂
+When the first step is much faster than the second:
+
+- A is rapidly converted to B
+- B accumulates before slowly converting to C
+- After an initial rapid phase, formation of C follows approximately first-order kinetics:
+
+$$[\mathrm{C}] \approx [\mathrm{A}]_0(1-\mathrm{e}^{-k_2t})$$
+
+```{r fig-consecutive-limiting, fig.cap="Concentration profiles for consecutive reactions in limiting cases. Left: k₁ << k₂, where the first step is rate-determining. Right: k₁ >> k₂, where the second step is rate-determining.", out.width='90%', fig.align='center'}
+knitr::include_graphics("lecture_1/figures/consecutive_limiting_cases.png")
+```
+
+The concept of a rate-determining step is particularly valuable when analyzing complex reaction mechanisms. When one step in a reaction sequence is much slower than the others, it becomes the "bottleneck" that controls the overall reaction rate. This principle helps explain why many complex reactions show simple kinetic behavior&mdash;the observed kinetics often reflect just the rate-determining step.

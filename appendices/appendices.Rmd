@@ -1,0 +1,47 @@
+# (APPENDIX) Appendices {-}
+
+# Integrating Factor Method for Consecutive Reactions {#integrating-factor}
+
+In analyzing consecutive reactions, we encounter the following differential equation for the intermediate species B:
+
+$$\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t} - k_2[\mathrm{B}]$$
+
+This is a first-order linear differential equation of the form:
+
+$$\frac{\mathrm{d}y}{\mathrm{d}t} + P(t)y = Q(t)$$
+
+where $y = [\mathrm{B}]$, $P(t) = k_2$, and $Q(t) = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t}$.
+
+The integrating factor method involves multiplying both sides by $\mathrm{e}^{\int P(t)\mathrm{d}t}$. Here:
+
+$$\int P(t)\mathrm{d}t = \int k_2\mathrm{d}t = k_2t$$
+
+So our integrating factor is $\mathrm{e}^{k_2t}$. Multiplying both sides of our original equation:
+
+$$\mathrm{e}^{k_2t}\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} + k_2[\mathrm{B}]\mathrm{e}^{k_2t} = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t}\mathrm{e}^{k_2t}$$
+
+The left side is now the derivative of $[\mathrm{B}]\mathrm{e}^{k_2t}$:
+
+$$\frac{\mathrm{d}}{\mathrm{d}t}([\mathrm{B}]\mathrm{e}^{k_2t}) = k_1[\mathrm{A}]_0\mathrm{e}^{(k_2-k_1)t}$$
+
+Integrating both sides:
+
+$$[\mathrm{B}]\mathrm{e}^{k_2t} = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}\mathrm{e}^{(k_2-k_1)t} + C$$
+
+Solving for [B]:
+
+$$[\mathrm{B}] = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}\mathrm{e}^{-k_1t} + C\mathrm{e}^{-k_2t}$$
+
+Using the initial condition [B]₀ = 0 at t = 0:
+
+$$0 = \frac{k_1[\mathrm{A}]_0}{k_2-k_1} + C$$
+
+Therefore:
+
+$$C = -\frac{k_1[\mathrm{A}]_0}{k_2-k_1}$$
+
+And our final solution is:
+
+$$[\mathrm{B}] = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}(\mathrm{e}^{-k_1t} - \mathrm{e}^{-k_2t})$$
+
+This method of solution is generally applicable to first-order linear differential equations that arise in chemical kinetics.

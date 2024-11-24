@@ -1,0 +1,52 @@
+## The Steady-State Approximation
+
+When analyzing complex reaction mechanisms, we can often simplify our analysis using the steady-state approximation. This approximation applies to reaction intermediates that are consumed much faster than they are formed, leading to a "steady state" where the rate of change of the intermediate's concentration is approximately zero.
+
+### Basic Principles
+
+The steady-state approximation assumes that after a brief initial period, the concentration of a reactive intermediate B reaches a "steady state" where:
+
+$$\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} \approx 0$$
+
+Consider our consecutive reaction mechanism from the previous section:
+
+$$\mathrm{A} \xrightarrow{k_1} \mathrm{B} \xrightarrow{k_2} \mathrm{C}$$
+
+The rate equations are:
+
+\begin{align}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} &= -k_1[\mathrm{A}] \\
+\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} &= k_1[\mathrm{A}] - k_2[\mathrm{B}] \\
+\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} &= k_2[\mathrm{B}]
+\end{align}
+
+When k₂ >> k₁, B is consumed much faster than it is formed, and we can apply the steady-state approximation:
+
+$$\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}] - k_2[\mathrm{B}] \approx 0$$
+
+This allows us to solve for [B]:
+
+$$[\mathrm{B}] \approx \frac{k_1}{k_2}[\mathrm{A}]$$
+
+Substituting this expression into our rate equation for C:
+
+$$\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = k_2[\mathrm{B}] = k_1[\mathrm{A}]$$
+
+From conservation of mass, [A]₀ = [A] + [B] + [C]. Under the condition k₂ >> k₁, the concentration of B remains small, so [A]₀ ≈ [A] + [C]. Therefore:
+
+$$\frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = k_1[\mathrm{A}] = k_1([A]_0 - [C])$$
+
+This first-order differential equation can be directly integrated to give:
+
+$$[\mathrm{C}] = [\mathrm{A}]_0(1-\mathrm{e}^{-k_1t})$$
+
+This is the same result we obtained in our analysis of consecutive reactions in the limit where k₁ << k₂.
+
+### Validity of the Steady-State Approximation
+
+The steady-state approximation is valid when:
+
+- The intermediate is consumed much faster than it is formed
+- We are not interested in the initial period before steady state is established
+
+These conditions are often met for reactive intermediates in chemical reactions. The approximation can be tested by comparing solutions of the complete rate equations with predictions from the steady-state analysis.
