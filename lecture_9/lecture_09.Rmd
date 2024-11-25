@@ -1,48 +1,39 @@
 # Applications of Transition State Theory {#lecture9}
 
-In previous lectures we developed transition state theory to explain how molecular properties control reaction rates. The theory shows that reaction rates depend on both the energy barrier molecules must climb (the enthalpy of activation) and changes in molecular freedom when forming the activated complex (the entropy of activation). To test these ideas against experimental data and make quantitative predictions, we need mathematical tools that connect our theoretical framework with measurable quantities.
+In previous lectures we developed transition state theory to explain how molecular properties control reaction rates. While the theory provides a framework for understanding reaction mechanisms, its real power emerges when we use it to analyse experimental data and predict reaction behaviour. Here we examine three key applications: using temperature-dependent kinetic data to determine activation parameters, understanding pressure effects on reaction rates, and interpreting kinetic isotope effects.
 
-## The Logarithmic Form of the Eyring Equation
+## The Eyring Plot
 
-The Eyring equation provides our starting point for analysing experimental data:
+The Eyring equation relates reaction rate constants to the activation parameters $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$:
 
-$$k_\mathrm{theory} = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}$$
+$$k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}$$
 
-While this equation captures the key features of how entropy and enthalpy of activation determine reaction rates, its exponential form makes it awkward to use with experimental data. We can transform it into a more practical linear form through a simple mathematical manipulation.
+By rearranging this equation we can determine these activation parameters from experimental measurements of rate constants at different temperatures. First, we divide both sides by $T$:
 
-First, dividing both sides by temperature $T$:
-
-$$\frac{k_\mathrm{theory}}{T} = \frac{k_\mathrm{B}}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}$$
+$$\frac{k}{T} = \frac{k_\mathrm{B}}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}$$
 
 Taking the natural logarithm gives:
 
-$$\ln\left(\frac{k_\mathrm{theory}}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}$$
+$$\ln\left(\frac{k}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}$$
 
-This has the form of a straight line $y = c + mx$ where:
-
-- $y = \ln(k_\mathrm{theory}/T)$
-- $x = 1/T$
-- $c = \ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R$
-- $m = -\Delta H^{\ddagger}/R$
-
-A plot of $\ln(k_\mathrm{theory}/T)$ versus $1/T$ therefore gives:
+A plot of $\ln(k/T)$ versus $1/T$ gives a straight line with:
 
 - Slope = $-\Delta H^{\ddagger}/R$
 - Intercept = $\ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R$
 
-From these, we can determine both $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$ for the reaction.
+From this "Eyring plot" we can determine both the enthalpy and entropy of activation.
 
 ## Effect of Pressure on Rate Coefficients
 
-For reactions in solution or the solid state, pressure can have a significant effect on reaction rates. We can understand this by considering how pressure affects the pre-equilibrium between reactants and the activated complex:
+For reactions in solution or the solid state, pressure can significantly affect reaction rates. We can understand this through the volume change that occurs when reactants combine to form the activated complex:
 
 $$\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}$$
 
-The key question is whether the volume changes when reactants combine to form the activated complex. We define the volume of activation $\Delta V^{\ddagger}$ as the difference in partial molar volume between the activated complex and the reactants. Where $\Delta V^{\ddagger}$ is negative (the activated complex occupies less volume than the reactants), Le Chatelier's principle tells us that increasing pressure will shift the pre-equilibrium towards the activated complex. Since the overall reaction rate is proportional to the concentration of activated complex,
+The volume of activation $\Delta V^{\ddagger}$ is defined as the difference in partial molar volume between the activated complex and the reactants. Where $\Delta V^{\ddagger}$ is negative (the activated complex occupies less volume than the reactants), increasing pressure shifts the pre-equilibrium towards the activated complex. Since the overall reaction rate is proportional to $[\mathrm{C}^{\ddagger}]$:
 
-$$\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]$$
+$$\nu = k^{\ddagger}[\mathrm{C}^{\ddagger}]$$
 
-this leads to an increase in reaction rate.
+this leads to an increase in the reaction rate.
 
 We can develop this idea quantitatively by considering how pressure affects the Gibbs energy of activation. The enthalpy of activation depends on pressure through:
 
