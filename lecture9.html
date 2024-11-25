@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2024-11-24" />
+<meta name="date" content="2024-11-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -203,7 +203,7 @@
 </ul></li>
 <li class="chapter" data-level="9" data-path="lecture9.html"><a href="lecture9.html"><i class="fa fa-check"></i><b>9</b> Applications of Transition State Theory</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-logarithmic-form-of-the-eyring-equation"><i class="fa fa-check"></i><b>9.1</b> The Logarithmic Form of the Eyring Equation</a></li>
+<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-eyring-plot"><i class="fa fa-check"></i><b>9.1</b> The Eyring Plot</a></li>
 <li class="chapter" data-level="9.2" data-path="lecture9.html"><a href="lecture9.html#effect-of-pressure-on-rate-coefficients"><i class="fa fa-check"></i><b>9.2</b> Effect of Pressure on Rate Coefficients</a></li>
 <li class="chapter" data-level="9.3" data-path="lecture9.html"><a href="lecture9.html#kinetic-isotope-effects"><i class="fa fa-check"></i><b>9.3</b> Kinetic Isotope Effects</a></li>
 </ul></li>
@@ -228,37 +228,29 @@
             <section class="normal" id="section-">
 <div id="lecture9" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">Lecture 9</span> Applications of Transition State Theory<a href="lecture9.html#lecture9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In previous lectures we developed transition state theory to explain how molecular properties control reaction rates. The theory shows that reaction rates depend on both the energy barrier molecules must climb (the enthalpy of activation) and changes in molecular freedom when forming the activated complex (the entropy of activation). To test these ideas against experimental data and make quantitative predictions, we need mathematical tools that connect our theoretical framework with measurable quantities.</p>
-<div id="the-logarithmic-form-of-the-eyring-equation" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> The Logarithmic Form of the Eyring Equation<a href="lecture9.html#the-logarithmic-form-of-the-eyring-equation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The Eyring equation provides our starting point for analysing experimental data:</p>
-<p><span class="math display">\[k_\mathrm{theory} = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\]</span></p>
-<p>While this equation captures the key features of how entropy and enthalpy of activation determine reaction rates, its exponential form makes it awkward to use with experimental data. We can transform it into a more practical linear form through a simple mathematical manipulation.</p>
-<p>First, dividing both sides by temperature <span class="math inline">\(T\)</span>:</p>
-<p><span class="math display">\[\frac{k_\mathrm{theory}}{T} = \frac{k_\mathrm{B}}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\]</span></p>
+<p>In previous lectures we developed transition state theory to explain how molecular properties control reaction rates. While the theory provides a framework for understanding reaction mechanisms, its real power emerges when we use it to analyse experimental data and predict reaction behaviour. Here we examine three key applications: using temperature-dependent kinetic data to determine activation parameters, understanding pressure effects on reaction rates, and interpreting kinetic isotope effects.</p>
+<div id="the-eyring-plot" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> The Eyring Plot<a href="lecture9.html#the-eyring-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Eyring equation relates reaction rate constants to the activation parameters <span class="math inline">\(\Delta H^{\ddagger}\)</span> and <span class="math inline">\(\Delta S^{\ddagger}\)</span>:</p>
+<p><span class="math display">\[k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\]</span></p>
+<p>By rearranging this equation we can determine these activation parameters from experimental measurements of rate constants at different temperatures. First, we divide both sides by <span class="math inline">\(T\)</span>:</p>
+<p><span class="math display">\[\frac{k}{T} = \frac{k_\mathrm{B}}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\]</span></p>
 <p>Taking the natural logarithm gives:</p>
-<p><span class="math display">\[\ln\left(\frac{k_\mathrm{theory}}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}\]</span></p>
-<p>This has the form of a straight line <span class="math inline">\(y = c + mx\)</span> where:</p>
-<ul>
-<li><span class="math inline">\(y = \ln(k_\mathrm{theory}/T)\)</span></li>
-<li><span class="math inline">\(x = 1/T\)</span></li>
-<li><span class="math inline">\(c = \ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R\)</span></li>
-<li><span class="math inline">\(m = -\Delta H^{\ddagger}/R\)</span></li>
-</ul>
-<p>A plot of <span class="math inline">\(\ln(k_\mathrm{theory}/T)\)</span> versus <span class="math inline">\(1/T\)</span> therefore gives:</p>
+<p><span class="math display">\[\ln\left(\frac{k}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}\]</span></p>
+<p>A plot of <span class="math inline">\(\ln(k/T)\)</span> versus <span class="math inline">\(1/T\)</span> gives a straight line with:</p>
 <ul>
 <li>Slope = <span class="math inline">\(-\Delta H^{\ddagger}/R\)</span></li>
 <li>Intercept = <span class="math inline">\(\ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R\)</span></li>
 </ul>
-<p>From these, we can determine both <span class="math inline">\(\Delta H^{\ddagger}\)</span> and <span class="math inline">\(\Delta S^{\ddagger}\)</span> for the reaction.</p>
+<p>From this “Eyring plot” we can determine both the enthalpy and entropy of activation.</p>
 </div>
 <div id="effect-of-pressure-on-rate-coefficients" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> Effect of Pressure on Rate Coefficients<a href="lecture9.html#effect-of-pressure-on-rate-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>For reactions in solution or the solid state, pressure can have a significant effect on reaction rates. We can understand this by considering how pressure affects the pre-equilibrium between reactants and the activated complex:</p>
+<p>For reactions in solution or the solid state, pressure can significantly affect reaction rates. We can understand this through the volume change that occurs when reactants combine to form the activated complex:</p>
 <p><span class="math display">\[\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}\]</span></p>
-<p>The key question is whether the volume changes when reactants combine to form the activated complex. We define the volume of activation <span class="math inline">\(\Delta V^{\ddagger}\)</span> as the difference in partial molar volume between the activated complex and the reactants. Where <span class="math inline">\(\Delta V^{\ddagger}\)</span> is negative (the activated complex occupies less volume than the reactants), Le Chatelier’s principle tells us that increasing pressure will shift the pre-equilibrium towards the activated complex. Since the overall reaction rate is proportional to the concentration of activated complex,</p>
-<p><span class="math display">\[\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]\]</span></p>
-<p>this leads to an increase in reaction rate.</p>
+<p>The volume of activation <span class="math inline">\(\Delta V^{\ddagger}\)</span> is defined as the difference in partial molar volume between the activated complex and the reactants. Where <span class="math inline">\(\Delta V^{\ddagger}\)</span> is negative (the activated complex occupies less volume than the reactants), increasing pressure shifts the pre-equilibrium towards the activated complex. Since the overall reaction rate is proportional to <span class="math inline">\([\mathrm{C}^{\ddagger}]\)</span>:</p>
+<p><span class="math display">\[\nu = k^{\ddagger}[\mathrm{C}^{\ddagger}]\]</span></p>
+<p>this leads to an increase in the reaction rate.</p>
 <p>We can develop this idea quantitatively by considering how pressure affects the Gibbs energy of activation. The enthalpy of activation depends on pressure through:</p>
 <p><span class="math display">\[\Delta H^{\ddagger} = \Delta U^{\ddagger} + p\Delta V^{\ddagger}\]</span></p>
 <p>Substituting this into our equation for the rate constant:</p>

@@ -123,7 +123,7 @@ effects-of-molecular-symmetry
 internal-molecular-motion
 applications-and-predictive-power
 lecture9
-the-logarithmic-form-of-the-eyring-equation
+the-eyring-plot
 effect-of-pressure-on-rate-coefficients
 kinetic-isotope-effects
 integrating-factor
