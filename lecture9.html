@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2024-11-25" />
+<meta name="date" content="2024-11-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -193,19 +193,28 @@
 <li class="chapter" data-level="8.5.1" data-path="lecture8.html"><a href="lecture8.html#atomic-reactions"><i class="fa fa-check"></i><b>8.5.1</b> Atomic Reactions</a></li>
 <li class="chapter" data-level="8.5.2" data-path="lecture8.html"><a href="lecture8.html#polyatomic-systems"><i class="fa fa-check"></i><b>8.5.2</b> Polyatomic Systems</a></li>
 </ul></li>
-<li class="chapter" data-level="8.6" data-path="lecture8.html"><a href="lecture8.html#limitations-in-pre-exponential-factor-estimation"><i class="fa fa-check"></i><b>8.6</b> Limitations in Pre-exponential Factor Estimation</a>
+<li class="chapter" data-level="8.6" data-path="lecture8.html"><a href="lecture8.html#unimolecular-reactions"><i class="fa fa-check"></i><b>8.6</b> Unimolecular Reactions</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="lecture8.html"><a href="lecture8.html#statistical-entropy-approximations"><i class="fa fa-check"></i><b>8.6.1</b> Statistical Entropy Approximations</a></li>
-<li class="chapter" data-level="8.6.2" data-path="lecture8.html"><a href="lecture8.html#effects-of-molecular-symmetry"><i class="fa fa-check"></i><b>8.6.2</b> Effects of Molecular Symmetry</a></li>
-<li class="chapter" data-level="8.6.3" data-path="lecture8.html"><a href="lecture8.html#internal-molecular-motion"><i class="fa fa-check"></i><b>8.6.3</b> Internal Molecular Motion</a></li>
+<li class="chapter" data-level="8.6.1" data-path="lecture8.html"><a href="lecture8.html#ethane-decomposition"><i class="fa fa-check"></i><b>8.6.1</b> Ethane Decomposition</a></li>
+<li class="chapter" data-level="8.6.2" data-path="lecture8.html"><a href="lecture8.html#the-cope-rearrangement"><i class="fa fa-check"></i><b>8.6.2</b> The Cope Rearrangement</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="lecture8.html"><a href="lecture8.html#applications-and-predictive-power"><i class="fa fa-check"></i><b>8.7</b> Applications and Predictive Power</a></li>
+<li class="chapter" data-level="8.7" data-path="lecture8.html"><a href="lecture8.html#limitations-in-pre-exponential-factor-estimation"><i class="fa fa-check"></i><b>8.7</b> Limitations in Pre-exponential Factor Estimation</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="lecture8.html"><a href="lecture8.html#statistical-entropy-approximations"><i class="fa fa-check"></i><b>8.7.1</b> Statistical Entropy Approximations</a></li>
+<li class="chapter" data-level="8.7.2" data-path="lecture8.html"><a href="lecture8.html#effects-of-molecular-symmetry"><i class="fa fa-check"></i><b>8.7.2</b> Effects of Molecular Symmetry</a></li>
+<li class="chapter" data-level="8.7.3" data-path="lecture8.html"><a href="lecture8.html#internal-molecular-motion"><i class="fa fa-check"></i><b>8.7.3</b> Internal Molecular Motion</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="lecture8.html"><a href="lecture8.html#applications-and-predictive-power"><i class="fa fa-check"></i><b>8.8</b> Applications and Predictive Power</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="lecture9.html"><a href="lecture9.html"><i class="fa fa-check"></i><b>9</b> Applications of Transition State Theory</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-eyring-plot"><i class="fa fa-check"></i><b>9.1</b> The Eyring Plot</a></li>
 <li class="chapter" data-level="9.2" data-path="lecture9.html"><a href="lecture9.html#effect-of-pressure-on-rate-coefficients"><i class="fa fa-check"></i><b>9.2</b> Effect of Pressure on Rate Coefficients</a></li>
-<li class="chapter" data-level="9.3" data-path="lecture9.html"><a href="lecture9.html#kinetic-isotope-effects"><i class="fa fa-check"></i><b>9.3</b> Kinetic Isotope Effects</a></li>
+<li class="chapter" data-level="9.3" data-path="lecture9.html"><a href="lecture9.html#kinetic-isotope-effects"><i class="fa fa-check"></i><b>9.3</b> Kinetic Isotope Effects</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="lecture9.html"><a href="lecture9.html#origin-of-the-kinetic-isotope-effect"><i class="fa fa-check"></i><b>9.3.1</b> Origin of the Kinetic Isotope Effect</a></li>
+<li class="chapter" data-level="9.3.2" data-path="lecture9.html"><a href="lecture9.html#using-kinetic-isotope-effects-to-probe-reaction-mechanisms"><i class="fa fa-check"></i><b>9.3.2</b> Using Kinetic Isotope Effects to Probe Reaction Mechanisms</a></li>
+</ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
 <li class="chapter" data-level="A" data-path="integrating-factor.html"><a href="integrating-factor.html"><i class="fa fa-check"></i><b>A</b> Integrating Factor Method for Consecutive Reactions</a></li>
@@ -228,77 +237,110 @@
             <section class="normal" id="section-">
 <div id="lecture9" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">Lecture 9</span> Applications of Transition State Theory<a href="lecture9.html#lecture9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In previous lectures we developed transition state theory to explain how molecular properties control reaction rates. While the theory provides a framework for understanding reaction mechanisms, its real power emerges when we use it to analyse experimental data and predict reaction behaviour. Here we examine three key applications: using temperature-dependent kinetic data to determine activation parameters, understanding pressure effects on reaction rates, and interpreting kinetic isotope effects.</p>
+<p>Throughout our development of transition state theory, we’ve focused on understanding how molecular properties govern reaction rates. While this theoretical framework is elegant, its real power emerges when we link it to experimental observations.
+Here we examine three key applications: using temperature-dependent kinetic data to determine activation parameters, understanding pressure effects on reaction rates, and interpreting kinetic isotope effects.</p>
 <div id="the-eyring-plot" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> The Eyring Plot<a href="lecture9.html#the-eyring-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The Eyring equation relates reaction rate constants to the activation parameters <span class="math inline">\(\Delta H^{\ddagger}\)</span> and <span class="math inline">\(\Delta S^{\ddagger}\)</span>:</p>
 <p><span class="math display">\[k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\]</span></p>
-<p>By rearranging this equation we can determine these activation parameters from experimental measurements of rate constants at different temperatures. First, we divide both sides by <span class="math inline">\(T\)</span>:</p>
+<p>By fitting this equation to experimental rate constant data at different temperatures, it is possible to estimate these activation parameters.</p>
+<p>The conventional approach to fitting the Eyring equation to experimental <span class="math inline">\(k(T)\)</span> data is to reformulate it as a linear equation. First, we divide both sides by <span class="math inline">\(T\)</span>:</p>
 <p><span class="math display">\[\frac{k}{T} = \frac{k_\mathrm{B}}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\]</span></p>
 <p>Taking the natural logarithm gives:</p>
 <p><span class="math display">\[\ln\left(\frac{k}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}\]</span></p>
-<p>A plot of <span class="math inline">\(\ln(k/T)\)</span> versus <span class="math inline">\(1/T\)</span> gives a straight line with:</p>
+<p>which has the form</p>
+<p><span class="math display">\[y = mx + c\]</span>.</p>
+<p>Therefore, the Eyring equation predicts that a plot of <span class="math inline">\(\ln(k/T)\)</span> versus <span class="math inline">\(1/T\)</span> should be approximately linear, and that the model parameters <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span> can be estimated from the slope and intercept, respectively,<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> via</p>
 <ul>
 <li>Slope = <span class="math inline">\(-\Delta H^{\ddagger}/R\)</span></li>
 <li>Intercept = <span class="math inline">\(\ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R\)</span></li>
 </ul>
-<p>From this “Eyring plot” we can determine both the enthalpy and entropy of activation.</p>
 </div>
 <div id="effect-of-pressure-on-rate-coefficients" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> Effect of Pressure on Rate Coefficients<a href="lecture9.html#effect-of-pressure-on-rate-coefficients" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For reactions in solution or the solid state, pressure can significantly affect reaction rates. We can understand this through the volume change that occurs when reactants combine to form the activated complex:</p>
 <p><span class="math display">\[\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}\]</span></p>
-<p>The volume of activation <span class="math inline">\(\Delta V^{\ddagger}\)</span> is defined as the difference in partial molar volume between the activated complex and the reactants. Where <span class="math inline">\(\Delta V^{\ddagger}\)</span> is negative (the activated complex occupies less volume than the reactants), increasing pressure shifts the pre-equilibrium towards the activated complex. Since the overall reaction rate is proportional to <span class="math inline">\([\mathrm{C}^{\ddagger}]\)</span>:</p>
+<p>The volume of activation <span class="math inline">\(\Delta V^{\ddagger}\)</span> is defined as the difference in partial molar volume between the activated complex and the reactants. Where <span class="math inline">\(\Delta V^{\ddagger}\)</span> is negative, the activated complex occupies less volume than the reactants, and increasing pressure shifts the pre-equilibrium towards the activated complex. Since the overall reaction rate is proportional to <span class="math inline">\([\mathrm{C}^{\ddagger}]\)</span>:</p>
 <p><span class="math display">\[\nu = k^{\ddagger}[\mathrm{C}^{\ddagger}]\]</span></p>
 <p>this leads to an increase in the reaction rate.</p>
 <p>We can develop this idea quantitatively by considering how pressure affects the Gibbs energy of activation. The enthalpy of activation depends on pressure through:</p>
 <p><span class="math display">\[\Delta H^{\ddagger} = \Delta U^{\ddagger} + p\Delta V^{\ddagger}\]</span></p>
 <p>Substituting this into our equation for the rate constant:</p>
-<p><span class="math display">\[\ln k = \ln \frac{k_\mathrm{B}T}{h} + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta U^{\ddagger} + p\Delta V^{\ddagger}}{RT}\]</span></p>
+<p><span class="math display" id="eq:linearkvsp">\[\begin{equation}
+\ln k = \ln \frac{k_\mathrm{B}T}{h} + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta U^{\ddagger} + p\Delta V^{\ddagger}}{RT}
+\tag{9.1}
+\end{equation}\]</span></p>
 <p>Differentiating with respect to pressure at constant temperature:</p>
 <p><span class="math display">\[\left(\frac{\partial \ln k}{\partial p}\right)_T = -\frac{\Delta V^{\ddagger}}{RT}\]</span></p>
-<p>This tells us that plotting <span class="math inline">\(\ln k\)</span> versus pressure gives a straight line with slope <span class="math inline">\(-\Delta V^{\ddagger}/RT\)</span>. The volume of activation can therefore be determined from experimental measurements of how reaction rates vary with pressure:</p>
+<p>giving us the prediction that plotting <span class="math inline">\(\ln k\)</span> versus pressure should be approximately linear with slope <span class="math inline">\(-\Delta V^{\ddagger}/RT\)</span>. The volume of activation can therefore be determined from experimental measurements of how reaction rates vary with pressure:<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
 <p><span class="math display">\[\Delta V^{\ddagger} = -RT\left(\frac{\partial \ln k}{\partial p}\right)_T\]</span></p>
 <p>As an example, consider the decomposition of dibutyl peroxide:</p>
 <p><span class="math display">\[[(\mathrm{CH}_3)_3\mathrm{CCO}_2]_2 \longrightarrow 2(\mathrm{CH}_3)_3\mathrm{CO}^\bullet\]</span></p>
-<p>Experimental data shows <span class="math inline">\(\Delta V^{\ddagger} = (5.24 \pm 0.24) \times 10^{-6}~\mathrm{m^3~mol^{-1}}\)</span>. This positive volume of activation tells us that in the transition state the O–O bond has started to break but no new bonds have yet formed, requiring a larger volume than the initial reactant.</p>
+<p>Experimental data shows <span class="math inline">\(\Delta V^{\ddagger} = (5.24 \pm 0.24) \times 10^{-6}~\mathrm{m^3~mol^{-1}}\)</span>. This positive volume of activation tells us that in the transition state the O–O bond has started to break, requiring a larger volume than the initial reactant.</p>
 </div>
 <div id="kinetic-isotope-effects" class="section level2 hasAnchor" number="9.3">
 <h2><span class="header-section-number">9.3</span> Kinetic Isotope Effects<a href="lecture9.html#kinetic-isotope-effects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Many reactions show slower rates when hydrogen is substituted by deuterium. This kinetic isotope effect cannot be explained by classical theories—both isotopes have identical potential energy surfaces and would therefore be predicted to have identical reaction rates. The origin of this effect lies in quantum mechanical zero-point energy.</p>
+<p>Many reactions proceed more slowly when hydrogen is replaced by deuterium. Classical theories cannot explain this kinetic isotope effect, as H and D have identical potential energy surfaces. Understanding this difference in reaction rates requires consideration of quantum mechanical zero-point vibrational energy.</p>
+<div id="origin-of-the-kinetic-isotope-effect" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Origin of the Kinetic Isotope Effect<a href="lecture9.html#origin-of-the-kinetic-isotope-effect" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For a simple harmonic oscillator, the allowed energy levels are given by:</p>
-<p><span class="math display">\[E_v = \left(v + \frac{1}{2}\right)\sqrt{\frac{k}{\mu}}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+E_v = \left(v + \frac{1}{2}\right)\sqrt{\frac{k}{\mu}}
+\end{equation}\]</span></p>
 <p>where <span class="math inline">\(v\)</span> is the vibrational quantum number, <span class="math inline">\(k\)</span> is the force constant, and <span class="math inline">\(\mu\)</span> is the reduced mass:</p>
-<p><span class="math display">\[\mu = \frac{m_1m_2}{m_1 + m_2}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\mu = \frac{m_1m_2}{m_1 + m_2}
+\end{equation}\]</span></p>
 <p>For an X–H bond (where X is much heavier than H), <span class="math inline">\(\mu \approx m_\mathrm{H}\)</span>. The zero-point energy is then:</p>
-<p><span class="math display">\[E_\mathrm{ZPE} \approx \frac{1}{2}\sqrt{\frac{k}{m_\mathrm{H}}}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+E_\mathrm{ZPE} \approx \frac{1}{2}\sqrt{\frac{k}{m_\mathrm{H}}}
+\end{equation}\]</span></p>
 <p>Substituting H with D approximately doubles the reduced mass, giving:</p>
-<p><span class="math display">\[\frac{E_\mathrm{ZPE}(\mathrm{D})}{E_\mathrm{ZPE}(\mathrm{H})} \approx \frac{1}{\sqrt{2}}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\frac{E_\mathrm{ZPE}(\mathrm{D})}{E_\mathrm{ZPE}(\mathrm{H})} \approx \frac{1}{\sqrt{2}}
+\end{equation}\]</span></p>
 <p>This difference in zero-point energy means that C–D bonds start from a lower energy than C–H bonds. If the reaction involves breaking this bond, the activation energy will be higher for the deuterated compound, leading to a slower reaction rate:</p>
-<p><span class="math display">\[\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(E_\mathrm{ZPE}(\mathrm{H})-E_\mathrm{ZPE}(\mathrm{D}))/RT}\]</span></p>
-<p>For a typical C–H stretching mode:</p>
-<ul>
-<li><span class="math inline">\(E_\mathrm{ZPE}(\mathrm{C-H}) = 18.0~\mathrm{kJ~mol^{-1}}\)</span></li>
-<li><span class="math inline">\(E_\mathrm{ZPE}(\mathrm{C-D}) = 13.2~\mathrm{kJ~mol^{-1}}\)</span></li>
-</ul>
+<p><span class="math display">\[\begin{equation}
+\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(E_\mathrm{ZPE}(\mathrm{H})-E_\mathrm{ZPE}(\mathrm{D}))/RT}
+\end{equation}\]</span></p>
+<p>For a typical C–H stretching mode:
+- <span class="math inline">\(E_\mathrm{ZPE}(\mathrm{C-H}) = 18.0~\mathrm{kJ~mol^{-1}}\)</span>
+- <span class="math inline">\(E_\mathrm{ZPE}(\mathrm{C-D}) = 13.2~\mathrm{kJ~mol^{-1}}\)</span></p>
 <p>At room temperature this predicts:</p>
-<p><span class="math display">\[\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(18.0-13.2)\times 10^3/(8.314 \times 298)} = 6.9\]</span></p>
-<p>The magnitude of the kinetic isotope effect depends on the extent to which the C–H/D bond is broken in the transition state:</p>
+<p><span class="math display">\[\begin{equation}
+\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(18.0-13.2)\times 10^3/(8.314 \times 298)} = 6.9
+\end{equation}\]</span></p>
+</div>
+<div id="using-kinetic-isotope-effects-to-probe-reaction-mechanisms" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Using Kinetic Isotope Effects to Probe Reaction Mechanisms<a href="lecture9.html#using-kinetic-isotope-effects-to-probe-reaction-mechanisms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The magnitude of the kinetic isotope effect depends on the extent to which the C–H/D bond is broken in the transition state. Three scenarios are common:</p>
 <ol style="list-style-type: decimal">
-<li>If the bond is completely broken, we expect <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} \approx 7\)</span></li>
-<li>If the bond is partially broken, we expect <span class="math inline">\(1 &lt; k_\mathrm{H}/k_\mathrm{D} &lt; 7\)</span></li>
-<li>If the bond is unaffected, we expect <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} \approx 1\)</span></li>
+<li>When the bond is completely broken in the transition state, we observe the full isotope effect: <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} \approx 7\)</span></li>
+<li>When the bond is partially broken, we find intermediate values: <span class="math inline">\(1 &lt; k_\mathrm{H}/k_\mathrm{D} &lt; 7\)</span></li>
+<li>When the bond is unaffected, there is no significant isotope effect: <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} \approx 1\)</span></li>
 </ol>
-<p>This makes kinetic isotope effects a valuable probe of reaction mechanisms. For example, compare these two reactions:</p>
-<p><span class="math display">\[\mathrm{Ph-CH(D)-CH_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 7.8\]</span>
-<span class="math display">\[\mathrm{Ph-CH_2-CD_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 1.09\]</span></p>
-<p>The large isotope effect in the first reaction shows that the C–H bond is almost completely broken in the transition state. The negligible isotope effect in the second reaction tells us the C–H bonds are spectators—they remain essentially unchanged as the reaction proceeds.</p>
+<p>These patterns make kinetic isotope effects a valuable probe of reaction mechanisms. Consider these contrasting examples:</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{Ph-CH(D)-CH_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 7.8
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{Ph-CH_2-CD_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 1.09
+\end{equation}\]</span></p>
+<p>In the first reaction, the large isotope effect (<span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} = 7.8\)</span>) indicates that the C–H bond is almost completely broken in the transition state. The negligible isotope effect in the second reaction (<span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} = 1.09\)</span>) tells us the C–H bonds are spectators—they remain essentially unchanged as the reaction proceeds. This information helps us understand the detailed molecular changes occurring in the transition state.</p>
 
 </div>
 </div>
+</div>
 
 
 
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>If the errors in our experimental data, <span class="math inline">\(k(T)\)</span>, are normally distributed, then standard least-squares fitting of the linear form of the Eyring equation gives biased estimates for <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span> — see, e.g., McCluskey J. Chem. Educ. 2023, 100, 11, 4174–4176. Unbiased estimates of <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span> can be obtained by instead fitting the non-linear form of the Eyring equation, using a computer. Because of the exponential dependence on <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span>, direct fitting of the non-linear Eyring equation can be numerically unstable. This can be ameliorated by fitting the linear form of the equation first, to obtain approximate (biased) estimates of the activation parameters, and then using these as starting guesses to fit the non-linear form.<a href="lecture9.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Again, least-squares fitting of <a href="lecture9.html#eq:linearkvsp">(9.1)</a> gives a biased estimate of <span class="math inline">\(\Delta V^\ddagger\)</span>, while direct fitting of the non-linear equation <span class="math inline">\(k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^\frac{\Delta S^\ddagger}{R}\mathrm{e}^\frac{-\Delta U^\ddagger}{RT}\mathrm{e}^\frac{p\Delta V^\ddagger}{RT}\)</span> gives an unbiased estimate.<a href="lecture9.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>

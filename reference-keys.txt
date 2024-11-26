@@ -36,6 +36,7 @@ eq:equilibrium-constant-expanded
 eq:tst-rate
 eq:tst-rate-constant
 eq:tst-k
+eq:linearkvsp
 lecture1
 why-study-chemical-kinetics
 sec:reaction-rates
@@ -117,6 +118,9 @@ mathematical-development
 analysis-of-molecular-systems
 atomic-reactions
 polyatomic-systems
+unimolecular-reactions
+ethane-decomposition
+the-cope-rearrangement
 limitations-in-pre-exponential-factor-estimation
 statistical-entropy-approximations
 effects-of-molecular-symmetry
@@ -126,4 +130,6 @@ lecture9
 the-eyring-plot
 effect-of-pressure-on-rate-coefficients
 kinetic-isotope-effects
+origin-of-the-kinetic-isotope-effect
+using-kinetic-isotope-effects-to-probe-reaction-mechanisms
 integrating-factor
