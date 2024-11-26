@@ -145,6 +145,46 @@ As in our atomic example, the factor of $N_\mathrm{A}$ converts to a per-mole ba
 
 This more complex example reveals a key feature of molecular reactions: as molecular complexity increases, we typically observe larger decreases in molecular freedom when forming the activated complex. This systematically leads to more negative values of $\Delta S^\ddagger$ and correspondingly smaller pre-exponential factors.
 
+## Unimolecular Reactions
+
+While our analysis thus far has focused on bimolecular reactions, we can apply the same molecular freedom approach to unimolecular processes of the form:
+
+\begin{equation}
+\mathrm{A} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}
+\end{equation}
+
+Consider first a single atom or simple diatomic molecule. For a single atom, both the reactant and activated complex possess three translational degrees of freedom but no rotational or vibrational modes. A linear diatomic molecule has two rotational degrees of freedom and one vibrational mode, in addition to its translational motion. In either case, our simple counting approach predicts no net change in molecular freedom when forming the activated complex: both reactant and activated complex have the same number of translational, rotational, and vibrational degrees of freedom. This leads to $\Delta S^{\ddagger} = 0$ and a predicted pre-exponential factor of:
+
+\begin{equation}
+A = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}= \frac{k_\mathrm{B}T}{h} \approx 10^{13}~\mathrm{s}^{-1}
+\end{equation}
+
+However, experimental measurements reveal substantial variations in pre-exponential factors between different unimolecular reactions. These variations arise from changes in internal molecular freedom when forming the activated complex, as illustrated by two contrasting examples.
+
+### Ethane Decomposition
+
+The thermal decomposition of ethane proceeds via C–C bond cleavage:
+
+\begin{equation}
+\mathrm{C}_2\mathrm{H}_6 \longrightarrow 2\mathrm{CH}_3^\bullet
+\end{equation}
+
+The experimental pre-exponential factor is $A = 2 \times 10^{16}~\mathrm{s}^{-1}$, corresponding to $\Delta S^{\ddagger} = +63~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$. This large positive entropy of activation arises because forming the transition state weakens the C–C bond, making the activated complex "looser" than the reactant molecule. The weakened C–C bond allows freer internal rotation, while the CH~3~ groups can undergo enhanced rocking motions. These additional motions correspond to looser, lower-frequency vibrational modes that increase the overall molecular freedom.
+
+### The Cope Rearrangement
+
+A contrasting example is provided by the Cope rearrangement:
+
+\begin{equation}
+\mathrm{CD}_3\mathrm{H}-\mathrm{CH}=\mathrm{CH}-\mathrm{CH}=\mathrm{CH}_2 \longrightarrow \mathrm{products}
+\end{equation}
+
+Here, the experimental pre-exponential factor is $A = 4 \times 10^{10}~\mathrm{s}^{-1}$, corresponding to $\Delta S^{\ddagger} = -46~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$. This negative entropy of activation reflects increased constraints in the transition state. While the reactant has three C–C single bonds allowing relatively free internal rotation, the transition state forms a cyclic, delocalised six-membered ring. This ring structure requires a specific planar geometry, constrained by orbital overlap requirements, resulting in the loss of three internal rotational degrees of freedom.
+
+The magnitude of $\Delta S^{\ddagger}$ suggests each restricted internal rotation contributes approximately $-15~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$ to the entropy change. This provides a useful estimate for analysing other reactions where internal rotations become restricted in the transition state.
+
+These examples reveal how changes in internal molecular freedom can produce significant deviations from our predicted $A \approx 10^{13}~\mathrm{s}^{-1}$. While collision theory cannot describe unimolecular reactions, our molecular freedom approach successfully explains systematic variations in pre-exponential factors when we consider how forming the activated complex affects internal molecular motion. This analysis provides both qualitative insight into reaction mechanisms and a framework for making quantitative predictions about reaction rates.
+
 ## Limitations in Pre-exponential Factor Estimation
 
 While our molecular freedom approach successfully predicts systematic trends in reaction rates, several important approximations underpin these calculations. Understanding these limitations helps us recognise both the power and constraints of our theoretical framework.
