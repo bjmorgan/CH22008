@@ -277,9 +277,11 @@
 </div>
 <div id="setting-up-the-problem" class="section level2 hasAnchor" number="12.2">
 <h2><span class="header-section-number">C.2</span> Setting Up the Problem<a href="the-mathematical-origin-of-the-boltzmann-distribution.html#setting-up-the-problem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Consider a large collection of <span class="math inline">\(N\)</span> molecules that can exchange energy with a heat reservoir at temperature <span class="math inline">\(T\)</span>. Each molecule can occupy different energy states, where:
-- <span class="math inline">\(\epsilon_i\)</span> is the energy of state <span class="math inline">\(i\)</span>
-- <span class="math inline">\(n_i\)</span> is the number of molecules in state <span class="math inline">\(i\)</span></p>
+<p>Consider a large collection of <span class="math inline">\(N\)</span> molecules that can exchange energy with a heat reservoir at temperature <span class="math inline">\(T\)</span>. Each molecule can occupy different energy states, where:</p>
+<ul>
+<li><span class="math inline">\(\epsilon_i\)</span> is the energy of state <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(n_i\)</span> is the number of molecules in state <span class="math inline">\(i\)</span></li>
+</ul>
 <p>Two fundamental constraints govern how these molecules can be distributed among the available states:</p>
 <ol style="list-style-type: decimal">
 <li><p>Conservation of molecules (constant <span class="math inline">\(N\)</span>):
@@ -296,9 +298,11 @@ E = \sum_i n_i\epsilon_i
 </div>
 <div id="the-most-probable-distribution" class="section level2 hasAnchor" number="12.3">
 <h2><span class="header-section-number">C.3</span> The Most Probable Distribution<a href="the-mathematical-origin-of-the-boltzmann-distribution.html#the-most-probable-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Many different arrangements of molecules could satisfy these constraints. However, some arrangements are more likely than others. To find the most probable distribution, we need to:
-1. Calculate how many different ways each distribution can be achieved
-2. Find the distribution that maximises this number while satisfying our constraints</p>
+<p>Many different arrangements of molecules could satisfy these constraints. However, some arrangements are more likely than others. To find the most probable distribution, we need to:</p>
+<ol style="list-style-type: decimal">
+<li>Calculate how many different ways each distribution can be achieved</li>
+<li>Find the distribution that maximises this number while satisfying our constraints</li>
+</ol>
 <div id="counting-molecular-arrangements" class="section level3 hasAnchor" number="12.3.1">
 <h3><span class="header-section-number">C.3.1</span> Counting Molecular Arrangements<a href="the-mathematical-origin-of-the-boltzmann-distribution.html#counting-molecular-arrangements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For a given set of occupation numbers <span class="math inline">\({n_i}\)</span>, the number of distinct ways to arrange <span class="math inline">\(N\)</span> molecules among the available states is:</p>
