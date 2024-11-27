@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>CH22008 Lecture Notes</title>
+  <title>B Statistical Foundations of Transition State Theory | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="CH22008 Lecture Notes" />
+  <meta property="og:title" content="B Statistical Foundations of Transition State Theory | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="CH22008 Lecture Notes" />
+  <meta name="twitter:title" content="B Statistical Foundations of Transition State Theory | CH22008 Lecture Notes" />
   
   <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="lecture1.html"/>
+<link rel="prev" href="integrating-factor.html"/>
+<link rel="next" href="the-mathematical-origin-of-the-boltzmann-distribution.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -269,23 +269,182 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">CH22008 Lecture Notes</h1>
-<p class="author"><em>Benjamin J. Morgan</em></p>
-<p class="date"><em>2024-11-27</em></p>
+<div id="appendix-statistical-tst" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">B</span> Statistical Foundations of Transition State Theory<a href="appendix-statistical-tst.html#appendix-statistical-tst" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="the-boltzmann-factor-and-probability-distributions" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">B.1</span> The Boltzmann Factor and Probability Distributions<a href="appendix-statistical-tst.html#the-boltzmann-factor-and-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statistical mechanics connects molecular-level properties to measurable thermodynamic quantities. The foundation of this connection lies in understanding how energy and temperature determine the distribution of molecular states in thermal equilibrium.</p>
+<div id="the-boltzmann-factor" class="section level3 hasAnchor" number="11.1.1">
+<h3><span class="header-section-number">B.1.1</span> The Boltzmann Factor<a href="appendix-statistical-tst.html#the-boltzmann-factor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When a system is in thermal equilibrium at temperature <span class="math inline">\(T\)</span>, the probability of finding it in a particular microstate <span class="math inline">\(i\)</span> with energy <span class="math inline">\(E_i\)</span> follows a specific mathematical form:</p>
+<p><span class="math display">\[P_i \propto e^{-\beta E_i}\]</span></p>
+<p>where <span class="math inline">\(\beta = \frac{1}{k_\mathrm{B}T}\)</span>, and <span class="math inline">\(k_\mathrm{B}\)</span> is Boltzmann’s constant.</p>
+<p>The Boltzmann factor determines the relative probabilities of molecular energy states in thermal equilibrium. At high temperatures, the exponential term becomes less sensitive to energy differences, resulting in more uniform probability distributions across energy states. As temperature decreases, the probability becomes more strongly concentrated in the lowest energy states.</p>
 </div>
-<div id="about" class="section level1 unnumbered hasAnchor">
-<h1>About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>These notes accompany the 2024 CH22008 lecture course on Advanced Kinetics.</p>
+<div id="properties-of-probability-distributions" class="section level3 hasAnchor" number="11.1.2">
+<h3><span class="header-section-number">B.1.2</span> Properties of Probability Distributions<a href="appendix-statistical-tst.html#properties-of-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The Boltzmann factor gives relative probabilities between states. To construct a complete probability distribution, we need three mathematical conditions:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Non-negativity</strong>: Probabilities cannot be negative
+<span class="math display">\[P_i \geq 0 \quad \text{for all } i\]</span></p></li>
+<li><p><strong>Normalization</strong>: Total probability must equal one
+<span class="math display">\[\sum_i P_i = 1\]</span></p></li>
+<li><p><strong>Additivity</strong>: For independent events, probabilities add
+<span class="math display">\[P(i \text{ or } j) = P_i + P_j\]</span></p></li>
+</ol>
+<p>The exponential form of the Boltzmann factor ensures non-negativity and additivity. Meeting the normalization condition requires introducing an additional factor.</p>
+</div>
+<div id="the-partition-function" class="section level3 hasAnchor" number="11.1.3">
+<h3><span class="header-section-number">B.1.3</span> The Partition Function<a href="appendix-statistical-tst.html#the-partition-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Converting the Boltzmann factor proportionality into a proper probability distribution requires a normalization constant <span class="math inline">\(Z\)</span>, called the partition function:</p>
+<p><span class="math display">\[P_i = \frac{1}{Z}e^{-\beta E_i}\]</span></p>
+<p>The normalization condition determines <span class="math inline">\(Z\)</span>:</p>
+<p><span class="math display">\[1 = \sum_i P_i = \sum_i \frac{1}{Z}e^{-\beta E_i}\]</span></p>
+<p>Therefore:</p>
+<p><span class="math display">\[Z = \sum_i e^{-\beta E_i}\]</span></p>
+<p>This sum encompasses all system microstates, each weighted by its Boltzmann factor. The partition function contains the essential statistical information needed to calculate thermodynamic properties.</p>
+</div>
+<div id="example-a-two-state-system" class="section level3 hasAnchor" number="11.1.4">
+<h3><span class="header-section-number">B.1.4</span> Example: A Two-State System<a href="appendix-statistical-tst.html#example-a-two-state-system" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider a molecular system with two possible states:</p>
+<ul>
+<li>Ground state: <span class="math inline">\(E_1 = 0\)</span></li>
+<li>Excited state: <span class="math inline">\(E_2 = \epsilon\)</span></li>
+</ul>
+<p>The partition function is:</p>
+<p><span class="math display">\[Z = e^{-\beta \cdot 0} + e^{-\beta \epsilon} = 1 + e^{-\beta \epsilon}\]</span></p>
+<p>The probability of the excited state becomes:</p>
+<p><span class="math display">\[P_2 = \frac{e^{-\beta \epsilon}}{1 + e^{-\beta \epsilon}}\]</span></p>
+<p>This basic example illustrates key features that appear in transition state theory: molecules populate multiple energy states, with relative populations determined by energy differences and temperature.</p>
+</div>
+</div>
+<div id="molecular-partition-functions" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">B.2</span> Molecular Partition Functions<a href="appendix-statistical-tst.html#molecular-partition-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The partition function for a single molecule encompasses all possible quantum states available to that molecule. For a molecule with discrete energy levels <span class="math inline">\(E_i\)</span>, the molecular partition function <span class="math inline">\(q\)</span> takes the form:</p>
+<p><span class="math display">\[q = \sum_i g_i e^{-\beta E_i}\]</span></p>
+<p>where <span class="math inline">\(g_i\)</span> represents the degeneracy of state <span class="math inline">\(i\)</span>.</p>
+<p>For polyatomic molecules, the total energy can be separated into contributions from different types of molecular motion:</p>
+<p><span class="math display">\[E = E_\mathrm{trans} + E_\mathrm{rot} + E_\mathrm{vib} + E_\mathrm{elec}\]</span></p>
+<p>When these motions are independent, the molecular partition function factorises:</p>
+<p><span class="math display">\[q = q_\mathrm{trans}q_\mathrm{rot}q_\mathrm{vib}q_\mathrm{elec}\]</span></p>
+</div>
+<div id="system-partition-functions" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">B.3</span> System Partition Functions<a href="appendix-statistical-tst.html#system-partition-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For a system containing <span class="math inline">\(N\)</span> identical molecules, the total partition function <span class="math inline">\(Q\)</span> must account for the indistinguishability of quantum particles. For a gas of non-interacting molecules:</p>
+<p><span class="math display">\[Q = \frac{q^N}{N!}\]</span></p>
+<p>The factor <span class="math inline">\(N!\)</span> prevents overcounting of states that differ only by exchanging identical particles.</p>
+</div>
+<div id="connection-to-chemical-equilibrium" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">B.4</span> Connection to Chemical Equilibrium<a href="appendix-statistical-tst.html#connection-to-chemical-equilibrium" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider a chemical equilibrium:</p>
+<p><span class="math display">\[\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}\]</span></p>
+<p>The equilibrium constant <span class="math inline">\(K\)</span> can be expressed in terms of partition functions. For an ideal gas mixture:</p>
+<p><span class="math display">\[K = \frac{Q_\mathrm{C}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)^{\Delta n}\]</span></p>
+<p>where <span class="math inline">\(\Delta n\)</span> represents the change in the number of gas molecules, and <span class="math inline">\(p^{\circ}\)</span> is the standard pressure.</p>
+<p>Substituting the system partition functions:</p>
+<p><span class="math display">\[K = \frac{q_\mathrm{C}}{q_\mathrm{A}q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)^{\Delta n}e^{-\Delta E_0/k_\mathrm{B}T}\]</span></p>
+<p>where <span class="math inline">\(\Delta E_0\)</span> represents the energy difference between the ground states of products and reactants.</p>
+<p>This expression reveals how molecular properties determine equilibrium constants:</p>
+<ul>
+<li>The ratio of partition functions captures entropic contributions</li>
+<li>The exponential term accounts for energetic differences</li>
+<li>The pressure term ensures correct dimensionality for gas-phase reactions</li>
+</ul>
+</div>
+<div id="the-statistical-rate-equation" class="section level2 hasAnchor" number="11.5">
+<h2><span class="header-section-number">B.5</span> The Statistical Rate Equation<a href="appendix-statistical-tst.html#the-statistical-rate-equation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="reaction-flux-through-the-transition-state" class="section level3 hasAnchor" number="11.5.1">
+<h3><span class="header-section-number">B.5.1</span> Reaction Flux Through the Transition State<a href="appendix-statistical-tst.html#reaction-flux-through-the-transition-state" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider a reaction where reactants A and B combine to form products via an activated complex C<span class="math inline">\(^\ddagger\)</span>:</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^\ddagger \longrightarrow \mathrm{P}
+\end{equation}\]</span></p>
+<p>The central assumption of transition state theory is that reactants and the activated complex maintain a state of pseudo-equilibrium. This equilibrium can be expressed using partition functions:</p>
+<p><span class="math display">\[\begin{equation}
+\frac{[\mathrm{C}^\ddagger]}{[\mathrm{A}][\mathrm{B}]} = \frac{Q_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)
+\end{equation}\]</span></p>
+</div>
+<div id="motion-along-the-reaction-coordinate" class="section level3 hasAnchor" number="11.5.2">
+<h3><span class="header-section-number">B.5.2</span> Motion Along the Reaction Coordinate<a href="appendix-statistical-tst.html#motion-along-the-reaction-coordinate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The partition function for the activated complex, <span class="math inline">\(Q_{\mathrm{C}^\ddagger}\)</span>, requires careful consideration. One degree of freedom corresponds to motion along the reaction coordinate—the path leading from reactants to products through the transition state. This motion differs fundamentally from typical molecular vibrations because it is unbounded: once the system passes through the transition state, it proceeds to products.</p>
+<p>We therefore separate the partition function for the activated complex into two parts:</p>
+<p><span class="math display">\[\begin{equation}
+Q_{\mathrm{C}^\ddagger} = Q^\prime_{\mathrm{C}^\ddagger}q_\mathrm{rc}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(Q^\prime_{\mathrm{C}^\ddagger}\)</span> excludes the reaction coordinate and <span class="math inline">\(q_\mathrm{rc}\)</span> represents the contribution from motion along the reaction coordinate.</p>
+</div>
+<div id="rate-of-barrier-crossing" class="section level3 hasAnchor" number="11.5.3">
+<h3><span class="header-section-number">B.5.3</span> Rate of Barrier Crossing<a href="appendix-statistical-tst.html#rate-of-barrier-crossing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Motion along the reaction coordinate at the transition state resembles a very loose vibrational mode. Consider a harmonic oscillator with frequency <span class="math inline">\(\nu\)</span>. The quantum mechanical partition function for this oscillator is:</p>
+<p><span class="math display">\[\begin{equation}
+q_\mathrm{vib} = \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}}
+\end{equation}\]</span></p>
+<p>As the frequency approaches zero, corresponding to free motion along the reaction coordinate, this becomes:</p>
+<p><span class="math display">\[\begin{equation}
+\lim_{\nu \to 0} q_\mathrm{vib} = \lim_{\nu \to 0} \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}} = \frac{k_\mathrm{B}T}{h\nu}
+\end{equation}\]</span></p>
+<p>The rate constant for passage through the transition state equals this frequency multiplied by the probability of finding the system at the transition state. The frequency factor <span class="math inline">\(\nu\)</span> cancels with the <span class="math inline">\(1/\nu\)</span> from the partition function, yielding the characteristic <span class="math inline">\(k_\mathrm{B}T/h\)</span> factor in the rate equation.</p>
+</div>
+<div id="the-statistical-rate-equation-1" class="section level3 hasAnchor" number="11.5.4">
+<h3><span class="header-section-number">B.5.4</span> The Statistical Rate Equation<a href="appendix-statistical-tst.html#the-statistical-rate-equation-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Combining these results gives the fundamental equation of transition state theory:</p>
+<p><span class="math display">\[\begin{equation}
+k = \frac{k_\mathrm{B}T}{h}\frac{Q^\prime_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)e^{-\Delta E_0/k_\mathrm{B}T}
+\end{equation}\]</span></p>
+<p>or, equivalently</p>
+<p><span class="math display">\[\begin{equation}
+k = \frac{k_\mathrm{B}T}{h}\frac{1}{c^\circ}\frac{Q^\prime_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}e^{-\Delta E_0/k_\mathrm{B}T}
+\end{equation}\]</span></p>
+<p>This equation shows how molecular properties—encoded in the partition functions—determine reaction rates. The pre-exponential factor <span class="math inline">\(\frac{k_\mathrm{B}T}{h}\)</span> emerges naturally from treating the reaction coordinate as a very loose vibration.</p>
+</div>
+</div>
+<div id="molecular-degrees-of-freedom-1" class="section level2 hasAnchor" number="11.6">
+<h2><span class="header-section-number">B.6</span> Molecular Degrees of Freedom<a href="appendix-statistical-tst.html#molecular-degrees-of-freedom-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For a polyatomic molecule, the partition function factorises into contributions from different types of motion:</p>
+<p><span class="math display">\[\begin{equation}
+q = q_\mathrm{trans}q_\mathrm{rot}q_\mathrm{vib}
+\end{equation}\]</span></p>
+<p>The entropic contribution to the rate constant depends on the ratio of partition functions:</p>
+<p><span class="math display">\[\begin{equation}
+\frac{Q^\prime_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}} = \exp(\Delta S^\ddagger/R)
+\end{equation}\]</span></p>
+<p>Changes in molecular freedom when forming the activated complex directly affect this ratio. For each type of motion:</p>
+<p><span class="math display">\[\begin{equation}
+q_\mathrm{trans} \approx \left(\frac{2\pi mk_\mathrm{B}T}{h^2}\right)^{3/2}V
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+q_\mathrm{rot} \approx \frac{8\pi^2Ik_\mathrm{B}T}{h^2}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+q_\mathrm{vib} \approx \exp(-h\nu/2k_\mathrm{B}T)
+\end{equation}\]</span></p>
+<p>Taking logarithms gives characteristic entropy contributions:</p>
+<ul>
+<li>Translation: <span class="math inline">\(S_\mathrm{trans} \approx 195~\mathrm{J~K^{-1}~mol^{-1}}\)</span></li>
+<li>Rotation: <span class="math inline">\(S_\mathrm{rot} \approx 20~\mathrm{J~K^{-1}~mol^{-1}}\)</span></li>
+<li>Vibration: <span class="math inline">\(S_\mathrm{vib} \approx 5~\mathrm{J~K^{-1}~mol^{-1}}\)</span></li>
+</ul>
+<p>For a bimolecular reaction, forming the activated complex typically:</p>
+<ul>
+<li>Reduces translational degrees of freedom by 3</li>
+<li>Reduces rotational degrees of freedom</li>
+<li>Increases vibrational degrees of freedom</li>
+</ul>
+<p>The total entropy change can be estimated by counting these changes:</p>
+<p><span class="math display">\[\begin{equation}
+\Delta S^\ddagger \approx n_\mathrm{t}\Delta S_\mathrm{trans} + n_\mathrm{r}\Delta S_\mathrm{rot} + n_\mathrm{v}\Delta S_\mathrm{vib}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(n_\mathrm{t}\)</span>, <span class="math inline">\(n_\mathrm{r}\)</span>, and <span class="math inline">\(n_\mathrm{v}\)</span> represent the changes in the number of translational, rotational, and vibrational degrees of freedom. This statistical mechanical treatment provides the theoretical basis for the thermodynamic analysis of molecular freedom developed in the main lectures.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="lecture1.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="integrating-factor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="the-mathematical-origin-of-the-boltzmann-distribution.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -316,7 +475,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bjmorgan/CH22008/main/index.Rmd",
+"link": "https://github.com/bjmorgan/CH22008/main/appendices/partition_functions.Rmd",
 "text": "Edit"
 },
 "history": {
