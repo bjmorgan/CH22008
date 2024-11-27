@@ -7,6 +7,7 @@ The Boltzmann distribution is a cornerstone of statistical mechanics, describing
 ## Setting Up the Problem
 
 Consider a large collection of $N$ molecules that can exchange energy with a heat reservoir at temperature $T$. Each molecule can occupy different energy states, where:
+
 - $\epsilon_i$ is the energy of state $i$
 - $n_i$ is the number of molecules in state $i$
 
@@ -27,6 +28,7 @@ Two fundamental constraints govern how these molecules can be distributed among 
 ## The Most Probable Distribution
 
 Many different arrangements of molecules could satisfy these constraints. However, some arrangements are more likely than others. To find the most probable distribution, we need to:
+
 1. Calculate how many different ways each distribution can be achieved
 2. Find the distribution that maximises this number while satisfying our constraints
 
