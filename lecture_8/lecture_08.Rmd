@@ -28,7 +28,7 @@ What happens if we move a small distance along the reaction coordinate? If we mo
 
 $$k^\ddagger = \frac{k_\mathrm{B}T}{h}$$
 
-where $k_\mathrm{B}$ is Boltzmann's constant, $h$ is Planck's constant, and $T$ is temperature.^[The derivation of this expression for $k^\ddagger$ requires a statistical mechanical treatment of transition state theory. You will cover statistical mechanics in the third year of your course.] Because this expression accounts for motion along the reaction coordinate, we must take care when counting vibrational modes in the activated complex: we count only $3N-7$ vibrational modes for a non-linear activated complex (one fewer than the usual $3N-6$), as the reaction coordinate "vibration" is already included in the $k^\ddagger$ term.
+where $k_\mathrm{B}$ is Boltzmann's constant, $h$ is Planck's constant, and $T$ is temperature.^[The derivation of this expression for $k^\ddagger$ requires a statistical mechanical treatment of transition state theory. You will cover statistical mechanics in the third year of your course. A brief overview of the statistical formulation of transition state theory is give in Appendix \@ref(appendix-statistical-tst).] Because this expression accounts for motion along the reaction coordinate, we must take care when counting vibrational modes in the activated complex: we count only $3N-7$ vibrational modes for a non-linear activated complex (one fewer than the usual $3N-6$), as the reaction coordinate "vibration" is already included in the $k^\ddagger$ term.
 
 ## Mathematical Development
 

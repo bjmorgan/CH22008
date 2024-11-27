@@ -1,0 +1,219 @@
+# Statistical Foundations of Transition State Theory {#appendix-statistical-tst}
+
+## The Boltzmann Factor and Probability Distributions
+
+Statistical mechanics connects molecular-level properties to measurable thermodynamic quantities. The foundation of this connection lies in understanding how energy and temperature determine the distribution of molecular states in thermal equilibrium.
+
+### The Boltzmann Factor
+
+When a system is in thermal equilibrium at temperature $T$, the probability of finding it in a particular microstate $i$ with energy $E_i$ follows a specific mathematical form:
+
+$$P_i \propto e^{-\beta E_i}$$
+
+where $\beta = \frac{1}{k_\mathrm{B}T}$, and $k_\mathrm{B}$ is Boltzmann's constant.
+
+The Boltzmann factor determines the relative probabilities of molecular energy states in thermal equilibrium. At high temperatures, the exponential term becomes less sensitive to energy differences, resulting in more uniform probability distributions across energy states. As temperature decreases, the probability becomes more strongly concentrated in the lowest energy states.
+
+### Properties of Probability Distributions
+
+The Boltzmann factor gives relative probabilities between states. To construct a complete probability distribution, we need three mathematical conditions:
+
+1. **Non-negativity**: Probabilities cannot be negative
+   $$P_i \geq 0 \quad \text{for all } i$$
+
+2. **Normalization**: Total probability must equal one
+   $$\sum_i P_i = 1$$
+
+3. **Additivity**: For independent events, probabilities add
+   $$P(i \text{ or } j) = P_i + P_j$$
+
+The exponential form of the Boltzmann factor ensures non-negativity and additivity. Meeting the normalization condition requires introducing an additional factor.
+
+### The Partition Function
+
+Converting the Boltzmann factor proportionality into a proper probability distribution requires a normalization constant $Z$, called the partition function:
+
+$$P_i = \frac{1}{Z}e^{-\beta E_i}$$
+
+The normalization condition determines $Z$:
+
+$$1 = \sum_i P_i = \sum_i \frac{1}{Z}e^{-\beta E_i}$$
+
+Therefore:
+
+$$Z = \sum_i e^{-\beta E_i}$$
+
+This sum encompasses all system microstates, each weighted by its Boltzmann factor. The partition function contains the essential statistical information needed to calculate thermodynamic properties.
+
+### Example: A Two-State System
+
+Consider a molecular system with two possible states:
+
+- Ground state: $E_1 = 0$
+- Excited state: $E_2 = \epsilon$
+
+The partition function is:
+
+$$Z = e^{-\beta \cdot 0} + e^{-\beta \epsilon} = 1 + e^{-\beta \epsilon}$$
+
+The probability of the excited state becomes:
+
+$$P_2 = \frac{e^{-\beta \epsilon}}{1 + e^{-\beta \epsilon}}$$
+
+This basic example illustrates key features that appear in transition state theory: molecules populate multiple energy states, with relative populations determined by energy differences and temperature.
+
+## Molecular Partition Functions
+
+The partition function for a single molecule encompasses all possible quantum states available to that molecule. For a molecule with discrete energy levels $E_i$, the molecular partition function $q$ takes the form:
+
+$$q = \sum_i g_i e^{-\beta E_i}$$
+
+where $g_i$ represents the degeneracy of state $i$.
+
+For polyatomic molecules, the total energy can be separated into contributions from different types of molecular motion:
+
+$$E = E_\mathrm{trans} + E_\mathrm{rot} + E_\mathrm{vib} + E_\mathrm{elec}$$
+
+When these motions are independent, the molecular partition function factorises:
+
+$$q = q_\mathrm{trans}q_\mathrm{rot}q_\mathrm{vib}q_\mathrm{elec}$$
+
+## System Partition Functions
+
+For a system containing $N$ identical molecules, the total partition function $Q$ must account for the indistinguishability of quantum particles. For a gas of non-interacting molecules:
+
+$$Q = \frac{q^N}{N!}$$
+
+The factor $N!$ prevents overcounting of states that differ only by exchanging identical particles.
+
+## Connection to Chemical Equilibrium
+
+Consider a chemical equilibrium:
+
+$$\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}$$
+
+The equilibrium constant $K$ can be expressed in terms of partition functions. For an ideal gas mixture:
+
+$$K = \frac{Q_\mathrm{C}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)^{\Delta n}$$
+
+where $\Delta n$ represents the change in the number of gas molecules, and $p^{\circ}$ is the standard pressure.
+
+Substituting the system partition functions:
+
+$$K = \frac{q_\mathrm{C}}{q_\mathrm{A}q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)^{\Delta n}e^{-\Delta E_0/k_\mathrm{B}T}$$
+
+where $\Delta E_0$ represents the energy difference between the ground states of products and reactants.
+
+This expression reveals how molecular properties determine equilibrium constants:
+
+- The ratio of partition functions captures entropic contributions
+- The exponential term accounts for energetic differences
+- The pressure term ensures correct dimensionality for gas-phase reactions
+
+## The Statistical Rate Equation 
+
+### Reaction Flux Through the Transition State
+
+Consider a reaction where reactants A and B combine to form products via an activated complex C$^\ddagger$:
+
+\begin{equation}
+\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^\ddagger \longrightarrow \mathrm{P}
+\end{equation}
+
+The central assumption of transition state theory is that reactants and the activated complex maintain a state of pseudo-equilibrium. This equilibrium can be expressed using partition functions:
+
+\begin{equation}
+\frac{[\mathrm{C}^\ddagger]}{[\mathrm{A}][\mathrm{B}]} = \frac{Q_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)
+\end{equation}
+
+### Motion Along the Reaction Coordinate
+
+The partition function for the activated complex, $Q_{\mathrm{C}^\ddagger}$, requires careful consideration. One degree of freedom corresponds to motion along the reaction coordinate—the path leading from reactants to products through the transition state. This motion differs fundamentally from typical molecular vibrations because it is unbounded: once the system passes through the transition state, it proceeds to products.
+
+We therefore separate the partition function for the activated complex into two parts:
+
+\begin{equation}
+Q_{\mathrm{C}^\ddagger} = Q^\prime_{\mathrm{C}^\ddagger}q_\mathrm{rc}
+\end{equation}
+
+where $Q^\prime_{\mathrm{C}^\ddagger}$ excludes the reaction coordinate and $q_\mathrm{rc}$ represents the contribution from motion along the reaction coordinate.
+
+### Rate of Barrier Crossing
+
+Motion along the reaction coordinate at the transition state resembles a very loose vibrational mode. Consider a harmonic oscillator with frequency $\nu$. The quantum mechanical partition function for this oscillator is:
+
+\begin{equation}
+q_\mathrm{vib} = \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}}
+\end{equation}
+
+As the frequency approaches zero, corresponding to free motion along the reaction coordinate, this becomes:
+
+\begin{equation}
+\lim_{\nu \to 0} q_\mathrm{vib} = \lim_{\nu \to 0} \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}} = \frac{k_\mathrm{B}T}{h\nu}
+\end{equation}
+
+The rate constant for passage through the transition state equals this frequency multiplied by the probability of finding the system at the transition state. The frequency factor $\nu$ cancels with the $1/\nu$ from the partition function, yielding the characteristic $k_\mathrm{B}T/h$ factor in the rate equation.
+
+### The Statistical Rate Equation
+
+Combining these results gives the fundamental equation of transition state theory:
+
+\begin{equation}
+k = \frac{k_\mathrm{B}T}{h}\frac{Q^\prime_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)e^{-\Delta E_0/k_\mathrm{B}T}
+\end{equation}
+
+or, equivalently
+
+\begin{equation}
+k = \frac{k_\mathrm{B}T}{h}\frac{1}{c^\circ}\frac{Q^\prime_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}e^{-\Delta E_0/k_\mathrm{B}T}
+\end{equation}
+
+This equation shows how molecular properties—encoded in the partition functions—determine reaction rates. The pre-exponential factor $\frac{k_\mathrm{B}T}{h}$ emerges naturally from treating the reaction coordinate as a very loose vibration.
+
+## Molecular Degrees of Freedom
+
+For a polyatomic molecule, the partition function factorises into contributions from different types of motion:
+
+\begin{equation}
+q = q_\mathrm{trans}q_\mathrm{rot}q_\mathrm{vib}
+\end{equation}
+
+The entropic contribution to the rate constant depends on the ratio of partition functions:
+
+\begin{equation}
+\frac{Q^\prime_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}} = \exp(\Delta S^\ddagger/R)
+\end{equation}
+
+Changes in molecular freedom when forming the activated complex directly affect this ratio. For each type of motion:
+
+\begin{equation}
+q_\mathrm{trans} \approx \left(\frac{2\pi mk_\mathrm{B}T}{h^2}\right)^{3/2}V
+\end{equation}
+
+\begin{equation}
+q_\mathrm{rot} \approx \frac{8\pi^2Ik_\mathrm{B}T}{h^2}
+\end{equation}
+
+\begin{equation}
+q_\mathrm{vib} \approx \exp(-h\nu/2k_\mathrm{B}T)
+\end{equation}
+
+Taking logarithms gives characteristic entropy contributions:
+
+- Translation: $S_\mathrm{trans} \approx 195~\mathrm{J~K^{-1}~mol^{-1}}$
+- Rotation: $S_\mathrm{rot} \approx 20~\mathrm{J~K^{-1}~mol^{-1}}$
+- Vibration: $S_\mathrm{vib} \approx 5~\mathrm{J~K^{-1}~mol^{-1}}$
+
+For a bimolecular reaction, forming the activated complex typically:
+
+- Reduces translational degrees of freedom by 3
+- Reduces rotational degrees of freedom
+- Increases vibrational degrees of freedom
+
+The total entropy change can be estimated by counting these changes:
+
+\begin{equation}
+\Delta S^\ddagger \approx n_\mathrm{t}\Delta S_\mathrm{trans} + n_\mathrm{r}\Delta S_\mathrm{rot} + n_\mathrm{v}\Delta S_\mathrm{vib}
+\end{equation}
+
+where $n_\mathrm{t}$, $n_\mathrm{r}$, and $n_\mathrm{v}$ represent the changes in the number of translational, rotational, and vibrational degrees of freedom. This statistical mechanical treatment provides the theoretical basis for the thermodynamic analysis of molecular freedom developed in the main lectures.

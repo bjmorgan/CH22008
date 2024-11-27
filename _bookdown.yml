@@ -24,7 +24,9 @@ rmd_files: [
   "lecture_7/lecture_07.Rmd",
   "lecture_8/lecture_08.Rmd",
   "lecture_9/lecture_09.Rmd",
-  "appendices/appendices.Rmd"
+  "appendices/appendices.Rmd",
+  "appendices/partition_functions.Rmd",
+  "appendices/boltzmann_factor_origin.Rmd"
 ]
 
 output:

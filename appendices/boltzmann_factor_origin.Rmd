@@ -1,0 +1,113 @@
+# The Mathematical Origin of the Boltzmann Distribution
+
+## Introduction
+
+The Boltzmann distribution is a cornerstone of statistical mechanics, describing how molecules distribute themselves among available energy states at thermal equilibrium. While we often simply quote the result that the probability of finding a molecule in a state with energy $\epsilon$ is proportional to $e^{-\epsilon/k_\mathrm{B}T}$, understanding where this expression comes from provides deep insight into the connection between microscopic molecular behaviour and macroscopic thermodynamic properties.
+
+## Setting Up the Problem
+
+Consider a large collection of $N$ molecules that can exchange energy with a heat reservoir at temperature $T$. Each molecule can occupy different energy states, where:
+- $\epsilon_i$ is the energy of state $i$
+- $n_i$ is the number of molecules in state $i$
+
+Two fundamental constraints govern how these molecules can be distributed among the available states:
+
+1. Conservation of molecules (constant $N$):
+   \begin{equation}
+   N = \sum_i n_i
+   (\#eq:number-conservation)
+   \end{equation}
+
+2. Conservation of energy (constant $E$):
+   \begin{equation}
+   E = \sum_i n_i\epsilon_i
+   (\#eq:energy-conservation)
+   \end{equation}
+
+## The Most Probable Distribution
+
+Many different arrangements of molecules could satisfy these constraints. However, some arrangements are more likely than others. To find the most probable distribution, we need to:
+1. Calculate how many different ways each distribution can be achieved
+2. Find the distribution that maximises this number while satisfying our constraints
+
+### Counting Molecular Arrangements
+
+For a given set of occupation numbers ${n_i}$, the number of distinct ways to arrange $N$ molecules among the available states is:
+
+\begin{equation}
+W = \frac{N!}{\prod_i n_i!}
+(\#eq:arrangements)
+\end{equation}
+
+This is analogous to the number of ways of dealing cards into piles, where $n_i$ represents the number of cards in pile $i$.
+
+### Mathematical Treatment
+
+Working with $W$ directly is challenging because factorials of large numbers are involved. Taking the natural logarithm simplifies our mathematics while preserving the maximum (since $\ln$ is a monotonic function):
+
+\begin{equation}
+\ln W = \ln N! - \sum_i \ln n_i!
+(\#eq:log-arrangements)
+\end{equation}
+
+For large numbers, we can use Stirling's approximation: $\ln n! \approx n\ln n - n$. This gives:
+
+\begin{equation}
+\ln W = N\ln N - N - \sum_i (n_i\ln n_i - n_i)
+(\#eq:stirling-applied)
+\end{equation}
+
+## Finding the Maximum
+
+To find the most probable distribution, we need to maximize $\ln W$ subject to our constraints on total number (Eqn. \@ref(eq:number-conservation)) and energy (Eqn. \@ref(eq:energy-conservation)). This is a constrained optimization problem perfectly suited for the method of Lagrange multipliers.
+
+We introduce two Lagrange multipliers, $\alpha$ and $\beta$, and set up the variation:
+
+\begin{equation}
+\delta\left[\ln W - \alpha\left(\sum_i n_i - N\right) - \beta\left(\sum_i n_i\epsilon_i - E\right)\right] = 0
+(\#eq:lagrange)
+\end{equation}
+
+Taking the variation with respect to each $n_i$ gives:
+
+\begin{equation}
+-\ln n_i - 1 - \alpha - \beta\epsilon_i = 0
+(\#eq:variation)
+\end{equation}
+
+Solving for $n_i$:
+
+\begin{equation}
+n_i = e^{-1-\alpha}e^{-\beta\epsilon_i}
+(\#eq:solution)
+\end{equation}
+
+## The Boltzmann Distribution
+
+Dividing by $N$ gives the probability of finding a molecule in state $i$:
+
+\begin{equation}
+P_i = \frac{n_i}{N} = \frac{1}{Z}e^{-\beta\epsilon_i}
+(\#eq:boltzmann)
+\end{equation}
+
+where $Z = Ne^{1+\alpha}$ is called the partition function and ensures that probabilities sum to 1.
+
+## Physical Interpretation
+
+The Lagrange multiplier $\beta$ acquires physical meaning by considering energy exchange with the heat reservoir. Detailed analysis shows that $\beta = 1/k_\mathrm{B}T$, where $k_\mathrm{B}$ is Boltzmann's constant and $T$ is the temperature
+
+This gives us the familiar form of the Boltzmann distribution:
+
+\begin{equation}
+P_i = \frac{1}{Z}e^{-\epsilon_i/k_\mathrm{B}T}
+(\#eq:boltzmann-final)
+\end{equation}
+
+This remarkable result shows that the probability of finding a molecule in a particular energy state depends only on:
+
+1. The energy of that state
+2. The temperature of the system
+3. A normalisation factor (the partition function)
+
+The exponential form emerges naturally from maximising the number of possible molecular arrangements while maintaining constant energy—we didn't need to assume it. This mathematical derivation reveals the deep connection between molecular-level disorder and macroscopic thermodynamic properties.
