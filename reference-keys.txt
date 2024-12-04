@@ -37,6 +37,17 @@ eq:tst-rate
 eq:tst-rate-constant
 eq:tst-k
 eq:linearkvsp
+eq:arrhenius-ln
+eq:dlnk-dt-arrh
+eq:eyring
+eq:eyring-linear
+eq:eyring-linear-expanded
+eq:dlnk-dt-eyring
+eq:relationship-bimolecular
+eq:relationship-unimolecular
+eq:eyring-unimolecular
+eq:eyring-termolecular
+eq:relationship-termolecular
 eq:number-conservation
 eq:energy-conservation
 eq:arrangements
@@ -143,6 +154,9 @@ kinetic-isotope-effects
 origin-of-the-kinetic-isotope-effect
 using-kinetic-isotope-effects-to-probe-reaction-mechanisms
 integrating-factor
+appendix-activation
+temperature-dependence-of-rate-constants
+effect-of-reaction-molecularity
 appendix-statistical-tst
 the-boltzmann-factor-and-probability-distributions
 the-boltzmann-factor

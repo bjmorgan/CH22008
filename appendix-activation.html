@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 6 Transition State Theory | CH22008 Lecture Notes</title>
+  <title>B The Relationship Between \(\Delta H^\ddagger\) and the Arrhenius Activation Energy | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 6 Transition State Theory | CH22008 Lecture Notes" />
+  <meta property="og:title" content="B The Relationship Between \(\Delta H^\ddagger\) and the Arrhenius Activation Energy | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 6 Transition State Theory | CH22008 Lecture Notes" />
+  <meta name="twitter:title" content="B The Relationship Between \(\Delta H^\ddagger\) and the Arrhenius Activation Energy | CH22008 Lecture Notes" />
   
   <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lecture5.html"/>
-<link rel="next" href="lecture7.html"/>
+<link rel="prev" href="integrating-factor.html"/>
+<link rel="next" href="appendix-statistical-tst.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -274,145 +274,86 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lecture6" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Lecture 6</span> Transition State Theory<a href="lecture6.html#lecture6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="sec:intro" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> A Molecular Theory of Reaction Rates<a href="lecture6.html#sec:intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Collision theory explains reaction rates using a simple model of colliding spheres. While this works for some gas-phase reactions, it cannot predict steric factors or explain systematic trends in activation energies. We need a more sophisticated approach.</p>
-<p>For a reaction A + B → P, molecules must climb an energy barrier before forming products. The reaction coordinate diagram shows this energy profile, from reactants through to products. The point at the highest point of the energy barrier is called the transition state; at this point the reacting molecules form a specific arrangement called the activated complex, in which bonds are partially broken and new bonds are starting to form. Transition state theory provides a framework for analyzing this activated complex and using it to predict reaction rates.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-tst-reaction-coordinate"></span>
-<img src="lecture_6/figures/reaction_coordinate.png" alt="A reaction coordinate diagram for the reaction A + B → P. The energy profile shows the barrier that must be crossed as reactants are converted to products. The peak of this barrier corresponds to the transition state configuration, and the collection of molecules at the transition state form the activated complex, C$^\ddagger$." width="55%" />
-<p class="caption">
-Figure 6.1: A reaction coordinate diagram for the reaction A + B → P. The energy profile shows the barrier that must be crossed as reactants are converted to products. The peak of this barrier corresponds to the transition state configuration, and the collection of molecules at the transition state form the activated complex, C<span class="math inline">\(^\ddagger\)</span>.
-</p>
-</div>
-</div>
-<div id="sec:tst-principles" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Basic Principles of Transition State Theory<a href="lecture6.html#sec:tst-principles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Transition state theory treats the overall reaction A + B → P as occurring in two steps. First, the reactants A and B combine to form the activated complex C<span class="math inline">\(^{\ddagger}\)</span>. This complex can either fall apart back to reactants or go on to form products. The theory makes a key assumption: we can treat the activated complex as being in equilibrium with the reactants, even though C<span class="math inline">\(^{\ddagger}\)</span> is inherently unstable. We call this a pseudo-equilibrium to reflect this special status.</p>
-<p>The second step is the conversion of C<span class="math inline">\(^{\ddagger}\)</span> to products, which we assume occurs with a characteristic rate constant <span class="math inline">\(k^{\ddagger}\)</span>. This is a first-order process — the rate depends only on the concentration of the activated complex:</p>
-<p><span class="math display">\[\nu = \frac{\mathrm{d}[\mathrm{P}]}{\mathrm{d}t} = k^{\ddagger}[\mathrm{C}^{\ddagger}]\]</span></p>
-<p>We can write the complete process as:
-<span class="math display" id="eq:tst-scheme">\[\begin{equation}
-\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \xrightarrow{k^{\ddagger}} \mathrm{P}
-\tag{6.1}
-\end{equation}\]</span></p>
-</div>
-<div id="sec:tst-math" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Mathematical Development of Transition State Theory<a href="lecture6.html#sec:tst-math" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a pseudo-equilibrium constant:</p>
-<p><span class="math display" id="eq:equilibrium-constant">\[\begin{equation}
-K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]}{[\mathrm{A}][\mathrm{B}]}
-\tag{6.2}
-\end{equation}\]</span></p>
-<p>This allows us to express the concentration of the activated complex in terms of reactant concentrations:</p>
-<p><span class="math display" id="eq:activated-complex-conc">\[\begin{equation}
-[\mathrm{C}^{\ddagger}] = K^{\ddagger}[\mathrm{A}][\mathrm{B}]
-\tag{6.3}
-\end{equation}\]</span></p>
-<p>Since we treat the formation of the activated complex as a pseudo-equilibrium, we can apply standard thermodynamic relationships. The equilibrium constant <span class="math inline">\(K^{\ddagger}\)</span> relates to the activation Gibbs energy through:</p>
-<p><span class="math display" id="eq:gibbs-activation">\[\begin{equation}
-\Delta G^{\ddagger} = -RT\ln(K^{\ddagger}c^{\circ})
-\tag{6.4}
-\end{equation}\]</span></p>
-<p>The reference concentration <span class="math inline">\(c^{\circ}\)</span> (1 mol dm<span class="math inline">\(^{-3}\)</span>) ensures our rate constant will have the correct units.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
-<p>Breaking <span class="math inline">\(\Delta G^{\ddagger}\)</span> into its enthalpic and entropic components:</p>
-<p><span class="math display" id="eq:equilibrium-constant-expanded">\[\begin{equation}
-K^{\ddagger} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
-\tag{6.5}
-\end{equation}\]</span></p>
-<p>From our second assumption, the rate of product formation is proportional to the concentration of the activated complex:</p>
-<p><span class="math display" id="eq:tst-rate">\[\begin{equation}
-\nu = k^{\ddagger}[\mathrm{C}^{\ddagger}] = \frac{k^{\ddagger}}{c^{\circ}}[\mathrm{A}][\mathrm{B}]\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
-\tag{6.6}
-\end{equation}\]</span></p>
-<p>This expression is known as the Eyring equation, and has the form of a second-order rate law with rate constant:</p>
-<p><span class="math display" id="eq:tst-rate-constant">\[\begin{equation}
-k = \frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
-\tag{6.7}
-\end{equation}\]</span></p>
-</div>
-<div id="sec:tst-arrhenius" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Relationship to the Arrhenius Equation<a href="lecture6.html#sec:tst-arrhenius" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We can understand how transition state theory connects to experimental observations by comparing the rate constant expression with the Arrhenius equation:</p>
-<p>From transition state theory:
-<span class="math display" id="eq:tst-k">\[\begin{equation}
-k = \frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
-\tag{6.8}
-\end{equation}\]</span></p>
-<p>The Arrhenius equation:
-<span class="math display" id="eq:arrhenius">\[\begin{equation}
+<div id="appendix-activation" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">B</span> The Relationship Between <span class="math inline">\(\Delta H^\ddagger\)</span> and the Arrhenius Activation Energy<a href="appendix-activation.html#appendix-activation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In Section <a href="lecture6.html#sec:tst-arrhenius">6.4</a>, we identified a correspondence between the transition state theory rate equation and the Arrhenius equation. The enthalpy of activation <span class="math inline">\(\Delta H^\ddagger\)</span> and the Arrhenius activation energy <span class="math inline">\(E_\mathrm{a}\)</span> play similar roles in these equations, but they are not identical quantities. Here we examine their precise relationship.</p>
+<div id="temperature-dependence-of-rate-constants" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">B.1</span> Temperature Dependence of Rate Constants<a href="appendix-activation.html#temperature-dependence-of-rate-constants" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Arrhenius equation defines the temperature dependence of rate constants empirically:</p>
+<p><span class="math display" id="eq:arrhenius">\[\begin{equation}
 k = A\mathrm{e}^{-E_\mathrm{a}/RT}
 \tag{5.4}
 \end{equation}\]</span></p>
-<p>This comparison reveals two important correspondences:</p>
-<ul>
-<li>The activation enthalpy <span class="math inline">\(\Delta H^{\ddagger}\)</span> plays a similar role to the Arrhenius activation energy <span class="math inline">\(E_\mathrm{a}\)</span>.</li>
-<li>The pre-exponential factor <span class="math inline">\(A\)</span> corresponds to <span class="math inline">\(\frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\)</span>.</li>
-</ul>
-<p>Like collision theory, transition state theory provides a molecular-level interpretation of the Arrhenius parameters. However, transition state theory offers additional insight by separating the activation barrier into enthalpic (<span class="math inline">\(\Delta H^{\ddagger}\)</span>) and entropic (<span class="math inline">\(\Delta S^{\ddagger}\)</span>) contributions, helping explain systematic variations in reactivity across related compounds.</p>
+<p>Taking logarithms:</p>
+<p><span class="math display" id="eq:arrhenius-ln">\[\begin{equation}
+\ln k = \ln A - \frac{E_\mathrm{a}}{RT}
+\tag{B.1}
+\end{equation}\]</span></p>
+<p>Differentiating with respect to temperature<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
+<p><span class="math display" id="eq:dlnk-dt-arrh">\[\begin{equation}
+\frac{\mathrm{d}\ln k}{\mathrm{d}T} = \frac{E_\mathrm{a}}{RT^2}
+\tag{B.2}
+\end{equation}\]</span></p>
+<p>This equation gives a formal defition of the Arrhenius activation energy.</p>
+<p>For a bimolecular reaction, the thermodynamic form of the transition state theory rate equation is:</p>
+<p><span class="math display" id="eq:eyring">\[\begin{equation}
+k = \frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\Delta H^\ddagger/RT}
+\tag{B.3}
+\end{equation}\]</span></p>
+<p>Taking logarithms:</p>
+<p><span class="math display" id="eq:eyring-linear">\[\begin{equation}
+\ln k = \ln\left(\frac{k_\mathrm{B}T}{hc^\circ}\right) + \frac{\Delta S^\ddagger}{R} - \frac{\Delta H^\ddagger}{RT}
+\tag{B.4}
+\end{equation}\]</span></p>
+<p>For an ideal gas, <span class="math inline">\(\frac{1}{c^\circ} = \frac{V}{N} = \frac{RT}{p}\)</span>, and we can rewrite our equation as</p>
+<p><span class="math display" id="eq:eyring-linear-expanded">\[\begin{equation}
+\ln k = \ln\left(\frac{k_\mathrm{B}T}{h}\right) + \ln\left(\frac{RT}{p}\right) + \frac{\Delta S^\ddagger}{R} - \frac{\Delta H^\ddagger}{RT}
+\tag{B.5}
+\end{equation}\]</span></p>
+<p>Differentiating with respect to temperature gives,<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
+<p><span class="math display" id="eq:dlnk-dt-eyring">\[\begin{equation}
+\frac{\mathrm{d}\ln k}{\mathrm{d}T} = \frac{1}{T} + \frac{1}{T} + \frac{\Delta H^\ddagger}{RT^2}
+\tag{B.6}
+\end{equation}\]</span></p>
+<p>Comparing equations <a href="appendix-activation.html#eq:dlnk-dt-arrh">(B.2)</a> and <a href="appendix-activation.html#eq:dlnk-dt-eyring">(B.6)</a> we find:</p>
+<p><span class="math display" id="eq:relationship-bimolecular">\[\begin{equation}
+E_\mathrm{a} = \Delta H^\ddagger + 2RT
+\tag{B.7}
+\end{equation}\]</span></p>
 </div>
-<div id="sec:enthalpy-activation" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Enthalpy of Activation<a href="lecture6.html#sec:enthalpy-activation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The enthalpy of activation <span class="math inline">\(\Delta H^{\ddagger}\)</span> represents the enthalpic contribution to forming the activated complex. For a simple reaction where C breaks an A–B bond to form B–C, examining what happens at the transition state reveals why this enthalpy change varies systematically between related reactions.</p>
-<p>In the activated complex, the original A–B bond is almost completely broken, while the new B–C bond has only started to form. This means <span class="math inline">\(\Delta H^{\ddagger}\)</span> depends primarily on the strength of the bond being broken. The strength of the bond being formed has much less effect, since this bond is still weak in the transition state.</p>
-<p>This principle helps explain trends in activation energies for a family of related reactions. Consider these examples involving H and Br:</p>
-<p><span class="math display">\[\begin{align*}
-\mathrm{H–H} + \mathrm{H} &amp;\longrightarrow \mathrm{H} + \mathrm{H–H} &amp; E_\mathrm{a} &amp;= +39~\mathrm{kJ~mol^{-1}} \\
-\mathrm{H–H} + \mathrm{Br} &amp;\longrightarrow \mathrm{H} + \mathrm{H–Br} &amp; E_\mathrm{a} &amp;= +82~\mathrm{kJ~mol^{-1}} \\
-\mathrm{Br–H} + \mathrm{H} &amp;\longrightarrow \mathrm{Br} + \mathrm{H–H} &amp; E_\mathrm{a} &amp;= +12~\mathrm{kJ~mol^{-1}} \\
-\mathrm{Br–Br} + \mathrm{H} &amp;\longrightarrow \mathrm{Br} + \mathrm{Br–H} &amp; E_\mathrm{a} &amp;= +4~\mathrm{kJ~mol^{-1}}
-\end{align*}\]</span></p>
-<p>To understand these trends, we need to consider the bond dissociation energies:</p>
-<p><span class="math display">\[\begin{align*}
-\mathrm{H–H}: &amp; ~E_\mathrm{d} = +436~\mathrm{kJ~mol^{-1}} \\
-\mathrm{H–Br}: &amp; ~E_\mathrm{d} = +366~\mathrm{kJ~mol^{-1}} \\
-\mathrm{Br–Br}: &amp; ~E_\mathrm{d} = +193~\mathrm{kJ~mol^{-1}}
-\end{align*}\]</span></p>
-<p>The trends in activation energy can be explained by:</p>
-<ol style="list-style-type: decimal">
-<li>The first two reactions involve breaking H–H bonds (highest <span class="math inline">\(E_\mathrm{d}\)</span>) → highest <span class="math inline">\(E_\mathrm{a}\)</span> values</li>
-<li>Between these two:
-<ul>
-<li>H–H + H forms H–H (more favorable)</li>
-<li>H–H + Br forms H–Br (less favorable)</li>
-<li>Therefore <span class="math inline">\(E_\mathrm{a}\)</span> is lower for H–H + H</li>
-</ul></li>
-<li>The remaining reactions follow the trend in bond strength being broken:
-<ul>
-<li>Breaking H–Br (<span class="math inline">\(E_\mathrm{a} = +12~\mathrm{kJ~mol^{-1}}\)</span>)</li>
-<li>Breaking Br–Br (<span class="math inline">\(E_\mathrm{a} = +4~\mathrm{kJ~mol^{-1}}\)</span>)</li>
-</ul></li>
-</ol>
-</div>
-<div id="sec:tst-collision" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> Reconciling Transition State Theory with Collision Theory<a href="lecture6.html#sec:tst-collision" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>At first glance, Collision theory and transition state theory can seem to give different pictures of activation energy. In collision theory, <span class="math inline">\(E_\mathrm{a}\)</span> represents a minimum kinetic energy molecules must have to react. In transition state theory, <span class="math inline">\(\Delta H^{\ddagger}\)</span> represents the energy needed to distort and partially break bonds bonds in the activated complex.</p>
-<p>We can connect these views by following the energy through a reactive collision. Initially, the molecules approach with kinetic energy at least equal to <span class="math inline">\(E_\mathrm{a}\)</span>. As they collide, this kinetic energy transforms into potential energy, with the molecular geometry distorting to form the activated complex. Here, the initial kinetic energy has become the energy stored in partially broken and formed bonds — our <span class="math inline">\(\Delta H^{\ddagger}\)</span>. By energy conservation, these energies must be approximately equal.</p>
-<p>The two theories thus describe the same process from different perspectives: collision theory focuses on the keinetic energy molecules must have before they collide, while transition state theory considers how this energy is used in making and breaking bonds.</p>
-</div>
-<div id="sec:entropy-activation" class="section level2 hasAnchor" number="6.7">
-<h2><span class="header-section-number">6.7</span> Entropy of Activation<a href="lecture6.html#sec:entropy-activation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We have seen that transition state theory provides a molecular interpretation of the Arrhenius pre-exponential factor <span class="math inline">\(A\)</span> in terms of an entropy of activation <span class="math inline">\(\Delta S^{\ddagger}\)</span>. To understand what this entropy term means and what determines its magnitude, we need to think carefully about what entropy means at a molecular level.</p>
-<div id="understanding-molecular-entropy" class="section level3 hasAnchor" number="6.7.1">
-<h3><span class="header-section-number">6.7.1</span> Understanding Molecular Entropy<a href="lecture6.html#understanding-molecular-entropy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>While entropy is often simply described as a measure of “disorder”, this description can be misleading. For many chemical reactions, simple arguments based on relative “disorder” fail to predict even qualitative behaviour. This becomes particularly apparent when considering gas-phase reactions: both reactants and products exist as freely moving molecules, so which state is more “disordered”?</p>
-<p>A more useful framework considers entropy in terms of molecular freedom and statistical likelihood. Systems with greater freedom have higher entropy than more constrained systems, and molecular arrangements that are statistically more likely have higher entropy than less likely arrangements.</p>
-<p>The spontaneous expansion of an ideal gas illustrates these ideas. An ideal gas expands to fill its container despite no change in internal energy (<span class="math inline">\(\Delta U = 0\)</span>) or enthalpy (<span class="math inline">\(\Delta H = 0\)</span>, since <span class="math inline">\(pV = nRT\)</span>). This process occurs spontaneously because the expanded state has higher entropy: gas molecules have more freedom to move through a larger volume, and an even distribution throughout the available space is statistically more likely than having all molecules confined to a smaller region.</p>
-</div>
-<div id="entropy-of-activation-for-bimolecular-reactions" class="section level3 hasAnchor" number="6.7.2">
-<h3><span class="header-section-number">6.7.2</span> Entropy of Activation for Bimolecular Reactions<a href="lecture6.html#entropy-of-activation-for-bimolecular-reactions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>For a gas-phase bimolecular reaction, forming the activated complex introduces new constraints on molecular motion:</p>
-<p><span class="math display">\[\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger}\]</span></p>
-<p>Each molecule in the gas phase has three translational degrees of freedom—the molecules are free to move along the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, and <span class="math inline">\(z\)</span> axes, independently of the motion of the other molecules in the system. The reactants A and B therefore have six translational degrees of freedom between them. When these molecules combine to form the activated complex, however, we have just three translational degrees of freedom, since <span class="math inline">\(\mathrm{C}^{\ddagger}\)</span> moves as a single unit through space. This loss of translational freedom corresponds to a decrease in entropy. For gas-phase bimolecular reactions, <span class="math inline">\(\Delta S^{\ddagger}\)</span> is therefore always negative, reflecting the increased constraints imposed when forming the activated complex.</p>
+<div id="effect-of-reaction-molecularity" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">B.2</span> Effect of Reaction Molecularity<a href="appendix-activation.html#effect-of-reaction-molecularity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The derivation above is for a bimolecular reaction. For a unimolecular reaction, the same procedure gives a different relationship between <span class="math inline">\(E_\mathrm{a}\)</span> and <span class="math inline">\(\Delta H^\ddagger\)</span>:</p>
+<p><span class="math display" id="eq:relationship-unimolecular">\[\begin{equation}
+E_\mathrm{a} = \Delta H^\ddagger + RT
+\tag{B.8}
+\end{equation}\]</span></p>
+<p>The difference arises because the unimolecular TST rate equation is</p>
+<p><span class="math display" id="eq:eyring-unimolecular">\[\begin{equation}
+k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\Delta H^\ddagger/RT}
+\tag{B.9}
+\end{equation}\]</span></p>
+<p>with no <span class="math inline">\(1/c^\circ\)</span> term in the prefactor, and we lose the corresponding factor of <span class="math inline">\(RT\)</span> when we evaluate <span class="math inline">\(\mathrm{d} \ln k / \mathrm{T}\)</span>.</p>
+<p>Similarly, the TST rate equation for a termolecular reaction is</p>
+<p><span class="math display" id="eq:eyring-termolecular">\[\begin{equation}
+k = \frac{k_\mathrm{B}T}{h{c^\circ}^2}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\Delta H^\ddagger/RT}
+\tag{B.10}
+\end{equation}\]</span></p>
+<p>and</p>
+<p><span class="math display" id="eq:relationship-termolecular">\[\begin{equation}
+E_\mathrm{a} = \Delta H^\ddagger + 3RT
+\tag{B.11}
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(2RT\)</span> comes from the squared concentration factor in the rate equation.</p>
+<p>At room temperature, <span class="math inline">\(RT \approx 2.5\)</span> kJ mol<span class="math inline">\(^{-1}\)</span>. The difference between <span class="math inline">\(E_\mathrm{a}\)</span> and <span class="math inline">\(\Delta H^\ddagger\)</span> therefore ranges from about 2.5 kJ mol<span class="math inline">\(^{-1}\)</span> for unimolecular reactions to 7.5 kJ mol<span class="math inline">\(^{-1}\)</span> for termolecular processes. While these differences are relatively small compared to typical activation energies, they become important when comparing activation parameters determined using different methods or analysing temperature-dependent kinetic data over wide temperature ranges.</p>
 
-</div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>Many basic treatments of transition state theory omit <span class="math inline">\(c^{\circ}\)</span> since it equals 1 under standard conditions. Including it ensures that <span class="math inline">\(k\)</span> has the correct units for a second-order rate constant of dm<span class="math inline">\(^3\)</span> mol<span class="math inline">\(^{-1}\)</span> s<span class="math inline">\(^{-1}\)</span>.<a href="lecture6.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="6">
+<li id="fn6"><p><span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d}x}\frac{a}{x} = -\frac{a}{x^2}\)</span>.<a href="appendix-activation.html#fnref6" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p><span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d}x}\ln ax = \frac{1}{x}\)</span>.<a href="appendix-activation.html#fnref7" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -420,8 +361,8 @@ k = A\mathrm{e}^{-E_\mathrm{a}/RT}
           </div>
         </div>
       </div>
-<a href="lecture5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lecture7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="integrating-factor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-statistical-tst.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -452,7 +393,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/bjmorgan/CH22008/main/lecture_6/lecture_06.Rmd",
+"link": "https://github.com/bjmorgan/CH22008/main/appendices/relationship_between_H_ddag_and_Ea.Rmd",
 "text": "Edit"
 },
 "history": {
