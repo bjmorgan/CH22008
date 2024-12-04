@@ -1,0 +1,99 @@
+# The Relationship Between $\Delta H^\ddagger$ and the Arrhenius Activation Energy {#appendix-activation}
+
+In Section \@ref(sec:tst-arrhenius), we identified a correspondence between the transition state theory rate equation and the Arrhenius equation. The enthalpy of activation $\Delta H^\ddagger$ and the Arrhenius activation energy $E_\mathrm{a}$ play similar roles in these equations, but they are not identical quantities. Here we examine their precise relationship.
+
+## Temperature Dependence of Rate Constants
+
+The Arrhenius equation defines the temperature dependence of rate constants empirically:
+
+\begin{equation}
+k = A\mathrm{e}^{-E_\mathrm{a}/RT}
+(\#eq:arrhenius)
+\end{equation}
+
+Taking logarithms:
+
+\begin{equation}
+\ln k = \ln A - \frac{E_\mathrm{a}}{RT}
+(\#eq:arrhenius-ln)
+\end{equation}
+
+Differentiating with respect to temperature^[$\frac{\mathrm{d}}{\mathrm{d}x}\frac{a}{x} = -\frac{a}{x^2}$.]
+
+\begin{equation}
+\frac{\mathrm{d}\ln k}{\mathrm{d}T} = \frac{E_\mathrm{a}}{RT^2}
+(\#eq:dlnk-dt-arrh)
+\end{equation}
+
+This equation gives a formal defition of the Arrhenius activation energy.
+
+For a bimolecular reaction, the thermodynamic form of the transition state theory rate equation is:
+
+\begin{equation}
+k = \frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\Delta H^\ddagger/RT}
+(\#eq:eyring)
+\end{equation}
+
+Taking logarithms:
+
+\begin{equation}
+\ln k = \ln\left(\frac{k_\mathrm{B}T}{hc^\circ}\right) + \frac{\Delta S^\ddagger}{R} - \frac{\Delta H^\ddagger}{RT}
+(\#eq:eyring-linear)
+\end{equation}
+
+For an ideal gas, $\frac{1}{c^\circ} = \frac{V}{N} = \frac{RT}{p}$, and we can rewrite our equation as
+
+\begin{equation}
+\ln k = \ln\left(\frac{k_\mathrm{B}T}{h}\right) + \ln\left(\frac{RT}{p}\right) + \frac{\Delta S^\ddagger}{R} - \frac{\Delta H^\ddagger}{RT}
+(\#eq:eyring-linear-expanded)
+\end{equation}
+
+Differentiating with respect to temperature gives,^[$\frac{\mathrm{d}}{\mathrm{d}x}\ln ax = \frac{1}{x}$.]
+
+\begin{equation}
+\frac{\mathrm{d}\ln k}{\mathrm{d}T} = \frac{1}{T} + \frac{1}{T} + \frac{\Delta H^\ddagger}{RT^2}
+(\#eq:dlnk-dt-eyring)
+\end{equation}
+
+Comparing equations \@ref(eq:dlnk-dt-arrh) and \@ref(eq:dlnk-dt-eyring) we find:
+
+\begin{equation}
+E_\mathrm{a} = \Delta H^\ddagger + 2RT
+(\#eq:relationship-bimolecular)
+\end{equation}
+
+## Effect of Reaction Molecularity
+
+The derivation above is for a bimolecular reaction. For a unimolecular reaction, the same procedure gives a different relationship between $E_\mathrm{a}$ and $\Delta H^\ddagger$:
+
+\begin{equation}
+E_\mathrm{a} = \Delta H^\ddagger + RT
+(\#eq:relationship-unimolecular)
+\end{equation}
+
+The difference arises because the unimolecular TST rate equation is 
+
+\begin{equation}
+k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\Delta H^\ddagger/RT}
+(\#eq:eyring-unimolecular)
+\end{equation}
+
+with no $1/c^\circ$ term in the prefactor, and we lose the corresponding factor of $RT$ when we evaluate $\mathrm{d} \ln k / \mathrm{T}$.
+
+Similarly, the TST rate equation for a termolecular reaction is
+
+\begin{equation}
+k = \frac{k_\mathrm{B}T}{h{c^\circ}^2}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\Delta H^\ddagger/RT}
+(\#eq:eyring-termolecular)
+\end{equation}
+
+and
+
+\begin{equation}
+E_\mathrm{a} = \Delta H^\ddagger + 3RT
+(\#eq:relationship-termolecular)
+\end{equation}
+
+where $2RT$ comes from the squared concentration factor in the rate equation.
+
+At room temperature, $RT \approx 2.5$ kJ mol$^{-1}$. The difference between $E_\mathrm{a}$ and $\Delta H^\ddagger$ therefore ranges from about 2.5 kJ mol$^{-1}$ for unimolecular reactions to 7.5 kJ mol$^{-1}$ for termolecular processes. While these differences are relatively small compared to typical activation energies, they become important when comparing activation parameters determined using different methods or analysing temperature-dependent kinetic data over wide temperature ranges.
