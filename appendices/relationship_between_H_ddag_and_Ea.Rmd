@@ -25,7 +25,7 @@ Differentiating with respect to temperature^[$\frac{\mathrm{d}}{\mathrm{d}x}\fra
 (\#eq:dlnk-dt-arrh)
 \end{equation}
 
-This equation gives a formal defition of the Arrhenius activation energy.
+This equation can be considered a formal definition of the Arrhenius activation energy.
 
 For a bimolecular reaction, the thermodynamic form of the transition state theory rate equation is:
 
