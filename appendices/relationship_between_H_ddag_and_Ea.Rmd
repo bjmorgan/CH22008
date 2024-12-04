@@ -1,4 +1,4 @@
-# The Relationship Between $\Delta H^\ddagger$ and the Arrhenius Activation Energy {#appendix-activation}
+# The Relationship Between $\Delta H^\ddagger$ and the $E_\mathrm{a}$ {#appendix-activation}
 
 In Section \@ref(sec:tst-arrhenius), we identified a correspondence between the transition state theory rate equation and the Arrhenius equation. The enthalpy of activation $\Delta H^\ddagger$ and the Arrhenius activation energy $E_\mathrm{a}$ play similar roles in these equations, but they are not identical quantities. Here we examine their precise relationship.
 
