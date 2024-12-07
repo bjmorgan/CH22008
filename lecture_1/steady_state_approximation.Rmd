@@ -44,9 +44,22 @@ This is the same result we obtained in our analysis of consecutive reactions in 
 
 ### Validity of the Steady-State Approximation
 
-The steady-state approximation is valid when:
+The steady-state approximation simplifies the analysis of complex reaction mechanisms by treating the concentrations of reactive intermediates as constant. While this mathematical convenience makes many problems tractable, we need to understand when the approximation holds and what it reveals about reaction kinetics.
 
-- The intermediate is consumed much faster than it is formed
-- We are not interested in the initial period before steady state is established
+A steady state exists when the rates of formation and consumption of the intermediate balance. This requires two conditions: the intermediate must be consumed much faster than it forms, and enough time must have passed for the intermediate to build up to its steady-state concentration. This initial period, where the intermediate concentration increases to its steady-state value, is called the induction period.
 
-These conditions are often met for reactive intermediates in chemical reactions. The approximation can be tested by comparing solutions of the complete rate equations with predictions from the steady-state analysis.
+Consider a reaction with the mechanism:
+
+$$\mathrm{A} + \mathrm{B} \underset{k_{-1}}{\overset{k1}\rightleftharpoons} \mathrm{C} \overset{k_2}\rightarrow \mathrm{D}$$
+
+Reactants A and B combine reversibly to form an intermediate C, which then reacts to form product D. The steady-state approximation assumes $\mathrm{d}[\mathrm{C}]/\mathrm{d}t \approx 0$ &mdash; that is, the concentration of C remains approximately constant as the reaction proceeds.
+
+```{r fig-steady-state-comparison, fig.cap="Time evolution of concentrations for the reaction mechanism $\\mathrm{A} + \\mathrm{B} \\underset{k_1}{\\overset{k1}\\rightleftharpoons} \\mathrm{C} \\overset{k_2}\\longrightarrow \\mathrm{D}$ where $k_2 \\gg k_1$. Solid lines show the exact concentrations, while the dashed line shows the predicted product concentration $[\\mathrm{D}]_\\mathrm{SSA}$ calculated using the steady-state approximation for intermediate C. The approximation overshoots during the initial induction period where [C] is still building up, but describes the reaction progress well once steady state is established.", out.width='50%', fig.align='center'}
+knitr::include_graphics("lecture_1/figures/steady_state_comparison.png")
+```
+
+Figure \@ref(fig:fig-steady-state-comparison) compares the steady-state prediction for [D] (dashed line) with the exact concentration profiles (solid lines) when $k_2 \gg k_1$. During the induction period, the steady-state approximation overestimates the rate of product formation because it assumes C has already reached its steady-state concentration. However, once this period passes, the predicted and actual concentrations align well.
+
+These observations suggest several criteria for applying the steady-state approximation to new systems. First, the kinetics must support the basic steady-state assumption, typically requiring $k_2 \gg k_1$. Second, the timescale of interest must exceed the induction period. Third, any deviations during the induction period should not compromise the analysis.
+
+When steady-state predictions match experimental data, they provide evidence for a reaction mechanism involving an intermediate maintained at near-constant concentration during the main reaction phase.
