@@ -2,6 +2,7 @@ fig:fig-yield
 fig:fig-changingconditions
 eq:HBrratelaw
 eq:HBrmechanism
+fig:fig-ratelawsforelementaryprocesses
 eq:conctorate
 eq:ratetoconc
 fig:fig-conctorate
@@ -13,6 +14,7 @@ eq:relativerates
 eq:secondorderdiff-alt
 fig:fig-consecutive-reactions
 fig:fig-consecutive-limiting
+fig:fig-steady-state-comparison
 fig:fig-reaction-coordinate-diagram
 eq:first-order
 eq:first-order-int
