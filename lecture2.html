@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2024-12-07" />
+<meta name="date" content="2024-12-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -114,12 +114,14 @@
 <li class="chapter" data-level="2" data-path="lecture2.html"><a href="lecture2.html"><i class="fa fa-check"></i><b>2</b> Parallel Irreversible Reactions</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="lecture2.html"><a href="lecture2.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
-<li class="chapter" data-level="2.2" data-path="lecture2.html"><a href="lecture2.html#simple-first-order-parallel-reactions"><i class="fa fa-check"></i><b>2.2</b> Simple First-Order Parallel Reactions</a></li>
+<li class="chapter" data-level="2.2" data-path="lecture2.html"><a href="lecture2.html#simple-first-order-reactions"><i class="fa fa-check"></i><b>2.2</b> Simple First-Order Reactions</a></li>
 <li class="chapter" data-level="2.3" data-path="lecture2.html"><a href="lecture2.html#first-order-parallel-reactions"><i class="fa fa-check"></i><b>2.3</b> First-Order Parallel Reactions</a></li>
 <li class="chapter" data-level="2.4" data-path="lecture2.html"><a href="lecture2.html#key-features-of-parallel-reactions"><i class="fa fa-check"></i><b>2.4</b> Key Features of Parallel Reactions</a></li>
 <li class="chapter" data-level="2.5" data-path="lecture2.html"><a href="lecture2.html#temperature-effects-on-selectivity"><i class="fa fa-check"></i><b>2.5</b> Temperature Effects on Selectivity</a></li>
-<li class="chapter" data-level="2.6" data-path="lecture2.html"><a href="lecture2.html#pressure-effects-on-selectivity"><i class="fa fa-check"></i><b>2.6</b> Pressure Effects on Selectivity</a></li>
-<li class="chapter" data-level="2.7" data-path="lecture2.html"><a href="lecture2.html#applications"><i class="fa fa-check"></i><b>2.7</b> Applications</a></li>
+<li class="chapter" data-level="2.6" data-path="lecture2.html"><a href="lecture2.html#pressure-effects-on-selectivity"><i class="fa fa-check"></i><b>2.6</b> Pressure Effects on Selectivity</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="lecture2.html"><a href="lecture2.html#example-decomposition-of-h2o2"><i class="fa fa-check"></i><b>2.6.1</b> Example: Decomposition of H<sub>2</sub>O<sub>2</sub></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="lecture3.html"><a href="lecture3.html"><i class="fa fa-check"></i><b>3</b> Parallel Reversibile Reactions</a>
 <ul>
@@ -283,8 +285,8 @@
 <span class="math display">\[\mathrm{A} \xrightarrow{k_2} \mathrm{C}\]</span></p>
 <p>Understanding how these parallel reactions proceed and what controls their relative rates is crucial for many practical applications, particularly in synthetic chemistry where we often want to maximize the yield of one product over another.</p>
 </div>
-<div id="simple-first-order-parallel-reactions" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Simple First-Order Parallel Reactions<a href="lecture2.html#simple-first-order-parallel-reactions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="simple-first-order-reactions" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Simple First-Order Reactions<a href="lecture2.html#simple-first-order-reactions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Let us first consider the case of a single first-order reaction:</p>
 <p><span class="math display">\[\mathrm{A} \xrightarrow{k} \mathrm{B}\]</span></p>
 <p>The rate equations are:</p>
@@ -294,6 +296,12 @@
 <span class="math display">\[[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-kt}\]</span></p>
 <p>And since [B] = [A]<sub>0</sub> - [A] (from conservation of mass):
 <span class="math display">\[[\mathrm{B}] = [\mathrm{A}]_0(1-\mathrm{e}^{-kt})\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-simple-first-order-concentrations"></span>
+<img src="lecture_2/figures/simple_first_order_concentrations.png" alt="Concentrations of reactant, A, and product, B, as a function of time for a reaction $\mathrm{A}\longrightarrow\mathrm{B}$ with first-order kinetics." width="50%" />
+<p class="caption">
+Figure 2.1: Concentrations of reactant, A, and product, B, as a function of time for a reaction <span class="math inline">\(\mathrm{A}\longrightarrow\mathrm{B}\)</span> with first-order kinetics.
+</p>
+</div>
 </div>
 <div id="first-order-parallel-reactions" class="section level2 hasAnchor" number="2.3">
 <h2><span class="header-section-number">2.3</span> First-Order Parallel Reactions<a href="lecture2.html#first-order-parallel-reactions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -321,6 +329,12 @@
 </ol>
 <p>This ratio is often called the selectivity, S:</p>
 <p><span class="math display">\[S = \frac{k_1}{k_2}\]</span></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-parallel-reactions"></span>
+<img src="lecture_2/figures/parallel_reactions.png" alt="B and C both form via first-order processes with the same effective rate constant $k_1+k_2$. At any point in time, the ratio $[\mathrm{B}]/[\mathrm{C}]$ is equal to $k_1/k_2$." width="50%" />
+<p class="caption">
+Figure 2.2: B and C both form via first-order processes with the same effective rate constant <span class="math inline">\(k_1+k_2\)</span>. At any point in time, the ratio <span class="math inline">\([\mathrm{B}]/[\mathrm{C}]\)</span> is equal to <span class="math inline">\(k_1/k_2\)</span>.
+</p>
+</div>
 </div>
 <div id="temperature-effects-on-selectivity" class="section level2 hasAnchor" number="2.5">
 <h2><span class="header-section-number">2.5</span> Temperature Effects on Selectivity<a href="lecture2.html#temperature-effects-on-selectivity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -329,7 +343,13 @@
 <span class="math display">\[k_2 = A_2\exp\left(-\frac{\Delta E_2}{RT}\right)\]</span></p>
 <p>Therefore:</p>
 <p><span class="math display">\[S = \frac{k_1}{k_2} = \frac{A_1}{A_2}\exp\left(-\frac{\Delta E_1-\Delta E_2}{RT}\right)\]</span></p>
-<p>If ΔE<sub>1</sub> &gt; ΔE<sub>2</sub>, then (ΔE<sub>1</sub>-ΔE<sub>2</sub>) is positive, and increasing temperature will increase S. This can be visualized using an Arrhenius plot (ln k vs 1/T), where the reaction with the higher activation energy has the steeper slope.</p>
+<p>If <span class="math inline">\(\Delta E_1 &gt; \Delta E_2\)</span>, then (<span class="math inline">\(\Delta E_1 - \Delta E_2\)</span>) is positive, and increasing temperature will increase <span class="math inline">\(S\)</span>. This can be visualized using an Arrhenius plot (<span class="math inline">\(\ln k\)</span> vs <span class="math inline">\(1/T\)</span>), where the reaction with the higher activation energy has the steeper slope.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-temperature-effect-on-selectivity"></span>
+<img src="lecture_2/figures/temperature_effect_on_selectivity.png" alt="Arrhenius plot showing the qualitative effect of changing temperature on selectivity between two reactions with different activation energies. Increasing temperature gives a larger increase in rate constant for the reaction with the larger activation energy, $\Delta E$, and increases selectivity for the product formed via this reaction." width="50%" />
+<p class="caption">
+Figure 2.3: Arrhenius plot showing the qualitative effect of changing temperature on selectivity between two reactions with different activation energies. Increasing temperature gives a larger increase in rate constant for the reaction with the larger activation energy, <span class="math inline">\(\Delta E\)</span>, and increases selectivity for the product formed via this reaction.
+</p>
+</div>
 </div>
 <div id="pressure-effects-on-selectivity" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> Pressure Effects on Selectivity<a href="lecture2.html#pressure-effects-on-selectivity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -343,11 +363,28 @@
 <p><span class="math display">\[\frac{[\mathrm{B}]}{[\mathrm{C}]} = \frac{\text{rate}_\mathrm{B}}{\text{rate}_\mathrm{C}} = \frac{k_1[\mathrm{A}]}{k_2[\mathrm{A}]^2} = \frac{k_1}{k_2[\mathrm{A}]}\]</span></p></li>
 </ol>
 <p>Following Le Chatelier’s principle, increasing pressure favors the reaction with the higher molecularity.</p>
-</div>
-<div id="applications" class="section level2 hasAnchor" number="2.7">
-<h2><span class="header-section-number">2.7</span> Applications<a href="lecture2.html#applications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Parallel reactions are particularly important in synthetic chemistry. For example, in the selective nitration of phenol (C<sub>6</sub>H<sub>5</sub>OH), controlling temperature and other conditions can direct the nitration to favor either ortho- or para- substitution. Understanding how reaction conditions affect selectivity allows chemists to optimize yields of desired products while minimizing unwanted side products.</p>
+<div id="example-decomposition-of-h2o2" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Example: Decomposition of H<sub>2</sub>O<sub>2</sub><a href="lecture2.html#example-decomposition-of-h2o2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The decomposition of hydrogen peroxide in aqueous solution occurs through two parallel pathways. A unimolecular decomposition:</p>
+<p><span class="math display">\[\begin{equation}
+\mathrm{H}_2\mathrm{O}_2 \overset{k_1}{\longrightarrow} \mathrm{H}_2\mathrm{O} + \frac{1}{2}\mathrm{O}_2
+\end{equation}\]</span></p>
+<p>and a bimolecular process:</p>
+<p><span class="math display">\[\begin{equation}
+2\mathrm{H}_2\mathrm{O}_2 \overset{k_2}{\longrightarrow} 2\mathrm{H}_2\mathrm{O} + \mathrm{O}_2
+\end{equation}\]</span></p>
+<p>The overall rate of H<sub>2</sub>O<sub>2</sub> consumption combines both pathways:</p>
+<p><span class="math display">\[\begin{equation}
+-\frac{\mathrm{d}[\mathrm{H}_2\mathrm{O}_2]}{\mathrm{d}t} = k_1[\mathrm{H}_2\mathrm{O}_2] + 2k_2[\mathrm{H}_2\mathrm{O}_2]^2
+\end{equation}\]</span></p>
+<p>The factor of 2 in the second term arises from the stoichiometry of the bimolecular process, where each reaction event consumes two H<sub>2</sub>O<sub>2</sub> molecules.</p>
+<p>The relative contribution of each pathway depends on the concentration of H<sub>2</sub>O<sub>2</sub>:</p>
+<p><span class="math display">\[\begin{equation}
+\frac{\text{rate}_1}{\text{rate}_2} = \frac{k_1[\mathrm{H}_2\mathrm{O}_2]}{2k_2[\mathrm{H}_2\mathrm{O}_2]^2} = \frac{k_1}{2k_2[\mathrm{H}_2\mathrm{O}_2]}
+\end{equation}\]</span></p>
+<p>This ratio varies inversely with H<sub>2</sub>O<sub>2</sub> concentration. The relative importance of the two pathways therefore depends both on the concentration and on the specific values of the rate constants <span class="math inline">\(k_1\)</span> and <span class="math inline">\(k_2\)</span>.</p>
 
+</div>
 </div>
 </div>
             </section>

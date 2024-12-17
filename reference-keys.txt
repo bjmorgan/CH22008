@@ -15,6 +15,9 @@ eq:secondorderdiff-alt
 fig:fig-consecutive-reactions
 fig:fig-consecutive-limiting
 fig:fig-steady-state-comparison
+fig:fig-simple-first-order-concentrations
+fig:fig-parallel-reactions
+fig:fig-temperature-effect-on-selectivity
 fig:fig-reaction-coordinate-diagram
 eq:first-order
 eq:first-order-int
@@ -86,12 +89,12 @@ basic-principles
 validity-of-the-steady-state-approximation
 lecture2
 introduction
-simple-first-order-parallel-reactions
+simple-first-order-reactions
 first-order-parallel-reactions
 key-features-of-parallel-reactions
 temperature-effects-on-selectivity
 pressure-effects-on-selectivity
-applications
+example-decomposition-of-h2o2
 lecture3
 introduction-to-parallel-reversible-reactions
 time-evolution-of-product-distributions
