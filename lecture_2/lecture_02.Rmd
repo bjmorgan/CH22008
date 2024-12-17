@@ -9,7 +9,7 @@ $$\mathrm{A} \xrightarrow{k_2} \mathrm{C}$$
 
 Understanding how these parallel reactions proceed and what controls their relative rates is crucial for many practical applications, particularly in synthetic chemistry where we often want to maximize the yield of one product over another.
 
-## Simple First-Order Parallel Reactions
+## Simple First-Order Reactions
 
 Let us first consider the case of a single first-order reaction:
 
@@ -25,6 +25,10 @@ $$[\mathrm{A}] = [\mathrm{A}]_0\mathrm{e}^{-kt}$$
 
 And since [B] = [A]~0~ - [A] (from conservation of mass):
 $$[\mathrm{B}] = [\mathrm{A}]_0(1-\mathrm{e}^{-kt})$$
+
+```{r fig-simple-first-order-concentrations, fig.cap="Concentrations of reactant, A, and product, B, as a function of time for a reaction $\\mathrm{A}\\longrightarrow\\mathrm{B}$ with first-order kinetics.", out.width='50%', fig.align='center', }
+knitr::include_graphics("lecture_2/figures/simple_first_order_concentrations.png")
+```
 
 ## First-Order Parallel Reactions
 
@@ -67,6 +71,11 @@ This ratio is often called the selectivity, S:
 
 $$S = \frac{k_1}{k_2}$$
 
+```{r fig-parallel-reactions, fig.cap="B and C both form via first-order processes with the same effective rate constant $k_1+k_2$. At any point in time, the ratio $[\\mathrm{B}]/[\\mathrm{C}]$ is equal to $k_1/k_2$.", out.width='50%', fig.align='center', }
+knitr::include_graphics("lecture_2/figures/parallel_reactions.png")
+```
+
+
 ## Temperature Effects on Selectivity
 
 How does changing temperature affect the selectivity? Using the Arrhenius equation:
@@ -78,7 +87,11 @@ Therefore:
 
 $$S = \frac{k_1}{k_2} = \frac{A_1}{A_2}\exp\left(-\frac{\Delta E_1-\Delta E_2}{RT}\right)$$
 
-If ΔE~1~ > ΔE~2~, then (ΔE~1~-ΔE~2~) is positive, and increasing temperature will increase S. This can be visualized using an Arrhenius plot (ln k vs 1/T), where the reaction with the higher activation energy has the steeper slope.
+If $\Delta E_1 > \Delta E_2$, then ($\Delta E_1 - \Delta E_2$) is positive, and increasing temperature will increase $S$. This can be visualized using an Arrhenius plot ($\ln k$ vs $1/T$), where the reaction with the higher activation energy has the steeper slope.
+
+```{r fig-temperature-effect-on-selectivity, fig.cap="Arrhenius plot showing the qualitative effect of changing temperature on selectivity between two reactions with different activation energies. Increasing temperature gives a larger increase in rate constant for the reaction with the larger activation energy, $\\Delta E$, and increases selectivity for the product formed via this reaction.", out.width='50%', fig.align='center'}
+knitr::include_graphics("lecture_2/figures/temperature_effect_on_selectivity.png")
+```
 
 ## Pressure Effects on Selectivity
 
@@ -97,6 +110,32 @@ The effect of pressure on selectivity depends on the molecularity of the competi
 
 Following Le Chatelier's principle, increasing pressure favors the reaction with the higher molecularity.
 
-## Applications
+### Example: Decomposition of H~2~O~2~
 
-Parallel reactions are particularly important in synthetic chemistry. For example, in the selective nitration of phenol (C~6~H~5~OH), controlling temperature and other conditions can direct the nitration to favor either ortho- or para- substitution. Understanding how reaction conditions affect selectivity allows chemists to optimize yields of desired products while minimizing unwanted side products.
+The decomposition of hydrogen peroxide in aqueous solution occurs through two parallel pathways. A unimolecular decomposition:
+
+\begin{equation}
+\mathrm{H}_2\mathrm{O}_2 \overset{k_1}{\longrightarrow} \mathrm{H}_2\mathrm{O} + \frac{1}{2}\mathrm{O}_2
+\end{equation}
+
+and a bimolecular process:
+
+\begin{equation}
+2\mathrm{H}_2\mathrm{O}_2 \overset{k_2}{\longrightarrow} 2\mathrm{H}_2\mathrm{O} + \mathrm{O}_2
+\end{equation}
+
+The overall rate of H~2~O~2~ consumption combines both pathways:
+
+\begin{equation}
+-\frac{\mathrm{d}[\mathrm{H}_2\mathrm{O}_2]}{\mathrm{d}t} = k_1[\mathrm{H}_2\mathrm{O}_2] + 2k_2[\mathrm{H}_2\mathrm{O}_2]^2
+\end{equation}
+
+The factor of 2 in the second term arises from the stoichiometry of the bimolecular process, where each reaction event consumes two H~2~O~2~ molecules.
+
+The relative contribution of each pathway depends on the concentration of H~2~O~2~:
+
+\begin{equation}
+\frac{\text{rate}_1}{\text{rate}_2} = \frac{k_1[\mathrm{H}_2\mathrm{O}_2]}{2k_2[\mathrm{H}_2\mathrm{O}_2]^2} = \frac{k_1}{2k_2[\mathrm{H}_2\mathrm{O}_2]}
+\end{equation}
+
+This ratio varies inversely with H~2~O~2~ concentration. The relative importance of the two pathways therefore depends both on the concentration and on the specific values of the rate constants $k_1$ and $k_2$.
