@@ -19,6 +19,13 @@ fig:fig-simple-first-order-concentrations
 fig:fig-parallel-reactions
 fig:fig-temperature-effect-on-selectivity
 fig:fig-reaction-coordinate-diagram
+fig:fig-parallel-reactions-reaction-coordinate-diagram
+fig:fig-enolate-formation
+fig:fig-enolate-selectivity
+fig:fig-alkene-stabilities
+fig:fig-removable-protons
+fig:fig-strong-base-rc-diagram
+fig:fig-weak-base-rc-diagram
 eq:first-order
 eq:first-order-int
 eq:lindemann-a
@@ -101,7 +108,7 @@ time-evolution-of-product-distributions
 short-time-behaviour
 long-time-behaviour
 kinetic-vs-thermodynamic-control
-example-base-catalyzed-isomerization
+example-enolate-formation-of-2-methylcyclohexanone
 lecture4
 sec:mech-to-data
 sec:integration-role
