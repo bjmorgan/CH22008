@@ -49,7 +49,7 @@ This is called &ldquo;thermodynamic control&rdquo;, as the product distribution 
 
 ## Kinetic vs Thermodynamic Control
 
-The evolution from kinetic to thermodynamic control can be understood by considering how the energy of a molecular system changes as reactants transform to products.
+When thinking about a pair of parallel reactions, we can rationalise a preference for forming either the kinetic or thermodynamic product by considering how the energy of a molecular system changes as reactants transform to products.
 
 ```{r fig-reaction-coordinate-diagram, fig.cap="A reaction coordinate diagram showing the free energy profile for a chemical reaction. The reaction coordinate represents the progression through molecular geometric changes (e.g., bonds breaking and forming) as reactants transform into products. The activation energy ($\\Delta G_\\mathrm{a}$) determines reaction rate, while the reaction free energy ($\\Delta G_\\mathrm{r}$) determines the position of equilibrium.", out.width='60%', fig.align='center'}
 knitr::include_graphics("lecture_3/figures/reaction_coordinate_diagram.png")
@@ -63,38 +63,71 @@ Two key features of these diagrams help us understand reaction behaviour:
 - The activation energy ($\Delta G_\mathrm{a}$) represents the energy barrier that must be overcome for reaction to occur. This determines reaction rate—lower barriers mean faster reactions.
 - The reaction free energy ($\Delta G_\mathrm{r}$) represents the overall thermodynamic driving force. This determines the position of equilibrium—more negative values mean the products are more favoured at equilibrium.
 
-For our parallel reactions, the diagram shows two paths starting from reactant A: one leading to product B and another to product C. Consider a system where:
+We can expand this concept of a reaction coordinate diagram to the case of parallel reactions by considering a diagram that shows two paths, A &rarr; B and A &rarr; C.
+In this composite reaction coordinate diagram, both paths start from the reactant A. One path leads to product B and the other path leads to product C.
+To understand the competition between kinetic and thermodymamic control, we consider the case where: 
 
-- Product B has the lower activation energy (faster formation, kinetic product)
-- Product C has the lower free energy (more stable, thermodynamic product)
+1. The reaction A &rarr; B has a lower activation energy than the reaction A &rarr; C; 
+2. C is thermodynamically favoured versus B; i.e., $\Delta G(B \to C) < 0$.
 
-At short times, B forms more rapidly due to its lower activation barrier. However, if the reaction is reversible (small enough barriers for reverse reactions), the system will eventually equilibrate to favour the more thermodynamically stable product C.
+At short times, the concentrations of B and C are small, and *relative* concentrations of B and C approximately follow the relative rates of the corresponding forward reactions. Because the activation barrier for A &rarr; B is smaller than for A &rarr; C, B forms more rapidly than C, and [B]/[C] > 1. The kinetic product is therefore B.
 
-Important factors that determine whether kinetic or thermodynamic control dominates:
+At long times the kinetic product, B, can convert back to the reactant A, via path B &rarr; A, and then convert to C, via path A &rarr; C. Eventually we reach an equilibrium distribution of products, where the ratio [B]/[C] at equilibrium depends on the relative free energies of the two competing products. Because $\Delta G(B \to C) < 0$, at long times C is favoured (thermodynamic product) and [B]/[C] < 1.
 
-1. Reaction conditions:
-   - Strong bases/irreversible conditions → kinetic control
-   - Weak bases/reversible conditions → thermodynamic control
+```{r fig-parallel-reactions-reaction-coordinate-diagram, fig.cap="Reaction coordinate diagram for a pair of parallel reversible reactions: A$\\,\\overset{k_1}{\\underset{k_{-1}}\\rightleftharpoons}\\,$B and A$\\,\\overset{k_2}{\\underset{k_{-2}}\\rightleftharpoons}\\,$C, where $\\Delta E_1 < \\Delta E_2$ (i.e., $k_1 \\gg k_2$) and $\\Delta G(\\mathrm{B} \\to \\text{C}) < 0$. (a) kinetic control: at short times the relative formation of B and C depends only on the relative rates of the forward reactions A &rarr; B and A &rarr; C. (b) thermodynamic control: at long times the relative formation of B and C depends on the free energy difference between the two products.", out.width='70%', fig.align='center'}
+knitr::include_graphics("lecture_3/figures/parallel_reactions_reaction_coordinate_diagram.png")
+```
 
-2. Temperature:
-   - Higher temperatures promote equilibration
-   - Lower temperatures can "freeze" kinetic product distributions
+## Example: Enolate formation of 2-methylcyclohexanone
 
-## Example: Base-Catalyzed Isomerization
+Thinking about competing products as being preferentially formed under kinetic or thermodynamic control gives us a framework for understanding how our choice of reaction conditions can determine the selectivity of reaction.
+As an example, consider enolate formation of 2-methylcyclohexanone.
 
-A classic example of kinetic versus thermodynamic control is the base-catalyzed isomerization of substituted cyclohexanones:
+```{r fig-enolate-formation, fig.cap="Under basic conditions, 2-methylcyclohexanone can form two distinct enolates, depending on whether a proton is removed from position 2 (green) or from position 6 (orange).", out.width="75%", fig.align="center"}
+knitr::include_graphics("lecture_3/figures/enolate_formation.png")
+```
 
-- With LDA (strong base) in DME:
-  - Product A (kinetic): 99%
-  - Product B (thermodynamic): 1%
+2-methylcyclohexanone can form two different enolates, depending on whether the base extracts a proton from position 2 or from position 6. In the presence of a strong base, the less substituted enolate (product A) is preferentially formed with high selectivity. While in the presence of a weak base, the more substituted enolate (product B) is preferentially formed with moderate selectivity (see Figure \@ref(fig:fig-enolate-formation)). 
 
-- With triethylamine (weak base) in DMF:
-  - Product A (kinetic): 22%
-  - Product B (thermodynamic): 78%
+```{r fig-enolate-selectivity, fig.cap="The selectivity between products A and B product B depends on the strength of the base that reacts with the 2-methylcyclohexanone.", out.width='75%', fig.align='center'}
+knitr::include_graphics("lecture_3/figures/enolate_selectivity.png")
+```
 
-This difference arises because:
+We can understand the selectivity of this enolate formation, and why this depends on the strength of the base added, by thinking about the competition between the kinetic and thermodynamic products.
 
-1. The less hindered position (Product A) has lower activation energy
-2. The more substituted alkene (Product B) is thermodynamically more stable
-3. Strong bases make the reaction effectively irreversible (kinetic control)
-4. Weak bases allow equilibration (thermodynamic control)
+The thermodynamic product is the enolate that is thermodynamically more stable. In general, more subtituted alkenes are more stable than less substituted alkenes (see Figure \@ref(fig:fig-alkene-stabilities)), so we can expect product B to be the thermodynamic product. 
+
+```{r fig-alkene-stabilities, fig.cap="Negative enthalpies of hydrogenation, $-\\Delta H_\\mathrm{hyd}$, for the series of C~6~H~12~ alkenes. The enthalpy of hydrogenation becomes less negative (less exothermic) as the degree of substitution of the alkene increases, indicating an increased stability of the C=C double bond.", out.width='95%', fig.align='center'}
+knitr::include_graphics("lecture_3/figures/alkene_stabilities.png")
+```
+
+The kinetic product is the product that forms fastest at the start of the reaction, so to identify the kinetic product, we need to consider the relative rates of forward reactions, $k_\mathrm{A}$ and $k_\mathrm{B}$. Because of the methyl group at position 2, the proton at position 2 is sterically hindered, while the proton at position 6 is not. We can therefore expect the proton at position 6 to be removed more easily than the proton at position 2, with product A, therefore, formed faster than product B. Product A is the kinetic product.
+
+```{r fig-removable-protons, fig.cap="Removing the proton at position 6 gives product A, while removing the proton at position 2 gives product B. The proton at position 2 is more sterically hindered than the proton at position 6, so is harder to remove.", out.width='90%', fig.align='center'}
+knitr::include_graphics("lecture_3/figures/removable_protons.png")
+```
+
+Now that we have identified the kinetic product as product A and the thermodynamic product as product B, we can think about why using a strong base gives predominantly product A (kinetic control) but a weak base gives predominantly product B (thermodynamic control).
+
+First, let us consider the case of using a strong base. We have already identified that $k_\text{A} > k_\text{B}$, by considering which proton is more easily removed. In the presence of a strong base, we can also say that the position of equilibrium for both products ie expected to strongly favour the products, i.e., $K_\mathrm{A} \gg 1$ and $K_\mathrm{B} \gg 1$. For a reversible reaction the equilibrium constant is equal to the ratio of rate constants for the forward and reverse reactions, so:
+
+\begin{equation}
+\frac{k_\mathrm{A}}{k_{-\mathrm{A}}} \gg 1 \qquad \frac{k_\mathrm{B}}{k_{-\mathrm{B}}} \gg 1.
+\end{equation}
+
+Both reverse reactions, B &rarr; R and C &rarr; R, where R is the reactant, are much slower than the corresponding forward reactions, and so we can treat both reactions as effectively irreversible. At the start of the reaction, product A is formed much more quickly than product B, and the relative amounts of products A and B reflect the different rates of the two forward reactions. Hence, we obtain a very high selectivity for the kinetic product A.
+
+We can also analyse the selectivity for product A over product B using a reaction coordinate diagram (Figure \@ref(fig:fig-strong-base-rc-diagram)).
+Because $K_\mathrm{A} \gg 1$ and $K_\mathrm{B} \gg 1$, the free energies of formation of both products, A and B, are large (because $\Delta G_\mathrm{r} = -RT \ln K$). This means the barriers for the reverse reactions A &rarr; R and B &rarr; R are large, and these reverse reactions are very slow, making both reactions effectively irreversible. In addition, the barrier for R &rarr; A is lower than the barrier for R &rarr; B, so product A will form faster than product B. This combination of faster formation of A than of B and effective irreversibility of both reactions gives us strong selectivity for the kinetic product, A.
+
+```{r fig-strong-base-rc-diagram, fig.cap="In the presence of a strong base, the position of equilibrium strongly favours both enolates, and both forward reactions are effectively irreversible. The pathway R &rarr; A has a lower activation barrier than the pathway R &rarr; B, so product A is formed faster than product B, resulting in strong selectivity for product A.", out.width='80%', fig.align='center'}
+knitr::include_graphics("lecture_3/figures/strong_base_rc_diagram.png")
+```
+
+In the presence of a weak base, both equilibria are more balanced: $K_\mathrm{A} \approx 1$ and $K_\mathrm{B} \approx 1$. Again, using the fact that these equiibrium constants are equal to the ratios of rate constants for the forward and reverse reactions, this tells us that $k_{-\mathrm{A}} \approx k_\mathrm{A}$ and $k_{-\mathrm{B}} \approx k_\mathrm{B}$, i.e., both reverse reactions have rates that are approximately equal to the corresponding forward reactions, and are therefore highly reversible.
+We still have $k_\text{A} > k_\text{B}$, and, so, at the start of the reaction product A forms faster than product B. But, because R &rarr; A is reversible, A is able to convert back to the reactant and then to form product B. Eventually we end up with a ratio [B]/[A] that reflects the free energy difference between the two products, with preferential formation for the thermodynamic product, B.
+
+```{r fig-weak-base-rc-diagram, fig.cap="In the presence of a weak base, the position of equilibrium less strongly favours both enolates, and both reactions are effectively reversible. Now the selectivity is determined by the free energy difference between the two products. Because B is more thermodymamically stable than A (because it is the more substituted enolate), we get preferential selectivity for the thermodynamic product B.", out.width='80%', fig.align='center'}
+knitr::include_graphics("lecture_3/figures/weak_base_rc_diagram.png")
+```
+
