@@ -15,5 +15,5 @@ github-repo: rstudio/bookdown-demo
 
 # About {-}
 
-These notes accompany the 2024 CH22008 lecture course on Advanced Kinetics.
+These notes accompany the 2025 CH22008 lecture course on Advanced Kinetics.
 
