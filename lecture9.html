@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 9 Applications of Transition State Theory | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 9 Applications of Transition State Theory | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-01-08" />
+<meta name="date" content="2025-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -291,7 +291,7 @@ Here we examine three key applications: using temperature-dependent kinetic data
 <p><span class="math display">\[\ln\left(\frac{k}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}\]</span></p>
 <p>which has the form</p>
 <p><span class="math display">\[y = mx + c\]</span>.</p>
-<p>Therefore, the Eyring equation predicts that a plot of <span class="math inline">\(\ln(k/T)\)</span> versus <span class="math inline">\(1/T\)</span> should be approximately linear, and that the model parameters <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span> can be estimated from the slope and intercept, respectively,<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> via</p>
+<p>Therefore, the Eyring equation predicts that a plot of <span class="math inline">\(\ln(k/T)\)</span> versus <span class="math inline">\(1/T\)</span> should be approximately linear, and that the model parameters <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span> can be estimated from the slope and intercept, respectively,<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> via</p>
 <ul>
 <li>Slope = <span class="math inline">\(-\Delta H^{\ddagger}/R\)</span></li>
 <li>Intercept = <span class="math inline">\(\ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R\)</span></li>
@@ -313,7 +313,7 @@ Here we examine three key applications: using temperature-dependent kinetic data
 \end{equation}\]</span></p>
 <p>Differentiating with respect to pressure at constant temperature:</p>
 <p><span class="math display">\[\left(\frac{\partial \ln k}{\partial p}\right)_T = -\frac{\Delta V^{\ddagger}}{RT}\]</span></p>
-<p>giving us the prediction that plotting <span class="math inline">\(\ln k\)</span> versus pressure should be approximately linear with slope <span class="math inline">\(-\Delta V^{\ddagger}/RT\)</span>. The volume of activation can therefore be determined from experimental measurements of how reaction rates vary with pressure:<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p>
+<p>giving us the prediction that plotting <span class="math inline">\(\ln k\)</span> versus pressure should be approximately linear with slope <span class="math inline">\(-\Delta V^{\ddagger}/RT\)</span>. The volume of activation can therefore be determined from experimental measurements of how reaction rates vary with pressure:<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
 <p><span class="math display">\[\Delta V^{\ddagger} = -RT\left(\frac{\partial \ln k}{\partial p}\right)_T\]</span></p>
 <p>As an example, consider the decomposition of dibutyl peroxide:</p>
 <p><span class="math display">\[[(\mathrm{CH}_3)_3\mathrm{CCO}_2]_2 \longrightarrow 2(\mathrm{CH}_3)_3\mathrm{CO}^\bullet\]</span></p>
@@ -377,9 +377,9 @@ E_\mathrm{ZPE} \approx \frac{1}{2}\sqrt{\frac{k}{m_\mathrm{H}}}
 
 <div class="footnotes">
 <hr />
-<ol start="4">
-<li id="fn4"><p>If the errors in our experimental data, <span class="math inline">\(k(T)\)</span>, are normally distributed, then standard least-squares fitting of the linear form of the Eyring equation gives biased estimates for <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span> — see, e.g., McCluskey J. Chem. Educ. 2023, 100, 11, 4174–4176. Unbiased estimates of <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span> can be obtained by instead fitting the non-linear form of the Eyring equation, using a computer. Because of the exponential dependence on <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span>, direct fitting of the non-linear Eyring equation can be numerically unstable. This can be ameliorated by fitting the linear form of the equation first, to obtain approximate (biased) estimates of the activation parameters, and then using these as starting guesses to fit the non-linear form.<a href="lecture9.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>Again, least-squares fitting of <a href="lecture9.html#eq:linearkvsp">(9.1)</a> gives a biased estimate of <span class="math inline">\(\Delta V^\ddagger\)</span>, while direct fitting of the non-linear equation <span class="math inline">\(k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^\frac{\Delta S^\ddagger}{R}\mathrm{e}^\frac{-\Delta U^\ddagger}{RT}\mathrm{e}^\frac{p\Delta V^\ddagger}{RT}\)</span> gives an unbiased estimate.<a href="lecture9.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<ol start="5">
+<li id="fn5"><p>If the errors in our experimental data, <span class="math inline">\(k(T)\)</span>, are normally distributed, then standard least-squares fitting of the linear form of the Eyring equation gives biased estimates for <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span> — see, e.g., McCluskey J. Chem. Educ. 2023, 100, 11, 4174–4176. Unbiased estimates of <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span> can be obtained by instead fitting the non-linear form of the Eyring equation, using a computer. Because of the exponential dependence on <span class="math inline">\(\Delta H^\ddagger\)</span> and <span class="math inline">\(\Delta S^\ddagger\)</span>, direct fitting of the non-linear Eyring equation can be numerically unstable. This can be ameliorated by fitting the linear form of the equation first, to obtain approximate (biased) estimates of the activation parameters, and then using these as starting guesses to fit the non-linear form.<a href="lecture9.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Again, least-squares fitting of <a href="lecture9.html#eq:linearkvsp">(9.1)</a> gives a biased estimate of <span class="math inline">\(\Delta V^\ddagger\)</span>, while direct fitting of the non-linear equation <span class="math inline">\(k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^\frac{\Delta S^\ddagger}{R}\mathrm{e}^\frac{-\Delta U^\ddagger}{RT}\mathrm{e}^\frac{p\Delta V^\ddagger}{RT}\)</span> gives an unbiased estimate.<a href="lecture9.html#fnref6" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -402,53 +402,59 @@ E_\mathrm{ZPE} \approx \frac{1}{2}\sqrt{\frac{k}{m_\mathrm{H}}}
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/bjmorgan/CH22008/main/lecture_9/lecture_09.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-},
-"mathjax": {
-"extensions": "mhchem.js"
-},
-"mathjax_config": {
-"TeX": {
-"Macros": {
-"conc": ["[\mathrm{#1}]", 1],
-"diffc": ["\frac{\mathrm{d}\conc{#1}}{\mathrm{d}t}", 1]
-}
-}
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/bjmorgan/CH22008/main/lecture_9/lecture_09.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  },
+  "mathjax": {
+    "extensions": "mhchem.js"
+  },
+  "mathjax_config": {
+    "TeX": {
+      "Macros": {
+        "conc": [
+          "[\mathrm{#1}]",
+          1
+        ],
+        "diffc": [
+          "\frac{\mathrm{d}\conc{#1}}{\mathrm{d}t}",
+          1
+        ]
+      }
+    }
+  }
 });
 });
 </script>

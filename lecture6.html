@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 6 Transition State Theory | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 6 Transition State Theory | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-01-08" />
+<meta name="date" content="2025-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -281,7 +281,7 @@
 <div id="sec:intro" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> A Molecular Theory of Reaction Rates<a href="lecture6.html#sec:intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Collision theory explains reaction rates using a simple model of colliding spheres. While this works for some gas-phase reactions, it cannot predict steric factors or explain systematic trends in activation energies. We need a more sophisticated approach.</p>
-<p>For a reaction A + B → P, molecules must climb an energy barrier before forming products. The reaction coordinate diagram shows this energy profile, from reactants through to products. The point at the highest point of the energy barrier is called the transition state; at this point the reacting molecules form a specific arrangement called the activated complex, in which bonds are partially broken and new bonds are starting to form. Transition state theory provides a framework for analyzing this activated complex and using it to predict reaction rates.</p>
+<p>For a reaction A + B → P, molecules must pass over an energy barrier before forming products. The reaction coordinate diagram shows this energy profile, from reactants through to products. The point at the highest point of the energy barrier is called the transition state; at this point the reacting molecules form a specific arrangement called the activated complex<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, in which bonds are partially broken and new bonds are starting to form. Transition state theory provides a framework for analyzing this activated complex and using it to predict reaction rates.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-tst-reaction-coordinate"></span>
 <img src="lecture_6/figures/reaction_coordinate.png" alt="A reaction coordinate diagram for the reaction A + B → P. The energy profile shows the barrier that must be crossed as reactants are converted to products. The peak of this barrier corresponds to the transition state configuration, and the collection of molecules at the transition state form the activated complex, C$^\ddagger$." width="55%" />
 <p class="caption">
@@ -317,7 +317,7 @@ K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]}{[\mathrm{A}][\mathrm{B}]}
 \Delta G^{\ddagger} = -RT\ln(K^{\ddagger}c^{\circ})
 \tag{6.4}
 \end{equation}\]</span></p>
-<p>The reference concentration <span class="math inline">\(c^{\circ}\)</span> (1 mol dm<span class="math inline">\(^{-3}\)</span>) ensures our rate constant will have the correct units.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>The reference concentration <span class="math inline">\(c^{\circ}\)</span> (1 mol dm<span class="math inline">\(^{-3}\)</span>) ensures our rate constant will have the correct units.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <p>Breaking <span class="math inline">\(\Delta G^{\ddagger}\)</span> into its enthalpic and entropic components:</p>
 <p><span class="math display" id="eq:equilibrium-constant-expanded">\[\begin{equation}
 K^{\ddagger} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
@@ -414,7 +414,8 @@ k = A\mathrm{e}^{-E_\mathrm{a}/RT}
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Many basic treatments of transition state theory omit <span class="math inline">\(c^{\circ}\)</span> since it equals 1 under standard conditions. Including it ensures that <span class="math inline">\(k\)</span> has the correct units for a second-order rate constant of dm<span class="math inline">\(^3\)</span> mol<span class="math inline">\(^{-1}\)</span> s<span class="math inline">\(^{-1}\)</span>.<a href="lecture6.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>In our treatment using 2D reaction coordinate diagrams, we represent the transition state as a single point at the peak of the energy barrier. In reality, for a molecular system with many degrees of freedom, the transition state is a dividing surface on the multidimensional potential energy surface. The “activated complex” comprises all molecular configurations on this dividing surface.<a href="lecture6.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Many basic treatments of transition state theory omit <span class="math inline">\(c^{\circ}\)</span> since it equals 1 under standard conditions. Including it ensures that <span class="math inline">\(k\)</span> has the correct units for a second-order rate constant of dm<span class="math inline">\(^3\)</span> mol<span class="math inline">\(^{-1}\)</span> s<span class="math inline">\(^{-1}\)</span>.<a href="lecture6.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -437,53 +438,59 @@ k = A\mathrm{e}^{-E_\mathrm{a}/RT}
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/bjmorgan/CH22008/main/lecture_6/lecture_06.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-},
-"mathjax": {
-"extensions": "mhchem.js"
-},
-"mathjax_config": {
-"TeX": {
-"Macros": {
-"conc": ["[\mathrm{#1}]", 1],
-"diffc": ["\frac{\mathrm{d}\conc{#1}}{\mathrm{d}t}", 1]
-}
-}
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/bjmorgan/CH22008/main/lecture_6/lecture_06.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  },
+  "mathjax": {
+    "extensions": "mhchem.js"
+  },
+  "mathjax_config": {
+    "TeX": {
+      "Macros": {
+        "conc": [
+          "[\mathrm{#1}]",
+          1
+        ],
+        "diffc": [
+          "\frac{\mathrm{d}\conc{#1}}{\mathrm{d}t}",
+          1
+        ]
+      }
+    }
+  }
 });
 });
 </script>
