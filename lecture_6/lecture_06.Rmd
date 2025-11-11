@@ -26,7 +26,7 @@ We can write the complete process as:
 
 ## Mathematical Development of Transition State Theory {#sec:tst-math}
 
-To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a dimensionless pseudo-equilibrium constant:
+To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a pseudo-equilibrium constant:
 
 \begin{equation}
 K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]c^\circ}{[\mathrm{A}][\mathrm{B}]}
