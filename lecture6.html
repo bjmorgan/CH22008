@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-11-09" />
+<meta name="date" content="2025-11-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -302,25 +302,25 @@ Figure 6.1: A reaction coordinate diagram for the reaction A + B → P. The ener
 </div>
 <div id="sec:tst-math" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Mathematical Development of Transition State Theory<a href="lecture6.html#sec:tst-math" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a pseudo-equilibrium constant:</p>
+<p>To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a dimensionless pseudo-equilibrium constant:</p>
 <p><span class="math display" id="eq:equilibrium-constant">\[\begin{equation}
-K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]}{[\mathrm{A}][\mathrm{B}]}
+K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]c^\circ}{[\mathrm{A}][\mathrm{B}]}
 \tag{6.2}
 \end{equation}\]</span></p>
+<p>where <span class="math inline">\(c^\circ\)</span> = 1 mol dm<sup>−3</sup>sup&gt; is the standard concentration.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <p>This allows us to express the concentration of the activated complex in terms of reactant concentrations:</p>
 <p><span class="math display" id="eq:activated-complex-conc">\[\begin{equation}
-[\mathrm{C}^{\ddagger}] = K^{\ddagger}[\mathrm{A}][\mathrm{B}]
+[\mathrm{C}^{\ddagger}] = (K^{\ddagger}/c^\circ)[\mathrm{A}][\mathrm{B}]
 \tag{6.3}
 \end{equation}\]</span></p>
 <p>Since we treat the formation of the activated complex as a pseudo-equilibrium, we can apply standard thermodynamic relationships. The equilibrium constant <span class="math inline">\(K^{\ddagger}\)</span> relates to the activation Gibbs energy through:</p>
 <p><span class="math display" id="eq:gibbs-activation">\[\begin{equation}
-\Delta G^{\ddagger} = -RT\ln(K^{\ddagger}c^{\circ})
+\Delta G^{\ddagger} = -RT\ln(K^{\ddagger})
 \tag{6.4}
 \end{equation}\]</span></p>
-<p>The reference concentration <span class="math inline">\(c^{\circ}\)</span> (1 mol dm<span class="math inline">\(^{-3}\)</span>) ensures our rate constant will have the correct units.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <p>Breaking <span class="math inline">\(\Delta G^{\ddagger}\)</span> into its enthalpic and entropic components:</p>
 <p><span class="math display" id="eq:equilibrium-constant-expanded">\[\begin{equation}
-K^{\ddagger} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
+K^{\ddagger} = \mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
 \tag{6.5}
 \end{equation}\]</span></p>
 <p>From our second assumption, the rate of product formation is proportional to the concentration of the activated complex:</p>
@@ -415,7 +415,7 @@ k = A\mathrm{e}^{-E_\mathrm{a}/RT}
 <hr />
 <ol start="1">
 <li id="fn1"><p>In our treatment using 2D reaction coordinate diagrams, we represent the transition state as a single point at the peak of the energy barrier. In reality, for a molecular system with many degrees of freedom, the transition state is a dividing surface on the multidimensional potential energy surface. The “activated complex” comprises all molecular configurations on this dividing surface.<a href="lecture6.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>Many basic treatments of transition state theory omit <span class="math inline">\(c^{\circ}\)</span> since it equals 1 under standard conditions. Including it ensures that <span class="math inline">\(k\)</span> has the correct units for a second-order rate constant of dm<span class="math inline">\(^3\)</span> mol<span class="math inline">\(^{-1}\)</span> s<span class="math inline">\(^{-1}\)</span>.<a href="lecture6.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Many basic treatments of transition state theory omit <span class="math inline">\(c^{\circ}\)</span> since it equals 1 under standard conditions. Including it ensures that <span class="math inline">\(K^\ddagger\)</span> is correctly defined as dimensionless, and that <span class="math inline">\(k\)</span> has the correct units for a second-order rate constant of dm<span class="math inline">\(^3\)</span> mol<span class="math inline">\(^{-1}\)</span> s<span class="math inline">\(^{-1}\)</span>.<a href="lecture6.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
