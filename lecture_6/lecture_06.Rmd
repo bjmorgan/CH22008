@@ -26,33 +26,33 @@ We can write the complete process as:
 
 ## Mathematical Development of Transition State Theory {#sec:tst-math}
 
-To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a pseudo-equilibrium constant:
+To develop our rate equation, we begin by considering the pseudo-equilibrium between reactants and the activated complex. We can define a dimensionless pseudo-equilibrium constant:
 
 \begin{equation}
-K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]}{[\mathrm{A}][\mathrm{B}]}
+K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]c^\circ}{[\mathrm{A}][\mathrm{B}]}
 (\#eq:equilibrium-constant)
 \end{equation}
+
+where $c^\circ$ = 1 mol dm<sup>&minus;3</sup>sup> is the standard concentration.^[Many basic treatments of transition state theory omit $c^{\circ}$ since it equals 1 under standard conditions. Including it ensures that $K^\ddagger$ is correctly defined as dimensionless, and that $k$ has the correct units for a second-order rate constant of dm$^3$ mol$^{-1}$ s$^{-1}$.]
 
 This allows us to express the concentration of the activated complex in terms of reactant concentrations:
 
 \begin{equation}
-[\mathrm{C}^{\ddagger}] = K^{\ddagger}[\mathrm{A}][\mathrm{B}]
+[\mathrm{C}^{\ddagger}] = (K^{\ddagger}/c^\circ)[\mathrm{A}][\mathrm{B}]
 (\#eq:activated-complex-conc)
 \end{equation}
 
 Since we treat the formation of the activated complex as a pseudo-equilibrium, we can apply standard thermodynamic relationships. The equilibrium constant $K^{\ddagger}$ relates to the activation Gibbs energy through:
 
 \begin{equation}
-\Delta G^{\ddagger} = -RT\ln(K^{\ddagger}c^{\circ})
+\Delta G^{\ddagger} = -RT\ln(K^{\ddagger})
 (#eq:gibbs-activation)
 \end{equation}
-
-The reference concentration $c^{\circ}$ (1 mol dm$^{-3}$) ensures our rate constant will have the correct units.^[Many basic treatments of transition state theory omit $c^{\circ}$ since it equals 1 under standard conditions. Including it ensures that $k$ has the correct units for a second-order rate constant of dm$^3$ mol$^{-1}$ s$^{-1}$.]
 
 Breaking $\Delta G^{\ddagger}$ into its enthalpic and entropic components:
 
 \begin{equation}
-K^{\ddagger} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
+K^{\ddagger} = \mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
 (\#eq:equilibrium-constant-expanded)
 \end{equation}
 
