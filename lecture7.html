@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-11-11" />
+<meta name="date" content="2025-11-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -314,9 +314,20 @@
 <div id="energy-spacings-and-entropy" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Energy Spacings and Entropy<a href="lecture7.html#energy-spacings-and-entropy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Quantum mechanics tells us that the energy levels for molecular motion are quantised. The spacing between these levels varies significantly with the type of motion:</p>
-<p><span class="math display">\[\Delta \epsilon_\mathrm{trans} \ll \Delta \epsilon_\mathrm{rot} &lt; \Delta \epsilon_\mathrm{vib}\]</span></p>
-<p>This hierarchy of energy spacings determines the entropy associated with each type of motion. A smaller energy spacing means more states are thermally accessible, corresponding to higher entropy. Hence:</p>
-<p><span class="math display">\[S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} &gt; S^{\ddagger}_\mathrm{vib}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\Delta \epsilon_\mathrm{trans} \ll \Delta \epsilon_\mathrm{rot} &lt; \Delta \epsilon_\mathrm{vib}
+\end{equation}\]</span></p>
+<p>To understand why this matters for entropy, we need the statistical mechanical foundation provided by Boltzmann’s equation:</p>
+<p><span class="math display">\[\begin{equation}
+S = k \ln W
+\end{equation}\]</span></p>
+<p>where <span class="math inline">\(W\)</span> represents the number of thermally accessible microstates—the different possible arrangements available to the system at a given energy. This equation tells us that entropy increases with the number of ways energy can be distributed across the available states.</p>
+<p>The hierarchy of energy spacings directly determines <span class="math inline">\(W\)</span> for each type of motion. When energy levels are closely spaced, there are many thermally accessible states at typical temperatures—many different ways to distribute the available energy across the system, giving large <span class="math inline">\(W\)</span>
+and hence high entropy. Conversely, when energy levels are widely spaced, only a few low-lying states can be populated, giving few ways to distribute the energy, small <span class="math inline">\(W\)</span>, and low entropy.</p>
+<p>For molecular motion, translational energy levels are narrowly spaced and appear almost continuous. At room temperature, an enormous number of translational states are accessible, giving very high entropy. Rotational energy levels are more widely spaced, with fewer accessible states. Vibrational energy levels are spaced more widely still, with only a few low-lying states thermally accessible at typical temperatures. This leads directly to the entropy hierarchy:</p>
+<p><span class="math display">\[\begin{equation}
+S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} &gt; S^{\ddagger}_\mathrm{vib}
+\end{equation}\]</span></p>
 </div>
 <div id="formation-of-the-activated-complex" class="section level2 hasAnchor" number="7.5">
 <h2><span class="header-section-number">7.5</span> Formation of the Activated Complex<a href="lecture7.html#formation-of-the-activated-complex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
