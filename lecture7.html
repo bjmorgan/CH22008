@@ -183,7 +183,7 @@
 <li class="chapter" data-level="7.3" data-path="lecture7.html"><a href="lecture7.html#molecular-degrees-of-freedom"><i class="fa fa-check"></i><b>7.3</b> Molecular Degrees of Freedom</a></li>
 <li class="chapter" data-level="7.4" data-path="lecture7.html"><a href="lecture7.html#a-simple-example-atom-atom-reaction"><i class="fa fa-check"></i><b>7.4</b> A Simple Example: Atom-Atom Reaction</a></li>
 <li class="chapter" data-level="7.5" data-path="lecture7.html"><a href="lecture7.html#energy-spacings-and-entropy"><i class="fa fa-check"></i><b>7.5</b> Energy Spacings and Entropy</a></li>
-<li class="chapter" data-level="7.6" data-path="lecture7.html"><a href="lecture7.html#formation-of-the-activated-complex"><i class="fa fa-check"></i><b>7.6</b> Formation of the Activated Complex</a></li>
+<li class="chapter" data-level="7.6" data-path="lecture7.html"><a href="lecture7.html#towards-quantitative-predictions"><i class="fa fa-check"></i><b>7.6</b> Towards Quantitative Predictions</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lecture8.html"><a href="lecture8.html"><i class="fa fa-check"></i><b>8</b> Estimating Pre-exponential Factors</a>
 <ul>
@@ -371,13 +371,14 @@ Figure 7.4: The hierarchy of energy spacings for translational, rotational, and 
 </p>
 </div>
 </div>
-<div id="formation-of-the-activated-complex" class="section level2 hasAnchor" number="7.6">
-<h2><span class="header-section-number">7.6</span> Formation of the Activated Complex<a href="lecture7.html#formation-of-the-activated-complex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We can now provide a complete molecular explanation for the systematic variation in steric factors. In Lecture <a href="lecture6.html#lecture6">6</a>, we introduced the idea of considering the degrees of freedom that are lost when forming the activated complex. While this correctly predicts negative <span class="math inline">\(\Delta S^{\ddagger}\)</span> for bimolecular reactions, it neglects the degrees of freedom created in the activated complex—particularly the new vibrational and rotational modes.</p>
-<p>The complete picture recognizes that forming the activated complex <em>transforms</em> molecular motion. When two molecules come together, high-entropy translational and rotational degrees of freedom are converted into lower-entropy vibrational and rotational modes within the complex. Our atom-atom example showed this explicitly: the six translational degrees of freedom in the separated atoms (3 + 3 = 6) become three translational, two rotational, and one vibrational degree of freedom in the activated complex.</p>
-<p>Why does this transformation produce negative <span class="math inline">\(\Delta S^{\ddagger}\)</span>? The hierarchy of entropy contributions (<span class="math inline">\(S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} &gt; S^{\ddagger}_\mathrm{vib}\)</span>) is the key. This hierarchy arises directly from energy level spacings: translational levels are extremely closely spaced, giving many thermally accessible states and high entropy (since <span class="math inline">\(S = k \ln W\)</span>). Vibrational levels are widely spaced, giving few accessible states and low entropy. When we transform high-entropy translational motion into low-entropy vibrational motion, we lose entropy overall.</p>
-<p>For more complex reactant molecules, this transformation is even more dramatic. Consider our opening comparison between atomic and molecular reactions: both lose translational freedom, but molecular reactions additionally lose rotational freedom. A diatomic + diatomic reaction loses more freedom still. Each additional degree of freedom lost from the high-entropy pool (translation and rotation) and converted into the low-entropy pool (vibration) makes <span class="math inline">\(\Delta S^{\ddagger}\)</span> more negative.</p>
-<p>This systematic trend explains the steric factor. Collision theory’s energy-only model works well for atoms (<span class="math inline">\(P \approx 1\)</span>) but systematically overestimates rates for molecular reactions because it does not account for this entropic cost. The steric factor is therefore not merely an empirical correction for “geometric effects”—it has a fundamental thermodynamic origin in the transformation of molecular degrees of freedom and the hierarchy of their entropy contributions.</p>
+<div id="towards-quantitative-predictions" class="section level2 hasAnchor" number="7.6">
+<h2><span class="header-section-number">7.6</span> Towards Quantitative Predictions<a href="lecture7.html#towards-quantitative-predictions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The thermodynamic framework we have developed here provides us with a molecular perspective on the entropy of activation, <span class="math inline">\(\Delta S^{\ddagger}\)</span>. When reactants come together to form the activated complex, high-entropy molecular degrees of freedom (translation and rotation) are converted into low-entropy degrees of freedom (rotation and vibration), giving an overall negative <span class="math inline">\(\Delta S^{\ddagger}\)</span>.</p>
+<p>To make quantitative predictions about pre-exponential factors for specific reactions, we need to estimate these entropy changes numerically. Recall from Lecture <a href="lecture6.html#lecture6">6</a> that the pre-exponential factor is:</p>
+<p><span class="math display">\[\begin{equation}
+A = \frac{k^{\ddagger}}{c^\circ} \exp\left(\frac{\Delta S^{\ddagger}}{R}\right)
+\end{equation}\]</span></p>
+<p>In Lecture <a href="lecture8.html#lecture8">8</a>, we will estimate both components—the entropy change <span class="math inline">\(\Delta S^{\ddagger}\)</span> and the rate constant <span class="math inline">\(k^{\ddagger}\)</span>—to calculate pre-exponential factors for real reactions.</p>
 
 </div>
 </div>

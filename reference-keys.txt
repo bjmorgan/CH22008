@@ -147,7 +147,7 @@ thermodynamic-origin-of-the-steric-factor
 molecular-degrees-of-freedom
 a-simple-example-atom-atom-reaction
 energy-spacings-and-entropy
-formation-of-the-activated-complex
+towards-quantitative-predictions
 lecture8
 from-molecular-freedom-to-reaction-rates
 the-reaction-coordinate
