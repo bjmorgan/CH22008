@@ -48,6 +48,10 @@ eq:equilibrium-constant-expanded
 eq:tst-rate
 eq:tst-rate-constant
 eq:tst-k
+fig:fig-entropy-steric-origin
+fig:fig-atom-atom-dof
+fig:fig-energy-spacing-entropy
+fig:fig-entropy-hierarchy
 eq:linearkvsp
 eq:arrhenius-ln
 eq:dlnk-dt-arrh
@@ -141,6 +145,7 @@ lecture7
 qualitative-analysis-atomic-and-molecular-reactions
 thermodynamic-origin-of-the-steric-factor
 molecular-degrees-of-freedom
+a-simple-example-atom-atom-reaction
 energy-spacings-and-entropy
 formation-of-the-activated-complex
 lecture8
