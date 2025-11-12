@@ -71,8 +71,6 @@ knitr::include_graphics("lecture_7/figures/atom_atom_dof_counting.png")
 
 The total number of degrees of freedom is preserved: both the reactants and the activated complex have 6 degrees of freedom. So why is $\Delta S^{\ddagger} \neq 0$? The answer lies in understanding that different types of molecular motion contribute very differently to entropy.
 
-
-
 ## Energy Spacings and Entropy
 
 Quantum mechanics tells us that the energy levels for molecular motion are quantised. The spacing between these levels varies significantly with the type of motion:
@@ -106,14 +104,14 @@ S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} > S^{\ddagger}_\mathrm
 knitr::include_graphics("lecture_7/figures/entropy_hierarchy.png")
 ```
 
-## Formation of the Activated Complex
+## Towards Quantitative Predictions
 
-We can now provide a complete molecular explanation for the systematic variation in steric factors. In Lecture \@ref(lecture6), we introduced the idea of considering the degrees of freedom that are lost when forming the activated complex. While this correctly predicts negative $\Delta S^{\ddagger}$ for bimolecular reactions, it neglects the degrees of freedom created in the activated complex&mdash;particularly the new vibrational and rotational modes.
+The thermodynamic framework we have developed here provides us with a molecular perspective on the entropy of activation, $\Delta S^{\ddagger}$. When reactants come together to form the activated complex, high-entropy molecular degrees of freedom (translation and rotation) are converted into low-entropy degrees of freedom (rotation and vibration), giving an overall negative $\Delta S^{\ddagger}$.
 
-The complete picture recognizes that forming the activated complex *transforms* molecular motion. When two molecules come together, high-entropy translational and rotational degrees of freedom are converted into lower-entropy vibrational and rotational modes within the complex. Our atom-atom example showed this explicitly: the six translational degrees of freedom in the separated atoms (3 + 3 = 6) become three translational, two rotational, and one vibrational degree of freedom in the activated complex.
+To make quantitative predictions about pre-exponential factors for specific reactions, we need to estimate these entropy changes numerically. Recall from Lecture \@ref(lecture6) that the pre-exponential factor is:
 
-Why does this transformation produce negative $\Delta S^{\ddagger}$? The hierarchy of entropy contributions ($S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} > S^{\ddagger}_\mathrm{vib}$) is the key. This hierarchy arises directly from energy level spacings: translational levels are extremely closely spaced, giving many thermally accessible states and high entropy (since $S = k \ln W$). Vibrational levels are widely spaced, giving few accessible states and low entropy. When we transform high-entropy translational motion into low-entropy vibrational motion, we lose entropy overall.
+\begin{equation}
+A = \frac{k^{\ddagger}}{c^\circ} \exp\left(\frac{\Delta S^{\ddagger}}{R}\right)
+\end{equation}
 
-For more complex reactant molecules, this transformation is even more dramatic. Consider our opening comparison between atomic and molecular reactions: both lose translational freedom, but molecular reactions additionally lose rotational freedom. A diatomic + diatomic reaction loses more freedom still. Each additional degree of freedom lost from the high-entropy pool (translation and rotation) and converted into the low-entropy pool (vibration) makes $\Delta S^{\ddagger}$ more negative.
-
-This systematic trend explains the steric factor. Collision theory's energy-only model works well for atoms ($P \approx 1$) but systematically overestimates rates for molecular reactions because it does not account for this entropic cost. The steric factor is therefore not merely an empirical correction for "geometric effects"&mdash;it has a fundamental thermodynamic origin in the transformation of molecular degrees of freedom and the hierarchy of their entropy contributions.
+In Lecture \@ref(lecture8), we will estimate both components&mdash;the entropy change $\Delta S^{\ddagger}$ and the rate constant $k^{\ddagger}$&mdash;to calculate pre-exponential factors for real reactions.
