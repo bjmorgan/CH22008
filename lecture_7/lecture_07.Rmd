@@ -40,11 +40,26 @@ A non-linear molecule has:
 
 Quantum mechanics tells us that the energy levels for molecular motion are quantised. The spacing between these levels varies significantly with the type of motion:
 
-$$\Delta \epsilon_\mathrm{trans} \ll \Delta \epsilon_\mathrm{rot} < \Delta \epsilon_\mathrm{vib}$$
+\begin{equation}
+\Delta \epsilon_\mathrm{trans} \ll \Delta \epsilon_\mathrm{rot} < \Delta \epsilon_\mathrm{vib}
+\end{equation}
 
-This hierarchy of energy spacings determines the entropy associated with each type of motion. A smaller energy spacing means more states are thermally accessible, corresponding to higher entropy. Hence:
+To understand why this matters for entropy, we need the statistical mechanical foundation provided by Boltzmann's equation:
 
-$$S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} > S^{\ddagger}_\mathrm{vib}$$
+\begin{equation}
+S = k \ln W
+\end{equation}
+
+where $W$ represents the number of thermally accessible microstates&mdash;the different possible arrangements available to the system at a given energy. This equation tells us that entropy increases with the number of ways energy can be distributed across the available states.
+
+The hierarchy of energy spacings directly determines $W$ for each type of motion. When energy levels are closely spaced, there are many thermally accessible states at typical temperatures&mdash;many different ways to distribute the available energy across the system, giving large $W$
+ and hence high entropy. Conversely, when energy levels are widely spaced, only a few low-lying states can be populated, giving few ways to distribute the energy, small $W$, and low entropy.
+
+For molecular motion, translational energy levels are narrowly spaced and appear almost continuous. At room temperature, an enormous number of translational states are accessible, giving very high entropy. Rotational energy levels are more widely spaced, with fewer accessible states. Vibrational energy levels are spaced more widely still, with only a few low-lying states thermally accessible at typical temperatures. This leads directly to the entropy hierarchy:
+
+\begin{equation}
+S^{\ddagger}_\mathrm{trans} \gg S^{\ddagger}_\mathrm{rot} > S^{\ddagger}_\mathrm{vib}
+\end{equation}
 
 ## Formation of the Activated Complex
 
