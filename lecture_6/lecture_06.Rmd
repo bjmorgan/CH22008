@@ -33,7 +33,7 @@ K^{\ddagger} = \frac{[\mathrm{C}^{\ddagger}]c^\circ}{[\mathrm{A}][\mathrm{B}]}
 (\#eq:equilibrium-constant)
 \end{equation}
 
-where $c^\circ$ = 1 mol dm<sup>&minus;3</sup>sup> is the standard concentration.^[Many basic treatments of transition state theory omit $c^{\circ}$ since it equals 1 under standard conditions. Including it ensures that $K^\ddagger$ is correctly defined as dimensionless, and that $k$ has the correct units for a second-order rate constant of dm$^3$ mol$^{-1}$ s$^{-1}$.]
+where $c^\circ$ = 1 mol dm<sup>&minus;3</sup> is the standard concentration.^[Many basic treatments of transition state theory omit $c^{\circ}$ since it equals 1 under standard conditions. Including it ensures that $K^\ddagger$ is correctly defined as dimensionless, and that $k$ has the correct units for a second-order rate constant of dm$^3$ mol$^{-1}$ s$^{-1}$.]
 
 This allows us to express the concentration of the activated complex in terms of reactant concentrations:
 
@@ -49,10 +49,10 @@ Since we treat the formation of the activated complex as a pseudo-equilibrium, w
 (#eq:gibbs-activation)
 \end{equation}
 
-Breaking $\Delta G^{\ddagger}$ into its enthalpic and entropic components:
+We can then use the standard relationship $\Delta G^\ddagger = \Delta H^\ddagger - T \Delta S^\ddagger$ to separate $K^\ddagger$ into enthalpic and entropic terms:
 
 \begin{equation}
-K^{\ddagger} = \mathrm{e}^{-\Delta G^{\ddagger}/RT} = \frac{1}{c^{\circ}}\mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
+K^{\ddagger} = \mathrm{e}^{-\Delta G^{\ddagger}/RT} = \mathrm{e}^{-\Delta H^{\ddagger}/RT}\mathrm{e}^{\Delta S^{\ddagger}/R}
 (\#eq:equilibrium-constant-expanded)
 \end{equation}
 
