@@ -54,6 +54,8 @@ fig:fig-energy-spacing-entropy
 fig:fig-entropy-hierarchy
 fig:fig-reaction-coordinate
 fig:fig-reaction-coordinate-motion
+fig:fig-atomic-dof-counting
+fig:fig-polyatomic-dof-counting
 fig:fig-preexp-comparison
 fig:fig-symmetry-ch4-cd3h
 fig:fig-internal-rotation-levels
