@@ -6,7 +6,7 @@ In Lecture \@ref(lecture7), we examined how molecular degrees of freedom change 
 
 ## The Reaction Coordinate
 
-To understand how molecular motion leads to reaction, we must look more carefully at what the reaction coordinate means. Consider a simple atom-transfer reaction A–B + C → A + B–C. We can describe the relative positions of these three atoms using two coordinates: the A–B distance ($r_\mathrm{AB}$) and the B–C distance ($r_\mathrm{BC}$).
+To understand how molecular motion leads to reaction, we must look more carefully at what the reaction coordinate means. Consider a simple atom-transfer reaction A–B + C $\to$ A + B–C. We can describe the relative positions of these three atoms using two coordinates: the A–B distance ($r_\mathrm{AB}$) and the B–C distance ($r_\mathrm{BC}$).
 
 At the start of the reaction:
 
@@ -20,9 +20,13 @@ At the end of the reaction:
 
 The reaction coordinate traces the lowest-energy path between reactants and products on this two-dimensional potential energy surface. This path must cross a "dividing surface" that separates reactant-like and product-like geometries. The transition state corresponds to the lowest-energy point on this dividing surface, where typically $r_\mathrm{AB}$ ≈ $r_\mathrm{BC}$.
 
+```{r fig-reaction-coordinate, fig.cap="The reaction coordinate for a bimolecular exchange reaction A + BC → AB + C. Left: The two key bond distances that define the reaction coordinate. Right: The potential energy surface as a function of $r_{\\mathrm{AB}}$ and $r_{\\mathrm{BC}}$. The reaction coordinate (pink line) follows the minimum energy pathway from reactants (top-left) through the transition state (saddle point) to products (bottom right).", out.width='100%', fig.align='center'}
+knitr::include_graphics("lecture_8/figures/reaction_coordinate_pes.png")
+```
+
 ## The Rate of Barrier Crossing
 
-To describe how fast activated complexes convert to products ($k^\ddagger$), we need to think carefully about what happens at the transition state. Consider our simple atom-transfer reaction A–B + C → A + B–C. At the transition state, we have an activated complex [A$\cdots$B$\cdots$C]$^\ddagger$.
+To describe how fast activated complexes convert to products ($k^\ddagger$), we need to think carefully about what happens at the transition state. Consider our simple atom-transfer reaction A–B + C $\to$ A + B–C. At the transition state, we have an activated complex [A$\cdots$B$\cdots$C]$^\ddagger$.
 
 What happens if we move a small distance along the reaction coordinate? If we move towards reactants, $r_\mathrm{AB}$ gets smaller and $r_\mathrm{BC}$ gets larger. If we move towards products, $r_\mathrm{AB}$ gets larger and $r_\mathrm{BC}$ gets smaller. This motion through the transition state looks like an asymmetric stretch of our activated complex. By modeling this as a loose molecular vibration, we can derive the expression:
 
@@ -30,11 +34,15 @@ $$k^\ddagger = \frac{k_\mathrm{B}T}{h}$$
 
 where $k_\mathrm{B}$ is Boltzmann's constant, $h$ is Planck's constant, and $T$ is temperature.^[The derivation of this expression for $k^\ddagger$ requires a statistical mechanical treatment of transition state theory. You will cover statistical mechanics in the third year of your course. A brief overview of the statistical formulation of transition state theory is give in Appendix \@ref(appendix-statistical-tst).] Because this expression accounts for motion along the reaction coordinate, we must take care when counting vibrational modes in the activated complex: we count only $3N-7$ vibrational modes for a non-linear activated complex (one fewer than the usual $3N-6$), as the reaction coordinate "vibration" is already included in the $k^\ddagger$ term.
 
+```{r fig-reaction-coordinate-motion, fig.cap="Motion across the transition state for the reaction A + BC $\to$ AB + C. Left: The molecular configuration at the transition state represents an intermediate geometry between reactants and products. Right: The transition state sits at a saddle point on the potential energy surface. Motion along the reaction coordinate (pink line) corresponds to vibration-like motion through the transition state, with frequency $\\nu^\\ddagger = k_\\mathrm{B}T/h$.", out.width='100%', fig.align='center'}
+knitr::include_graphics("lecture_8/figures/reaction_coordinate_motion.png")
+```
+
 ## Mathematical Development
 
 The complete transition state theory rate equation can be written as:
 
-$$\nu = k^{\ddagger}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}[\mathrm{A}][\mathrm{B}]$$
+$$\nu = \frac{k^{\ddagger}}{c^\circ}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}[\mathrm{A}][\mathrm{B}]$$
 
 Comparison with the Arrhenius equation:
 
@@ -42,11 +50,11 @@ $$\nu = A\mathrm{e}^{-E_\mathrm{a}/RT}[\mathrm{A}][\mathrm{B}]$$
 
 reveals that the pre-exponential factor corresponds to:
 
-$$A \approx k^{\ddagger}\mathrm{e}^{\Delta S^{\ddagger}/R}$$
+$$A \approx \frac{k^{\ddagger}}{c^\circ}\mathrm{e}^{\Delta S^{\ddagger}/R}$$
 
 By separating the entropy of activation into contributions from different types of molecular motion, we arrive at the complete transition state theory expression:
 
-$$A = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}_\mathrm{trans}/R}\mathrm{e}^{\Delta S^{\ddagger}_\mathrm{rot}/R}\mathrm{e}^{\Delta S^{\ddagger,(n-1)}_\mathrm{vib}/R}$$
+$$A = \frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^{\ddagger}_\mathrm{trans}/R}\mathrm{e}^{\Delta S^{\ddagger}_\mathrm{rot}/R}\mathrm{e}^{\Delta S^{\ddagger,(n-1)}_\mathrm{vib}/R}$$
 
 where the superscript $(n-1)$ on the vibrational entropy term indicates that we consider one fewer vibrational mode than might be expected, since motion along the reaction coordinate is already accounted for in the frequency prefactor $\frac{k_\mathrm{B}T}{h}$. This expression is particularly powerful because it allows us to make quantitative predictions of the Arrhenius pre-exponential factor if we can evaluate (or estimate) the changes in translational, rotational, and vibrational entropy when forming the activated complex. For gas-phase reactions, these contributions can be estimated using characteristic values:
 
@@ -64,7 +72,7 @@ The simplest case to analyse is a reaction between two atoms, A + B. Initially, 
 - Three translational degrees of freedom for atom B
 - No rotational or vibrational modes
 
-When these atoms combine to form the activated complex [A⋯B]$^\ddagger$, this transforms into:
+When these atoms combine to form the activated complex [A$\ldots$B]$^\ddagger$, this transforms into:
 
 - Three translational degrees of freedom (describing motion of the complex as a whole)
 - Two rotational degrees of freedom (the complex can rotate about two axes)
@@ -145,6 +153,35 @@ As in our atomic example, the factor of $N_\mathrm{A}$ converts to a per-mole ba
 
 This more complex example reveals a key feature of molecular reactions: as molecular complexity increases, we typically observe larger decreases in molecular freedom when forming the activated complex. This systematically leads to more negative values of $\Delta S^\ddagger$ and correspondingly smaller pre-exponential factors.
 
+## Applications and Predictive Power
+
+Despite these limitations, our molecular freedom approach successfully explains systematic trends in experimental pre-exponential factors. Consider these representative reactions:
+
+$$\mathrm{Br}^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{HBr} + \mathrm{H}^\bullet \qquad A = 3 \times 10^{10}~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
+$$\mathrm{CD}_3^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{CD}_3\mathrm{H} + \mathrm{H}^\bullet \qquad A = 3 \times 10^8~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
+$$\text{Diels-Alder cycloaddition} \qquad A = 1 \times 10^7~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
+
+
+The systematic decrease in pre-exponential factors reflects three key features:
+
+1. Increasing molecular complexity in the reactants
+2. Greater loss of molecular freedom in forming the activated complex
+3. Increasingly negative values of $\Delta S^\ddagger_\mathrm{rot+vib}$: +15, -20, and -35 J K$^{-1}$ mol$^{-1}$ respectively
+
+Our estimation method correctly predicts both the magnitude and ordering of these pre-exponential factors, giving values of $4 \times 10^9$, $1 \times 10^8$, and $2 \times 10^7~\mathrm{dm^3~mol^{-1}~s^{-1}}$ respectively.
+
+```{r fig-preexp-comparison, fig.cap="Comparison of experimental and estimated pre-exponential factors for representative bimolecular reactions. The systematic decrease in pre-exponential factors reflects increasing molecular complexity and greater loss of molecular freedom when forming the activated complex. The estimated entropy changes ($\\Delta S^\\ddagger_\\mathrm{rot+vib}$) become increasingly negative, leading to correspondingly smaller pre-exponential factors. Our simple estimation method successfully predicts both the magnitude and ordering of experimental values, with agreement typically within an order of magnitude.", out.width='85%', fig.align='center'}
+knitr::include_graphics("lecture_8/figures/preexp_comparison_table.png")
+```
+
+## Connection to Collision Theory
+
+This molecular freedom framework finally provides a quantitative explanation for an observation we made in Lecture \@ref(lecture5): collision theory's empirical steric factor $P$ is systematically less than unity for reactions between complex molecules, and decreases as molecular complexity increases.
+
+We can now understand why. The steric factor $P$ in collision theory appears as an empirical correction to account for the requirement that molecules must collide with appropriate orientation and alignment. From our transition state theory perspective, these geometric constraints manifest as losses of molecular freedom when forming the activated complex. Reactions between more complex molecules lose more translational and rotational freedom—and may also experience constraints on internal rotations—leading to increasingly negative values of $\Delta S^{\ddagger}$ and correspondingly smaller pre-exponential factors.
+
+The systematic trends we observe in Figure \@ref(fig:fig-preexp-comparison) demonstrate this principle: as we move from simple radical reactions ($\Delta S^{\ddagger}_\mathrm{rot+vib} = +15~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$) to more complex cycloadditions ($\Delta S^{\ddagger}_\mathrm{rot+vib} = -35~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$), the pre-exponential factors decrease by over three orders of magnitude. What collision theory attributed to "steric hindrance" is revealed by transition state theory to be the thermodynamic consequence of transforming high-entropy molecular degrees of freedom into low-entropy modes at the transition state.
+
 ## Unimolecular Reactions
 
 While our analysis thus far has focused on bimolecular reactions, we can apply the same molecular freedom approach to unimolecular processes of the form:
@@ -153,7 +190,7 @@ While our analysis thus far has focused on bimolecular reactions, we can apply t
 \mathrm{A} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}
 \end{equation}
 
-Consider first a single atom or simple diatomic molecule. For a single atom, both the reactant and activated complex possess three translational degrees of freedom but no rotational or vibrational modes. A linear diatomic molecule has two rotational degrees of freedom and one vibrational mode, in addition to its translational motion. In either case, our simple counting approach predicts no net change in molecular freedom when forming the activated complex: both reactant and activated complex have the same number of translational, rotational, and vibrational degrees of freedom. This leads to $\Delta S^{\ddagger} = 0$ and a predicted pre-exponential factor of:
+Consider first a single atom or simple diatomic molecule. For a single atom, both the reactant and activated complex possess three translational degrees of freedom but no rotational or vibrational modes. A linear diatomic molecule has two rotational degrees of freedom and one vibrational mode, in addition to its translational motion. In either case, our simple counting approach predicts no net change in molecular freedom when forming the activated complex: both reactant and activated complex have the same number of translational, rotational, and vibrational degrees of freedom. This leads to $\Delta S^{\ddagger} = 0$ and a predicted pre-exponential factor of:^[Note the absence of the standard concentration factor $c^\circ$ in this expression, unlike the bimolecular case where $A = (k_\mathrm{B}T/hc^\circ)\mathrm{e}^{\Delta S^\ddagger/R}$. For unimolecular reactions, the rate constant has units of s$^{-1}$ rather than dm$^3$ mol$^{-1}$ s$^{-1}$, so no concentration term is needed for dimensional consistency.]
 
 \begin{equation}
 A = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}= \frac{k_\mathrm{B}T}{h} \approx 10^{13}~\mathrm{s}^{-1}
@@ -185,6 +222,7 @@ The magnitude of $\Delta S^{\ddagger}$ suggests each restricted internal rotatio
 
 These examples reveal how changes in internal molecular freedom can produce significant deviations from our predicted $A \approx 10^{13}~\mathrm{s}^{-1}$. While collision theory cannot describe unimolecular reactions, our molecular freedom approach successfully explains systematic variations in pre-exponential factors when we consider how forming the activated complex affects internal molecular motion. This analysis provides both qualitative insight into reaction mechanisms and a framework for making quantitative predictions about reaction rates.
 
+
 ## Limitations in Pre-exponential Factor Estimation
 
 While our molecular freedom approach successfully predicts systematic trends in reaction rates, several important approximations underpin these calculations. Understanding these limitations helps us recognise both the power and constraints of our theoretical framework.
@@ -210,12 +248,16 @@ Our previous analysis, based purely on counting molecular degrees of freedom, pr
 
 This difference arises from molecular symmetry. In CH~4~, all four hydrogen atoms are equivalent—the bromine radical can abstract any hydrogen to form the same product. In CD~3~H, only one hydrogen is available for abstraction. We account for this effect by introducing a statistical factor, $l$, into our transition state theory expression:
 
-$$A = l\frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^\ddagger/RT}$$
+$$A = l\frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^\ddagger/RT}$$
 
 Here $l$ represents the number of different chemically plausible products that can be formed when identical atoms in the reactant molecules are labeled. For our example reactions:
 
 - CH~4~ reaction: $l = 4$ (four equivalent hydrogens)
 - CD~3~H reaction: $l = 1$ (single abstractable hydrogen)
+
+```{r fig-symmetry-ch4-cd3h, fig.cap="Molecular symmetry affects pre-exponential factors through configurational entropy. Top: In CH$_4$, all four hydrogen atoms (blue) are equivalent, so the bromine radical can abstract any hydrogen to form the same product, giving a statistical factor of $l = 4$. Bottom: In CD$_3$H, only one hydrogen (blue) is available for abstraction whilst the three deuterium atoms (orange) are not, giving $l = 1$. This symmetry difference results in the CH$_4$ reaction being approximately four times faster than the CD$_3$H reaction, even though simple degree-of-freedom counting predicts identical rates.", out.width='50%', fig.align='center'}
+knitr::include_graphics("lecture_8/figures/ch4_cd3h_symmetry.png")
+```
 
 ### Internal Molecular Motion
 
@@ -232,6 +274,10 @@ The treatment of internal molecular motions reveals additional subtlety in our t
    - Requires much less energy
    - Shows more closely spaced energy levels
    - Makes larger contributions to entropy
+   
+```{r fig-internal-rotation-levels, fig.cap="Comparison of energy level spacings for different types of molecular motion in ethane-like molecules. Left: A normal C–C stretching vibration involves compression and extension of the bond, requiring significant energy. The resulting widely spaced quantum energy levels (gray) mean only a few low-lying states (green) are thermally accessible at room temperature, giving low entropy. Right: Internal rotation of CH$_3$ groups about the C–C axis requires much less energy. The resulting closely spaced energy levels mean many states are thermally accessible, giving substantially higher entropy than a normal vibration.", out.width='80%', fig.align='center'}
+   knitr::include_graphics("lecture_8/figures/internal_rotation_energy_levels.png")
+```
 
 When such molecules form activated complexes, two scenarios commonly arise:
 
@@ -246,21 +292,13 @@ When such molecules form activated complexes, two scenarios commonly arise:
    - Increases freedom of internal motion
    - Produces less negative $\Delta S^\ddagger$ values
    - Leads to higher pre-exponential factors than predicted
-
-## Applications and Predictive Power
-
-Despite these limitations, our molecular freedom approach successfully explains systematic trends in experimental pre-exponential factors. Consider these representative reactions:
-
-$$\mathrm{Br}^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{HBr} + \mathrm{H}^\bullet \qquad A = 3 \times 10^{10}~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
-$$\mathrm{CD}_3^\bullet + \mathrm{H}_2 \longrightarrow \mathrm{CD}_3\mathrm{H} + \mathrm{H}^\bullet \qquad A = 3 \times 10^8~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
-$$\text{Diels-Alder cycloaddition} \qquad A = 1 \times 10^7~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
-
-The systematic decrease in pre-exponential factors reflects three key features:
-
-1. Increasing molecular complexity in the reactants
-2. Greater loss of molecular freedom in forming the activated complex
-3. Increasingly negative values of $\Delta S^\ddagger_\mathrm{rot+vib}$: +15, -20, and -35 J K$^{-1}$ mol$^{-1}$ respectively
-
-Our estimation method correctly predicts both the magnitude and ordering of these pre-exponential factors, giving values of $4 \times 10^9$, $1 \times 10^8$, and $2 \times 10^7~\mathrm{dm^3~mol^{-1}~s^{-1}}$ respectively.
+   
+```{r fig-internal-rotation-ts-effects, fig.cap="The effect of transition state formation on internal rotation determines the sign of entropy contributions. Left: When the transition state requires specific molecular alignment or constrains rotation (indicated by the red barrier), internal rotational freedom is reduced. This produces additional negative contributions to $\\Delta S^\\ddagger$, leading to lower pre-exponential factors than predicted by simple degree-of-freedom counting. Right: When transition state formation weakens a bond, internal rotation becomes freer. The enhanced rotational freedom produces positive contributions to $\\Delta S^\\ddagger$, leading to higher pre-exponential factors.", out.width='80%', fig.align='center'}
+   knitr::include_graphics("lecture_8/figures/internal_rotation_ts_effects.png")
+```
 
 The Diels-Alder cycloaddition provides particularly valuable insight into the limitations of our simple counting approach. Our predictions typically overestimate the experimental pre-exponential factors for these reactions because the transition state requires precise alignment of the diene and dienophile components. This geometric constraint introduces additional restrictions on molecular motion beyond those captured by simple counting of degrees of freedom, leading to more negative $\Delta S^\ddagger$ values than predicted.
+
+```{r fig-diels-alder-ts-constraint, fig.cap="The Diels-Alder cycloaddition transition state illustrates why geometric constraints can produce more negative $\\Delta S^\\ddagger$ values than predicted by simple degree-of-freedom counting. Left: The diene reactant possesses internal rotational freedom (rotation arrow). Right: The transition state requires formation of a planar, cyclic six-membered ring structure (shown in red dashes). This geometric constraint restricts the internal rotational freedom present in the reactants, producing additional negative entropy contributions beyond those from simple translational and rotational degree-of-freedom changes. This explains why our estimated pre-exponential factor (2 × 10$^7$ dm$^3$ mol$^{-1}$ s$^{-1}$) slightly overestimates the experimental value (1 × 10$^7$ dm$^3$ mol$^{-1}$ s$^{-1}$).", out.width='45%', fig.align='center'}
+knitr::include_graphics("lecture_8/figures/diels_alder_ts_constraint.png")
+```
