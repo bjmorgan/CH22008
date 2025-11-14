@@ -90,6 +90,10 @@ The vibration through the transition state is already accounted for in our $k^\d
 
 $$\Delta S^\ddagger_\mathrm{vib} = 0 \times 5 = 0~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
 
+```{r fig-atomic-dof-counting, fig.cap="Systematic accounting of degrees of freedom changes for the reaction between two atoms. The table format provides a template for organizing similar analyses: count initial degrees of freedom for each reactant, count final degrees of freedom in the activated complex, then calculate the change (Δ) for each type of motion.", out.width='70%', fig.align='center'}
+knitr::include_graphics("lecture_8/figures/atomic_dof_counting.png")
+```
+
 With these entropy changes calculated, we can now determine the pre-exponential factor:
 
 $$A = 10^{13} \times \mathrm{e}^{-3 \times 195/8.314} \times \mathrm{e}^{2 \times 20/8.314} \times \mathrm{e}^{0 \times 5/8.314} \times (N_\mathrm{A} \times 10^3)~\mathrm{dm^3~mol^{-1}~s^{-1}}$$
@@ -142,6 +146,10 @@ For vibrational motion:
 - Finally: eleven vibrational modes in the complex
 - Net gain: four vibrational modes
 $$\Delta S^\ddagger_\mathrm{vib} = +4 \times 5 = +20~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
+
+```{r fig-polyatomic-dof-counting, fig.cap="Degree of freedom accounting for a reaction between a diatomic molecule (N = 2) and a four-atom molecule (N = 4) forming a six-atom activated complex (N = 6). The activated complex has 12 vibrational modes (3N-6 for a non-linear molecule), but when calculating the pre-exponential factor, we use only 11 modes in the entropy expression because one vibrational mode&mdash;motion along the reaction coordinate&mdash;is already included in the k$^\\ddagger$ term.", out.width='75%', fig.align='center'}
+knitr::include_graphics("lecture_8/figures/polyatomic_dof_counting.png")
+```
 
 With these entropy changes determined, we can calculate the pre-exponential factor:
 
