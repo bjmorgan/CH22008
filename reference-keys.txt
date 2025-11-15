@@ -52,11 +52,12 @@ fig:fig-entropy-steric-origin
 fig:fig-atom-atom-dof
 fig:fig-energy-spacing-entropy
 fig:fig-entropy-hierarchy
-fig:fig-reaction-coordinate
-fig:fig-reaction-coordinate-motion
+fig:reaction-coordinate
+fig:reaction-coordinate-motion
 fig:fig-atomic-dof-counting
 fig:fig-polyatomic-dof-counting
 fig:fig-preexp-comparison
+fig:cope-rearrangement
 fig:fig-symmetry-ch4-cd3h
 fig:fig-internal-rotation-levels
 fig:fig-internal-rotation-ts-effects
@@ -159,7 +160,6 @@ energy-spacings-and-entropy
 towards-quantitative-predictions
 lecture8
 from-molecular-freedom-to-reaction-rates
-the-reaction-coordinate
 the-rate-of-barrier-crossing
 mathematical-development
 analysis-of-molecular-systems
