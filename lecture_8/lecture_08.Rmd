@@ -266,7 +266,7 @@ knitr::include_graphics("lecture_8/figures/ch4_cd3h_symmetry.png")
 
 ### Internal Molecular Motion
 
-The treatment of internal molecular motions reveals additional subtlety in our theoretical framework. Consider the ethane molecule (C~2~H~6~), which exhibits two distinct types of motion around its C–C bond:
+The treatment of internal molecular motions reveals additional subtlety in our theoretical framework. We have already seen contrasting examples of this effect in the unimolecular section: ethane decomposition showed unusually high pre-exponential factors due to enhanced internal rotation, whilst the Cope rearrangement showed lower values due to constrained rotation. To understand these effects systematically, consider the ethane molecule (C~2~H~6~), which exhibits two distinct types of motion around its C–C bond:
 
 1. C–C stretching vibration:
    - Involves direct compression and extension of the C–C bond
@@ -279,30 +279,29 @@ The treatment of internal molecular motions reveals additional subtlety in our t
    - Requires much less energy
    - Shows more closely spaced energy levels
    - Makes larger contributions to entropy
-   
 ```{r fig-internal-rotation-levels, fig.cap="Comparison of energy level spacings for different types of molecular motion in ethane-like molecules. Left: A normal C–C stretching vibration involves compression and extension of the bond, requiring significant energy. The resulting widely spaced quantum energy levels (gray) mean only a few low-lying states (green) are thermally accessible at room temperature, giving low entropy. Right: Internal rotation of CH$_3$ groups about the C–C axis requires much less energy. The resulting closely spaced energy levels mean many states are thermally accessible, giving substantially higher entropy than a normal vibration.", out.width='70%', fig.align='center'}
    knitr::include_graphics("lecture_8/figures/internal_rotation_energy_levels.png")
 ```
 
-When such molecules form activated complexes, two scenarios commonly arise:
+Figure \@ref(fig:fig-internal-rotation-levels) illustrates why internal rotation contributes more entropy than normal vibrations: the closely spaced energy levels mean many more states are thermally accessible. When such molecules form activated complexes, two scenarios arise, which we have already encountered:
 
-1. Restricted internal rotation:
+1. **Restricted internal rotation** (as in the Cope rearrangement):
    - Occurs when specific molecular alignments are required
    - Reduces freedom of internal motion
    - Produces more negative $\Delta S^\ddagger$ values
    - Leads to lower pre-exponential factors than predicted by simple counting
 
-2. Enhanced internal rotation:
+2. **Enhanced internal rotation** (as in ethane decomposition):
    - Occurs when bond lengthening makes rotation easier
    - Increases freedom of internal motion
-   - Produces less negative $\Delta S^\ddagger$ values
+   - Produces less negative (or positive) $\Delta S^\ddagger$ values
    - Leads to higher pre-exponential factors than predicted
    
 ```{r fig-internal-rotation-ts-effects, fig.cap="The effect of transition state formation on internal rotation determines the sign of entropy contributions. Left: When the transition state requires specific molecular alignment or constrains rotation (indicated by the red barrier), internal rotational freedom is reduced. This produces additional negative contributions to $\\Delta S^\\ddagger$, leading to lower pre-exponential factors than predicted by simple degree-of-freedom counting. Right: When transition state formation weakens a bond, internal rotation becomes freer. The enhanced rotational freedom produces positive contributions to $\\Delta S^\\ddagger$, leading to higher pre-exponential factors.", out.width='70%', fig.align='center'}
    knitr::include_graphics("lecture_8/figures/internal_rotation_ts_effects.png")
 ```
 
-Diels-Alder cycloadditions provide a specific example of this effect. Our predictions typically overestimate the experimental pre-exponential factors for these reactions because the transition state requires precise alignment of the diene and dienophile components. This geometric constraint introduces additional restrictions on molecular motion beyond those captured by simple counting of degrees of freedom, leading to more negative $\Delta S^\ddagger$ values than predicted.
+This effect is not limited to unimolecular reactions. Diels-Alder cycloadditions provide a bimolecular example: our predictions typically overestimate the experimental pre-exponential factors for these reactions because the transition state requires precise alignment of the diene and dienophile components. This geometric constraint introduces additional restrictions on molecular motion beyond those captured by simple counting of degrees of freedom, leading to more negative $\Delta S^\ddagger$ values than predicted.
 
 ```{r fig-diels-alder-ts-constraint, fig.cap="The Diels-Alder cycloaddition transition state illustrates why geometric constraints can produce more negative $\\Delta S^\\ddagger$ values than predicted by simple degree-of-freedom counting. Left: The diene reactant possesses internal rotational freedom (rotation arrow). Right: The transition state requires formation of a planar, cyclic six-membered ring structure (shown in red dashes). This geometric constraint restricts the internal rotational freedom present in the reactants, producing additional negative entropy contributions beyond those from simple translational and rotational degree-of-freedom changes. This explains why our estimated pre-exponential factor (2 &times; 10$^7$ dm$^3$ mol$^{-1}$ s$^{-1}$) slightly overestimates the experimental value (1 &times; 10$^7$ dm$^3$ mol$^{-1}$ s$^{-1}$).", out.width='60%', fig.align='center'}
 knitr::include_graphics("lecture_8/figures/diels_alder_ts_constraint.png")
