@@ -5,129 +5,195 @@ Here we examine three key applications: using temperature-dependent kinetic data
 
 ## The Eyring Plot
 
-The Eyring equation relates reaction rate constants to the activation parameters $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$:
+Over the past three lectures, we have developed transition state theory as a framework for understanding how molecular properties govern reaction rates. We derived the Eyring equation:
 
 $$k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}$$
 
-By fitting this equation to experimental rate constant data at different temperatures, it is possible to estimate these activation parameters.
+This equation connects the rate constant to the activation parameters $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$. But how do we actually determine these parameters from experimental measurements? If we measure rate constants at different temperatures, can we extract $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$?
 
-The conventional approach to fitting the Eyring equation to experimental $k(T)$ data is to reformulate it as a linear equation. First, we divide both sides by $T$:
+The Eyring equation is non-linear in the parameters we want to determine. Modern computational analysis fits such equations directly using non-linear regression, which gives the most accurate parameter estimates. However, you will encounter linearised forms of the Eyring equation throughout textbooks and published literature—this approach became standard before computers were readily available and persists through historical inertia. More practically, you need to understand how to transform equations into linear forms because in examinations, you can plot linearised data and estimate parameters by drawing a line through the points and calculating its slope and intercept. The Eyring plot provides exactly this: a method for transforming the Eyring equation into a form where $\ln(k/T)$ versus $1/T$ produces a straight line.
+
+### Deriving the Linear Form
+
+To transform the Eyring equation into a linear form, we first divide both sides by $T$:
 
 $$\frac{k}{T} = \frac{k_\mathrm{B}}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}$$
 
-Taking the natural logarithm gives:
+Taking the natural logarithm of both sides gives:
 
 $$\ln\left(\frac{k}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}$$
 
-which has the form
+Rearranging to separate the temperature-dependent term:
 
-$$y = mx + c$$.
+$$\ln\left(\frac{k}{T}\right) = \ln\left(\frac{k_\mathrm{B}}{h}\right) + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{R}\left(\frac{1}{T}\right)$$
 
-Therefore, the Eyring equation predicts that a plot of $\ln(k/T)$ versus $1/T$ should be approximately linear, and that the model parameters $\Delta H^\ddagger$ and $\Delta S^\ddagger$ can be estimated from the slope and intercept, respectively,^[If the errors in our experimental data, $k(T)$, are normally distributed, then standard least-squares fitting of the linear form of the Eyring equation gives biased estimates for $\Delta H^\ddagger$ and $\Delta S^\ddagger$ &mdash; see, e.g., [McCluskey J. Chem. Educ. 2023, 100, 11, 4174–4176](https://doi.org/10.1021/acs.jchemed.3c00466). Unbiased estimates of $\Delta H^\ddagger$ and $\Delta S^\ddagger$ can be obtained by instead fitting the non-linear form of the Eyring equation, using a computer. Because of the exponential dependence on $\Delta H^\ddagger$ and $\Delta S^\ddagger$, direct fitting of the non-linear Eyring equation can be numerically unstable. This can be ameliorated by fitting the linear form of the equation first, to obtain approximate (biased) estimates of the activation parameters, and then using these as starting guesses to fit the non-linear form.] via
+This has the form of a straight line:
 
-- Slope = $-\Delta H^{\ddagger}/R$
-- Intercept = $\ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R$
+$$y = c + mx$$
+
+where $y = \ln(k/T)$, $x = 1/T$, the intercept is $c = \ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R$, and the slope is $m = -\Delta H^{\ddagger}/R$.
+
+### Extracting Activation Parameters
+
+A plot of $\ln(k/T)$ versus $1/T$ is called an Eyring plot. If transition state theory correctly describes the temperature dependence of the rate constant, this plot should be approximately linear. The activation parameters can then be extracted from:^[Whilst the Eyring plot is widely used in literature and essential for examination purposes, modern kinetic analysis should use direct non-linear fitting of the Eyring equation to experimental data. If the errors in experimental rate constant measurements are normally distributed, then fitting the linearised form gives biased estimates of $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$—see McCluskey, *J. Chem. Educ.* **2023**, *100*, 4174–4176 (DOI: [10.1021/acs.jchemed.3c00466](https://doi.org/10.1021/acs.jchemed.3c00466)). Non-linear fitting gives unbiased parameter estimates, though it can be numerically unstable. A practical approach is to fit the linear form first, then use these values as starting points for non-linear fitting. When analysing your own kinetic data, use computational tools for non-linear fitting.]
+
+- **Slope** = $-\Delta H^{\ddagger}/R$ → giving $\Delta H^{\ddagger} = -\text{slope} \times R$
+- **Intercept** = $\ln(k_\mathrm{B}/h) + \Delta S^{\ddagger}/R$ → giving $\Delta S^{\ddagger} = R \times (\text{intercept} - \ln(k_\mathrm{B}/h))$
+```{r fig-eyring-plot, fig.cap="An Eyring plot for experimental rate constant data measured at different temperatures. The good linear fit through the data points confirms that transition state theory describes the temperature dependence well for this reaction. The activation parameters $\\Delta H^\\ddagger$ and $\\Delta S^\\ddagger$ can be extracted from the slope and intercept of the fitted line.", out.width='50%', fig.align='center'}
+knitr::include_graphics("lecture_9/figures/eyring_plot.png")
+```
+
+Figure \@ref(fig:fig-eyring-plot) shows an example Eyring plot. The fitted line has slope $-1485.8$ K and intercept $7.6809$. Using $R = 8.314~\mathrm{J~K^{-1}~mol^{-1}}$, we can calculate:
+
+$$\Delta H^{\ddagger} = -(-1485.8~\mathrm{K}) \times 8.314~\mathrm{J~K^{-1}~mol^{-1}} = 12.4~\mathrm{kJ~mol^{-1}}$$
+
+The intercept provides $\Delta S^{\ddagger}$ once we account for the $\ln(k_\mathrm{B}/h)$ term.
 
 ## Effect of Pressure on Rate Coefficients
 
-For reactions in solution or the solid state, pressure can significantly affect reaction rates. We can understand this through the volume change that occurs when reactants combine to form the activated complex:
+So far, we have examined how temperature affects reaction rates through the Eyring equation. But reactions in solution or the solid state can also be influenced by pressure. How does pressure affect rate constants, and what can we learn about transition states from these pressure effects?
 
-$$\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}$$
+### Volume of Activation
 
-The volume of activation $\Delta V^{\ddagger}$ is defined as the difference in partial molar volume between the activated complex and the reactants. Where $\Delta V^{\ddagger}$ is negative, the activated complex occupies less volume than the reactants, and increasing pressure shifts the pre-equilibrium towards the activated complex. Since the overall reaction rate is proportional to $[\mathrm{C}^{\ddagger}]$:
+Transition state theory provides a framework for understanding pressure effects. When reactants form the activated complex, there is typically a change in volume:
 
-$$\nu = k^{\ddagger}[\mathrm{C}^{\ddagger}]$$
+$$\mathrm{A} + \mathrm{B} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{products}$$
 
-this leads to an increase in the reaction rate.
+The volume of activation, $\Delta V^{\ddagger}$, is defined as the difference in partial molar volume between the activated complex and the reactants. This volume change affects how pressure influences the reaction rate:
 
-We can develop this idea quantitatively by considering how pressure affects the Gibbs energy of activation. The enthalpy of activation depends on pressure through:
+- If $\Delta V^{\ddagger} < 0$ (activated complex more compact than reactants): increasing pressure favours formation of the activated complex, increasing the reaction rate
+- If $\Delta V^{\ddagger} > 0$ (activated complex more expanded than reactants): increasing pressure disfavours formation of the activated complex, decreasing the reaction rate
+
+The overall reaction rate is proportional to the concentration of the activated complex, $[\mathrm{C}^{\ddagger}]$, so any pressure-induced change in $[\mathrm{C}^{\ddagger}]$ directly affects the rate constant.
+
+### Quantitative Treatment
+
+We can develop this idea quantitatively by considering how pressure affects the enthalpy of activation. For reactions where volume changes occur, the enthalpy depends on pressure through:
 
 $$\Delta H^{\ddagger} = \Delta U^{\ddagger} + p\Delta V^{\ddagger}$$
 
-Substituting this into our equation for the rate constant:
+Substituting this into the Eyring equation and taking logarithms:
 
 \begin{equation}
 \ln k = \ln \frac{k_\mathrm{B}T}{h} + \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta U^{\ddagger} + p\Delta V^{\ddagger}}{RT}
 (\#eq:linearkvsp)
 \end{equation}
 
-Differentiating with respect to pressure at constant temperature:
+If we differentiate this expression with respect to pressure at constant temperature, we obtain:
 
 $$\left(\frac{\partial \ln k}{\partial p}\right)_T = -\frac{\Delta V^{\ddagger}}{RT}$$
 
-giving us the prediction that plotting $\ln k$ versus pressure should be approximately linear with slope $-\Delta V^{\ddagger}/RT$. The volume of activation can therefore be determined from experimental measurements of how reaction rates vary with pressure:^[Again, least-squares fitting of \@ref(eq:linearkvsp) gives a biased estimate of $\Delta V^\ddagger$, while direct fitting of the non-linear equation $k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^\frac{\Delta S^\ddagger}{R}\mathrm{e}^\frac{-\Delta U^\ddagger}{RT}\mathrm{e}^\frac{p\Delta V^\ddagger}{RT}$ gives an unbiased estimate.]  
+This predicts that a plot of $\ln k$ versus pressure should be approximately linear, with slope $-\Delta V^{\ddagger}/RT$. Rearranging this relationship allows us to determine the volume of activation from experimental measurements:
 
 $$\Delta V^{\ddagger} = -RT\left(\frac{\partial \ln k}{\partial p}\right)_T$$
 
-As an example, consider the decomposition of dibutyl peroxide:
+By measuring how the rate constant changes with pressure, we can extract information about the relative volumes of the reactants and the transition state.
 
-$$[(\mathrm{CH}_3)_3\mathrm{CCO}_2]_2 \longrightarrow 2(\mathrm{CH}_3)_3\mathrm{CO}^\bullet$$
+### Example: Decomposition of Dibutyl Peroxide
 
-Experimental data shows $\Delta V^{\ddagger} = (5.24 \pm 0.24) \times 10^{-6}~\mathrm{m^3~mol^{-1}}$. This positive volume of activation tells us that in the transition state the O–O bond has started to break, requiring a larger volume than the initial reactant.
+Consider the thermal decomposition of dibutyl peroxide, shown in Figure \@ref(fig:fig-peroxide-decomposition).
+```{r fig-peroxide-decomposition, fig.cap="Decomposition of dibutyl peroxide to form two tert-butoxy radicals. The transition state (centre) shows the O&ndash;O bond partially broken (blue dashed line). This bond lengthening requires more volume than the intact O&ndash;O bond in the reactant, leading to a positive volume of activation.", out.width='85%', fig.align='center'}
+knitr::include_graphics("lecture_9/figures/peroxide_decomposition.png")
+```
+
+Experimental measurements of the pressure dependence give $\Delta V^{\ddagger}$ = +5.24 &times; 10<sup>&minus;6</sup>&nbsp;m<sup>3</sup>&nbsp;mol<sup>&minus;1</sup>$. This positive volume of activation tells us that the transition state occupies more volume than the reactant. As shown in the figure, the O–O bond is partially broken at the transition state—the bond has lengthened compared to the reactant. This bond stretching increases the volume occupied by the molecule, explaining the positive $\Delta V^{\ddagger}$.
+
+This demonstrates how the sign and magnitude of the volume of activation provide direct information about geometric changes at the transition state. A negative $\Delta V^{\ddagger}$ would indicate bond formation or increased compactness, whilst a positive value reveals bond breaking or expansion, as we observe here for peroxide decomposition.
 
 ## Kinetic Isotope Effects
 
-Many reactions proceed more slowly when hydrogen is replaced by deuterium. Classical theories cannot explain this kinetic isotope effect, as H and D have identical potential energy surfaces. Understanding this difference in reaction rates requires consideration of quantum mechanical zero-point vibrational energy.
+Many reactions proceed more slowly when hydrogen is replaced by deuterium. For example, consider this E2 elimination reaction (Figure \@ref(fig:fig-kie-example-reactions)):
 
-### Origin of the Kinetic Isotope Effect
+```{r fig-kie-example-reactions, fig.cap="E2 elimination of phenylethyl bromide with sodium ethoxide. The hydrogen (orange, rate constant $k_\\mathrm{H}$) and deuterium (blue, rate constant $k_\\mathrm{D}$) at the $\\alpha$-position are removed during the elimination to form ethanol/deuterated ethanol. Experimentally, $k_\\mathrm{H}/k_\\mathrm{D}$ = 7.8.", out.width='60%', fig.align='center'}
+knitr::include_graphics("lecture_9/figures/kie_example_reactions.png")
+```
 
-For a simple harmonic oscillator, the allowed energy levels are given by:
+Experimentally, we find $k_\mathrm{H}/k_\mathrm{D} = 7.8$&mdash;the deuterated compound reacts nearly eight times more slowly than its hydrogen analogue.
+
+Why should this be? The two molecules differ only in the mass of one nucleus&mdash;they have identical electronic structures and therefore experience the same potential energy surface during reaction. Our transition state theory analysis has focused on how forming the activated complex changes the number and type of molecular degrees of freedom (translational, rotational, vibrational), which determines $\Delta S^{\ddagger}$. For these two very similar molecules, we would expect nearly identical $\Delta S^{\ddagger}$ values and the same $\Delta H^{\ddagger}$, giving similar rate constants. Yet we observe a substantial kinetic isotope effect.
+
+### Zero-Point Vibrational Energy
+
+The explanation lies in the zero-point vibrational energy. While both molecules move on the same potential energy surface, the vibrational energy levels on that surface depend on mass. This means the ground state energy&mdash;the energy of the $v=0$ vibrational level&mdash;is different for C–H and C–D bonds. When we account for these zero-point energy differences, the activation barriers measured from the ground states differ even though the potential energy surface is identical for both molecules.
+
+To understand how mass affects vibrational energy, we can model the C–H and C–D bonds as harmonic oscillators. For a harmonic oscillator, the vibrational energy levels are given by:
 
 \begin{equation}
 E_v = \left(v + \frac{1}{2}\right)\sqrt{\frac{k}{\mu}}
 \end{equation}
 
-where $v$ is the vibrational quantum number, $k$ is the force constant, and $\mu$ is the reduced mass:
+where $v$ is the vibrational quantum number, $k$ is the force constant (determined by the strength of the bond), and $\mu$ is the reduced mass:
 
 \begin{equation}
 \mu = \frac{m_1m_2}{m_1 + m_2}
 \end{equation}
 
-For an X–H bond (where X is much heavier than H), $\mu \approx m_\mathrm{H}$. The zero-point energy is then:
+Even in the ground vibrational state ($v=0$), the system retains energy&mdash;the zero-point energy. For a C–H bond where carbon is much heavier than hydrogen, we can approximate $\mu \approx m_\mathrm{H}$, giving:
 
 \begin{equation}
-E_\mathrm{ZPE} \approx \frac{1}{2}\sqrt{\frac{k}{m_\mathrm{H}}}
+E_\mathrm{ZPE}(\mathrm{C{-}H}) \approx \frac{1}{2}\sqrt{\frac{k}{m_\mathrm{H}}}
 \end{equation}
 
-Substituting H with D approximately doubles the reduced mass, giving:
+When we substitute deuterium, where $m_\mathrm{D} \approx 2m_\mathrm{H}$, the reduced mass approximately doubles. This changes the zero-point energy:
 
 \begin{equation}
-\frac{E_\mathrm{ZPE}(\mathrm{D})}{E_\mathrm{ZPE}(\mathrm{H})} \approx \frac{1}{\sqrt{2}}
+E_\mathrm{ZPE}(\mathrm{C{-}D}) \approx \frac{1}{2}\sqrt{\frac{k}{2m_\mathrm{H}}} = \frac{1}{\sqrt{2}} \times E_\mathrm{ZPE}(\mathrm{C{-}H})
 \end{equation}
 
-This difference in zero-point energy means that C–D bonds start from a lower energy than C–H bonds. If the reaction involves breaking this bond, the activation energy will be higher for the deuterated compound, leading to a slower reaction rate:
+```{r fig-kie-energy-levels, fig.cap="Comparison of vibrational energy levels for C&ndash;H and C&ndash;D bonds. Both bonds vibrate on identical potential energy curves (same force constant $k$). The heavier C&ndash;D bond (blue, right) has more closely spaced energy levels than the lighter C&ndash;H bond (orange, left), resulting in lower zero-point energy by a factor of $1/\\sqrt{2}$.", out.width='85%', fig.align='center'}
+knitr::include_graphics("lecture_9/figures/kie_energy_levels.png")
+```
+
+Figure \@ref(fig:fig-kie-energy-levels) shows how this works. The potential energy curve—the surface on which the atoms move—is identical for both isotopes. What differs is the quantisation of motion on that surface: the heavier C–D bond has more closely spaced vibrational levels and therefore lower zero-point energy than the C–H bond.
+
+### From Zero-Point Energy to Activation Energy
+
+This difference in zero-point energy directly affects the activation barrier. In the reactants, the C–H and C–D bonds have different zero-point energies. At the transition state, if the C–H or C–D bond is essentially completely broken, the vibrational mode associated with that bond no longer exists—it has transformed into motion along the reaction coordinate. Under this assumption, both isotopes reach effectively the same transition state energy: the potential energy surface is identical, and the C–H/C–D vibrational mode that gave different zero-point energies in the reactants no longer contributes at the transition state.
+
+```{r fig-kie-reaction-coordinate, fig.cap="Reaction coordinate diagram showing how zero-point energy differences create the kinetic isotope effect. The orange and blue curves before the transition state show different energy profiles for the H and D substituted molecules, reflecting their different zero-point energies in the reactants. Assuming the C&ndash;H/C&ndash;D bond is completely broken at the transition state, both isotopes converge to the same transition state energy (black dot). After the transition state, where the C&ndash;H/C&ndash;D bond no longer exists, both follow the same energy profile (black curve). This produces $\\Delta E^\\ddagger_\\mathrm{D} > \\Delta E^\\ddagger_\\mathrm{H}$, causing the deuterated compound to react more slowly.", out.width='65%', fig.align='center'}
+knitr::include_graphics("lecture_9/figures/kie_reaction_coordinate.png")
+```
+
+As shown in Figure \@ref(fig:fig-kie-reaction-coordinate), the activation energy is the difference between the transition state and the ground vibrational state of the reactant. Because $E_\mathrm{ZPE}(\mathrm{C{-}D}) < E_\mathrm{ZPE}(\mathrm{C{-}H})$ in the reactants, and both reach the same transition state energy, the deuterated compound faces a larger activation barrier:
 
 \begin{equation}
-\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(E_\mathrm{ZPE}(\mathrm{H})-E_\mathrm{ZPE}(\mathrm{D}))/RT}
+\Delta E^\ddagger_\mathrm{D} - \Delta E^\ddagger_\mathrm{H} = E_\mathrm{ZPE}(\mathrm{C{-}H}) - E_\mathrm{ZPE}(\mathrm{C{-}D})
 \end{equation}
 
-For a typical C–H stretching mode:
-- $E_\mathrm{ZPE}(\mathrm{C-H}) = 18.0~\mathrm{kJ~mol^{-1}}$
-- $E_\mathrm{ZPE}(\mathrm{C-D}) = 13.2~\mathrm{kJ~mol^{-1}}$
+We can quantify this effect. For a typical C–H stretching vibration:
+- $E_\mathrm{ZPE}(\mathrm{C{-}H}) = 18.0~\mathrm{kJ~mol^{-1}}$
+- $E_\mathrm{ZPE}(\mathrm{C{-}D}) = 13.2~\mathrm{kJ~mol^{-1}}$
 
-At room temperature this predicts:
+The difference in activation energies leads to different rate constants:
+
+\begin{equation}
+\frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(\Delta E^\ddagger_\mathrm{D} - \Delta E^\ddagger_\mathrm{H})/RT} = \mathrm{e}^{(E_\mathrm{ZPE}(\mathrm{H})-E_\mathrm{ZPE}(\mathrm{D}))/RT}
+\end{equation}
+
+At room temperature (298 K), this gives:
 
 \begin{equation}
 \frac{k_\mathrm{H}}{k_\mathrm{D}} = \mathrm{e}^{(18.0-13.2)\times 10^3/(8.314 \times 298)} = 6.9
 \end{equation}
 
+This predicts $k_\mathrm{H}/k_\mathrm{D} \approx 7$ when the C–H bond is completely broken at the transition state&mdash;consistent with the experimental value of 7.8 observed in our E2 elimination example. If the bond is only partially broken, or if it remains intact during reaction, the observed isotope effect will be correspondingly smaller.
+
 ### Using Kinetic Isotope Effects to Probe Reaction Mechanisms
 
-The magnitude of the kinetic isotope effect depends on the extent to which the C–H/D bond is broken in the transition state. Three scenarios are common:
+The magnitude of the kinetic isotope effect reveals how much a bond has broken at the transition state. Three scenarios are commonly observed:
 
-1. When the bond is completely broken in the transition state, we observe the full isotope effect: $k_\mathrm{H}/k_\mathrm{D} \approx 7$
-2. When the bond is partially broken, we find intermediate values: $1 < k_\mathrm{H}/k_\mathrm{D} < 7$
-3. When the bond is unaffected, there is no significant isotope effect: $k_\mathrm{H}/k_\mathrm{D} \approx 1$
+1. **Complete bond breaking at the transition state**: $k_\mathrm{H}/k_\mathrm{D} \approx 7$ (the full zero-point energy difference contributes to the activation barrier)
+2. **Partial bond breaking**: $1 < k_\mathrm{H}/k_\mathrm{D} < 7$ (intermediate extent of bond cleavage)
+3. **Bond remains intact**: $k_\mathrm{H}/k_\mathrm{D} \approx 1$ (the bond does not participate in the rate-determining step)
 
-These patterns make kinetic isotope effects a valuable probe of reaction mechanisms. Consider these contrasting examples:
+This makes kinetic isotope effects a powerful tool for investigating reaction mechanisms. Consider the contrasting E2 elimination reactions shown in Figure \@ref(fig:fig-kie-comparison).
+```{r fig-kie-comparison, fig.cap="Comparison of kinetic isotope effects in E2 eliminations. Top: When H/D is at the $\\alpha$-position (being removed during elimination), a large kinetic isotope effect is observed ($k_\\mathrm{H}/k_\\mathrm{D}$ = 7.8), indicating the C&ndash;H bond is almost completely broken at the transition state. Bottom: When H/D is at the $\\beta$-position (not involved in the elimination), the kinetic isotope effect is negligible ($k_\\mathrm{H}/k_\\mathrm{D}$ = 1.09), indicating these C&ndash;H bonds remain essentially intact at the transition state.", out.width='80%', fig.align='center'}
+knitr::include_graphics("lecture_9/figures/kie_comparison.png")
+```
 
-\begin{equation}
-\mathrm{Ph-CH(D)-CH_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 7.8
-\end{equation}
+When deuterium is substituted at the &alpha;-position—the site where the C–H bond is removed during elimination—we observe $k_\mathrm{H}/k_\mathrm{D} = 7.8$. This large isotope effect tells us that the C–H bond at this position is almost completely broken at the transition state. The magnitude, close to our predicted value of ~7, indicates that the full zero-point energy difference between C–H and C–D bonds affects the activation barrier.
 
-\begin{equation}
-\mathrm{Ph-CH_2-CD_2Br + EtO^-} \longrightarrow \mathrm{products} \quad k_\mathrm{H}/k_\mathrm{D} = 1.09
-\end{equation}
+In contrast, when deuterium is substituted at the &beta;-position, the isotope effect is negligible: $k_\mathrm{H}/k_\mathrm{D} = 1.09$. This small value shows that the C–H bonds at the &beta;-position remain essentially intact throughout the reaction&mdash;they are spectators that do not participate in the rate-determining step. The C–H/C–D zero-point energy difference has virtually no effect on the activation barrier because these bonds are not breaking.
 
-In the first reaction, the large isotope effect ($k_\mathrm{H}/k_\mathrm{D} = 7.8$) indicates that the C–H bond is almost completely broken in the transition state. The negligible isotope effect in the second reaction ($k_\mathrm{H}/k_\mathrm{D} = 1.09$) tells us the C–H bonds are spectators—they remain essentially unchanged as the reaction proceeds. This information helps us understand the detailed molecular changes occurring in the transition state.
+These contrasting results demonstrate the mechanistic power of kinetic isotope effects. By measuring how the reaction rate changes upon isotopic substitution at different positions in the molecule, we can determine which bonds are breaking, which remain intact, and the extent of bond cleavage at the transition state. This provides detailed mechanistic information that would be difficult to obtain by other experimental techniques.
 
