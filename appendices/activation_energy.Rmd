@@ -1,0 +1,60 @@
+# Derivation of the Exponential Energy Factor {#appendix-energy}
+
+In Lecture \@ref(lecture5), we used the result that the fraction of collisions with relative kinetic energy greater than or equal to the activation energy $E_\mathrm{a}$ is given by:
+
+$$P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
+
+This expression can be derived from the kinetic theory of gases.
+
+### The Maxwell-Boltzmann Distribution
+
+The kinetic theory of gases tells us that the probability density for finding a collision with relative kinetic energy $E$ is given by the Maxwell-Boltzmann distribution:
+
+$$f(E) = \frac{2\pi}{(\pi k_\mathrm{B}T)^{3/2}}\sqrt{E}\,\exp\left(-\frac{E}{k_\mathrm{B}T}\right)$$
+
+where $k_\mathrm{B}$ is the Boltzmann constant and $T$ is the absolute temperature. This distribution is normalised such that:
+
+$$\int_0^{\infty} f(E)\,\mathrm{d}E = 1$$
+
+### Calculating the Fraction with E ≥ E_a
+
+The fraction of collisions with energy greater than or equal to $E_\mathrm{a}$ is obtained by integrating the distribution from $E_\mathrm{a}$ to infinity:
+
+$$P(E \geq E_\mathrm{a}) = \int_{E_\mathrm{a}}^{\infty} f(E)\,\mathrm{d}E$$
+
+Substituting the Maxwell-Boltzmann distribution:
+
+$$P(E \geq E_\mathrm{a}) = \int_{E_\mathrm{a}}^{\infty} \frac{2\pi}{(\pi k_\mathrm{B}T)^{3/2}}\sqrt{E}\,\exp\left(-\frac{E}{k_\mathrm{B}T}\right)\,\mathrm{d}E$$
+
+To evaluate this integral, we make the substitution $u = E/(k_\mathrm{B}T)$, so that $E = uk_\mathrm{B}T$ and $\mathrm{d}E = k_\mathrm{B}T\,\mathrm{d}u$. When $E = E_\mathrm{a}$, we have $u = E_\mathrm{a}/(k_\mathrm{B}T) \equiv \beta$. The integral becomes:
+
+$$P(E \geq E_\mathrm{a}) = \frac{2\pi}{(\pi k_\mathrm{B}T)^{3/2}}\int_{\beta}^{\infty} \sqrt{uk_\mathrm{B}T}\,\mathrm{e}^{-u}\,k_\mathrm{B}T\,\mathrm{d}u$$
+
+Simplifying:
+
+$$P(E \geq E_\mathrm{a}) = \frac{2}{\sqrt{\pi}}\int_{\beta}^{\infty} \sqrt{u}\,\mathrm{e}^{-u}\,\mathrm{d}u$$
+
+This integral can be evaluated using integration by parts. Let $v = \sqrt{u}$ and $\mathrm{d}w = \mathrm{e}^{-u}\,\mathrm{d}u$, so that $\mathrm{d}v = \frac{1}{2\sqrt{u}}\,\mathrm{d}u$ and $w = -\mathrm{e}^{-u}$:
+
+\begin{align}
+\int_{\beta}^{\infty} \sqrt{u}\,\mathrm{e}^{-u}\,\mathrm{d}u &= \left[-\sqrt{u}\,\mathrm{e}^{-u}\right]_{\beta}^{\infty} + \int_{\beta}^{\infty} \frac{\mathrm{e}^{-u}}{2\sqrt{u}}\,\mathrm{d}u\\
+&= \sqrt{\beta}\,\mathrm{e}^{-\beta} + \frac{1}{2}\int_{\beta}^{\infty} \frac{\mathrm{e}^{-u}}{\sqrt{u}}\,\mathrm{d}u
+\end{align}
+
+For large $\beta$ (which corresponds to $E_\mathrm{a} \gg k_\mathrm{B}T$, a condition typically satisfied for chemical reactions), the second term becomes negligible compared to the first. Therefore:
+
+$$\int_{\beta}^{\infty} \sqrt{u}\,\mathrm{e}^{-u}\,\mathrm{d}u \approx \sqrt{\beta}\,\mathrm{e}^{-\beta}$$
+
+Substituting back:
+
+$$P(E \geq E_\mathrm{a}) \approx \frac{2}{\sqrt{\pi}}\sqrt{\beta}\,\mathrm{e}^{-\beta} = \frac{2}{\sqrt{\pi}}\sqrt{\frac{E_\mathrm{a}}{k_\mathrm{B}T}}\exp\left(-\frac{E_\mathrm{a}}{k_\mathrm{B}T}\right)$$
+
+For typical activation energies in chemical reactions, $E_\mathrm{a}/(k_\mathrm{B}T) \gg 1$, which means the pre-exponential factor $\sqrt{E_\mathrm{a}/(k_\mathrm{B}T)}$ is much larger than unity but changes only slowly with temperature compared to the exponential term. To a good approximation, we can therefore write:
+
+$$P(E \geq E_\mathrm{a}) \approx \exp\left(-\frac{E_\mathrm{a}}{k_\mathrm{B}T}\right)$$
+
+Finally, using the relationship $R = N_\mathrm{A}k_\mathrm{B}$ (where $R$ is the gas constant and $N_\mathrm{A}$ is Avogadro's number), we can write this in the more familiar form:
+
+$$P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
+
+This derivation shows that the exponential dependence of reaction rates on temperature arises naturally from the Maxwell-Boltzmann distribution of molecular energies, and that the activation energy $E_\mathrm{a}$ represents a threshold that determines which fraction of collisions have sufficient energy to react.

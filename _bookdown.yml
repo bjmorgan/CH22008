@@ -25,6 +25,7 @@ rmd_files: [
   "lecture_8/lecture_08.Rmd",
   "lecture_9/lecture_09.Rmd",
   "appendices/appendices.Rmd",
+  "appendices/activation_energy.Rmd",
   "appendices/relationship_between_H_ddag_and_Ea.Rmd",
   "appendices/partition_functions.Rmd",
   "appendices/boltzmann_factor_origin.Rmd"

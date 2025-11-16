@@ -36,92 +36,178 @@ rate = rate of collisions &times; fraction of &ldquo;successful&rdquo; collision
 
 ### Collision Frequency {#sec:frequency}
 
-Consider two molecules A and B with radii $r_\mathrm{A}$ and $r_\mathrm{B}$ and velocities $v_\mathrm{A}$ and $v_\mathrm{B}$. To analyze their collisions, we can adopt the reference frame of molecule B, where:
+To determine the rate of collisions, we need to calculate how often molecules A and B encounter each other in the gas phase. Consider two molecules with radii $r_\mathrm{A}$ and $r_\mathrm{B}$ moving with velocities $v_\mathrm{A}$ and $v_\mathrm{B}$. 
 
-- B appears stationary
-- A moves with relative velocity $v = v_\mathrm{B} - v_\mathrm{A}$
+We can simplify this problem by working in the reference frame of molecule A, where A appears stationary and B molecules move with the relative velocity $v = |v_\mathrm{B} - v_\mathrm{A}|$.
 
-A collision occurs when the closest distance of approach (the &ldquo;impact parameter&rdquo; $b$) is less than the sum of the molecular radii:
+A collision occurs when the centres of the two molecules come within a distance $d = r_\mathrm{A} + r_\mathrm{B}$ of each other. As shown in Figure \@ref(fig:fig-collision-cylinder), molecule A (green) can be thought of as sitting at the centre of a cylindrical "target zone". Any molecule B (orange) whose centre lies within this cylinder will collide with A.
+```{r fig-collision-cylinder, fig.cap="Collision geometry in the reference frame of molecule A. Molecule A (teal) sits at the centre of a cylindrical volume of radius $d = r_\\mathrm{A} + r_\\mathrm{B}$ (shown as dashed outline). As time progresses by $t$, this cylinder extends by length $v \\times t$, where $v$ is the relative velocity. Molecules B (orange) with centres inside this cylinder will collide with A; those outside will not.", out.width='70%', fig.align='center'}
+knitr::include_graphics("lecture_5/figures/collision_cylinder.png")
+```
 
-$$b < (r_\mathrm{A} + r_\mathrm{B}) = d$$
-
-As molecule A moves through space, it sweeps out a cylindrical volume:
+The dimensions of this collision cylinder are:
 
 - Radius = $d = (r_\mathrm{A} + r_\mathrm{B})$
-- Length (per unit time) = $v$ (the relative velocity)
-- Volume (per unit time) = $vS = v\pi d^2$
+- Cross-sectional area = $S = \pi d^2$
+- Length swept in time $t$ = $vt$ (where $v$ is the relative velocity)
+- Volume swept in time $t$ = $vt \times \pi d^2$
 
-The collision frequency per unit volume ($Z'$) is then:
+The volume swept per unit time is therefore $v\pi d^2$. Any molecule B whose centre lies within this volume will collide with molecule A. If there are $N_\mathrm{B}$ molecules of B in total volume $V$, the number of B molecules per unit volume is $N_\mathrm{B}/V$, and the number of collisions that one molecule A makes per unit time is:
+
+$$\frac{N_\mathrm{B}}{V}v\pi d^2$$
+
+To find the total collision frequency per unit volume, we multiply by the concentration of A molecules. This gives the collision frequency per unit volume ($Z'$):
 
 $$Z' = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}v\pi d^2$$
 
-where $N_\mathrm{A}$ and $N_\mathrm{B}$ are the numbers of molecules of each species in volume $V$.
+where $N_\mathrm{A}$ and $N_\mathrm{B}$ are the total numbers of molecules of each species in volume $V$.
 
-### Average Relative Velocity
+### Average Relative Velocity {#sec:average-velocity}
 
-The relative velocity between molecules follows the Maxwell-Boltzmann distribution. The average relative velocity is:
+In our expression for collision frequency, we used the relative velocity $v$ between molecules A and B. However, in a gas at temperature $T$, molecules have a distribution of velocities—not all molecules move at the same speed. To calculate the collision frequency, we need the average relative velocity.
 
-$$\bar{v} = \left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}$$
-
-where $\mu$ is the reduced mass:
+From the kinetic theory of gases, the average relative velocity between molecules A and B depends on both temperature and the reduced mass of the colliding pair. The reduced mass $\mu$ is defined as:
 
 $$\mu = \frac{m_\mathrm{A}m_\mathrm{B}}{m_\mathrm{A} + m_\mathrm{B}}$$
 
-Substituting this into our expression for collision frequency:
+The average relative velocity is then:
 
-$$Z' = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}$$
+$$\langle v \rangle = \left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}$$
+
+This expression shows that:
+
+- Lighter molecules (smaller $\mu$) move faster on average and collide more frequently
+- Higher temperatures increase molecular speeds and collision rates
+- The velocity increases with the square root of temperature
+
+Substituting this average velocity into our collision frequency expression gives:
+
+$$Z' = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}$$
+
+This is the collision frequency per unit volume for molecules A and B in a gas at temperature $T$.
 
 ## From Collisions to Reaction Rates
 
-### Successful Collisions
+### Energetic Requirements for Reaction {#sec:energy-requirement}
 
-Not all collisions lead to reaction. We assume a collision is successful if the relative kinetic energy exceeds a threshold activation energy $E_\mathrm{a}$. For a Maxwell-Boltzmann distribution, the fraction of collisions with sufficient energy is:
+Not every collision between molecules A and B leads to reaction. The collision frequency $Z'$ tells us how often molecules encounter each other, but only a fraction of these collisions have sufficient energy to overcome the activation barrier and form products.
+
+In collision theory, we assume that molecules must possess a minimum relative kinetic energy $E_\mathrm{a}$ (the activation energy) for reaction to occur. This threshold energy is needed to break bonds and rearrange atoms during the collision. The question then becomes: what fraction of molecular collisions have relative kinetic energy greater than or equal to $E_\mathrm{a}$?
+
+The answer comes from the Maxwell-Boltzmann distribution of molecular speeds. In a gas at temperature $T$, the relative kinetic energies of colliding molecules follow a probability distribution that depends on temperature, as shown in Figure \@ref(fig:fig-maxwell-boltzmann).
+```{r fig-maxwell-boltzmann, fig.cap="Maxwell-Boltzmann distribution of relative kinetic energies for molecular collisions at two temperatures. The shaded regions show the fraction of collisions with energy $E \\geq E_\\mathrm{a}$. At higher temperature (orange, 600 K), the distribution broadens and shifts to higher energies, increasing the fraction of collisions with sufficient energy to react. The fraction of successful collisions is given by $P(E \\geq E_\\mathrm{a}) = \\exp(-E_\\mathrm{a}/RT)$.", out.width='55%', fig.align='center'}
+knitr::include_graphics("lecture_5/figures/maxwell_boltzmann.png")
+```
+
+The figure shows two key features:
+
+1. Temperature dependence: At higher temperature (orange curve, 600 K), the distribution is broader and shifted to higher energies compared to lower temperature (blue curve, 300 K). This means a larger fraction of collisions have energy exceeding $E_\mathrm{a}$.
+
+2. Exponential tail: The shaded region represents collisions with $E \geq E_\mathrm{a}$. The fraction of collisions in this high-energy tail follows directly from the kinetic theory of gases :^[The derivation of this result from the Maxwell-Boltzmann distribution is given in Appendix \@ref(appendix-energy).]
 
 $$P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
 
-This gives a total reaction rate:
+### The Complete Rate Expression {#sec:complete-rate}
 
-$$\nu = Z' \times P(E \geq E_\mathrm{a}) = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
+Combining the collision frequency with the probability that a collision has sufficient energy, we obtain:
 
-This can be written in the familiar form of a second-order rate law:
+$$\text{rate} = Z' \times P(E \geq E_\mathrm{a})$$
+
+Substituting our expressions for $Z'$ and $P(E \geq E_\mathrm{a})$ gives:
+
+$$\text{rate} = \frac{N_\mathrm{A}N_\mathrm{B}}{V^2}\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
+
+To express this in the familiar form of a rate law, we convert from numbers of molecules to concentrations. The concentration of A is $[\mathrm{A}] = N_\mathrm{A}/V$ and similarly $[\mathrm{B}] = N_\mathrm{B}/V$, giving:
+
+$$\text{rate} = \pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)[\mathrm{A}][\mathrm{B}]$$
+
+This has exactly the form we expect for a bimolecular elementary reaction:
 
 \begin{equation}
-\nu=k[\mathrm{A}][\mathrm{B}]
+\text{rate} = k[\mathrm{A}][\mathrm{B}]
 \end{equation}
 
-where
+where the rate is first-order with respect to A, first-order with respect to B, and second-order overall. The rate constant predicted by collision theory is:
 
 \begin{equation}
-k = \pi d^2\left(\frac{8k_\mathrm{B}T}{\pi \mu}\right)^\frac{1}{2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
+k = \pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
+(\#eq:collision-k-simple)
 \end{equation}
 
-### Steric Factors {#sec:steric-factors}
+This expression shows how collision theory connects the macroscopic rate constant to microscopic molecular properties: the collision cross-section ($\pi d^2$), the molecular masses (through $\mu$), the temperature, and the activation energy.
 
-When we compare the reaction rates predicted by collision theory with experimental measurements, we typically find that collision theory overestimates reaction rates, sometimes by several orders of magnitude. This discrepancy arises because our model of molecules as hard spheres is an oversimplification—successful reactions often require specific molecular orientations or more complex interactions than simple collisions.
-To account for these effects, we introduce an empirical correction factor $P$, called the steric factor, that modifies our expression for the rate constant:
-\begin{equation}
-k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-(#eq:steric-k)
-\end{equation}
-The steric factor $P$ is defined as the ratio of the experimental pre-exponential factor to the theoretical value predicted by collision theory:
+### The Steric Factor {#sec:steric-factors}
+
+Our collision theory expression predicts that the rate constant should be:
+
+$$k = \pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
+
+When we compare this theoretical prediction with experimental measurements, we find a systematic discrepancy: collision theory typically overestimates reaction rates, sometimes by several orders of magnitude. This tells us that our model of molecules as hard spheres is too simple—there is something missing from our picture of how molecules react.
+
+To account for this discrepancy, we introduce an empirical correction factor $P$, called the steric factor.
+The steric factor is defined as the ratio of the experimentally measured pre-exponential factor to the theoretical value predicted by collision theory:
+
 \begin{equation}
 P = \frac{A_\mathrm{exp}}{A_\mathrm{th}}
-(#eq:steric-factor)
+(\#eq:steric-factor)
 \end{equation}
-Different types of reactions exhibit characteristic ranges of steric factors. Consider these examples:
 
-1. For the hydrogenation of ethene: H~2~+C~2~H~4~$\longrightarrow$C~2~H~6~
-$P = 1.7 \times 10^{-6}$.
-This very small steric factor reflects the strict geometric requirements for reaction&mdash;the H~2~ molecule must approach the C=C double bond in a specific orientation for reaction to occur.
-2. For the reaction between potassium and bromine:
-K+Br~2~$\longrightarrow$KBr+Br
-$P = 4.8$.
-Here the steric factor is greater than unity, indicating that reactions occur more frequently than predicted by simple collision theory. This enhanced reactivity arises from the "harpoon mechanism", where electron transfer between K and Br~2~ creates long-range attractive forces that effectively increase the collision cross-section.
+where $A_\mathrm{exp}$ comes from fitting the Arrhenius equation to experimental data, and $A_\mathrm{th} = \pi d^2\sqrt{8k_\mathrm{B}T/(\pi\mu)}$ is the pre-exponential factor predicted by collision theory.
+
+By including the steric factor, we obtain a revised expression for the rate constant, $k$:
+
+\begin{equation}
+k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
+(\#eq:steric-k)
+\end{equation}
+
+Table \@ref(tab:steric-factors) shows experimental pre-exponential factors, collision theory predictions, and the resulting steric factors for several representative reactions.
+
+```{r steric-factors, echo=FALSE}
+library(knitr)
+steric_data <- data.frame(
+  Reaction = c("K + Br$_2$ $\\rightarrow$ KBr + Br",
+               "CH$_3$ + CH$_3$ $\\rightarrow$ C$_2$H$_6$",
+               "2NOCl $\\rightarrow$ 2NO + Cl$_2$",
+               "H$_2$ + C$_2$H$_4$ $\\rightarrow$ C$_2$H$_6$"),
+  Aexp = c("10", "0.24", "0.094", "1.24 $\\times$ 10$^{-5}$"),
+  Ath = c("2.1", "1.1", "0.59", "7.3"),
+  P = c(4.8, 0.22, 0.16, "1.7 $\\times$ 10$^{-6}$")
+)
+
+kable(steric_data,
+      col.names = c("Reaction",
+                    "$A_\\mathrm{exp}$ / 10$^{11}$ dm$^3$ mol$^{-1}$ s$^{-1}$",
+                    "$A_\\mathrm{th}$ / 10$^{11}$ dm$^3$ mol$^{-1}$ s$^{-1}$",
+                    "$P$"),
+      caption = "Comparison of experimental and theoretical pre-exponential factors for representative bimolecular gas-phase reactions. The steric factor $P = A_\\mathrm{exp}/A_\\mathrm{th}$ quantifies how much collision theory overestimates ($P < 1$) or underestimates ($P > 1$) the reaction rate.",
+      escape = FALSE,
+      align = c('l', 'r', 'r', 'r'))
+```
+
+The data in Table \@ref(tab:steric-factors) show two key features. First, for most reactions, collision theory overestimates the reaction rate. The reaction 2NOCl → 2NO + Cl~2~ has $P = 0.16$, meaning the experimental rate is only about one-sixth of the collision theory prediction.
+Second, the steric factor decreases systematically as molecular complexity increases. For methyl radical combination we find $P = 0.22$, while for the hydrogenation of ethene, $P = 1.7 \times 10^{-6}&mdash;a difference of five orders of magnitude.
+
+### Physical Interpretation
+
+We can interpret these observations in terms of molecular orientation requirements. For a reaction to occur, it is not sufficient for the reactants to have sufficient relative kinetic energy—molecules must also come together in specific orientations. The steric factor $P$ can be interpreted as representing how likely it is that a collision occurs with a geometry suitable for reaction. This interpretation explains why collision theory typically overestimates reaction rates: most collisions, even those with sufficient energy, involve unsuitable orientations.
+
+With this interpretation of the steric factor, we can understand the systematic decrease in $P$ with molecular complexity as reflecting increasingly stringent geometric constraints. For larger, more complex molecules, only a small fraction of all possible collision orientations have the correct geometry for reaction. The hydrogenation of ethene provides an extreme example: H~2~ must approach the C=C electron density in a specific orientation and cannot react if blocked by the CH~2~ end-groups, leading to $P = 1.7 \times 10^{-6}$.
+
+```{r fig-ethene-geometry, fig.cap="Geometric constraints in the hydrogenation of ethene. H$_2$ (green) must approach the C=C double bond from above (arrow shows allowed approach) to react. Approach from the side is blocked by the CH$_2$ groups, preventing reaction even if the collision has sufficient energy. This stringent geometric requirement leads to $P = 1.7 \\times 10^{-6}$.", out.width='50%', fig.align='center'}
+knitr::include_graphics("lecture_5/figures/ethene_geometry.png")
+```
+
+While this general principle explains the data where $P < 1$, the K + Br~2~ reaction appears to contradict our conceptual model. Here, $P = 4.8$—reactions occur more frequently than collision theory predicts. This enhanced reactivity arises from the "harpoon mechanism": during the approach of K and Br~2~, an electron can transfer from potassium to bromine at relatively large separation, creating K^+^ and Br~2~^−^ ions. The resulting electrostatic attraction pulls the reactants together and effectively increases the collision cross-section beyond what we would predict from hard-sphere radii. This demonstrates that our simple hard-sphere model can fail in both directions—it can underestimate rates when long-range forces are important, just as it typically overestimates rates when orientation constraints matter.
+
+```{r fig-harpoon-mechanism, fig.cap="The harpoon mechanism in the K + Br$_2$ reaction. During approach, an electron transfers from potassium to bromine at relatively large separation, creating K$^+$ and Br$_2^-$ ions. The resulting electrostatic attraction increases the effective collision cross-section beyond what hard-sphere radii predict.", out.width='60%', fig.align='center'}
+knitr::include_graphics("lecture_5/figures/harpoon_mechanism.png")
+```
+
 
 ## Relationship to the Arrhenius Equation {#sec:arrhenius-comparison}
 
-The rate constant derived from collision theory has a remarkably similar form to the empirical Arrhenius equation.
-Let us compare them directly:
+The rate constant derived from collision theory has a similar form to the empirical Arrhenius equation.
 
 From collision theory:
 \begin{equation}
