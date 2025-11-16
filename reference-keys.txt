@@ -35,8 +35,14 @@ eq:num-example-a
 eq:num-example-b
 eq:num-step-a
 eq:num-step-b
-eq:steric-k
+fig:fig-collision-cylinder
+fig:fig-maxwell-boltzmann
+eq:collision-k-simple
 eq:steric-factor
+eq:steric-k
+tab:steric-factors
+fig:fig-ethene-geometry
+fig:fig-harpoon-mechanism
 eq:collision-k
 eq:arrhenius
 fig:fig-tst-reaction-coordinate
@@ -141,10 +147,12 @@ introduction-to-kinetic-theories
 sec:fundamentals
 sec:principles
 sec:frequency
-average-relative-velocity
+sec:average-velocity
 from-collisions-to-reaction-rates
-successful-collisions
+sec:energy-requirement
+sec:complete-rate
 sec:steric-factors
+physical-interpretation
 sec:arrhenius-comparison
 sec:collision-limitations
 lecture6
@@ -193,6 +201,9 @@ zero-point-vibrational-energy
 from-zero-point-energy-to-activation-energy
 using-kinetic-isotope-effects-to-probe-reaction-mechanisms
 integrating-factor
+appendix-energy
+the-maxwell-boltzmann-distribution
+calculating-the-fraction-with-e-e_a
 appendix-activation
 temperature-dependence-of-rate-constants
 effect-of-reaction-molecularity
@@ -219,4 +230,4 @@ counting-molecular-arrangements
 mathematical-treatment
 finding-the-maximum
 the-boltzmann-distribution
-physical-interpretation
+physical-interpretation-1

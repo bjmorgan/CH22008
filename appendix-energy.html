@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Integrating Factor Method for Consecutive Reactions | CH22008 Lecture Notes</title>
+  <title>B Derivation of the Exponential Energy Factor | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Integrating Factor Method for Consecutive Reactions | CH22008 Lecture Notes" />
+  <meta property="og:title" content="B Derivation of the Exponential Energy Factor | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Integrating Factor Method for Consecutive Reactions | CH22008 Lecture Notes" />
+  <meta name="twitter:title" content="B Derivation of the Exponential Energy Factor | CH22008 Lecture Notes" />
   
   <meta name="twitter:description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lecture9.html"/>
-<link rel="next" href="appendix-energy.html"/>
+<link rel="prev" href="integrating-factor.html"/>
+<link rel="next" href="appendix-activation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -294,39 +294,52 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="integrating-factor" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">A</span> Integrating Factor Method for Consecutive Reactions<a href="integrating-factor.html#integrating-factor" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In analyzing consecutive reactions, we encounter the following differential equation for the intermediate species B:</p>
-<p><span class="math display">\[\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t} - k_2[\mathrm{B}]\]</span></p>
-<p>This is a first-order linear differential equation of the form:</p>
-<p><span class="math display">\[\frac{\mathrm{d}y}{\mathrm{d}t} + P(t)y = Q(t)\]</span></p>
-<p>where <span class="math inline">\(y = [\mathrm{B}]\)</span>, <span class="math inline">\(P(t) = k_2\)</span>, and <span class="math inline">\(Q(t) = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t}\)</span>.</p>
-<p>The integrating factor method involves multiplying both sides by <span class="math inline">\(\mathrm{e}^{\int P(t)\mathrm{d}t}\)</span>. Here:</p>
-<p><span class="math display">\[\int P(t)\mathrm{d}t = \int k_2\mathrm{d}t = k_2t\]</span></p>
-<p>So our integrating factor is <span class="math inline">\(\mathrm{e}^{k_2t}\)</span>. Multiplying both sides of our original equation:</p>
-<p><span class="math display">\[\mathrm{e}^{k_2t}\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} + k_2[\mathrm{B}]\mathrm{e}^{k_2t} = k_1[\mathrm{A}]_0\mathrm{e}^{-k_1t}\mathrm{e}^{k_2t}\]</span></p>
-<p>The left side is now the derivative of <span class="math inline">\([\mathrm{B}]\mathrm{e}^{k_2t}\)</span>:</p>
-<p><span class="math display">\[\frac{\mathrm{d}}{\mathrm{d}t}([\mathrm{B}]\mathrm{e}^{k_2t}) = k_1[\mathrm{A}]_0\mathrm{e}^{(k_2-k_1)t}\]</span></p>
-<p>Integrating both sides:</p>
-<p><span class="math display">\[[\mathrm{B}]\mathrm{e}^{k_2t} = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}\mathrm{e}^{(k_2-k_1)t} + C\]</span></p>
-<p>Solving for [B]:</p>
-<p><span class="math display">\[[\mathrm{B}] = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}\mathrm{e}^{-k_1t} + C\mathrm{e}^{-k_2t}\]</span></p>
-<p>Using the initial condition [B]₀ = 0 at t = 0:</p>
-<p><span class="math display">\[0 = \frac{k_1[\mathrm{A}]_0}{k_2-k_1} + C\]</span></p>
-<p>Therefore:</p>
-<p><span class="math display">\[C = -\frac{k_1[\mathrm{A}]_0}{k_2-k_1}\]</span></p>
-<p>And our final solution is:</p>
-<p><span class="math display">\[[\mathrm{B}] = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}(\mathrm{e}^{-k_1t} - \mathrm{e}^{-k_2t})\]</span></p>
-<p>This method of solution is generally applicable to first-order linear differential equations that arise in chemical kinetics.</p>
+<div id="appendix-energy" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">B</span> Derivation of the Exponential Energy Factor<a href="appendix-energy.html#appendix-energy" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In Lecture <a href="lecture5.html#lecture5">5</a>, we used the result that the fraction of collisions with relative kinetic energy greater than or equal to the activation energy <span class="math inline">\(E_\mathrm{a}\)</span> is given by:</p>
+<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
+<p>This expression can be derived from the kinetic theory of gases.</p>
+<div id="the-maxwell-boltzmann-distribution" class="section level3 hasAnchor" number="11.0.1">
+<h3><span class="header-section-number">B.0.1</span> The Maxwell-Boltzmann Distribution<a href="appendix-energy.html#the-maxwell-boltzmann-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The kinetic theory of gases tells us that the probability density for finding a collision with relative kinetic energy <span class="math inline">\(E\)</span> is given by the Maxwell-Boltzmann distribution:</p>
+<p><span class="math display">\[f(E) = \frac{2\pi}{(\pi k_\mathrm{B}T)^{3/2}}\sqrt{E}\,\exp\left(-\frac{E}{k_\mathrm{B}T}\right)\]</span></p>
+<p>where <span class="math inline">\(k_\mathrm{B}\)</span> is the Boltzmann constant and <span class="math inline">\(T\)</span> is the absolute temperature. This distribution is normalised such that:</p>
+<p><span class="math display">\[\int_0^{\infty} f(E)\,\mathrm{d}E = 1\]</span></p>
+</div>
+<div id="calculating-the-fraction-with-e-e_a" class="section level3 hasAnchor" number="11.0.2">
+<h3><span class="header-section-number">B.0.2</span> Calculating the Fraction with E ≥ E_a<a href="appendix-energy.html#calculating-the-fraction-with-e-e_a" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The fraction of collisions with energy greater than or equal to <span class="math inline">\(E_\mathrm{a}\)</span> is obtained by integrating the distribution from <span class="math inline">\(E_\mathrm{a}\)</span> to infinity:</p>
+<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \int_{E_\mathrm{a}}^{\infty} f(E)\,\mathrm{d}E\]</span></p>
+<p>Substituting the Maxwell-Boltzmann distribution:</p>
+<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \int_{E_\mathrm{a}}^{\infty} \frac{2\pi}{(\pi k_\mathrm{B}T)^{3/2}}\sqrt{E}\,\exp\left(-\frac{E}{k_\mathrm{B}T}\right)\,\mathrm{d}E\]</span></p>
+<p>To evaluate this integral, we make the substitution <span class="math inline">\(u = E/(k_\mathrm{B}T)\)</span>, so that <span class="math inline">\(E = uk_\mathrm{B}T\)</span> and <span class="math inline">\(\mathrm{d}E = k_\mathrm{B}T\,\mathrm{d}u\)</span>. When <span class="math inline">\(E = E_\mathrm{a}\)</span>, we have <span class="math inline">\(u = E_\mathrm{a}/(k_\mathrm{B}T) \equiv \beta\)</span>. The integral becomes:</p>
+<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \frac{2\pi}{(\pi k_\mathrm{B}T)^{3/2}}\int_{\beta}^{\infty} \sqrt{uk_\mathrm{B}T}\,\mathrm{e}^{-u}\,k_\mathrm{B}T\,\mathrm{d}u\]</span></p>
+<p>Simplifying:</p>
+<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \frac{2}{\sqrt{\pi}}\int_{\beta}^{\infty} \sqrt{u}\,\mathrm{e}^{-u}\,\mathrm{d}u\]</span></p>
+<p>This integral can be evaluated using integration by parts. Let <span class="math inline">\(v = \sqrt{u}\)</span> and <span class="math inline">\(\mathrm{d}w = \mathrm{e}^{-u}\,\mathrm{d}u\)</span>, so that <span class="math inline">\(\mathrm{d}v = \frac{1}{2\sqrt{u}}\,\mathrm{d}u\)</span> and <span class="math inline">\(w = -\mathrm{e}^{-u}\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+\int_{\beta}^{\infty} \sqrt{u}\,\mathrm{e}^{-u}\,\mathrm{d}u &amp;= \left[-\sqrt{u}\,\mathrm{e}^{-u}\right]_{\beta}^{\infty} + \int_{\beta}^{\infty} \frac{\mathrm{e}^{-u}}{2\sqrt{u}}\,\mathrm{d}u\\
+&amp;= \sqrt{\beta}\,\mathrm{e}^{-\beta} + \frac{1}{2}\int_{\beta}^{\infty} \frac{\mathrm{e}^{-u}}{\sqrt{u}}\,\mathrm{d}u
+\end{align}\]</span></p>
+<p>For large <span class="math inline">\(\beta\)</span> (which corresponds to <span class="math inline">\(E_\mathrm{a} \gg k_\mathrm{B}T\)</span>, a condition typically satisfied for chemical reactions), the second term becomes negligible compared to the first. Therefore:</p>
+<p><span class="math display">\[\int_{\beta}^{\infty} \sqrt{u}\,\mathrm{e}^{-u}\,\mathrm{d}u \approx \sqrt{\beta}\,\mathrm{e}^{-\beta}\]</span></p>
+<p>Substituting back:</p>
+<p><span class="math display">\[P(E \geq E_\mathrm{a}) \approx \frac{2}{\sqrt{\pi}}\sqrt{\beta}\,\mathrm{e}^{-\beta} = \frac{2}{\sqrt{\pi}}\sqrt{\frac{E_\mathrm{a}}{k_\mathrm{B}T}}\exp\left(-\frac{E_\mathrm{a}}{k_\mathrm{B}T}\right)\]</span></p>
+<p>For typical activation energies in chemical reactions, <span class="math inline">\(E_\mathrm{a}/(k_\mathrm{B}T) \gg 1\)</span>, which means the pre-exponential factor <span class="math inline">\(\sqrt{E_\mathrm{a}/(k_\mathrm{B}T)}\)</span> is much larger than unity but changes only slowly with temperature compared to the exponential term. To a good approximation, we can therefore write:</p>
+<p><span class="math display">\[P(E \geq E_\mathrm{a}) \approx \exp\left(-\frac{E_\mathrm{a}}{k_\mathrm{B}T}\right)\]</span></p>
+<p>Finally, using the relationship <span class="math inline">\(R = N_\mathrm{A}k_\mathrm{B}\)</span> (where <span class="math inline">\(R\)</span> is the gas constant and <span class="math inline">\(N_\mathrm{A}\)</span> is Avogadro’s number), we can write this in the more familiar form:</p>
+<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
+<p>This derivation shows that the exponential dependence of reaction rates on temperature arises naturally from the Maxwell-Boltzmann distribution of molecular energies, and that the activation energy <span class="math inline">\(E_\mathrm{a}\)</span> represents a threshold that determines which fraction of collisions have sufficient energy to react.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="lecture9.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="appendix-energy.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="integrating-factor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-activation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -357,7 +370,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/bjmorgan/CH22008/main/appendices/appendices.Rmd",
+    "link": "https://github.com/bjmorgan/CH22008/main/appendices/activation_energy.Rmd",
     "text": "Edit"
   },
   "history": {
