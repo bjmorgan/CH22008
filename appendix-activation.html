@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-11-15" />
+<meta name="date" content="2025-11-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -211,12 +211,22 @@
 </ul></li>
 <li class="chapter" data-level="9" data-path="lecture9.html"><a href="lecture9.html"><i class="fa fa-check"></i><b>9</b> Applications of Transition State Theory</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-eyring-plot"><i class="fa fa-check"></i><b>9.1</b> The Eyring Plot</a></li>
-<li class="chapter" data-level="9.2" data-path="lecture9.html"><a href="lecture9.html#effect-of-pressure-on-rate-coefficients"><i class="fa fa-check"></i><b>9.2</b> Effect of Pressure on Rate Coefficients</a></li>
+<li class="chapter" data-level="9.1" data-path="lecture9.html"><a href="lecture9.html#the-eyring-plot"><i class="fa fa-check"></i><b>9.1</b> The Eyring Plot</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="lecture9.html"><a href="lecture9.html#deriving-the-linear-form"><i class="fa fa-check"></i><b>9.1.1</b> Deriving the Linear Form</a></li>
+<li class="chapter" data-level="9.1.2" data-path="lecture9.html"><a href="lecture9.html#extracting-activation-parameters"><i class="fa fa-check"></i><b>9.1.2</b> Extracting Activation Parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="lecture9.html"><a href="lecture9.html#effect-of-pressure-on-rate-coefficients"><i class="fa fa-check"></i><b>9.2</b> Effect of Pressure on Rate Coefficients</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="lecture9.html"><a href="lecture9.html#volume-of-activation"><i class="fa fa-check"></i><b>9.2.1</b> Volume of Activation</a></li>
+<li class="chapter" data-level="9.2.2" data-path="lecture9.html"><a href="lecture9.html#quantitative-treatment"><i class="fa fa-check"></i><b>9.2.2</b> Quantitative Treatment</a></li>
+<li class="chapter" data-level="9.2.3" data-path="lecture9.html"><a href="lecture9.html#example-decomposition-of-dibutyl-peroxide"><i class="fa fa-check"></i><b>9.2.3</b> Example: Decomposition of Dibutyl Peroxide</a></li>
+</ul></li>
 <li class="chapter" data-level="9.3" data-path="lecture9.html"><a href="lecture9.html#kinetic-isotope-effects"><i class="fa fa-check"></i><b>9.3</b> Kinetic Isotope Effects</a>
 <ul>
-<li class="chapter" data-level="9.3.1" data-path="lecture9.html"><a href="lecture9.html#origin-of-the-kinetic-isotope-effect"><i class="fa fa-check"></i><b>9.3.1</b> Origin of the Kinetic Isotope Effect</a></li>
-<li class="chapter" data-level="9.3.2" data-path="lecture9.html"><a href="lecture9.html#using-kinetic-isotope-effects-to-probe-reaction-mechanisms"><i class="fa fa-check"></i><b>9.3.2</b> Using Kinetic Isotope Effects to Probe Reaction Mechanisms</a></li>
+<li class="chapter" data-level="9.3.1" data-path="lecture9.html"><a href="lecture9.html#zero-point-vibrational-energy"><i class="fa fa-check"></i><b>9.3.1</b> Zero-Point Vibrational Energy</a></li>
+<li class="chapter" data-level="9.3.2" data-path="lecture9.html"><a href="lecture9.html#from-zero-point-energy-to-activation-energy"><i class="fa fa-check"></i><b>9.3.2</b> From Zero-Point Energy to Activation Energy</a></li>
+<li class="chapter" data-level="9.3.3" data-path="lecture9.html"><a href="lecture9.html#using-kinetic-isotope-effects-to-probe-reaction-mechanisms"><i class="fa fa-check"></i><b>9.3.3</b> Using Kinetic Isotope Effects to Probe Reaction Mechanisms</a></li>
 </ul></li>
 </ul></li>
 <li class="appendix"><span><b>Appendices</b></span></li>
@@ -292,7 +302,7 @@ k = A\mathrm{e}^{-E_\mathrm{a}/RT}
 \ln k = \ln A - \frac{E_\mathrm{a}}{RT}
 \tag{B.1}
 \end{equation}\]</span></p>
-<p>Differentiating with respect to temperature<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
+<p>Differentiating with respect to temperature<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
 <p><span class="math display" id="eq:dlnk-dt-arrh">\[\begin{equation}
 \frac{\mathrm{d}\ln k}{\mathrm{d}T} = \frac{E_\mathrm{a}}{RT^2}
 \tag{B.2}
@@ -313,7 +323,7 @@ k = \frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\
 \ln k = \ln\left(\frac{k_\mathrm{B}T}{h}\right) + \ln\left(\frac{RT}{p}\right) + \frac{\Delta S^\ddagger}{R} - \frac{\Delta H^\ddagger}{RT}
 \tag{B.5}
 \end{equation}\]</span></p>
-<p>Differentiating with respect to temperature gives,<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
+<p>Differentiating with respect to temperature gives,<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
 <p><span class="math display" id="eq:dlnk-dt-eyring">\[\begin{equation}
 \frac{\mathrm{d}\ln k}{\mathrm{d}T} = \frac{1}{T} + \frac{1}{T} + \frac{\Delta H^\ddagger}{RT^2}
 \tag{B.6}
@@ -354,9 +364,9 @@ E_\mathrm{a} = \Delta H^\ddagger + 3RT
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p><span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d}x}\frac{a}{x} = -\frac{a}{x^2}\)</span>.<a href="appendix-activation.html#fnref8" class="footnote-back">↩︎</a></p></li>
-<li id="fn9"><p><span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d}x}\ln ax = \frac{1}{x}\)</span>.<a href="appendix-activation.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<ol start="7">
+<li id="fn7"><p><span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d}x}\frac{a}{x} = -\frac{a}{x^2}\)</span>.<a href="appendix-activation.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p><span class="math inline">\(\frac{\mathrm{d}}{\mathrm{d}x}\ln ax = \frac{1}{x}\)</span>.<a href="appendix-activation.html#fnref8" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
