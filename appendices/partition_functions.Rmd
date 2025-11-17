@@ -123,7 +123,7 @@ Consider a reaction where reactants A and B combine to form products via an acti
 The central assumption of transition state theory is that reactants and the activated complex maintain a state of pseudo-equilibrium. This equilibrium can be expressed using partition functions:
 
 \begin{equation}
-\frac{[\mathrm{C}^\ddagger]}{[\mathrm{A}][\mathrm{B}]} = \frac{Q_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)
+\frac{[\mathrm{C}^\ddagger]c^\circ}{[\mathrm{A}][\mathrm{B}]} = \frac{Q_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)
 \end{equation}
 
 ### Motion Along the Reaction Coordinate
@@ -146,7 +146,7 @@ Motion along the reaction coordinate at the transition state resembles a very lo
 q_\mathrm{vib} = \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}}
 \end{equation}
 
-As the frequency approaches zero, corresponding to free motion along the reaction coordinate, this becomes:
+As the frequency approaches zero, corresponding to free motion along the reaction coordinate, this becomes:^[To evaluate this limit, let $x = h\nu/k_\mathrm{B}T$. As $\nu \to 0$, $x \to 0$, and we can use the leading terms of the Taylor expansion $e^{-x} \approx 1 - x$. The numerator becomes $e^{-x/2} \approx 1 - x/2$ and the denominator becomes $1 - e^{-x} \approx x$. Thus $q_\mathrm{vib} \approx (1 - x/2)/x = 1/x - 1/2$. As $x \to 0$, the $1/x$ term dominates, giving $q_\mathrm{vib} \to k_\mathrm{B}T/h\nu$.]
 
 \begin{equation}
 \lim_{\nu \to 0} q_\mathrm{vib} = \lim_{\nu \to 0} \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}} = \frac{k_\mathrm{B}T}{h\nu}

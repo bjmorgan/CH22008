@@ -204,7 +204,6 @@ While this general principle explains the data where $P < 1$, the K + Br~2~ reac
 knitr::include_graphics("lecture_5/figures/harpoon_mechanism.png")
 ```
 
-
 ## Relationship to the Arrhenius Equation {#sec:arrhenius-comparison}
 
 The rate constant derived from collision theory has a similar form to the empirical Arrhenius equation.
