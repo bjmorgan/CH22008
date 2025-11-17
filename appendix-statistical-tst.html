@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-11-16" />
+<meta name="date" content="2025-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -386,7 +386,7 @@
 \end{equation}\]</span></p>
 <p>The central assumption of transition state theory is that reactants and the activated complex maintain a state of pseudo-equilibrium. This equilibrium can be expressed using partition functions:</p>
 <p><span class="math display">\[\begin{equation}
-\frac{[\mathrm{C}^\ddagger]}{[\mathrm{A}][\mathrm{B}]} = \frac{Q_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)
+\frac{[\mathrm{C}^\ddagger]c^\circ}{[\mathrm{A}][\mathrm{B}]} = \frac{Q_{\mathrm{C}^\ddagger}}{Q_\mathrm{A}Q_\mathrm{B}}\left(\frac{k_\mathrm{B}T}{p^{\circ}}\right)
 \end{equation}\]</span></p>
 </div>
 <div id="motion-along-the-reaction-coordinate" class="section level3 hasAnchor" number="13.5.2">
@@ -404,7 +404,7 @@ Q_{\mathrm{C}^\ddagger} = Q^\prime_{\mathrm{C}^\ddagger}q_\mathrm{rc}
 <p><span class="math display">\[\begin{equation}
 q_\mathrm{vib} = \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}}
 \end{equation}\]</span></p>
-<p>As the frequency approaches zero, corresponding to free motion along the reaction coordinate, this becomes:</p>
+<p>As the frequency approaches zero, corresponding to free motion along the reaction coordinate, this becomes:<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p>
 <p><span class="math display">\[\begin{equation}
 \lim_{\nu \to 0} q_\mathrm{vib} = \lim_{\nu \to 0} \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}} = \frac{k_\mathrm{B}T}{h\nu}
 \end{equation}\]</span></p>
@@ -462,6 +462,12 @@ q_\mathrm{vib} \approx \exp(-h\nu/2k_\mathrm{B}T)
 <p>where <span class="math inline">\(n_\mathrm{t}\)</span>, <span class="math inline">\(n_\mathrm{r}\)</span>, and <span class="math inline">\(n_\mathrm{v}\)</span> represent the changes in the number of translational, rotational, and vibrational degrees of freedom. This statistical mechanical treatment provides the theoretical basis for the thermodynamic analysis of molecular freedom developed in the main lectures.</p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>To evaluate this limit, let <span class="math inline">\(x = h\nu/k_\mathrm{B}T\)</span>. As <span class="math inline">\(\nu \to 0\)</span>, <span class="math inline">\(x \to 0\)</span>, and we can use the leading terms of the Taylor expansion <span class="math inline">\(e^{-x} \approx 1 - x\)</span>. The numerator becomes <span class="math inline">\(e^{-x/2} \approx 1 - x/2\)</span> and the denominator becomes <span class="math inline">\(1 - e^{-x} \approx x\)</span>. Thus <span class="math inline">\(q_\mathrm{vib} \approx (1 - x/2)/x = 1/x - 1/2\)</span>. As <span class="math inline">\(x \to 0\)</span>, the <span class="math inline">\(1/x\)</span> term dominates, giving <span class="math inline">\(q_\mathrm{vib} \to k_\mathrm{B}T/h\nu\)</span>.<a href="appendix-statistical-tst.html#fnref10" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
