@@ -253,7 +253,7 @@ Our previous analysis, based purely on counting molecular degrees of freedom, pr
 
 This difference arises from molecular symmetry. In CH~4~, all four hydrogen atoms are equivalent—the bromine radical can abstract any hydrogen to form the same product. In CD~3~H, only one hydrogen is available for abstraction. We account for this effect by introducing a statistical factor, $l$, into our transition state theory expression:
 
-$$A = l\frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^\ddagger/RT}$$
+$$A = l\frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^\ddagger/R}$$
 
 Here $l$ represents the number of different chemically plausible products that can be formed when identical atoms in the reactant molecules are labeled. For our example reactions:
 
