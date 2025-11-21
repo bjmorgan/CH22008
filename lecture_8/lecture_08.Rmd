@@ -186,48 +186,6 @@ We can now understand why. The steric factor $P$ in collision theory appears as 
 
 The systematic trends in Figure \@ref(fig:fig-preexp-comparison) demonstrate this principle directly: as we move from simple to more complex reactions, the pre-exponential factors decrease by over three orders of magnitude. Collision theory's "steric hindrance" is thus given a quantitative thermodynamic foundation: geometrically constrained transition states, which require significant loss of molecular freedom, are thermodynamically less favourable than less constrained transition states, leading to smaller pre-exponential factors.
 
-## Unimolecular Reactions
-
-While our analysis thus far has focused on bimolecular reactions, we can apply the same molecular freedom approach to unimolecular processes of the form:
-
-\begin{equation}
-\mathrm{A} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}
-\end{equation}
-
-Consider first a single atom or simple diatomic molecule. For a single atom, both the reactant and activated complex possess three translational degrees of freedom but no rotational or vibrational modes. A linear diatomic molecule has two rotational degrees of freedom and one vibrational mode, in addition to its translational motion. In either case, our simple counting approach predicts no net change in molecular freedom when forming the activated complex: both reactant and activated complex have the same number of translational, rotational, and vibrational degrees of freedom. This leads to $\Delta S^{\ddagger} = 0$ and a predicted pre-exponential factor of:^[Note the absence of the standard concentration factor $c^\circ$ in this expression, unlike the bimolecular case where $A = (k_\mathrm{B}T/hc^\circ)\mathrm{e}^{\Delta S^\ddagger/R}$. For unimolecular reactions, the rate constant has units of s$^{-1}$ rather than dm$^3$ mol$^{-1}$ s$^{-1}$, so no concentration term is needed for dimensional consistency.]
-
-\begin{equation}
-A = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}= \frac{k_\mathrm{B}T}{h} \approx 10^{13}~\mathrm{s}^{-1}
-\end{equation}
-
-However, experimental measurements reveal substantial variations in pre-exponential factors between different unimolecular reactions. These variations arise from changes in internal molecular freedom when forming the activated complex, as illustrated by two contrasting examples.
-
-### Ethane Decomposition
-
-The thermal decomposition of ethane proceeds via C–C bond cleavage:
-
-\begin{equation}
-\mathrm{C}_2\mathrm{H}_6 \longrightarrow 2\mathrm{CH}_3^\bullet
-\end{equation}
-
-The experimental pre-exponential factor is <i>A</i> = 2 &times; 10<sup>16</sup>&nbsp;s<sup>&minus;1</sup>, corresponding to $\Delta S^{\ddagger}$ = +63&nbsp;J&nbsp;K<sup>&minus;1</sup>&nbsp;mol<sup>&minus;1</sup>. This large positive entropy of activation arises because forming the transition state weakens the C–C bond, making the activated complex "looser" than the reactant molecule. The weakened C–C bond allows freer internal rotation, while the CH<sub>3</sub> groups can undergo enhanced rocking motions. These additional motions correspond to looser, lower-frequency vibrational modes that increase the overall molecular freedom.
-
-### The Cope Rearrangement
-
-A contrasting example is provided by the Cope rearrangement of 1,5-hexadiene.
-This reaction has an experimental pre-exponential factor of <i>A</i> = 4 &times; 10<sup>10</sup> s<sup>&minus;1</sup>, corresponding to $\Delta S^{\ddagger}$ = &minus;46 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>. This negative entropy of activation arises from the geometric constraints required at the transition state.
-
-As shown in the left panel of Figure \@ref(fig:cope-rearrangement), the reactant molecule has three C–C single bonds that allow relatively free internal rotation. However, the [3,3]-sigmatropic rearrangement mechanism requires the molecule to adopt a specific cyclic geometry at the transition state (centre panel). This cyclic arrangement, with its requirement for planar geometry and precise orbital overlap shown by the red dashed ring, severely restricts the internal rotational freedom present in the reactant.
-
-```{r cope-rearrangement, fig.cap="The Cope rearrangement of 1,5-hexadiene proceeds through a constrained cyclic transition state. Left: The reactant possesses considerable internal rotational freedom around the three C–C single bonds (rotation arrows). Centre: The transition state requires a planar, cyclic six-membered ring geometry (red dashed ring) with specific orbital overlap for the [3,3]-sigmatropic shift. Right: The product, with the double bonds in new positions. The constraint of forming this cyclic transition state eliminates the internal rotational freedom present in the reactant.", out.width='50%', fig.align='center'}
-knitr::include_graphics("lecture_8/figures/cope_rearrangement.png")
-```
-
-The loss of three internal rotational degrees of freedom contributes approximately &minus;15 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup> per rotation to the overall entropy change, accounting for the observed negative $\Delta S^{\ddagger}$. This provides a useful estimate for analysing other reactions where internal rotations become restricted in the transition state.
-
-These contrasting examples—ethane decomposition with positive $\Delta S^{\ddagger}$ and the Cope rearrangement with negative $\Delta S^{\ddagger}$—demonstrate that unimolecular pre-exponential factors depend critically on how forming the transition state affects internal molecular freedom. Unlike bimolecular reactions, where collision always reduces translational and rotational freedom, unimolecular reactions can either enhance or restrict internal motion at the transition state, leading to pre-exponential factors that can vary by orders of magnitude from the typical 10<sup>13</sup> s<sup>&minus;1</sup> value.
-
-
 ## Limitations in Pre-exponential Factor Estimation
 
 While our molecular freedom approach successfully predicts systematic trends in reaction rates, several important approximations underpin these calculations. Understanding these limitations helps us recognise both the power and constraints of our theoretical framework.
@@ -250,23 +208,36 @@ $$\mathrm{CH}_4 + \mathrm{Br}^\bullet \longrightarrow \mathrm{HBr} + \mathrm{CH}
 $$\mathrm{CD}_3\mathrm{H} + \mathrm{Br}^\bullet \longrightarrow \mathrm{HBr} + \mathrm{CD}_3^\bullet$$
 
 Our previous analysis, based purely on counting molecular degrees of freedom, predicts identical pre-exponential factors for both reactions. However, experimental measurements reveal that the CH~4~ reaction proceeds approximately four times faster than the CD~3~H reaction.
-
-This difference arises from molecular symmetry. In CH~4~, all four hydrogen atoms are equivalent—the bromine radical can abstract any hydrogen to form the same product. In CD~3~H, only one hydrogen is available for abstraction. We account for this effect by introducing a statistical factor, $l$, into our transition state theory expression:
-
-$$A = l\frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^\ddagger/R}$$
-
-Here $l$ represents the number of different chemically plausible products that can be formed when identical atoms in the reactant molecules are labeled. For our example reactions:
-
-- CH~4~ reaction: $l = 4$ (four equivalent hydrogens)
-- CD~3~H reaction: $l = 1$ (single abstractable hydrogen)
-
 ```{r fig-symmetry-ch4-cd3h, fig.cap="Molecular symmetry affects pre-exponential factors through configurational entropy. Top: In CH$_4$, all four hydrogen atoms (blue) are equivalent, so the bromine radical can abstract any hydrogen to form the same product, giving a statistical factor of $l = 4$. Bottom: In CD$_3$H, only one hydrogen (blue) is available for abstraction whilst the three deuterium atoms (orange) are not, giving $l = 1$. This symmetry difference results in the CH$_4$ reaction being approximately four times faster than the CD$_3$H reaction, even though simple degree-of-freedom counting predicts identical rates.", out.width='50%', fig.align='center'}
 knitr::include_graphics("lecture_8/figures/ch4_cd3h_symmetry.png")
 ```
 
+This difference arises from molecular symmetry. In CH~4~, all four hydrogen atoms are equivalent—the bromine radical can abstract any hydrogen to form the same product. In CD~3~H, only one hydrogen is available for abstraction. 
+
+To understand the statistical factor more deeply, consider what happens if we artificially label the four hydrogen atoms in CH~4~ as shown in Figure \@ref(fig:fig-symmetry-general). 
+
+```{r fig-symmetry-general, fig.cap="Understanding the statistical factor for CH$_4$ through artificial labeling. When we label the four equivalent hydrogen atoms (1–4), we see that reaction at each site produces a distinct labeled product. Since the hydrogens are actually indistinguishable, these represent four equivalent pathways to the same physical product, giving a statistical factor of $l = 4$.", out.width='83%', fig.align='center'}
+knitr::include_graphics("lecture_8/figures/symmetry_general.png")
+```
+
+What we consider a single reaction is in fact four different reaction pathways&mdash;each pathway corresponds to the bromine radical extracting a different labelled hydrogen, which then gives a different labeled product. Since the hydrogen atoms in methane are actually indistinguishable, these four products, and the four reaction pathways that form them, are physically indistinguishable—all four produce the same products, CH~3~&bullet; + HBr. We account for this by introducing a statistical factor, $l$, representing the number of equivalent pathways:^[The statistical factor can equivalently be expressed as a configurational entropy contribution: $\Delta S^\ddagger_\mathrm{conf} = R \ln l$. This reflects the increased number of microstates available to the activated complex when multiple equivalent reaction pathways exist.]
+
+$$A = l\frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^\ddagger/R}$$
+
+For our example reactions:
+
+- CH~4~ reaction: $l = 4$ (four equivalent hydrogens)
+- CD~3~H reaction: $l = 1$ (single abstractable hydrogen)
+
+The rate constant ratio becomes:
+
+$$\frac{k_\mathrm{CH_4}}{k_\mathrm{CD_3H}} = \frac{4}{1} = 4$$
+
+explaining the observed fourfold difference in reaction rates.
+
 ### Internal Molecular Motion
 
-The treatment of internal molecular motions reveals additional subtlety in our theoretical framework. We have already seen contrasting examples of this effect in the unimolecular section: ethane decomposition showed unusually high pre-exponential factors due to enhanced internal rotation, whilst the Cope rearrangement showed lower values due to constrained rotation. To understand these effects systematically, consider the ethane molecule (C~2~H~6~), which exhibits two distinct types of motion around its C–C bond:
+The treatment of internal molecular motions reveals additional subtlety in our theoretical framework. Consider the ethane molecule (C~2~H~6~), which exhibits two distinct types of motion around its C–C bond:
 
 1. C–C stretching vibration:
    - Involves direct compression and extension of the C–C bond
@@ -279,30 +250,33 @@ The treatment of internal molecular motions reveals additional subtlety in our t
    - Requires much less energy
    - Shows more closely spaced energy levels
    - Makes larger contributions to entropy
+   
 ```{r fig-internal-rotation-levels, fig.cap="Comparison of energy level spacings for different types of molecular motion in ethane-like molecules. Left: A normal C–C stretching vibration involves compression and extension of the bond, requiring significant energy. The resulting widely spaced quantum energy levels (gray) mean only a few low-lying states (green) are thermally accessible at room temperature, giving low entropy. Right: Internal rotation of CH$_3$ groups about the C–C axis requires much less energy. The resulting closely spaced energy levels mean many states are thermally accessible, giving substantially higher entropy than a normal vibration.", out.width='70%', fig.align='center'}
-   knitr::include_graphics("lecture_8/figures/internal_rotation_energy_levels.png")
+knitr::include_graphics("lecture_8/figures/internal_rotation_energy_levels.png")
 ```
 
-Figure \@ref(fig:fig-internal-rotation-levels) illustrates why internal rotation contributes more entropy than normal vibrations: the closely spaced energy levels mean many more states are thermally accessible. When such molecules form activated complexes, two scenarios arise, which we have already encountered:
+Figure \@ref(fig:fig-internal-rotation-levels) illustrates why internal rotation contributes more entropy than normal vibrations: the closely spaced energy levels mean many more states are thermally accessible. When molecules with internal rotations form activated complexes, two contrasting scenarios can arise:
 
-1. **Restricted internal rotation** (as in the Cope rearrangement):
-   - Occurs when specific molecular alignments are required
+1. **Restricted internal rotation**:
+   - Occurs when the transition state requires specific molecular alignment
    - Reduces freedom of internal motion
    - Produces more negative $\Delta S^\ddagger$ values
    - Leads to lower pre-exponential factors than predicted by simple counting
 
-2. **Enhanced internal rotation** (as in ethane decomposition):
-   - Occurs when bond lengthening makes rotation easier
+2. **Enhanced internal rotation**:
+   - Occurs when transition state formation weakens bonds that hinder rotation
    - Increases freedom of internal motion
    - Produces less negative (or positive) $\Delta S^\ddagger$ values
    - Leads to higher pre-exponential factors than predicted
    
 ```{r fig-internal-rotation-ts-effects, fig.cap="The effect of transition state formation on internal rotation determines the sign of entropy contributions. Left: When the transition state requires specific molecular alignment or constrains rotation (indicated by the red barrier), internal rotational freedom is reduced. This produces additional negative contributions to $\\Delta S^\\ddagger$, leading to lower pre-exponential factors than predicted by simple degree-of-freedom counting. Right: When transition state formation weakens a bond, internal rotation becomes freer. The enhanced rotational freedom produces positive contributions to $\\Delta S^\\ddagger$, leading to higher pre-exponential factors.", out.width='70%', fig.align='center'}
-   knitr::include_graphics("lecture_8/figures/internal_rotation_ts_effects.png")
+knitr::include_graphics("lecture_8/figures/internal_rotation_ts_effects.png")
 ```
 
-This effect is not limited to unimolecular reactions. Diels-Alder cycloadditions provide a bimolecular example: our predictions typically overestimate the experimental pre-exponential factors for these reactions because the transition state requires precise alignment of the diene and dienophile components. This geometric constraint introduces additional restrictions on molecular motion beyond those captured by simple counting of degrees of freedom, leading to more negative $\Delta S^\ddagger$ values than predicted.
+This effect is not limited to simple molecules. Diels-Alder cycloadditions provide a clear example: our predictions typically overestimate the experimental pre-exponential factors for these reactions. This occurs because the transition state requires precise alignment of the diene and dienophile components. This geometric constraint introduces additional restrictions on molecular motion beyond those captured by simple counting of degrees of freedom, leading to more negative $\Delta S^\ddagger$ values than predicted.
 
-```{r fig-diels-alder-ts-constraint, fig.cap="The Diels-Alder cycloaddition transition state illustrates why geometric constraints can produce more negative $\\Delta S^\\ddagger$ values than predicted by simple degree-of-freedom counting. Left: The diene reactant possesses internal rotational freedom (rotation arrow). Right: The transition state requires formation of a planar, cyclic six-membered ring structure (shown in red dashes). This geometric constraint restricts the internal rotational freedom present in the reactants, producing additional negative entropy contributions beyond those from simple translational and rotational degree-of-freedom changes. This explains why our estimated pre-exponential factor (2 &times; 10$^7$ dm$^3$ mol$^{-1}$ s$^{-1}$) slightly overestimates the experimental value (1 &times; 10$^7$ dm$^3$ mol$^{-1}$ s$^{-1}$).", out.width='60%', fig.align='center'}
+```{r fig-diels-alder-ts-constraint, fig.cap="The Diels-Alder cycloaddition transition state illustrates why geometric constraints can produce more negative $\\Delta S^\\ddagger$ values than predicted by simple degree-of-freedom counting. Left: The diene reactant possesses internal rotational freedom (rotation arrow). Right: The transition state requires formation of a planar, cyclic six-membered ring structure (shown in red dashes). This geometric constraint restricts the internal rotational freedom present in the reactants, producing additional negative entropy contributions beyond those from simple translational and rotational degree-of-freedom changes. This explains why our estimated pre-exponential factor typically overestimates experimental values for Diels-Alder reactions.", out.width='60%', fig.align='center'}
 knitr::include_graphics("lecture_8/figures/diels_alder_ts_constraint.png")
 ```
+
+These examples demonstrate that pre-exponential factors depend not only on the changes in translational and rotational degrees of freedom, but also on how transition state formation affects internal molecular motions such as rotation around single bonds.

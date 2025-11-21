@@ -1,15 +1,94 @@
 # Applications of Transition State Theory {#lecture9}
 
-Throughout our development of transition state theory, we've focused on understanding how molecular properties govern reaction rates. While this theoretical framework is elegant, its real power emerges when we link it to experimental observations.
-Here we examine three key applications: using temperature-dependent kinetic data to determine activation parameters, understanding pressure effects on reaction rates, and interpreting kinetic isotope effects.
+Over the previous three lectures, we have developed transition state theory as a comprehensive framework for understanding how molecular properties govern reaction rates. Here we explore how this framework connects experimental measurements to transition state structure.
+
+We examine four applications: comparing experimental pre-exponential factors for unimolecular reactions to predictions from degree-of-freedom counting, extracting activation parameters from temperature-dependent rate data, understanding how pressure affects reaction rates, and using kinetic isotope effects to probe bond breaking at transition states. Each demonstrates how transition state theory provides a systematic way to interpret kinetic measurements in molecular terms.
+
+## Unimolecular Reactions
+
+In Lecture \@ref(lecture8), we developed a scheme for estimating pre-exponential factors by systematically counting molecular degrees of freedom and using characteristic entropy values for translational, rotational, and vibrational motion. While our analysis focused on bimolecular reactions, we can apply the same approach to unimolecular processes of the form:
+
+\begin{equation}
+\mathrm{A} \rightleftharpoons \mathrm{C}^{\ddagger} \longrightarrow \mathrm{P}
+\end{equation}
+
+### The Baseline Estimate
+
+Consider a polyatomic molecule undergoing unimolecular rearrangement or decomposition. The activated complex is simply the reactant molecule distorted along the reaction coordinate, so both reactant and activated complex possess the same number of translational, rotational, and vibrational degrees of freedom—the total degrees of freedom are conserved. This simple picture suggests $\Delta S^{\ddagger} \approx 0$, leading to a predicted pre-exponential factor of:^[Note the absence of the standard concentration factor $c^\circ$ in this expression, unlike the bimolecular case where $A = (k_\mathrm{B}T/hc^\circ)\mathrm{e}^{\Delta S^\ddagger/R}$. For unimolecular reactions, the rate constant has units of s$^{-1}$ rather than dm$^3$ mol$^{-1}$ s$^{-1}$, so no concentration term is needed for dimensional consistency.]
+
+\begin{equation}
+A = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R} \approx \frac{k_\mathrm{B}T}{h} \approx 10^{13}~\mathrm{s}^{-1}
+\end{equation}
+
+However, this picture glosses over an important detail about how we account for these degrees of freedom. If the reactant molecule has *n* vibrational modes, the transition state also has *n* vibrational degrees of freedom—but one of these now corresponds to motion along the reaction coordinate. In transition state theory, this reaction coordinate motion provides the $k_\mathrm{B}T/h$ prefactor rather than contributing to $\Delta S^{\ddagger}$. 
+
+When we count entropy contributions to $\Delta S^{\ddagger}$, we therefore include only *n*−1 vibrational modes for the transition state but *n* vibrational modes for the reactant. We are effectively "losing" the entropy contribution of one vibrational mode—the one that becomes the reaction coordinate.
+
+For a typical vibrational mode at room temperature, $S_\mathrm{vib} \approx 5~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$. Losing this entropy contribution when forming the transition state gives:
+
+$$\Delta S^{\ddagger} \approx -5~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
+
+The predicted pre-exponential factor is therefore:
+
+$$A = \frac{k_\mathrm{B}T}{h} \times \exp\left(\frac{-5}{8.314}\right) \approx 10^{13} \times 0.55 \approx 5 \times 10^{12}~\mathrm{s}^{-1}$$
+
+Even when we properly account for how the vibrational modes are treated, we still obtain $A \approx 10^{13}~\mathrm{s}^{-1}$ to within the same order of magnitude. This baseline estimate holds provided the remaining *n*−1 vibrational modes have similar frequencies in the reactant and the transition state, such that their entropy contributions approximately cancel.
+
+### Using Pre-exponential Factors to Probe Transition State Structure
+
+The baseline estimate of $A \approx 10^{13}~\mathrm{s}^{-1}$ provides a useful reference point. When experimental measurements of pre-exponential factors differ significantly from this baseline, those differences tell us about transition state structure. We can quantify this by calculating the entropy of activation from the experimental pre-exponential factor:
+
+$$\Delta S^{\ddagger} = R \ln\left(\frac{hA_\mathrm{expt}}{k_\mathrm{B}T}\right)$$
+
+Comparing this to our baseline prediction of $\Delta S^{\ddagger} \approx -5~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$ reveals whether the transition state has more or less molecular freedom than expected:
+
+- If $\Delta S^{\ddagger}$ is more positive than the baseline: the transition state has enhanced molecular freedom&mdash;a "loose" transition state
+- If $\Delta S^{\ddagger}$ is more negative* than the baseline: the transition state has reduced molecular freedom&mdash;a "tight" transition state
+
+These deviations arise when the structure of the transition state causes the *n*−1 vibrational modes (those that are not the reaction coordinate) to change significantly in frequency between reactant and transition state. Two contrasting examples illustrate how experimental pre-exponential factors reveal transition state structure.
+
+#### Ethane Decomposition: A Loose Transition State
+
+The thermal decomposition of ethane proceeds via C–C bond cleavage:
+
+\begin{equation}
+\mathrm{C}_2\mathrm{H}_6 \longrightarrow 2\mathrm{CH}_3^\bullet
+\end{equation}
+
+The experimental pre-exponential factor is <i>A</i> = 2 &times; 10<sup>16</sup>&nbsp;s<sup>&minus;1</sup>. Using this to calculate the entropy of activation:
+
+$$\Delta S^{\ddagger} = R \ln\left(\frac{h \times 2 \times 10^{16}}{k_\mathrm{B}T}\right) \approx +63~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
+
+This is substantially more positive than our baseline prediction of −5 J K<sup>−1</sup> mol<sup>−1</sup>. What does this tell us about the transition state structure?
+
+In this reaction, the C–C stretching mode becomes the reaction coordinate, contributing the expected baseline entropy loss. However, the large positive $\Delta S^{\ddagger}$ indicates that the other vibrational modes gain significant entropy in the transition state. As the C–C bond weakens in forming the transition state, the activated complex becomes "looser" than the intact molecule. Internal rotation around the weakened C–C bond becomes much freer, and the CH~3~ groups can undergo enhanced rocking and torsional motions. These modes, which were relatively constrained in the reactant, become lower-frequency vibrations in the transition state. The experimental pre-exponential factor thus reveals a loose transition state with enhanced molecular freedom.
+
+#### The Cope Rearrangement: A Tight Transition State
+
+A contrasting example is provided by the Cope rearrangement of 1,5-hexadiene. The experimental pre-exponential factor is <i>A</i> = 4 &times; 10<sup>10</sup> s<sup>&minus;1</sup>. Calculating the entropy of activation:
+
+$$\Delta S^{\ddagger} = R \ln\left(\frac{h \times 4 \times 10^{10}}{k_\mathrm{B}T}\right) \approx -46~\mathrm{J}~\mathrm{K}^{-1}~\mathrm{mol}^{-1}$$
+
+This is substantially more negative than our baseline prediction. The experimental pre-exponential factor tells us that the transition state has significantly reduced molecular freedom compared to the reactant.
+```{r cope-rearrangement, fig.cap="The Cope rearrangement of 1,5-hexadiene proceeds through a constrained cyclic transition state. Left: The reactant possesses considerable internal rotational freedom around the three C–C single bonds (rotation arrows). Centre: The transition state requires a planar, cyclic six-membered ring geometry (red dashed ring) with specific orbital overlap for the [3,3]-sigmatropic shift. Right: The product, with the double bonds in new positions. The constraint of forming this cyclic transition state eliminates the internal rotational freedom present in the reactant.", out.width='50%', fig.align='center'}
+knitr::include_graphics("lecture_8/figures/cope_rearrangement.png")
+```
+
+As shown in Figure \@ref(fig:cope-rearrangement), forming the cyclic transition state imposes **geometric constraints** on the molecule. The reaction requires precise alignment of the diene termini with specific orbital overlap for the [3,3]-sigmatropic shift, restricting internal rotations that were relatively free in the reactant. These constraints reduce the entropy contributions from the vibrational modes in the transition state. The experimental pre-exponential factor thus reveals a tight, constrained transition state.
+
+### The Power of the Comparison
+
+By comparing experimental pre-exponential factors to the baseline prediction from our degree-of-freedom counting scheme, we get insight into the transition state and the reaction mechanism. Deviations from $A \approx 10^{13}~\mathrm{s}^{-1}$ tell us whether transition states are loose or tight, whether bonds are weakened or geometric constraints are imposed, and how molecular freedom changes along the reaction coordinate. This provides insight into fleeting transition states that we cannot observe directly.
 
 ## The Eyring Plot
 
-Over the past three lectures, we have developed transition state theory as a framework for understanding how molecular properties govern reaction rates. We derived the Eyring equation:
+We have seen how comparing experimental and predicted pre-exponential factors provides information about transition state structure. Another powerful application of transition state theory is extracting activation parameters directly from temperature-dependent rate measurements.
+
+In Lecture \@ref(lecture6), we developed the transition state theory expression for the rate constant. This equation, known as the Eyring equation after [Henry Eyring](https://en.wikipedia.org/wiki/Henry_Eyring_(chemist)) who developed transition state theory in the 1930s, connects the rate constant to the activation parameters $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$:
 
 $$k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}$$
 
-This equation connects the rate constant to the activation parameters $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$. But how do we actually determine these parameters from experimental measurements? If we measure rate constants at different temperatures, can we extract $\Delta H^{\ddagger}$ and $\Delta S^{\ddagger}$?
+By measuring rate constants at different temperatures, we can extract these activation parameters and learn about the energetic and entropic requirements for reaching the transition state.
 
 The Eyring equation is non-linear in the parameters we want to determine. Modern computational analysis fits such equations directly using non-linear regression, which gives the most accurate parameter estimates. However, you will encounter linearised forms of the Eyring equation throughout textbooks and published literature—this approach became standard before computers were readily available and persists through historical inertia. More practically, you need to understand how to transform equations into linear forms because in examinations, you can plot linearised data and estimate parameters by drawing a line through the points and calculating its slope and intercept. The Eyring plot provides exactly this: a method for transforming the Eyring equation into a form where $\ln(k/T)$ versus $1/T$ produces a straight line.
 
@@ -101,6 +180,8 @@ Experimental measurements of the pressure dependence give $\Delta V^{\ddagger}$ 
 This demonstrates how the sign and magnitude of the volume of activation provide direct information about geometric changes at the transition state. A negative $\Delta V^{\ddagger}$ would indicate bond formation or increased compactness, whilst a positive value reveals bond breaking or expansion, as we observe here for peroxide decomposition.
 
 ## Kinetic Isotope Effects
+
+As discussed above, temperature and pressure measurements can provide thermodynamic and volumetric information about transition states. A third experimental technique—isotopic substitution—reveals which specific bonds are breaking during reaction.
 
 Many reactions proceed more slowly when hydrogen is replaced by deuterium. For example, consider this E2 elimination reaction (Figure \@ref(fig:fig-kie-example-reactions)):
 
