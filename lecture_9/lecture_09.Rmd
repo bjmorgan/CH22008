@@ -71,7 +71,7 @@ $$\Delta S^{\ddagger} = R \ln\left(\frac{h \times 4 \times 10^{10}}{k_\mathrm{B}
 
 This is substantially more negative than our baseline prediction. The experimental pre-exponential factor tells us that the transition state has significantly reduced molecular freedom compared to the reactant.
 ```{r cope-rearrangement, fig.cap="The Cope rearrangement of 1,5-hexadiene proceeds through a constrained cyclic transition state. Left: The reactant possesses considerable internal rotational freedom around the three C–C single bonds (rotation arrows). Centre: The transition state requires a planar, cyclic six-membered ring geometry (red dashed ring) with specific orbital overlap for the [3,3]-sigmatropic shift. Right: The product, with the double bonds in new positions. The constraint of forming this cyclic transition state eliminates the internal rotational freedom present in the reactant.", out.width='50%', fig.align='center'}
-knitr::include_graphics("lecture_8/figures/cope_rearrangement.png")
+knitr::include_graphics("lecture_9/figures/cope_rearrangement.png")
 ```
 
 As shown in Figure \@ref(fig:cope-rearrangement), forming the cyclic transition state imposes **geometric constraints** on the molecule. The reaction requires precise alignment of the diene termini with specific orbital overlap for the [3,3]-sigmatropic shift, restricting internal rotations that were relatively free in the reactant. These constraints reduce the entropy contributions from the vibrational modes in the transition state. The experimental pre-exponential factor thus reveals a tight, constrained transition state.
