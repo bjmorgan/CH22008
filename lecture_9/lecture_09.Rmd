@@ -276,5 +276,11 @@ When deuterium is substituted at the &alpha;-position—the site where the C–H
 
 In contrast, when deuterium is substituted at the &beta;-position, the isotope effect is negligible: $k_\mathrm{H}/k_\mathrm{D} = 1.09$. This small value shows that the C–H bonds at the &beta;-position remain essentially intact throughout the reaction&mdash;they are spectators that do not participate in the rate-determining step. The C–H/C–D zero-point energy difference has virtually no effect on the activation barrier because these bonds are not breaking.
 
+Figure \@ref(fig:fig-kie-beta-position) illustrates this effect: the vertical separation between the H and D curves remains approximately constant from reactants through the transition state to products, because the &beta; C–H bonds are spectators that never break.
+
+```{r fig-kie-beta-position, fig.cap="Reaction coordinate diagram for isotopic substitution at the &beta;-position. The C–H and C–D bonds at this position remain intact throughout the reaction. The zero-point energy difference present in the reactants (vertical separation between the orange and blue curves) persists to the transition state, giving ΔE$^\\ddagger$_H ≈ ΔE$^\\ddagger$_D and therefore k$_\\mathrm{H}$/k$_\\mathrm{D}$ ≈ 1. This contrasts with &alpha;-position substitution (Figure \\@ref(fig:fig-kie-reaction-coordinate)) where the C–H bond breaks at the transition state, causing the curves to converge.", out.width='65%', fig.align='center'}
+knitr::include_graphics("lecture_9/figures/kie_beta_position.png")
+```
+
 These contrasting results demonstrate the mechanistic power of kinetic isotope effects. By measuring how the reaction rate changes upon isotopic substitution at different positions in the molecule, we can determine which bonds are breaking, which remain intact, and the extent of bond cleavage at the transition state. This provides detailed mechanistic information that would be difficult to obtain by other experimental techniques.
 
