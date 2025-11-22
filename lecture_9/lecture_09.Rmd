@@ -146,7 +146,7 @@ The two forms are related by a constant:
 \ln\left(\frac{k}{T}\right) = \ln\left(\frac{kh}{k_\mathrm{B}T}\right) - \ln\left(\frac{h}{k_\mathrm{B}}\right) = \ln\left(\frac{kh}{k_\mathrm{B}T}\right) + \ln\left(\frac{k_\mathrm{B}}{h}\right)
 \end{equation}
 
-Both forms give **identical slopes** (and hence identical $-\Delta H^\ddagger$ values). The intercepts differ by exactly $\ln(k_\mathrm{B}/h)$ = 23.76. For the conventional form, the intercept is $\ln(k_\mathrm{B}/h) + \Delta S^\ddagger/R$, which is why we must subtract $\ln(k_\mathrm{B}/h) when extracting $\Delta S^\ddagger$.
+Both forms give **identical slopes** (and hence identical $-\Delta H^\ddagger$ values). The intercepts differ by exactly $\ln(k_\mathrm{B}/h)$ = 23.76. For the conventional form, the intercept is $\ln(k_\mathrm{B}/h) + \Delta S^\ddagger/R$, which is why we must subtract $\ln(k_\mathrm{B}/h)$ when extracting $\Delta S^\ddagger$.
 
 In practice, the conventional form $\ln(k/T)$ versus $1/T$ is widely used in textbooks and research papers because it is computationally simpler and easier to use for manual calculations. This conventional plot is what is typically referred to as an "Eyring plot" in the literature. Both activation parameters can be correctly extracted provided we account for the $\ln(k_\mathrm{B}/h)$ offset when determining $\Delta S^\ddagger$.
 
