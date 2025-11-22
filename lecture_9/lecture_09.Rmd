@@ -128,14 +128,14 @@ $$\Delta H^{\ddagger} = -(-1485.8~\mathrm{K}) \times 8.314~\mathrm{J~K^{-1}~mol^
 
 The intercept provides $\Delta S^{\ddagger}$ once we account for the $\ln(k_\mathrm{B}/h)$ term.
 
-### A Note on Dimensional Consistency in Eyring Plots
+### Dimensional Consistency in Eyring Plots
 
 The conventional Eyring plot uses $\ln(k/T)$ versus $1/T$, which has the practical advantage of simplicity—we just divide the rate constant by temperature. However, this creates a dimensional inconsistency: the argument of the natural logarithm should be dimensionless, but $k/T$ has units.
 
-The rigorous approach plots $\ln(kh/k_\mathrm{B}T)$ versus $1/T$, where $kh/k_\mathrm{B}T$ is dimensionless. Starting from the Eyring equation and rearranging:
+An alternative, dimensionally consistent, approach is to plot $\ln(kh/k_\mathrm{B}T)$ versus $1/T$, where $kh/k_\mathrm{B}T$ is dimensionless. Starting from the Eyring equation and rearranging:
 
 \begin{equation}
-\ln\left(\frac{kh}{k_\mathrm{B}T}\right) = \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}
+\ln\left(\frac{kh}{k_\mathrm{B}T}\right) = \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{R}\frac{1}{T}
 \end{equation}
 
 This gives slope = $-\Delta H^\ddagger/R$ and intercept = $\Delta S^\ddagger/R$ directly, with no need for the $\ln(k_\mathrm{B}/h)$ correction.
@@ -143,12 +143,12 @@ This gives slope = $-\Delta H^\ddagger/R$ and intercept = $\Delta S^\ddagger/R$ 
 The two forms are related by a constant:
 
 \begin{equation}
-\ln\left(\frac{k}{T}\right) = \ln\left(\frac{kh}{k_\mathrm{B}T}\right) - \ln\left(\frac{h}{k_\mathrm{B}}\right) = \ln\left(\frac{kh}{k_\mathrm{B}T}\right) + \ln\left(\frac{k_\mathrm{B}}{h}\right)
+\ln\left(\frac{kh}{k_\mathrm{B}T}\right) = \ln\left(\frac{k}{T}\frac{h}{k_\mathrm{B}}\right) =  \ln\left(\frac{k}{T}\right) + \ln\left(\frac{h}{k_\mathrm{B}}\right) = \ln\left(\frac{k}{T}\right) - \ln\left(\frac{k_\mathrm{B}}{h}\right)
 \end{equation}
 
-Both forms give **identical slopes** (and hence identical $-\Delta H^\ddagger$ values). The intercepts differ by exactly $\ln(k_\mathrm{B}/h)$ = 23.76. For the conventional form, the intercept is $\ln(k_\mathrm{B}/h) + \Delta S^\ddagger/R$, which is why we must subtract $\ln(k_\mathrm{B}/h)$ when extracting $\Delta S^\ddagger$.
+Both forms give identical slopes (and hence identical $\Delta H^\ddagger$ values). The intercepts differ by exactly $\ln(k_\mathrm{B}/h)$ = 23.76.^[Evaluating $\ln(k_\mathrm{B}/h)$ using $k_\mathrm{B} = 1.381 \times 10^{-23}~\mathrm{J~K^{-1}}$ and $h = 6.626 \times 10^{-34}~\mathrm{J~s}$ gives 23.76. Strictly speaking, both $\ln(k/T)$ and $\ln(k_\mathrm{B}/h)$ are mathematically ill-defined because logarithms require dimensionless arguments. In practice, these expressions involve implicit division by reference quantities with matching units. When we subtract, these implicit references cancel, giving the dimensionless result $\ln(kh/k_\mathrm{B}T)$. The conventional procedure thus produces correct values for $\Delta S^\ddagger$.] For the conventional form, the intercept is $\ln(k_\mathrm{B}/h) + \Delta S^\ddagger/R$, which is why we must subtract $\ln(k_\mathrm{B}/h)$ when extracting $\Delta S^\ddagger$.
 
-In practice, the conventional form $\ln(k/T)$ versus $1/T$ is widely used in textbooks and research papers because it is computationally simpler and easier to use for manual calculations. This conventional plot is what is typically referred to as an "Eyring plot" in the literature. Both activation parameters can be correctly extracted provided we account for the $\ln(k_\mathrm{B}/h)$ offset when determining $\Delta S^\ddagger$.
+In practice, the conventional form $\ln(k/T)$ versus $1/T$ is widely used in textbooks (and exam questions), both for historical reasons, and because it is computationally simpler and easier to use for manual calculations. This conventional plot is what is typically referred to as an "Eyring plot" in the literature. 
 
 ## Effect of Pressure on Rate Coefficients
 
