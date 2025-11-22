@@ -197,7 +197,7 @@ the-power-of-the-comparison
 the-eyring-plot
 deriving-the-linear-form
 extracting-activation-parameters
-a-note-on-dimensional-consistency-in-eyring-plots
+dimensional-consistency-in-eyring-plots
 effect-of-pressure-on-rate-coefficients
 volume-of-activation
 quantitative-treatment

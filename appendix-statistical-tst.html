@@ -218,7 +218,7 @@
 <ul>
 <li class="chapter" data-level="9.2.1" data-path="lecture9.html"><a href="lecture9.html#deriving-the-linear-form"><i class="fa fa-check"></i><b>9.2.1</b> Deriving the Linear Form</a></li>
 <li class="chapter" data-level="9.2.2" data-path="lecture9.html"><a href="lecture9.html#extracting-activation-parameters"><i class="fa fa-check"></i><b>9.2.2</b> Extracting Activation Parameters</a></li>
-<li class="chapter" data-level="9.2.3" data-path="lecture9.html"><a href="lecture9.html#a-note-on-dimensional-consistency-in-eyring-plots"><i class="fa fa-check"></i><b>9.2.3</b> A Note on Dimensional Consistency in Eyring Plots</a></li>
+<li class="chapter" data-level="9.2.3" data-path="lecture9.html"><a href="lecture9.html#dimensional-consistency-in-eyring-plots"><i class="fa fa-check"></i><b>9.2.3</b> Dimensional Consistency in Eyring Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="lecture9.html"><a href="lecture9.html#effect-of-pressure-on-rate-coefficients"><i class="fa fa-check"></i><b>9.3</b> Effect of Pressure on Rate Coefficients</a>
 <ul>
@@ -406,7 +406,7 @@ Q_{\mathrm{C}^\ddagger} = Q^\prime_{\mathrm{C}^\ddagger}q_\mathrm{rc}
 <p><span class="math display">\[\begin{equation}
 q_\mathrm{vib} = \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}}
 \end{equation}\]</span></p>
-<p>As the frequency approaches zero, corresponding to free motion along the reaction coordinate, this becomes:<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a></p>
+<p>As the frequency approaches zero, corresponding to free motion along the reaction coordinate, this becomes:<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a></p>
 <p><span class="math display">\[\begin{equation}
 \lim_{\nu \to 0} q_\mathrm{vib} = \lim_{\nu \to 0} \frac{e^{-h\nu/2k_\mathrm{B}T}}{1 - e^{-h\nu/k_\mathrm{B}T}} = \frac{k_\mathrm{B}T}{h\nu}
 \end{equation}\]</span></p>
@@ -467,8 +467,8 @@ q_\mathrm{vib} \approx \exp(-h\nu/2k_\mathrm{B}T)
 </div>
 <div class="footnotes">
 <hr />
-<ol start="11">
-<li id="fn11"><p>To evaluate this limit, let <span class="math inline">\(x = h\nu/k_\mathrm{B}T\)</span>. As <span class="math inline">\(\nu \to 0\)</span>, <span class="math inline">\(x \to 0\)</span>, and we can use the leading terms of the Taylor expansion <span class="math inline">\(e^{-x} \approx 1 - x\)</span>. The numerator becomes <span class="math inline">\(e^{-x/2} \approx 1 - x/2\)</span> and the denominator becomes <span class="math inline">\(1 - e^{-x} \approx x\)</span>. Thus <span class="math inline">\(q_\mathrm{vib} \approx (1 - x/2)/x = 1/x - 1/2\)</span>. As <span class="math inline">\(x \to 0\)</span>, the <span class="math inline">\(1/x\)</span> term dominates, giving <span class="math inline">\(q_\mathrm{vib} \to k_\mathrm{B}T/h\nu\)</span>.<a href="appendix-statistical-tst.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<ol start="12">
+<li id="fn12"><p>To evaluate this limit, let <span class="math inline">\(x = h\nu/k_\mathrm{B}T\)</span>. As <span class="math inline">\(\nu \to 0\)</span>, <span class="math inline">\(x \to 0\)</span>, and we can use the leading terms of the Taylor expansion <span class="math inline">\(e^{-x} \approx 1 - x\)</span>. The numerator becomes <span class="math inline">\(e^{-x/2} \approx 1 - x/2\)</span> and the denominator becomes <span class="math inline">\(1 - e^{-x} \approx x\)</span>. Thus <span class="math inline">\(q_\mathrm{vib} \approx (1 - x/2)/x = 1/x - 1/2\)</span>. As <span class="math inline">\(x \to 0\)</span>, the <span class="math inline">\(1/x\)</span> term dominates, giving <span class="math inline">\(q_\mathrm{vib} \to k_\mathrm{B}T/h\nu\)</span>.<a href="appendix-statistical-tst.html#fnref12" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
