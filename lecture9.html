@@ -218,6 +218,7 @@
 <ul>
 <li class="chapter" data-level="9.2.1" data-path="lecture9.html"><a href="lecture9.html#deriving-the-linear-form"><i class="fa fa-check"></i><b>9.2.1</b> Deriving the Linear Form</a></li>
 <li class="chapter" data-level="9.2.2" data-path="lecture9.html"><a href="lecture9.html#extracting-activation-parameters"><i class="fa fa-check"></i><b>9.2.2</b> Extracting Activation Parameters</a></li>
+<li class="chapter" data-level="9.2.3" data-path="lecture9.html"><a href="lecture9.html#a-note-on-dimensional-consistency-in-eyring-plots"><i class="fa fa-check"></i><b>9.2.3</b> A Note on Dimensional Consistency in Eyring Plots</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="lecture9.html"><a href="lecture9.html#effect-of-pressure-on-rate-coefficients"><i class="fa fa-check"></i><b>9.3</b> Effect of Pressure on Rate Coefficients</a>
 <ul>
@@ -394,6 +395,21 @@ Figure 9.2: An Eyring plot for experimental rate constant data measured at diffe
 <p>Figure <a href="lecture9.html#fig:fig-eyring-plot">9.2</a> shows an example Eyring plot. The fitted line has slope <span class="math inline">\(-1485.8\)</span> K and intercept <span class="math inline">\(7.6809\)</span>. Using <span class="math inline">\(R = 8.314~\mathrm{J~K^{-1}~mol^{-1}}\)</span>, we can calculate:</p>
 <p><span class="math display">\[\Delta H^{\ddagger} = -(-1485.8~\mathrm{K}) \times 8.314~\mathrm{J~K^{-1}~mol^{-1}} = 12.4~\mathrm{kJ~mol^{-1}}\]</span></p>
 <p>The intercept provides <span class="math inline">\(\Delta S^{\ddagger}\)</span> once we account for the <span class="math inline">\(\ln(k_\mathrm{B}/h)\)</span> term.</p>
+</div>
+<div id="a-note-on-dimensional-consistency-in-eyring-plots" class="section level3 hasAnchor" number="9.2.3">
+<h3><span class="header-section-number">9.2.3</span> A Note on Dimensional Consistency in Eyring Plots<a href="lecture9.html#a-note-on-dimensional-consistency-in-eyring-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The conventional Eyring plot uses <span class="math inline">\(\ln(k/T)\)</span> versus <span class="math inline">\(1/T\)</span>, which has the practical advantage of simplicity—we just divide the rate constant by temperature. However, this creates a dimensional inconsistency: the argument of the natural logarithm should be dimensionless, but <span class="math inline">\(k/T\)</span> has units.</p>
+<p>The rigorous approach plots <span class="math inline">\(\ln(kh/k_\mathrm{B}T)\)</span> versus <span class="math inline">\(1/T\)</span>, where <span class="math inline">\(kh/k_\mathrm{B}T\)</span> is dimensionless. Starting from the Eyring equation and rearranging:</p>
+<p><span class="math display">\[\begin{equation}
+\ln\left(\frac{kh}{k_\mathrm{B}T}\right) = \frac{\Delta S^{\ddagger}}{R} - \frac{\Delta H^{\ddagger}}{RT}
+\end{equation}\]</span></p>
+<p>This gives slope = <span class="math inline">\(-\Delta H^\ddagger/R\)</span> and intercept = <span class="math inline">\(\Delta S^\ddagger/R\)</span> directly, with no need for the <span class="math inline">\(\ln(k_\mathrm{B}/h)\)</span> correction.</p>
+<p>The two forms are related by a constant:</p>
+<p><span class="math display">\[\begin{equation}
+\ln\left(\frac{k}{T}\right) = \ln\left(\frac{kh}{k_\mathrm{B}T}\right) - \ln\left(\frac{h}{k_\mathrm{B}}\right) = \ln\left(\frac{kh}{k_\mathrm{B}T}\right) + \ln\left(\frac{k_\mathrm{B}}{h}\right)
+\end{equation}\]</span></p>
+<p>Both forms give <strong>identical slopes</strong> (and hence identical <span class="math inline">\(-\Delta H^\ddagger\)</span> values). The intercepts differ by exactly <span class="math inline">\(\ln(k_\mathrm{B}/h)\)</span> = 23.76. For the conventional form, the intercept is <span class="math inline">\(\ln(k_\mathrm{B}/h) + \Delta S^\ddagger/R\)</span>, which is why we must subtract $(k_/h) when extracting <span class="math inline">\(\Delta S^\ddagger\)</span>.</p>
+<p>In practice, the conventional form <span class="math inline">\(\ln(k/T)\)</span> versus <span class="math inline">\(1/T\)</span> is widely used in textbooks and research papers because it is computationally simpler and easier to use for manual calculations. This conventional plot is what is typically referred to as an “Eyring plot” in the literature. Both activation parameters can be correctly extracted provided we account for the <span class="math inline">\(\ln(k_\mathrm{B}/h)\)</span> offset when determining <span class="math inline">\(\Delta S^\ddagger\)</span>.</p>
 </div>
 </div>
 <div id="effect-of-pressure-on-rate-coefficients" class="section level2 hasAnchor" number="9.3">
