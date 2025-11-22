@@ -300,7 +300,7 @@ In contrast, when deuterium is substituted at the &beta;-position, the isotope e
 
 Figure \@ref(fig:fig-kie-beta-position) illustrates this effect: the vertical separation between the H and D curves remains approximately constant from reactants through the transition state to products, because the &beta; C–H bonds are spectators that never break.
 
-```{r fig-kie-beta-position, fig.cap="Reaction coordinate diagram for isotopic substitution at the &beta;-position. The C–H and C–D bonds at this position remain intact throughout the reaction. The zero-point energy difference present in the reactants (vertical separation between the orange and blue curves) persists to the transition state, giving ΔE$^\\ddagger$_H ≈ ΔE$^\\ddagger$_D and therefore k$_\\mathrm{H}$/k$_\\mathrm{D}$ ≈ 1. This contrasts with &alpha;-position substitution (Figure \\@ref(fig:fig-kie-reaction-coordinate)) where the C–H bond breaks at the transition state, causing the curves to converge.", out.width='65%', fig.align='center'}
+```{r fig-kie-beta-position, fig.cap="Reaction coordinate diagram for isotopic substitution at the &beta;-position. The C–H and C–D bonds at this position remain intact throughout the reaction. The zero-point energy difference present in the reactants (vertical separation between the orange and blue curves) persists to the transition state, giving ΔE$^\\ddagger$_H ≈ ΔE$^\\ddagger$_D and therefore k$_\\mathrm{H}$/k$_\\mathrm{D}$ ≈ 1. This contrasts with &alpha;-position substitution (Figure \\@ref(fig:fig-kie-reaction-coordinate)) where the C–H bond breaks at the transition state, causing the curves to converge.", out.width='60%', fig.align='center'}
 knitr::include_graphics("lecture_9/figures/kie_beta_position.png")
 ```
 
