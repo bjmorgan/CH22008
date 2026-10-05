@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 9 Applications of Transition State Theory | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
-  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 9 Applications of Transition State Theory | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-11-22" />
+<meta name="date" content="2026-10-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,8 +237,10 @@
 <li class="chapter" data-level="A" data-path="integrating-factor.html"><a href="integrating-factor.html"><i class="fa fa-check"></i><b>A</b> Integrating Factor Method for Consecutive Reactions</a></li>
 <li class="chapter" data-level="B" data-path="appendix-energy.html"><a href="appendix-energy.html"><i class="fa fa-check"></i><b>B</b> Derivation of the Exponential Energy Factor</a>
 <ul>
-<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#the-maxwell-boltzmann-distribution"><i class="fa fa-check"></i><b>B.0.1</b> The Maxwell-Boltzmann Distribution</a></li>
-<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.2</b> Calculating the Fraction with E ≥ E_a</a></li>
+<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#head-on-collision-energy"><i class="fa fa-check"></i><b>B.0.1</b> Head-On Collision Energy</a></li>
+<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#the-distribution-of-head-on-velocities"><i class="fa fa-check"></i><b>B.0.2</b> The Distribution of Head-On Velocities</a></li>
+<li class="chapter" data-level="B.0.3" data-path="appendix-energy.html"><a href="appendix-energy.html#from-velocities-to-energies"><i class="fa fa-check"></i><b>B.0.3</b> From Velocities to Energies</a></li>
+<li class="chapter" data-level="B.0.4" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.4</b> Calculating the Fraction with E ≥ E_a</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="appendix-activation.html"><a href="appendix-activation.html"><i class="fa fa-check"></i><b>C</b> The Relationship Between <span class="math inline">\(\Delta H^\ddagger\)</span> and the <span class="math inline">\(E_\mathrm{a}\)</span></a>
 <ul>
@@ -459,9 +461,9 @@ Figure 9.3: Decomposition of dibutyl peroxide to form two tert-butoxy radicals. 
 <p>As discussed above, temperature and pressure measurements can provide thermodynamic and volumetric information about transition states. A third experimental technique—isotopic substitution—reveals which specific bonds are breaking during reaction.</p>
 <p>Many reactions proceed more slowly when hydrogen is replaced by deuterium. For example, consider this E2 elimination reaction (Figure <a href="lecture9.html#fig:fig-kie-example-reactions">9.4</a>):</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-kie-example-reactions"></span>
-<img src="lecture_9/figures/kie_example_reactions.png" alt="E2 elimination of phenylethyl bromide with sodium ethoxide. The hydrogen (orange, rate constant $k_\mathrm{H}$) and deuterium (blue, rate constant $k_\mathrm{D}$) at the $\alpha$-position are removed during the elimination to form ethanol/deuterated ethanol. Experimentally, $k_\mathrm{H}/k_\mathrm{D}$ = 7.8." width="60%" />
+<img src="lecture_9/figures/kie_example_reactions.png" alt="E2 elimination of phenylethyl bromide with sodium ethoxide. The hydrogen (orange, rate constant $k_\mathrm{H}$) and deuterium (blue, rate constant $k_\mathrm{D}$) at the $\beta$-position (the carbon next to the one bearing Br) are removed during the elimination to form ethanol/deuterated ethanol. Experimentally, $k_\mathrm{H}/k_\mathrm{D}$ = 7.8." width="60%" />
 <p class="caption">
-Figure 9.4: E2 elimination of phenylethyl bromide with sodium ethoxide. The hydrogen (orange, rate constant <span class="math inline">\(k_\mathrm{H}\)</span>) and deuterium (blue, rate constant <span class="math inline">\(k_\mathrm{D}\)</span>) at the <span class="math inline">\(\alpha\)</span>-position are removed during the elimination to form ethanol/deuterated ethanol. Experimentally, <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D}\)</span> = 7.8.
+Figure 9.4: E2 elimination of phenylethyl bromide with sodium ethoxide. The hydrogen (orange, rate constant <span class="math inline">\(k_\mathrm{H}\)</span>) and deuterium (blue, rate constant <span class="math inline">\(k_\mathrm{D}\)</span>) at the <span class="math inline">\(\beta\)</span>-position (the carbon next to the one bearing Br) are removed during the elimination to form ethanol/deuterated ethanol. Experimentally, <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D}\)</span> = 7.8.
 </p>
 </div>
 <p>Experimentally, we find <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} = 7.8\)</span>—the deuterated compound reacts nearly eight times more slowly than its hydrogen analogue.</p>
@@ -471,19 +473,19 @@ Figure 9.4: E2 elimination of phenylethyl bromide with sodium ethoxide. The hydr
 <p>The explanation lies in the zero-point vibrational energy. While both molecules move on the same potential energy surface, the vibrational energy levels on that surface depend on mass. This means the ground state energy—the energy of the <span class="math inline">\(v=0\)</span> vibrational level—is different for C–H and C–D bonds. When we account for these zero-point energy differences, the activation barriers measured from the ground states differ even though the potential energy surface is identical for both molecules.</p>
 <p>To understand how mass affects vibrational energy, we can model the C–H and C–D bonds as harmonic oscillators. For a harmonic oscillator, the vibrational energy levels are given by:</p>
 <p><span class="math display">\[\begin{equation}
-E_v = \left(v + \frac{1}{2}\right)\sqrt{\frac{k}{\mu}}
+E_v = \left(v + \frac{1}{2}\right)\hbar\sqrt{\frac{k}{\mu}}
 \end{equation}\]</span></p>
-<p>where <span class="math inline">\(v\)</span> is the vibrational quantum number, <span class="math inline">\(k\)</span> is the force constant (determined by the strength of the bond), and <span class="math inline">\(\mu\)</span> is the reduced mass:</p>
+<p>where <span class="math inline">\(v\)</span> is the vibrational quantum number, <span class="math inline">\(\hbar = h/2\pi\)</span> is the reduced Planck constant, <span class="math inline">\(k\)</span> is the force constant (determined by the strength of the bond), and <span class="math inline">\(\mu\)</span> is the reduced mass:</p>
 <p><span class="math display">\[\begin{equation}
 \mu = \frac{m_1m_2}{m_1 + m_2}
 \end{equation}\]</span></p>
 <p>Even in the ground vibrational state (<span class="math inline">\(v=0\)</span>), the system retains energy—the zero-point energy. For a C–H bond where carbon is much heavier than hydrogen, we can approximate <span class="math inline">\(\mu \approx m_\mathrm{H}\)</span>, giving:</p>
 <p><span class="math display">\[\begin{equation}
-E_\mathrm{ZPE}(\mathrm{C{-}H}) \approx \frac{1}{2}\sqrt{\frac{k}{m_\mathrm{H}}}
+E_\mathrm{ZPE}(\mathrm{C{-}H}) \approx \frac{1}{2}\hbar\sqrt{\frac{k}{m_\mathrm{H}}}
 \end{equation}\]</span></p>
 <p>When we substitute deuterium, where <span class="math inline">\(m_\mathrm{D} \approx 2m_\mathrm{H}\)</span>, the reduced mass approximately doubles. This changes the zero-point energy:</p>
 <p><span class="math display">\[\begin{equation}
-E_\mathrm{ZPE}(\mathrm{C{-}D}) \approx \frac{1}{2}\sqrt{\frac{k}{2m_\mathrm{H}}} = \frac{1}{\sqrt{2}} \times E_\mathrm{ZPE}(\mathrm{C{-}H})
+E_\mathrm{ZPE}(\mathrm{C{-}D}) \approx \frac{1}{2}\hbar\sqrt{\frac{k}{2m_\mathrm{H}}} = \frac{1}{\sqrt{2}} \times E_\mathrm{ZPE}(\mathrm{C{-}H})
 \end{equation}\]</span></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-kie-energy-levels"></span>
 <img src="lecture_9/figures/kie_energy_levels.png" alt="Comparison of vibrational energy levels for C&amp;ndash;H and C&amp;ndash;D bonds. Both bonds vibrate on identical potential energy curves (same force constant $k$). The heavier C&amp;ndash;D bond (blue, right) has more closely spaced energy levels than the lighter C&amp;ndash;H bond (orange, left), resulting in lower zero-point energy by a factor of $1/\sqrt{2}$." width="85%" />
@@ -529,18 +531,18 @@ Figure 9.6: Reaction coordinate diagram showing how zero-point energy difference
 </ol>
 This makes kinetic isotope effects a powerful tool for investigating reaction mechanisms. Consider the contrasting E2 elimination reactions shown in Figure <a href="lecture9.html#fig:fig-kie-comparison">9.7</a>.
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-kie-comparison"></span>
-<img src="lecture_9/figures/kie_comparison.png" alt="Comparison of kinetic isotope effects in E2 eliminations. Top: When H/D is at the $\alpha$-position (being removed during elimination), a large kinetic isotope effect is observed ($k_\mathrm{H}/k_\mathrm{D}$ = 7.8), indicating the C&amp;ndash;H bond is almost completely broken at the transition state. Bottom: When H/D is at the $\beta$-position (not involved in the elimination), the kinetic isotope effect is negligible ($k_\mathrm{H}/k_\mathrm{D}$ = 1.09), indicating these C&amp;ndash;H bonds remain essentially intact at the transition state." width="80%" />
+<img src="lecture_9/figures/kie_comparison.png" alt="Comparison of kinetic isotope effects in E2 eliminations. Top: When H/D is at the $\beta$-position (being removed during elimination), a large kinetic isotope effect is observed ($k_\mathrm{H}/k_\mathrm{D}$ = 7.8), indicating the C&amp;ndash;H bond is almost completely broken at the transition state. Bottom: When H/D is at the $\alpha$-position (the carbon bearing Br, whose C&amp;ndash;H bonds are not broken), the kinetic isotope effect is negligible ($k_\mathrm{H}/k_\mathrm{D}$ = 1.09), indicating these C&amp;ndash;H bonds remain essentially intact at the transition state." width="80%" />
 <p class="caption">
-Figure 9.7: Comparison of kinetic isotope effects in E2 eliminations. Top: When H/D is at the <span class="math inline">\(\alpha\)</span>-position (being removed during elimination), a large kinetic isotope effect is observed (<span class="math inline">\(k_\mathrm{H}/k_\mathrm{D}\)</span> = 7.8), indicating the C–H bond is almost completely broken at the transition state. Bottom: When H/D is at the <span class="math inline">\(\beta\)</span>-position (not involved in the elimination), the kinetic isotope effect is negligible (<span class="math inline">\(k_\mathrm{H}/k_\mathrm{D}\)</span> = 1.09), indicating these C–H bonds remain essentially intact at the transition state.
+Figure 9.7: Comparison of kinetic isotope effects in E2 eliminations. Top: When H/D is at the <span class="math inline">\(\beta\)</span>-position (being removed during elimination), a large kinetic isotope effect is observed (<span class="math inline">\(k_\mathrm{H}/k_\mathrm{D}\)</span> = 7.8), indicating the C–H bond is almost completely broken at the transition state. Bottom: When H/D is at the <span class="math inline">\(\alpha\)</span>-position (the carbon bearing Br, whose C–H bonds are not broken), the kinetic isotope effect is negligible (<span class="math inline">\(k_\mathrm{H}/k_\mathrm{D}\)</span> = 1.09), indicating these C–H bonds remain essentially intact at the transition state.
 </p>
 </div>
-<p>When deuterium is substituted at the α-position—the site where the C–H bond is removed during elimination—we observe <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} = 7.8\)</span>. This large isotope effect tells us that the C–H bond at this position is almost completely broken at the transition state. The magnitude, close to our predicted value of ~7, indicates that the full zero-point energy difference between C–H and C–D bonds affects the activation barrier.</p>
-<p>In contrast, when deuterium is substituted at the β-position, the isotope effect is negligible: <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} = 1.09\)</span>. This small value shows that the C–H bonds at the β-position remain essentially intact throughout the reaction—they are spectators that do not participate in the rate-determining step. The C–H/C–D zero-point energy difference has virtually no effect on the activation barrier because these bonds are not breaking.</p>
-<p>Figure <a href="lecture9.html#fig:fig-kie-beta-position">9.8</a> illustrates this effect: the vertical separation between the H and D curves remains approximately constant from reactants through the transition state to products, because the β C–H bonds are spectators that never break.</p>
+<p>Positions are labelled relative to the carbon bearing the leaving group (Br): that carbon is the α-position, and its neighbour is the β-position. When deuterium is substituted at the β-position—the site where the C–H bond is removed during elimination—we observe <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} = 7.8\)</span>. This large isotope effect tells us that the C–H bond at this position is almost completely broken at the transition state. The magnitude, close to our predicted value of ~7, indicates that the full zero-point energy difference between C–H and C–D bonds affects the activation barrier.</p>
+<p>In contrast, when deuterium is substituted at the α-position, the isotope effect is negligible: <span class="math inline">\(k_\mathrm{H}/k_\mathrm{D} = 1.09\)</span>. This small value shows that the C–H bonds at the α-position remain essentially intact throughout the reaction—they are spectators that do not participate in the rate-determining step. The C–H/C–D zero-point energy difference has virtually no effect on the activation barrier because these bonds are not breaking.</p>
+<p>Figure <a href="lecture9.html#fig:fig-kie-beta-position">9.8</a> illustrates this effect: the vertical separation between the H and D curves remains approximately constant from reactants through the transition state to products, because the α C–H bonds are spectators that never break.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-kie-beta-position"></span>
-<img src="lecture_9/figures/kie_beta_position.png" alt="Reaction coordinate diagram for isotopic substitution at the &amp;beta;-position. The C–H and C–D bonds at this position remain intact throughout the reaction. The zero-point energy difference present in the reactants (vertical separation between the orange and blue curves) persists to the transition state, giving ΔE$^\ddagger$_H ≈ ΔE$^\ddagger$_D and therefore k$_\mathrm{H}$/k$_\mathrm{D}$ ≈ 1. This contrasts with &amp;alpha;-position substitution (Figure \@ref(fig:fig-kie-reaction-coordinate)) where the C–H bond breaks at the transition state, causing the curves to converge." width="60%" />
+<img src="lecture_9/figures/kie_beta_position.png" alt="Reaction coordinate diagram for isotopic substitution at the &amp;alpha;-position. The C–H and C–D bonds at this position remain intact throughout the reaction. The zero-point energy difference present in the reactants (vertical separation between the orange and blue curves) persists to the transition state, giving ΔE$^\ddagger$_H ≈ ΔE$^\ddagger$_D and therefore k$_\mathrm{H}$/k$_\mathrm{D}$ ≈ 1. This contrasts with &amp;beta;-position substitution (Figure \@ref(fig:fig-kie-reaction-coordinate)) where the C–H bond breaks at the transition state, causing the curves to converge." width="60%" />
 <p class="caption">
-Figure 9.8: Reaction coordinate diagram for isotopic substitution at the β-position. The C–H and C–D bonds at this position remain intact throughout the reaction. The zero-point energy difference present in the reactants (vertical separation between the orange and blue curves) persists to the transition state, giving ΔE<span class="math inline">\(^\ddagger\)</span>_H ≈ ΔE<span class="math inline">\(^\ddagger\)</span>_D and therefore k<span class="math inline">\(_\mathrm{H}\)</span>/k<span class="math inline">\(_\mathrm{D}\)</span> ≈ 1. This contrasts with α-position substitution (Figure <a href="lecture9.html#fig:fig-kie-reaction-coordinate">9.6</a>) where the C–H bond breaks at the transition state, causing the curves to converge.
+Figure 9.8: Reaction coordinate diagram for isotopic substitution at the α-position. The C–H and C–D bonds at this position remain intact throughout the reaction. The zero-point energy difference present in the reactants (vertical separation between the orange and blue curves) persists to the transition state, giving ΔE<span class="math inline">\(^\ddagger\)</span>_H ≈ ΔE<span class="math inline">\(^\ddagger\)</span>_D and therefore k<span class="math inline">\(_\mathrm{H}\)</span>/k<span class="math inline">\(_\mathrm{D}\)</span> ≈ 1. This contrasts with β-position substitution (Figure <a href="lecture9.html#fig:fig-kie-reaction-coordinate">9.6</a>) where the C–H bond breaks at the transition state, causing the curves to converge.
 </p>
 </div>
 <p>These contrasting results demonstrate the mechanistic power of kinetic isotope effects. By measuring how the reaction rate changes upon isotopic substitution at different positions in the molecule, we can determine which bonds are breaking, which remain intact, and the extent of bond cleavage at the transition state. This provides detailed mechanistic information that would be difficult to obtain by other experimental techniques.</p>

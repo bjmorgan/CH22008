@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 8 Estimating Pre-exponential Factors | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
-  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 8 Estimating Pre-exponential Factors | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-11-22" />
+<meta name="date" content="2026-10-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,8 +237,10 @@
 <li class="chapter" data-level="A" data-path="integrating-factor.html"><a href="integrating-factor.html"><i class="fa fa-check"></i><b>A</b> Integrating Factor Method for Consecutive Reactions</a></li>
 <li class="chapter" data-level="B" data-path="appendix-energy.html"><a href="appendix-energy.html"><i class="fa fa-check"></i><b>B</b> Derivation of the Exponential Energy Factor</a>
 <ul>
-<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#the-maxwell-boltzmann-distribution"><i class="fa fa-check"></i><b>B.0.1</b> The Maxwell-Boltzmann Distribution</a></li>
-<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.2</b> Calculating the Fraction with E ≥ E_a</a></li>
+<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#head-on-collision-energy"><i class="fa fa-check"></i><b>B.0.1</b> Head-On Collision Energy</a></li>
+<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#the-distribution-of-head-on-velocities"><i class="fa fa-check"></i><b>B.0.2</b> The Distribution of Head-On Velocities</a></li>
+<li class="chapter" data-level="B.0.3" data-path="appendix-energy.html"><a href="appendix-energy.html#from-velocities-to-energies"><i class="fa fa-check"></i><b>B.0.3</b> From Velocities to Energies</a></li>
+<li class="chapter" data-level="B.0.4" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.4</b> Calculating the Fraction with E ≥ E_a</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="appendix-activation.html"><a href="appendix-activation.html"><i class="fa fa-check"></i><b>C</b> The Relationship Between <span class="math inline">\(\Delta H^\ddagger\)</span> and the <span class="math inline">\(E_\mathrm{a}\)</span></a>
 <ul>
@@ -426,7 +428,7 @@ Figure 8.3: Systematic accounting of degrees of freedom changes for the reaction
 <p><span class="math display">\[= 1 \times 10^8~\mathrm{dm^3~mol^{-1}~s^{-1}}\]</span></p>
 <p>As in our atomic example, the factor of <i>N</i><sub>A</sub> converts to a per-mole basis, while the factor of 10<sup>3</sup> handles the conversion from m<sup>3</sup> to dm<sup>3</sup> units.</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-polyatomic-dof-counting"></span>
-<img src="lecture_8/figures/polyatomic_dof_counting.png" alt="Degree of freedom accounting for a reaction between a diatomic molecule (&lt;i&gt;N&lt;/i&gt; = 2) and a four-atom molecule (&lt;i&gt;N&lt;/i&gt; = 4) forming a six-atom activated complex (&lt;i&gt;N&lt;/i&gt; = 6). The activated complex has 12 vibrational modes (3&lt;i&gt;N&lt;/i&gt;&amp;minus;6 for a non-linear molecule), but when calculating the pre-exponential factor, we use only 11 modes in the entropy expression because one vibrational mode—motion along the reaction coordinate—is already included in the $k^\ddagger$ term." width="75%" />
+<img src="lecture_8/figures/polyatomic_dof_counting.png" alt="Degree of freedom accounting for a reaction between a diatomic molecule (N = 2) and a four-atom molecule (N = 4) forming a six-atom activated complex (N = 6). The activated complex has 12 vibrational modes (3N&amp;minus;6 for a non-linear molecule), but when calculating the pre-exponential factor, we use only 11 modes in the entropy expression because one vibrational mode—motion along the reaction coordinate—is already included in the $k^\ddagger$ term." width="75%" />
 <p class="caption">
 Figure 8.4: Degree of freedom accounting for a reaction between a diatomic molecule (<i>N</i> = 2) and a four-atom molecule (<i>N</i> = 4) forming a six-atom activated complex (<i>N</i> = 6). The activated complex has 12 vibrational modes (3<i>N</i>−6 for a non-linear molecule), but when calculating the pre-exponential factor, we use only 11 modes in the entropy expression because one vibrational mode—motion along the reaction coordinate—is already included in the <span class="math inline">\(k^\ddagger\)</span> term.
 </p>

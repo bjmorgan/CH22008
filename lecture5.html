@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 5 Collision Theory | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
-  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 5 Collision Theory | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-11-22" />
+<meta name="date" content="2026-10-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,8 +237,10 @@
 <li class="chapter" data-level="A" data-path="integrating-factor.html"><a href="integrating-factor.html"><i class="fa fa-check"></i><b>A</b> Integrating Factor Method for Consecutive Reactions</a></li>
 <li class="chapter" data-level="B" data-path="appendix-energy.html"><a href="appendix-energy.html"><i class="fa fa-check"></i><b>B</b> Derivation of the Exponential Energy Factor</a>
 <ul>
-<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#the-maxwell-boltzmann-distribution"><i class="fa fa-check"></i><b>B.0.1</b> The Maxwell-Boltzmann Distribution</a></li>
-<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.2</b> Calculating the Fraction with E ≥ E_a</a></li>
+<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#head-on-collision-energy"><i class="fa fa-check"></i><b>B.0.1</b> Head-On Collision Energy</a></li>
+<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#the-distribution-of-head-on-velocities"><i class="fa fa-check"></i><b>B.0.2</b> The Distribution of Head-On Velocities</a></li>
+<li class="chapter" data-level="B.0.3" data-path="appendix-energy.html"><a href="appendix-energy.html#from-velocities-to-energies"><i class="fa fa-check"></i><b>B.0.3</b> From Velocities to Energies</a></li>
+<li class="chapter" data-level="B.0.4" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.4</b> Calculating the Fraction with E ≥ E_a</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="appendix-activation.html"><a href="appendix-activation.html"><i class="fa fa-check"></i><b>C</b> The Relationship Between <span class="math inline">\(\Delta H^\ddagger\)</span> and the <span class="math inline">\(E_\mathrm{a}\)</span></a>
 <ul>
@@ -373,18 +375,19 @@ Figure 5.1: Collision geometry in the reference frame of molecule A. Molecule A 
 <div id="sec:energy-requirement" class="section level3 hasAnchor" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Energetic Requirements for Reaction<a href="lecture5.html#sec:energy-requirement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Not every collision between molecules A and B leads to reaction. The collision frequency <span class="math inline">\(Z&#39;\)</span> tells us how often molecules encounter each other, but only a fraction of these collisions have sufficient energy to overcome the activation barrier and form products.</p>
-<p>In collision theory, we assume that molecules must possess a minimum relative kinetic energy <span class="math inline">\(E_\mathrm{a}\)</span> (the activation energy) for reaction to occur. This threshold energy is needed to break bonds and rearrange atoms during the collision. The question then becomes: what fraction of molecular collisions have relative kinetic energy greater than or equal to <span class="math inline">\(E_\mathrm{a}\)</span>?</p>
-The answer comes from the Maxwell-Boltzmann distribution of molecular speeds. In a gas at temperature <span class="math inline">\(T\)</span>, the relative kinetic energies of colliding molecules follow a probability distribution that depends on temperature, as shown in Figure <a href="lecture5.html#fig:fig-maxwell-boltzmann">5.2</a>.
+<p>In collision theory, we assume that colliding molecules must have a minimum energy <span class="math inline">\(E_\mathrm{a}\)</span> (the activation energy) for reaction to occur. This threshold energy is needed to break bonds and rearrange atoms during the collision. The question then becomes: what fraction of collisions have enough energy to react?</p>
+<p>Not all of the kinetic energy of a colliding pair is available to drive a reaction. When two molecules collide, only the part of their relative motion along the line joining their centres pushes them together; motion perpendicular to this line carries the molecules past each other. A glancing collision is therefore less effective than a head-on collision at the same speed. The energy that counts is the <em>head-on collision energy</em>, and for reaction this must be at least <span class="math inline">\(E_\mathrm{a}\)</span>.</p>
+Using the Maxwell-Boltzmann distribution of molecular speeds, we can work out how head-on collision energies are distributed across all the collisions in a gas at temperature <span class="math inline">\(T\)</span>. The result is a simple exponential distribution,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> shown for two temperatures in Figure <a href="lecture5.html#fig:fig-maxwell-boltzmann">5.2</a>.
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-maxwell-boltzmann"></span>
-<img src="lecture_5/figures/maxwell_boltzmann.png" alt="Maxwell-Boltzmann distribution of relative kinetic energies for molecular collisions at two temperatures. The shaded regions show the fraction of collisions with energy $E \geq E_\mathrm{a}$. At higher temperature (orange, 600 K), the distribution broadens and shifts to higher energies, increasing the fraction of collisions with sufficient energy to react. The fraction of successful collisions is given by $P(E \geq E_\mathrm{a}) = \exp(-E_\mathrm{a}/RT)$." width="55%" />
+<img src="lecture_5/figures/maxwell_boltzmann.png" alt="Distribution of head-on collision energies across all collisions in a gas at two temperatures. The head-on collision energy is the part of the relative kinetic energy along the line joining the centres of the colliding molecules. The shaded regions show the collisions with $E \geq E_\mathrm{a}$, which have enough energy to react. At higher temperature (orange, 600 K), the distribution decays more slowly with energy, increasing the fraction of collisions with enough energy to react. The shaded area is $P(E \geq E_\mathrm{a}) = \exp(-E_\mathrm{a}/RT)$." width="55%" />
 <p class="caption">
-Figure 5.2: Maxwell-Boltzmann distribution of relative kinetic energies for molecular collisions at two temperatures. The shaded regions show the fraction of collisions with energy <span class="math inline">\(E \geq E_\mathrm{a}\)</span>. At higher temperature (orange, 600 K), the distribution broadens and shifts to higher energies, increasing the fraction of collisions with sufficient energy to react. The fraction of successful collisions is given by <span class="math inline">\(P(E \geq E_\mathrm{a}) = \exp(-E_\mathrm{a}/RT)\)</span>.
+Figure 5.2: Distribution of head-on collision energies across all collisions in a gas at two temperatures. The head-on collision energy is the part of the relative kinetic energy along the line joining the centres of the colliding molecules. The shaded regions show the collisions with <span class="math inline">\(E \geq E_\mathrm{a}\)</span>, which have enough energy to react. At higher temperature (orange, 600 K), the distribution decays more slowly with energy, increasing the fraction of collisions with enough energy to react. The shaded area is <span class="math inline">\(P(E \geq E_\mathrm{a}) = \exp(-E_\mathrm{a}/RT)\)</span>.
 </p>
 </div>
 <p>The figure shows two key features:</p>
 <ol style="list-style-type: decimal">
-<li><p>Temperature dependence: At higher temperature (orange curve, 600 K), the distribution is broader and shifted to higher energies compared to lower temperature (blue curve, 300 K). This means a larger fraction of collisions have energy exceeding <span class="math inline">\(E_\mathrm{a}\)</span>.</p></li>
-<li><p>Exponential tail: The shaded region represents collisions with <span class="math inline">\(E \geq E_\mathrm{a}\)</span>. The fraction of collisions in this high-energy tail follows directly from the kinetic theory of gases :<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>Temperature dependence: At higher temperature (orange curve, 600 K), the distribution decays more slowly with energy than at lower temperature (blue curve, 300 K). This means a larger fraction of collisions have energy exceeding <span class="math inline">\(E_\mathrm{a}\)</span>.</p></li>
+<li><p>Exponential tail: The shaded region represents collisions with <span class="math inline">\(E \geq E_\mathrm{a}\)</span>. The fraction of collisions in this high-energy tail is:</p></li>
 </ol>
 <p><span class="math display">\[P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
 </div>
@@ -505,7 +508,7 @@ k = A_0\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
 \end{equation}\]</span></p>
 <p>This comparison provides physical insight into the meaning of the Arrhenius parameters:</p>
 <ol style="list-style-type: decimal">
-<li>The activation energy <span class="math inline">\(E_\mathrm{a}\)</span> in the Arrhenius equation can be interpreted as the minimum relative kinetic energy that colliding molecules must possess for reaction to occur. This threshold energy is needed to overcome the potential energy barrier to reaction.</li>
+<li>The activation energy <span class="math inline">\(E_\mathrm{a}\)</span> in the Arrhenius equation can be interpreted as the minimum head-on collision energy that colliding molecules must have for reaction to occur. This threshold energy is needed to overcome the potential energy barrier to reaction.</li>
 <li>The pre-exponential factor <span class="math inline">\(A_0\)</span> represents a normalized collision frequency. The collision theory expression shows that this frequency depends on:</li>
 </ol>
 <ul>
@@ -529,7 +532,7 @@ k = A_0\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>The derivation of this result from the Maxwell-Boltzmann distribution is given in Appendix <a href="appendix-energy.html#appendix-energy">B</a>.<a href="lecture5.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>The derivation of this distribution is given in Appendix <a href="appendix-energy.html#appendix-energy">B</a>.<a href="lecture5.html#fnref1" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

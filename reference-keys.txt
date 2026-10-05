@@ -208,7 +208,9 @@ from-zero-point-energy-to-activation-energy
 using-kinetic-isotope-effects-to-probe-reaction-mechanisms
 integrating-factor
 appendix-energy
-the-maxwell-boltzmann-distribution
+head-on-collision-energy
+the-distribution-of-head-on-velocities
+from-velocities-to-energies
 calculating-the-fraction-with-e-e_a
 appendix-activation
 temperature-dependence-of-rate-constants

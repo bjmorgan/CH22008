@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 1 Chemical Kinetics | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
-  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 1 Chemical Kinetics | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-11-22" />
+<meta name="date" content="2026-10-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,8 +237,10 @@
 <li class="chapter" data-level="A" data-path="integrating-factor.html"><a href="integrating-factor.html"><i class="fa fa-check"></i><b>A</b> Integrating Factor Method for Consecutive Reactions</a></li>
 <li class="chapter" data-level="B" data-path="appendix-energy.html"><a href="appendix-energy.html"><i class="fa fa-check"></i><b>B</b> Derivation of the Exponential Energy Factor</a>
 <ul>
-<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#the-maxwell-boltzmann-distribution"><i class="fa fa-check"></i><b>B.0.1</b> The Maxwell-Boltzmann Distribution</a></li>
-<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.2</b> Calculating the Fraction with E ≥ E_a</a></li>
+<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#head-on-collision-energy"><i class="fa fa-check"></i><b>B.0.1</b> Head-On Collision Energy</a></li>
+<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#the-distribution-of-head-on-velocities"><i class="fa fa-check"></i><b>B.0.2</b> The Distribution of Head-On Velocities</a></li>
+<li class="chapter" data-level="B.0.3" data-path="appendix-energy.html"><a href="appendix-energy.html#from-velocities-to-energies"><i class="fa fa-check"></i><b>B.0.3</b> From Velocities to Energies</a></li>
+<li class="chapter" data-level="B.0.4" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.4</b> Calculating the Fraction with E ≥ E_a</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="appendix-activation.html"><a href="appendix-activation.html"><i class="fa fa-check"></i><b>C</b> The Relationship Between <span class="math inline">\(\Delta H^\ddagger\)</span> and the <span class="math inline">\(E_\mathrm{a}\)</span></a>
 <ul>
@@ -326,10 +328,10 @@ We express reaction rates mathematically as derivatives of the form <span class=
 \mathrm{A} \longrightarrow 2\mathrm{B}
 \end{equation}\]</span></p>
 <p>the product, B, is formed at twice the rate that the reactant, A, is consumed. Hence,</p>
-<p><span class="math display">\[2\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\]</span></p>
+<p><span class="math display">\[-2\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\]</span></p>
 <p>In general, we can define an “overall” reaction rate <span class="math inline">\(\nu\)</span> that is related to the rates of change of reactants and products by</p>
 <p><span class="math display">\[\nu = \frac{1}{n_\mathrm{X}}\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}\]</span></p>
-<p>where <span class="math inline">\(n_\mathrm{X}\)</span> is the stoichiometric coefficient of species <span class="math inline">\(X\)</span> in the reaction equation.</p>
+<p>where <span class="math inline">\(n_\mathrm{X}\)</span> is the stoichiometric coefficient of species <span class="math inline">\(X\)</span> in the reaction equation, taken as negative for reactants and positive for products, so that <span class="math inline">\(\nu\)</span> is positive. For the reaction above, <span class="math inline">\(\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{1}{2}\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\)</span>.</p>
 
 </div>
 <div id="simple-rate-equations" class="section level2 hasAnchor" number="1.3">
@@ -428,7 +430,7 @@ Figure 1.4: If we know the concentration of a reactant or product as a function 
 \end{equation}\]</span></p>
 <p>To derive the corresponding integrated rate law, we rearrange this to form an integral equation:</p>
 <p><span class="math display">\[\begin{equation}
-\int_{[\mathrm{A}]_0}^{\mathrm[A]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]}\,\mathrm{d}[\mathrm{A}] = \int_0^t -k\,\mathrm{d}t
+\int_{[\mathrm{A}]_0}^{[\mathrm{A}]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]} = \int_0^t -k\,\mathrm{d}t
 \end{equation}\]</span></p>
 <p>where the limits of the integral with respect to concentration of A are between the concentration at time <span class="math inline">\(0\)</span> (<span class="math inline">\([\mathrm{A}]_0\)</span>) and the concentration at time <span class="math inline">\(t\)</span> (<span class="math inline">\([\mathrm{A}]_t\)</span>), and the limits of the integral with respect to time are between <span class="math inline">\(t=0\)</span> and <span class="math inline">\(t=t\)</span>.</p>
 <p>Integrating, using the integral <span class="math inline">\(\int \frac{1}{x}\,\mathrm{d}x = \ln x\)</span>, gives</p>
@@ -464,15 +466,15 @@ Figure 1.5: Concentrations as a function of time for a first-order process <span
 \end{equation}\]</span></p>
 <p>As for first-order reactions, above, we can derive the corresponding integrated rate law for <span class="math inline">\([\mathrm{A}]_t\)</span> by rearranging Eqn. <a href="lecture1.html#eq:secondorderdiff">(1.6)</a> and then integrating:</p>
 <p><span class="math display">\[\begin{equation}
-\int_{[\mathrm{A}]_0}^{\mathrm[A]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]^2}\,\mathrm{d}[\mathrm{A}] = \int_0^t -k\,\mathrm{d}t
+\int_{[\mathrm{A}]_0}^{[\mathrm{A}]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]^2} = \int_0^t -2k\,\mathrm{d}t
 \end{equation}\]</span></p>
 <p>Integrating, using the integral <span class="math inline">\(\int \frac{1}{x^2}\,\mathrm{d}x = -\frac{1}{x}\)</span>, gives</p>
 <p><span class="math display">\[\begin{equation}
-\frac{1}{[\mathrm{A}]_t} - \frac{1}{[\mathrm{A}]_0} = -kt
+\frac{1}{[\mathrm{A}]_t} - \frac{1}{[\mathrm{A}]_0} = 2kt
 \end{equation}\]</span></p>
 <p>which can be rearranged as</p>
 <p><span class="math display">\[\begin{equation}
-[\mathrm{A}]_t = \frac{[\mathrm{A}]_0}{1 + kt[\mathrm{A}]_0}
+[\mathrm{A}]_t = \frac{[\mathrm{A}]_0}{1 + 2kt[\mathrm{A}]_0}
 \end{equation}\]</span></p>
 <p>To obtain an expression for <span class="math inline">\([\mathrm{B}]_t\)</span>, we again use our knowledge of the reaction stoichiometry and initial conditions: we start with only the reactant A, and at any stage of the reaction, the amount of B formed is equal to half the amount of A consumed.</p>
 <p><span class="math display">\[\begin{equation}
@@ -480,11 +482,11 @@ Figure 1.5: Concentrations as a function of time for a first-order process <span
 \end{equation}\]</span></p>
 <p>And, so</p>
 <p><span class="math display">\[\begin{equation}
-[\mathrm{B}]_t = \frac{[\mathrm{A}]_0}{2}\left(1 - \frac{1}{1+kt[\mathrm{A}_0]}\right)
+[\mathrm{B}]_t = \frac{[\mathrm{A}]_0}{2}\left(1 - \frac{1}{1+2kt[\mathrm{A}]_0}\right)
 \end{equation}\]</span></p>
 <p>which rearranges to</p>
 <p><span class="math display">\[\begin{equation}
-[\mathrm{B}]_t = \frac{kt[\mathrm{A}]_0^2}{2(1 + kt[\mathrm{A}]_0)}
+[\mathrm{B}]_t = \frac{kt[\mathrm{A}]_0^2}{1 + 2kt[\mathrm{A}]_0}
 \end{equation}\]</span></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-second-order-example"></span>
 <img src="lecture_1/figures/second_order_example.png" alt="Concentrations as a function of time for a second-order process $2\mathrm{A} \longrightarrow \mathrm{B}$. The dashed line shows the sum $[\mathrm{A}]_t + [\mathrm{B}]_t$." width="45%" />
@@ -494,16 +496,16 @@ Figure 1.6: Concentrations as a function of time for a second-order process <spa
 </div>
 <div id="aside-why-does-our-second-order-rate-equation-include-a-factor-of-2" class="section level4 unnumbered hasAnchor">
 <h4>Aside: Why Does Our Second-Order Rate Equation Include a Factor of 2?<a href="lecture1.html#aside-why-does-our-second-order-rate-equation-include-a-factor-of-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p>Let us briefly examine the origin of the factor of 2 on the right-hand side of Eqn. @ref{eq:secondorderdiff}. Writing the rate equation for <span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span> in this way is consistent with the convention in Section <a href="lecture1.html#sec:reaction-rates">1.2</a>, that the overall rate of a reaction is related to the rates of change of specific reactants or products by</p>
+<p>Let us briefly examine the origin of the factor of 2 on the right-hand side of Eqn. <a href="lecture1.html#eq:secondorderdiff">(1.6)</a>. Writing the rate equation for <span class="math inline">\(\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span> in this way is consistent with the convention in Section <a href="lecture1.html#sec:reaction-rates">1.2</a>, that the overall rate of a reaction is related to the rates of change of specific reactants or products by</p>
 <p><span class="math display" id="eq:relativerates">\[\begin{equation}
 \nu = \frac{1}{n_\mathrm{X}}\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}
 \tag{1.7}
 \end{equation}\]</span></p>
 <p>We can also justify the factor of <span class="math inline">\(2\)</span> by recognising that the stoichiometry of the reaction requires 2 molecules of A to be consumed for every 1 molecule of B formed, and, hence,</p>
 <p><span class="math display">\[\begin{equation}
-\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = 2\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -2\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}
 \end{equation}\]</span></p>
-<p>The factor of 2 in Eqn. <a href="lecture1.html#eq:secondorderdiff">(1.6)</a> is somewhat arbitrary though, as it is a consequence of our choice to define the overall rate of reaction as <span class="math inline">\(\nu = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\)</span>. If, instead, we define our overall rate as <span class="math inline">\(\nu = \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span> then we would write the rate of change of concentration of A as</p>
+<p>The factor of 2 in Eqn. <a href="lecture1.html#eq:secondorderdiff">(1.6)</a> is somewhat arbitrary though, as it is a consequence of our choice to define the overall rate of reaction as <span class="math inline">\(\nu = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}\)</span>. If, instead, we define our overall rate as <span class="math inline">\(\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}\)</span> then we would write the rate of change of concentration of A as</p>
 <p><span class="math display" id="eq:secondorderdiff-alt">\[\begin{equation}
 \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]^2
 \tag{1.8}
@@ -596,7 +598,7 @@ Figure 1.7: Concentration profiles for a consecutive reaction A → B → C. The
 </ul>
 <p><span class="math display">\[[\mathrm{C}] \approx [\mathrm{A}]_0(1-\mathrm{e}^{-k_2t})\]</span></p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-consecutive-limiting"></span>
-<img src="lecture_1/figures/consecutive_limiting_cases.png" alt="Concentration profiles for consecutive reactions in limiting cases. Left: k₁ &lt;&lt; k₂, where the first step is rate-determining. Right: k₁ &gt;&gt; k₂, where the second step is rate-determining." width="90%" />
+<img src="lecture_1/figures/consecutive_limiting_cases.png" alt="Concentration profiles for consecutive reactions in limiting cases. Left: k₁ &gt; k₂, where the second step is rate-determining." width="90%" />
 <p class="caption">
 Figure 1.8: Concentration profiles for consecutive reactions in limiting cases. Left: k₁ &lt;&lt; k₂, where the first step is rate-determining. Right: k₁ &gt;&gt; k₂, where the second step is rate-determining.
 </p>

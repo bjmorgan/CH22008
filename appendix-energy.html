@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>B Derivation of the Exponential Energy Factor | CH22008 Lecture Notes</title>
   <meta name="description" content="These are notes to accompany the 2024 CH22008 lecture course on Advanced Kinetics." />
-  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.48 and GitBook 2.6.7" />
 
   <meta property="og:title" content="B Derivation of the Exponential Energy Factor | CH22008 Lecture Notes" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2025-11-22" />
+<meta name="date" content="2026-10-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -237,8 +237,10 @@
 <li class="chapter" data-level="A" data-path="integrating-factor.html"><a href="integrating-factor.html"><i class="fa fa-check"></i><b>A</b> Integrating Factor Method for Consecutive Reactions</a></li>
 <li class="chapter" data-level="B" data-path="appendix-energy.html"><a href="appendix-energy.html"><i class="fa fa-check"></i><b>B</b> Derivation of the Exponential Energy Factor</a>
 <ul>
-<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#the-maxwell-boltzmann-distribution"><i class="fa fa-check"></i><b>B.0.1</b> The Maxwell-Boltzmann Distribution</a></li>
-<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.2</b> Calculating the Fraction with E ≥ E_a</a></li>
+<li class="chapter" data-level="B.0.1" data-path="appendix-energy.html"><a href="appendix-energy.html#head-on-collision-energy"><i class="fa fa-check"></i><b>B.0.1</b> Head-On Collision Energy</a></li>
+<li class="chapter" data-level="B.0.2" data-path="appendix-energy.html"><a href="appendix-energy.html#the-distribution-of-head-on-velocities"><i class="fa fa-check"></i><b>B.0.2</b> The Distribution of Head-On Velocities</a></li>
+<li class="chapter" data-level="B.0.3" data-path="appendix-energy.html"><a href="appendix-energy.html#from-velocities-to-energies"><i class="fa fa-check"></i><b>B.0.3</b> From Velocities to Energies</a></li>
+<li class="chapter" data-level="B.0.4" data-path="appendix-energy.html"><a href="appendix-energy.html#calculating-the-fraction-with-e-e_a"><i class="fa fa-check"></i><b>B.0.4</b> Calculating the Fraction with E ≥ E_a</a></li>
 </ul></li>
 <li class="chapter" data-level="C" data-path="appendix-activation.html"><a href="appendix-activation.html"><i class="fa fa-check"></i><b>C</b> The Relationship Between <span class="math inline">\(\Delta H^\ddagger\)</span> and the <span class="math inline">\(E_\mathrm{a}\)</span></a>
 <ul>
@@ -298,40 +300,38 @@
             <section class="normal" id="section-">
 <div id="appendix-energy" class="section level1 hasAnchor" number="11">
 <h1><span class="header-section-number">B</span> Derivation of the Exponential Energy Factor<a href="appendix-energy.html#appendix-energy" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>In Lecture <a href="lecture5.html#lecture5">5</a>, we used the result that the fraction of collisions with relative kinetic energy greater than or equal to the activation energy <span class="math inline">\(E_\mathrm{a}\)</span> is given by:</p>
+<p>In Lecture <a href="lecture5.html#lecture5">5</a>, we used the result that the fraction of collisions with enough energy to react, i.e., with head-on collision energy greater than or equal to the activation energy <span class="math inline">\(E_\mathrm{a}\)</span>, is given by:</p>
 <p><span class="math display">\[P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
 <p>This expression can be derived from the kinetic theory of gases.</p>
-<div id="the-maxwell-boltzmann-distribution" class="section level3 hasAnchor" number="11.0.1">
-<h3><span class="header-section-number">B.0.1</span> The Maxwell-Boltzmann Distribution<a href="appendix-energy.html#the-maxwell-boltzmann-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The kinetic theory of gases tells us that the probability density for finding a collision with relative kinetic energy <span class="math inline">\(E\)</span> is given by the Maxwell-Boltzmann distribution:</p>
-<p><span class="math display">\[f(E) = \frac{2\pi}{(\pi k_\mathrm{B}T)^{3/2}}\sqrt{E}\,\exp\left(-\frac{E}{k_\mathrm{B}T}\right)\]</span></p>
-<p>where <span class="math inline">\(k_\mathrm{B}\)</span> is the Boltzmann constant and <span class="math inline">\(T\)</span> is the absolute temperature. This distribution is normalised such that:</p>
-<p><span class="math display">\[\int_0^{\infty} f(E)\,\mathrm{d}E = 1\]</span></p>
+<div id="head-on-collision-energy" class="section level3 hasAnchor" number="11.0.1">
+<h3><span class="header-section-number">B.0.1</span> Head-On Collision Energy<a href="appendix-energy.html#head-on-collision-energy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider a molecule B approaching a molecule A. We can split the velocity of B relative to A into two parts: a component <span class="math inline">\(v\)</span> along the line joining the centres of the two molecules when they collide, and a component perpendicular to this line. Only the component along the line of centres pushes the molecules together; the perpendicular component carries them past each other. The head-on collision energy is the kinetic energy associated with the component along the line of centres:</p>
+<p><span class="math display">\[E = \frac{1}{2}\mu v^2\]</span></p>
+<p>where <span class="math inline">\(\mu\)</span> is the reduced mass of A and B.</p>
 </div>
-<div id="calculating-the-fraction-with-e-e_a" class="section level3 hasAnchor" number="11.0.2">
-<h3><span class="header-section-number">B.0.2</span> Calculating the Fraction with E ≥ E_a<a href="appendix-energy.html#calculating-the-fraction-with-e-e_a" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The fraction of collisions with energy greater than or equal to <span class="math inline">\(E_\mathrm{a}\)</span> is obtained by integrating the distribution from <span class="math inline">\(E_\mathrm{a}\)</span> to infinity:</p>
-<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \int_{E_\mathrm{a}}^{\infty} f(E)\,\mathrm{d}E\]</span></p>
-<p>Substituting the Maxwell-Boltzmann distribution:</p>
-<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \int_{E_\mathrm{a}}^{\infty} \frac{2\pi}{(\pi k_\mathrm{B}T)^{3/2}}\sqrt{E}\,\exp\left(-\frac{E}{k_\mathrm{B}T}\right)\,\mathrm{d}E\]</span></p>
-<p>To evaluate this integral, we make the substitution <span class="math inline">\(u = E/(k_\mathrm{B}T)\)</span>, so that <span class="math inline">\(E = uk_\mathrm{B}T\)</span> and <span class="math inline">\(\mathrm{d}E = k_\mathrm{B}T\,\mathrm{d}u\)</span>. When <span class="math inline">\(E = E_\mathrm{a}\)</span>, we have <span class="math inline">\(u = E_\mathrm{a}/(k_\mathrm{B}T) \equiv \beta\)</span>. The integral becomes:</p>
-<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \frac{2\pi}{(\pi k_\mathrm{B}T)^{3/2}}\int_{\beta}^{\infty} \sqrt{uk_\mathrm{B}T}\,\mathrm{e}^{-u}\,k_\mathrm{B}T\,\mathrm{d}u\]</span></p>
-<p>Simplifying:</p>
-<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \frac{2}{\sqrt{\pi}}\int_{\beta}^{\infty} \sqrt{u}\,\mathrm{e}^{-u}\,\mathrm{d}u\]</span></p>
-<p>This integral can be evaluated using integration by parts. Let <span class="math inline">\(v = \sqrt{u}\)</span> and <span class="math inline">\(\mathrm{d}w = \mathrm{e}^{-u}\,\mathrm{d}u\)</span>, so that <span class="math inline">\(\mathrm{d}v = \frac{1}{2\sqrt{u}}\,\mathrm{d}u\)</span> and <span class="math inline">\(w = -\mathrm{e}^{-u}\)</span>:</p>
-<p><span class="math display">\[\begin{align}
-\int_{\beta}^{\infty} \sqrt{u}\,\mathrm{e}^{-u}\,\mathrm{d}u &amp;= \left[-\sqrt{u}\,\mathrm{e}^{-u}\right]_{\beta}^{\infty} + \int_{\beta}^{\infty} \frac{\mathrm{e}^{-u}}{2\sqrt{u}}\,\mathrm{d}u\\
-&amp;= \sqrt{\beta}\,\mathrm{e}^{-\beta} + \frac{1}{2}\int_{\beta}^{\infty} \frac{\mathrm{e}^{-u}}{\sqrt{u}}\,\mathrm{d}u
-\end{align}\]</span></p>
-<p>For large <span class="math inline">\(\beta\)</span> (which corresponds to <span class="math inline">\(E_\mathrm{a} \gg k_\mathrm{B}T\)</span>, a condition typically satisfied for chemical reactions), the second term becomes negligible compared to the first. Therefore:</p>
-<p><span class="math display">\[\int_{\beta}^{\infty} \sqrt{u}\,\mathrm{e}^{-u}\,\mathrm{d}u \approx \sqrt{\beta}\,\mathrm{e}^{-\beta}\]</span></p>
-<p>Substituting back:</p>
-<p><span class="math display">\[P(E \geq E_\mathrm{a}) \approx \frac{2}{\sqrt{\pi}}\sqrt{\beta}\,\mathrm{e}^{-\beta} = \frac{2}{\sqrt{\pi}}\sqrt{\frac{E_\mathrm{a}}{k_\mathrm{B}T}}\exp\left(-\frac{E_\mathrm{a}}{k_\mathrm{B}T}\right)\]</span></p>
-<p>For typical activation energies in chemical reactions, <span class="math inline">\(E_\mathrm{a}/(k_\mathrm{B}T) \gg 1\)</span>, which means the pre-exponential factor <span class="math inline">\(\sqrt{E_\mathrm{a}/(k_\mathrm{B}T)}\)</span> is much larger than unity but changes only slowly with temperature compared to the exponential term. To a good approximation, we can therefore write:</p>
-<p><span class="math display">\[P(E \geq E_\mathrm{a}) \approx \exp\left(-\frac{E_\mathrm{a}}{k_\mathrm{B}T}\right)\]</span></p>
-<p>Finally, using the relationship <span class="math inline">\(R = N_\mathrm{A}k_\mathrm{B}\)</span> (where <span class="math inline">\(R\)</span> is the gas constant and <span class="math inline">\(N_\mathrm{A}\)</span> is Avogadro’s number), we can write this in the more familiar form:</p>
+<div id="the-distribution-of-head-on-velocities" class="section level3 hasAnchor" number="11.0.2">
+<h3><span class="header-section-number">B.0.2</span> The Distribution of Head-On Velocities<a href="appendix-energy.html#the-distribution-of-head-on-velocities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The kinetic theory of gases tells us that each component of the relative velocity of a pair of molecules follows a Gaussian (Maxwell-Boltzmann) distribution:</p>
+<p><span class="math display">\[g(v) = \left(\frac{\mu}{2\pi k_\mathrm{B}T}\right)^{1/2}\exp\left(-\frac{\mu v^2}{2k_\mathrm{B}T}\right)\]</span></p>
+<p>where <span class="math inline">\(k_\mathrm{B}\)</span> is the Boltzmann constant and <span class="math inline">\(T\)</span> is the absolute temperature. Because a gas has no preferred direction, this holds whichever direction the line of centres points in.</p>
+<p>The distribution <span class="math inline">\(g(v)\)</span> describes pairs of molecules, but the pairs that collide in a given time are not a random sample of all pairs. A pair approaching quickly closes the gap between the two molecules sooner than a pair approaching slowly, so the rate at which pairs with approach velocity <span class="math inline">\(v\)</span> collide is proportional to <span class="math inline">\(v\)</span> as well as to <span class="math inline">\(g(v)\)</span>. Only pairs that are approaching each other collide, so <span class="math inline">\(v &gt; 0\)</span>. The distribution of head-on velocities across all collisions is therefore</p>
+<p><span class="math display">\[h(v) \propto v\exp\left(-\frac{\mu v^2}{2k_\mathrm{B}T}\right) \qquad (v &gt; 0)\]</span></p>
+</div>
+<div id="from-velocities-to-energies" class="section level3 hasAnchor" number="11.0.3">
+<h3><span class="header-section-number">B.0.3</span> From Velocities to Energies<a href="appendix-energy.html#from-velocities-to-energies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To convert this into a distribution of head-on collision energies, we change variables from <span class="math inline">\(v\)</span> to <span class="math inline">\(E = \frac{1}{2}\mu v^2\)</span>, so that <span class="math inline">\(\mathrm{d}E = \mu v\,\mathrm{d}v\)</span>. The factor of <span class="math inline">\(v\)</span> in <span class="math inline">\(h(v)\)</span> then cancels:</p>
+<p><span class="math display">\[h(v)\,\mathrm{d}v \propto v\exp\left(-\frac{E}{k_\mathrm{B}T}\right)\frac{\mathrm{d}E}{\mu v} \propto \exp\left(-\frac{E}{k_\mathrm{B}T}\right)\mathrm{d}E\]</span></p>
+<p>The head-on collision energies therefore follow a simple exponential distribution. Normalising, so that <span class="math inline">\(\int_0^{\infty} p(E)\,\mathrm{d}E = 1\)</span>, gives</p>
+<p><span class="math display">\[p(E) = \frac{1}{k_\mathrm{B}T}\exp\left(-\frac{E}{k_\mathrm{B}T}\right)\]</span></p>
+<p>which is the distribution plotted in Figure <a href="lecture5.html#fig:fig-maxwell-boltzmann">5.2</a>.</p>
+</div>
+<div id="calculating-the-fraction-with-e-e_a" class="section level3 hasAnchor" number="11.0.4">
+<h3><span class="header-section-number">B.0.4</span> Calculating the Fraction with E ≥ E_a<a href="appendix-energy.html#calculating-the-fraction-with-e-e_a" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The fraction of collisions with head-on energy greater than or equal to <span class="math inline">\(E_\mathrm{a}\)</span> is obtained by integrating this distribution from <span class="math inline">\(E_\mathrm{a}\)</span> to infinity:</p>
+<p><span class="math display">\[P(E \geq E_\mathrm{a}) = \int_{E_\mathrm{a}}^{\infty} \frac{1}{k_\mathrm{B}T}\exp\left(-\frac{E}{k_\mathrm{B}T}\right)\mathrm{d}E = \exp\left(-\frac{E_\mathrm{a}}{k_\mathrm{B}T}\right)\]</span></p>
+<p>Finally, using the relationship <span class="math inline">\(R = N_\mathrm{A}k_\mathrm{B}\)</span> (where <span class="math inline">\(R\)</span> is the gas constant and <span class="math inline">\(N_\mathrm{A}\)</span> is Avogadro’s number), we can write this in the more familiar form, with <span class="math inline">\(E_\mathrm{a}\)</span> now a molar energy:</p>
 <p><span class="math display">\[P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)\]</span></p>
-<p>This derivation shows that the exponential dependence of reaction rates on temperature arises naturally from the Maxwell-Boltzmann distribution of molecular energies, and that the activation energy <span class="math inline">\(E_\mathrm{a}\)</span> represents a threshold that determines which fraction of collisions have sufficient energy to react.</p>
+<p>This derivation shows that the exponential dependence of reaction rates on temperature arises naturally from the Maxwell-Boltzmann distribution of molecular speeds, and that the activation energy <span class="math inline">\(E_\mathrm{a}\)</span> represents a threshold that determines which fraction of collisions have sufficient energy to react.</p>
 
 </div>
 </div>
