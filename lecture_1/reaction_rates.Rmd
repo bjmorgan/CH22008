@@ -11,10 +11,10 @@ For any reaction that does not have a 1:1 stoichiometry ratio between all reacta
 
 the product, B, is formed at twice the rate that the reactant, A, is consumed.  Hence,
 
-$$2\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}$$
+$$-2\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}$$
 
 In general, we can define an &ldquo;overall&rdquo; reaction rate $\nu$ that is related to the rates of change of reactants and products by
 
 $$\nu = \frac{1}{n_\mathrm{X}}\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}$$
 
-where $n_\mathrm{X}$ is the stoichiometric coefficient of species $X$ in the reaction equation.
+where $n_\mathrm{X}$ is the stoichiometric coefficient of species $X$ in the reaction equation, taken as negative for reactants and positive for products, so that $\nu$ is positive. For the reaction above, $\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{1}{2}\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}$.

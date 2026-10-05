@@ -17,7 +17,7 @@ For a first-order process $\mathrm{A} \longrightarrow \mathrm{B}$, the rate of c
 To derive the corresponding integrated rate law, we rearrange this to form an integral equation:
 
 \begin{equation}
-\int_{[\mathrm{A}]_0}^{\mathrm[A]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]}\,\mathrm{d}[\mathrm{A}] = \int_0^t -k\,\mathrm{d}t
+\int_{[\mathrm{A}]_0}^{[\mathrm{A}]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]} = \int_0^t -k\,\mathrm{d}t
 \end{equation}
 
 where the limits of the integral with respect to concentration of A are between the concentration at time $0$ ($[\mathrm{A}]_0$) and the concentration at time $t$ ($[\mathrm{A}]_t$), and the limits of the integral with respect to time are between $t=0$ and $t=t$.
@@ -65,19 +65,19 @@ For a second-order process $2\mathrm{A} \longrightarrow \mathrm{B}$, with overal
 As for first-order reactions, above, we can derive the corresponding integrated rate law for $[\mathrm{A}]_t$ by rearranging Eqn. \@ref(eq:secondorderdiff) and then integrating:
 
 \begin{equation}
-\int_{[\mathrm{A}]_0}^{\mathrm[A]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]^2}\,\mathrm{d}[\mathrm{A}] = \int_0^t -k\,\mathrm{d}t
+\int_{[\mathrm{A}]_0}^{[\mathrm{A}]_t} \frac{\mathrm{d}[\mathrm{A}]}{[\mathrm{A}]^2} = \int_0^t -2k\,\mathrm{d}t
 \end{equation}
 
 Integrating, using the integral $\int \frac{1}{x^2}\,\mathrm{d}x = -\frac{1}{x}$, gives
 
 \begin{equation}
-\frac{1}{[\mathrm{A}]_t} - \frac{1}{[\mathrm{A}]_0} = -kt
+\frac{1}{[\mathrm{A}]_t} - \frac{1}{[\mathrm{A}]_0} = 2kt
 \end{equation}
 
 which can be rearranged as
 
 \begin{equation}
-[\mathrm{A}]_t = \frac{[\mathrm{A}]_0}{1 + kt[\mathrm{A}]_0}
+[\mathrm{A}]_t = \frac{[\mathrm{A}]_0}{1 + 2kt[\mathrm{A}]_0}
 \end{equation}
 
 To obtain an expression for $[\mathrm{B}]_t$, we again use our knowledge of the reaction stoichiometry and initial conditions: we start with only the reactant A, and at any stage of the reaction, the amount of B formed is equal to half the amount of A consumed.
@@ -89,13 +89,13 @@ To obtain an expression for $[\mathrm{B}]_t$, we again use our knowledge of the 
 And, so
 
 \begin{equation}
-[\mathrm{B}]_t = \frac{[\mathrm{A}]_0}{2}\left(1 - \frac{1}{1+kt[\mathrm{A}_0]}\right)
+[\mathrm{B}]_t = \frac{[\mathrm{A}]_0}{2}\left(1 - \frac{1}{1+2kt[\mathrm{A}]_0}\right)
 \end{equation}
 
 which rearranges to
 
 \begin{equation}
-[\mathrm{B}]_t = \frac{kt[\mathrm{A}]_0^2}{2(1 + kt[\mathrm{A}]_0)}
+[\mathrm{B}]_t = \frac{kt[\mathrm{A}]_0^2}{1 + 2kt[\mathrm{A}]_0}
 \end{equation}
 
 ```{r fig-second-order-example, fig.cap="Concentrations as a function of time for a second-order process $2\\mathrm{A} \\longrightarrow \\mathrm{B}$. The dashed line shows the sum $[\\mathrm{A}]_t + [\\mathrm{B}]_t$.", out.width='45%', fig.align='center'}
@@ -104,7 +104,7 @@ knitr::include_graphics("lecture_1/figures/second_order_example.png")
 
 #### Aside: Why Does Our Second-Order Rate Equation Include a Factor of 2? {-}
 
-Let us briefly examine the origin of the factor of 2 on the right-hand side of Eqn. \@ref{eq:secondorderdiff}. Writing the rate equation for $\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$ in this way is consistent with the convention in Section \@ref(sec:reaction-rates), that the overall rate of a reaction is related to the rates of change of specific reactants or products by
+Let us briefly examine the origin of the factor of 2 on the right-hand side of Eqn. \@ref(eq:secondorderdiff). Writing the rate equation for $\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$ in this way is consistent with the convention in Section \@ref(sec:reaction-rates), that the overall rate of a reaction is related to the rates of change of specific reactants or products by
 
 \begin{equation}
 \nu = \frac{1}{n_\mathrm{X}}\frac{\mathrm{d}[\mathrm{X}]}{\mathrm{d}t}
@@ -114,10 +114,10 @@ Let us briefly examine the origin of the factor of 2 on the right-hand side of E
 We can also justify the factor of $2$ by recognising that the stoichiometry of the reaction requires 2 molecules of A to be consumed for every 1 molecule of B formed, and, hence,
 
 \begin{equation}
-\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = 2\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}
+\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -2\frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}
 \end{equation}
 
-The factor of 2 in Eqn. \@ref(eq:secondorderdiff) is somewhat arbitrary though, as it is a consequence of our choice to define the overall rate of reaction as $\nu = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}$. If, instead, we define our overall rate as $\nu = \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$ then we would write the rate of change of concentration of A as
+The factor of 2 in Eqn. \@ref(eq:secondorderdiff) is somewhat arbitrary though, as it is a consequence of our choice to define the overall rate of reaction as $\nu = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t}$. If, instead, we define our overall rate as $\nu = -\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t}$ then we would write the rate of change of concentration of A as
 
 \begin{equation}
 \frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = -k[\mathrm{A}]^2

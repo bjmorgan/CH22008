@@ -92,18 +92,20 @@ This is the collision frequency per unit volume for molecules A and B in a gas a
 
 Not every collision between molecules A and B leads to reaction. The collision frequency $Z'$ tells us how often molecules encounter each other, but only a fraction of these collisions have sufficient energy to overcome the activation barrier and form products.
 
-In collision theory, we assume that molecules must possess a minimum relative kinetic energy $E_\mathrm{a}$ (the activation energy) for reaction to occur. This threshold energy is needed to break bonds and rearrange atoms during the collision. The question then becomes: what fraction of molecular collisions have relative kinetic energy greater than or equal to $E_\mathrm{a}$?
+In collision theory, we assume that colliding molecules must have a minimum energy $E_\mathrm{a}$ (the activation energy) for reaction to occur. This threshold energy is needed to break bonds and rearrange atoms during the collision. The question then becomes: what fraction of collisions have enough energy to react?
 
-The answer comes from the Maxwell-Boltzmann distribution of molecular speeds. In a gas at temperature $T$, the relative kinetic energies of colliding molecules follow a probability distribution that depends on temperature, as shown in Figure \@ref(fig:fig-maxwell-boltzmann).
-```{r fig-maxwell-boltzmann, fig.cap="Maxwell-Boltzmann distribution of relative kinetic energies for molecular collisions at two temperatures. The shaded regions show the fraction of collisions with energy $E \\geq E_\\mathrm{a}$. At higher temperature (orange, 600 K), the distribution broadens and shifts to higher energies, increasing the fraction of collisions with sufficient energy to react. The fraction of successful collisions is given by $P(E \\geq E_\\mathrm{a}) = \\exp(-E_\\mathrm{a}/RT)$.", out.width='55%', fig.align='center'}
+Not all of the kinetic energy of a colliding pair is available to drive a reaction. When two molecules collide, only the part of their relative motion along the line joining their centres pushes them together; motion perpendicular to this line carries the molecules past each other. A glancing collision is therefore less effective than a head-on collision at the same speed. The energy that counts is the *head-on collision energy*, and for reaction this must be at least $E_\mathrm{a}$.
+
+Using the Maxwell-Boltzmann distribution of molecular speeds, we can work out how head-on collision energies are distributed across all the collisions in a gas at temperature $T$. The result is a simple exponential distribution,^[The derivation of this distribution is given in Appendix \@ref(appendix-energy).] shown for two temperatures in Figure \@ref(fig:fig-maxwell-boltzmann).
+```{r fig-maxwell-boltzmann, fig.cap="Distribution of head-on collision energies across all collisions in a gas at two temperatures. The head-on collision energy is the part of the relative kinetic energy along the line joining the centres of the colliding molecules. The shaded regions show the collisions with $E \\geq E_\\mathrm{a}$, which have enough energy to react. At higher temperature (orange, 600 K), the distribution decays more slowly with energy, increasing the fraction of collisions with enough energy to react. The shaded area is $P(E \\geq E_\\mathrm{a}) = \\exp(-E_\\mathrm{a}/RT)$.", out.width='55%', fig.align='center'}
 knitr::include_graphics("lecture_5/figures/maxwell_boltzmann.png")
 ```
 
 The figure shows two key features:
 
-1. Temperature dependence: At higher temperature (orange curve, 600 K), the distribution is broader and shifted to higher energies compared to lower temperature (blue curve, 300 K). This means a larger fraction of collisions have energy exceeding $E_\mathrm{a}$.
+1. Temperature dependence: At higher temperature (orange curve, 600 K), the distribution decays more slowly with energy than at lower temperature (blue curve, 300 K). This means a larger fraction of collisions have energy exceeding $E_\mathrm{a}$.
 
-2. Exponential tail: The shaded region represents collisions with $E \geq E_\mathrm{a}$. The fraction of collisions in this high-energy tail follows directly from the kinetic theory of gases :^[The derivation of this result from the Maxwell-Boltzmann distribution is given in Appendix \@ref(appendix-energy).]
+2. Exponential tail: The shaded region represents collisions with $E \geq E_\mathrm{a}$. The fraction of collisions in this high-energy tail is:
 
 $$P(E \geq E_\mathrm{a}) = \exp\left(-\frac{E_\mathrm{a}}{RT}\right)$$
 
@@ -222,7 +224,7 @@ k = A_0\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
 
 This comparison provides physical insight into the meaning of the Arrhenius parameters:
 
-1. The activation energy $E_\mathrm{a}$ in the Arrhenius equation can be interpreted as the minimum relative kinetic energy that colliding molecules must possess for reaction to occur. This threshold energy is needed to overcome the potential energy barrier to reaction.
+1. The activation energy $E_\mathrm{a}$ in the Arrhenius equation can be interpreted as the minimum head-on collision energy that colliding molecules must have for reaction to occur. This threshold energy is needed to overcome the potential energy barrier to reaction.
 2. The pre-exponential factor $A_0$ represents a normalized collision frequency. The collision theory expression shows that this frequency depends on:
   - The collision cross-section ($\pi d^2$)
   - The average relative velocity of molecules ($\propto \sqrt{T/\mu}$)
