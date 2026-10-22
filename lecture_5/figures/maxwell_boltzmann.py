@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 plt.rcParams.update({
     "font.family": "Helvetica",
     "mathtext.fontset": "stix",
-    "font.size": 12,
+    "font.size": 16,
     "pdf.fonttype": 42,
 })
 
@@ -42,12 +42,12 @@ tail = E >= EA
 for T in (600, 300):    # draw the larger (600 K) tail first so the 300 K tail sits on top
     ax.fill_between(E[tail], head_on(E[tail], T), color=SHADES[T], lw=0)
 for T in TEMPS:
-    ax.plot(E, head_on(E, T), color=COLOURS[T], lw=1.6, label=f"T = {T} K")
+    ax.plot(E, head_on(E, T), color=COLOURS[T], lw=2.0, label=f"T = {T} K")
 top = head_on(0, 300)
-ax.plot([EA, EA], [0, 0.55 * top], "k--", lw=1.2)
-ax.text(EA, 0.57 * top, r"$E_\mathrm{a}$", ha="center", va="bottom", fontsize=15)
+ax.plot([EA, EA], [0, 0.55 * top], "k--", lw=1.5)
+ax.text(EA, 0.57 * top, r"$E_\mathrm{a}$", ha="center", va="bottom", fontsize=20)
 ax.text(0.97, 0.42, r"$P(E \geq E_\mathrm{a}) = \exp\left(\dfrac{-E_\mathrm{a}}{RT}\right)$",
-        transform=ax.transAxes, ha="right", fontsize=16)
+        transform=ax.transAxes, ha="right", fontsize=21)
 for side in ("top", "right"):
     ax.spines[side].set_visible(False)
 ax.set_yticks([])
