@@ -23,7 +23,7 @@
 <meta name="author" content="Benjamin J. Morgan" />
 
 
-<meta name="date" content="2026-10-05" />
+<meta name="date" content="2026-10-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -123,7 +123,7 @@
 <li class="chapter" data-level="2.6.1" data-path="lecture2.html"><a href="lecture2.html#example-decomposition-of-h2o2"><i class="fa fa-check"></i><b>2.6.1</b> Example: Decomposition of H<sub>2</sub>O<sub>2</sub></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="lecture3.html"><a href="lecture3.html"><i class="fa fa-check"></i><b>3</b> Parallel Reversibile Reactions</a>
+<li class="chapter" data-level="3" data-path="lecture3.html"><a href="lecture3.html"><i class="fa fa-check"></i><b>3</b> Parallel Reversible Reactions</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="lecture3.html"><a href="lecture3.html#introduction-to-parallel-reversible-reactions"><i class="fa fa-check"></i><b>3.1</b> Introduction to Parallel Reversible Reactions</a></li>
 <li class="chapter" data-level="3.2" data-path="lecture3.html"><a href="lecture3.html#time-evolution-of-product-distributions"><i class="fa fa-check"></i><b>3.2</b> Time Evolution of Product Distributions</a>
@@ -306,43 +306,43 @@
 <p>The Arrhenius equation defines the temperature dependence of rate constants empirically:</p>
 <p><span class="math display" id="eq:arrhenius">\[\begin{equation}
 k = A\mathrm{e}^{-E_\mathrm{a}/RT}
-\tag{5.5}
+\tag{C.1}
 \end{equation}\]</span></p>
 <p>Taking logarithms:</p>
 <p><span class="math display" id="eq:arrhenius-ln">\[\begin{equation}
 \ln k = \ln A - \frac{E_\mathrm{a}}{RT}
-\tag{C.1}
+\tag{C.2}
 \end{equation}\]</span></p>
 <p>Differentiating with respect to temperature<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p>
 <p><span class="math display" id="eq:dlnk-dt-arrh">\[\begin{equation}
 \frac{\mathrm{d}\ln k}{\mathrm{d}T} = \frac{E_\mathrm{a}}{RT^2}
-\tag{C.2}
+\tag{C.3}
 \end{equation}\]</span></p>
 <p>This equation can be considered a formal definition of the Arrhenius activation energy.</p>
 <p>For a bimolecular reaction, the thermodynamic form of the transition state theory rate equation is:</p>
 <p><span class="math display" id="eq:eyring">\[\begin{equation}
 k = \frac{k_\mathrm{B}T}{hc^\circ}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\Delta H^\ddagger/RT}
-\tag{C.3}
+\tag{C.4}
 \end{equation}\]</span></p>
 <p>Taking logarithms:</p>
 <p><span class="math display" id="eq:eyring-linear">\[\begin{equation}
 \ln k = \ln\left(\frac{k_\mathrm{B}T}{hc^\circ}\right) + \frac{\Delta S^\ddagger}{R} - \frac{\Delta H^\ddagger}{RT}
-\tag{C.4}
+\tag{C.5}
 \end{equation}\]</span></p>
 <p>For an ideal gas, <span class="math inline">\(\frac{1}{c^\circ} = \frac{V}{N} = \frac{RT}{p}\)</span>, and we can rewrite our equation as</p>
 <p><span class="math display" id="eq:eyring-linear-expanded">\[\begin{equation}
 \ln k = \ln\left(\frac{k_\mathrm{B}T}{h}\right) + \ln\left(\frac{RT}{p}\right) + \frac{\Delta S^\ddagger}{R} - \frac{\Delta H^\ddagger}{RT}
-\tag{C.5}
+\tag{C.6}
 \end{equation}\]</span></p>
 <p>Differentiating with respect to temperature gives,<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a></p>
 <p><span class="math display" id="eq:dlnk-dt-eyring">\[\begin{equation}
 \frac{\mathrm{d}\ln k}{\mathrm{d}T} = \frac{1}{T} + \frac{1}{T} + \frac{\Delta H^\ddagger}{RT^2}
-\tag{C.6}
+\tag{C.7}
 \end{equation}\]</span></p>
-<p>Comparing equations <a href="appendix-activation.html#eq:dlnk-dt-arrh">(C.2)</a> and <a href="appendix-activation.html#eq:dlnk-dt-eyring">(C.6)</a> we find:</p>
+<p>Comparing equations <a href="appendix-activation.html#eq:dlnk-dt-arrh">(C.3)</a> and <a href="appendix-activation.html#eq:dlnk-dt-eyring">(C.7)</a> we find:</p>
 <p><span class="math display" id="eq:relationship-bimolecular">\[\begin{equation}
 E_\mathrm{a} = \Delta H^\ddagger + 2RT
-\tag{C.7}
+\tag{C.8}
 \end{equation}\]</span></p>
 </div>
 <div id="effect-of-reaction-molecularity" class="section level2 hasAnchor" number="12.2">
@@ -350,23 +350,23 @@ E_\mathrm{a} = \Delta H^\ddagger + 2RT
 <p>The derivation above is for a bimolecular reaction. For a unimolecular reaction, the same procedure gives a different relationship between <span class="math inline">\(E_\mathrm{a}\)</span> and <span class="math inline">\(\Delta H^\ddagger\)</span>:</p>
 <p><span class="math display" id="eq:relationship-unimolecular">\[\begin{equation}
 E_\mathrm{a} = \Delta H^\ddagger + RT
-\tag{C.8}
+\tag{C.9}
 \end{equation}\]</span></p>
 <p>The difference arises because the unimolecular TST rate equation is</p>
 <p><span class="math display" id="eq:eyring-unimolecular">\[\begin{equation}
 k = \frac{k_\mathrm{B}T}{h}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\Delta H^\ddagger/RT}
-\tag{C.9}
+\tag{C.10}
 \end{equation}\]</span></p>
 <p>with no <span class="math inline">\(1/c^\circ\)</span> term in the prefactor, and we lose the corresponding factor of <span class="math inline">\(RT\)</span> when we evaluate <span class="math inline">\(\mathrm{d} \ln k / \mathrm{T}\)</span>.</p>
 <p>Similarly, the TST rate equation for a termolecular reaction is</p>
 <p><span class="math display" id="eq:eyring-termolecular">\[\begin{equation}
 k = \frac{k_\mathrm{B}T}{h{c^\circ}^2}\mathrm{e}^{\Delta S^\ddagger/R}\mathrm{e}^{-\Delta H^\ddagger/RT}
-\tag{C.10}
+\tag{C.11}
 \end{equation}\]</span></p>
 <p>and</p>
 <p><span class="math display" id="eq:relationship-termolecular">\[\begin{equation}
 E_\mathrm{a} = \Delta H^\ddagger + 3RT
-\tag{C.11}
+\tag{C.12}
 \end{equation}\]</span></p>
 <p>where <span class="math inline">\(2RT\)</span> comes from the squared concentration factor in the rate equation.</p>
 <p>At room temperature, <span class="math inline">\(RT \approx 2.5\)</span> kJ mol<span class="math inline">\(^{-1}\)</span>. The difference between <span class="math inline">\(E_\mathrm{a}\)</span> and <span class="math inline">\(\Delta H^\ddagger\)</span> therefore ranges from about 2.5 kJ mol<span class="math inline">\(^{-1}\)</span> for unimolecular reactions to 7.5 kJ mol<span class="math inline">\(^{-1}\)</span> for termolecular processes. While these differences are relatively small compared to typical activation energies, they become important when comparing activation parameters determined using different methods or analysing temperature-dependent kinetic data over wide temperature ranges.</p>

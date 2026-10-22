@@ -44,7 +44,7 @@ tab:steric-factors
 fig:fig-ethene-geometry
 fig:fig-harpoon-mechanism
 eq:collision-k
-eq:arrhenius
+eq:arrhenius-ct
 fig:fig-tst-reaction-coordinate
 eq:tst-scheme
 eq:equilibrium-constant
@@ -54,6 +54,7 @@ eq:equilibrium-constant-expanded
 eq:tst-rate
 eq:tst-rate-constant
 eq:tst-k
+eq:arrhenius-tst
 fig:fig-entropy-steric-origin
 fig:fig-atom-atom-dof
 fig:fig-energy-spacing-entropy
@@ -77,6 +78,7 @@ fig:fig-kie-energy-levels
 fig:fig-kie-reaction-coordinate
 fig:fig-kie-comparison
 fig:fig-kie-beta-position
+eq:arrhenius
 eq:arrhenius-ln
 eq:dlnk-dt-arrh
 eq:eyring
