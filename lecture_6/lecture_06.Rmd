@@ -46,7 +46,7 @@ Since we treat the formation of the activated complex as a pseudo-equilibrium, w
 
 \begin{equation}
 \Delta G^{\ddagger} = -RT\ln(K^{\ddagger})
-(#eq:gibbs-activation)
+(\#eq:gibbs-activation)
 \end{equation}
 
 We can then use the standard relationship $\Delta G^\ddagger = \Delta H^\ddagger - T \Delta S^\ddagger$ to separate $K^\ddagger$ into enthalpic and entropic terms:
@@ -77,13 +77,13 @@ We can understand how transition state theory connects to experimental observati
 From transition state theory:
 \begin{equation}
 k = \frac{k^{\ddagger}}{c^{\circ}}\mathrm{e}^{\Delta S^{\ddagger}/R}\mathrm{e}^{-\Delta H^{\ddagger}/RT}
-(#eq:tst-k)
+(\#eq:tst-k)
 \end{equation}
 
 The Arrhenius equation:
 \begin{equation}
 k = A\mathrm{e}^{-E_\mathrm{a}/RT}
-(#eq:arrhenius)
+(\#eq:arrhenius-tst)
 \end{equation}
 
 This comparison reveals two important correspondences:
@@ -128,13 +128,13 @@ The trends in activation energy can be explained by:
    - Breaking H–Br ($E_\mathrm{a} = +12~\mathrm{kJ~mol^{-1}}$)
    - Breaking Br–Br ($E_\mathrm{a} = +4~\mathrm{kJ~mol^{-1}}$)
 
-## Reconciling Transition State Theory  with Collision Theory {#sec:tst-collision}
+## Reconciling Transition State Theory with Collision Theory {#sec:tst-collision}
 
-At first glance, Collision theory and transition state theory can seem to give different pictures of activation energy. In collision theory, $E_\mathrm{a}$ represents a minimum kinetic energy molecules must have to react. In transition state theory, $\Delta H^{\ddagger}$ represents the energy needed to distort and partially break bonds bonds in the activated complex.
+At first glance, collision theory and transition state theory can seem to give different pictures of activation energy. In collision theory, $E_\mathrm{a}$ represents a minimum kinetic energy molecules must have to react. In transition state theory, $\Delta H^{\ddagger}$ represents the energy needed to distort and partially break bonds in the activated complex.
 
 We can connect these views by following the energy through a reactive collision. Initially, the molecules approach with kinetic energy at least equal to $E_\mathrm{a}$. As they collide, this kinetic energy transforms into potential energy, with the molecular geometry distorting to form the activated complex. Here, the initial kinetic energy has become the energy stored in partially broken and formed bonds &mdash; our $\Delta H^{\ddagger}$. By energy conservation, these energies must be approximately equal.
 
-The two theories thus describe the same process from different perspectives: collision theory focuses on the keinetic energy molecules must have before they collide, while transition state theory considers how this energy is used in making and breaking bonds.
+The two theories thus describe the same process from different perspectives: collision theory focuses on the kinetic energy molecules must have before they collide, while transition state theory considers how this energy is used in making and breaking bonds.
 
 ## Entropy of Activation {#sec:entropy-activation}
 

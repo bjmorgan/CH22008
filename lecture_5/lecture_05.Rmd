@@ -188,7 +188,7 @@ kable(steric_data,
 ```
 
 The data in Table \@ref(tab:steric-factors) show two key features. First, for most reactions, collision theory overestimates the reaction rate. The reaction 2NOCl → 2NO + Cl~2~ has $P = 0.16$, meaning the experimental rate is only about one-sixth of the collision theory prediction.
-Second, the steric factor decreases systematically as molecular complexity increases. For methyl radical combination we find $P = 0.22$, while for the hydrogenation of ethene, $P = 1.7 \times 10^{-6}&mdash;a difference of five orders of magnitude.
+Second, the steric factor decreases systematically as molecular complexity increases. For methyl radical combination we find $P = 0.22$, while for the hydrogenation of ethene, $P = 1.7 \times 10^{-6}$&mdash;a difference of five orders of magnitude.
 
 ### Physical Interpretation
 
@@ -213,13 +213,13 @@ The rate constant derived from collision theory has a similar form to the empiri
 From collision theory:
 \begin{equation}
 k = P\pi d^2\left(\frac{8k_\mathrm{B}T}{\pi\mu}\right)^{1/2}\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-(#eq:collision-k)
+(\#eq:collision-k)
 \end{equation}
 
 The Arrhenius equation:
 \begin{equation}
 k = A_0\exp\left(-\frac{E_\mathrm{a}}{RT}\right)
-(#eq:arrhenius)
+(\#eq:arrhenius-ct)
 \end{equation}
 
 This comparison provides physical insight into the meaning of the Arrhenius parameters:
@@ -238,5 +238,5 @@ Collision theory works reasonably well for simple molecules but typically overes
 
 Two key limitations prevent collision theory from serving as a fully predictive framework:
 
-- The activation energy E$\mathrm{a}$ appears as an arbitrary &ldquo;threshold energy&rdquo; that molecules must possess to react. While we can measure this energy experimentally, the theory provides no insight into how $E_\mathrm{a}$ varies between different reactions. 
+- The activation energy $E_\mathrm{a}$ appears as an arbitrary &ldquo;threshold energy&rdquo; that molecules must possess to react. While we can measure this energy experimentally, the theory provides no insight into how $E_\mathrm{a}$ varies between different reactions. 
 - While we can determine the steric factor $P$ by comparing experimental and theoretical rate constants, we have no quantitative theory to predict its value. This means we cannot predict absolute rate constants for new reactions without experimental data.

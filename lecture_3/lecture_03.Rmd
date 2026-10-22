@@ -1,4 +1,4 @@
-# Parallel Reversibile Reactions {#lecture3}
+# Parallel Reversible Reactions {#lecture3}
 
 ## Introduction to Parallel Reversible Reactions
 
@@ -29,7 +29,7 @@ This is often called &ldquo;kinetic control&rdquo;, as the product distribution 
 
 At long times, the system reaches equilibrium, where:
 
-$$\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = \frac{\mathrm{d}d[\mathrm{C}]}{\mathrm{d}t} = 0$$
+$$\frac{\mathrm{d}[\mathrm{A}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{B}]}{\mathrm{d}t} = \frac{\mathrm{d}[\mathrm{C}]}{\mathrm{d}t} = 0$$
 
 At equilibrium:
 
@@ -95,7 +95,7 @@ knitr::include_graphics("lecture_3/figures/enolate_selectivity.png")
 
 We can understand the selectivity of this enolate formation, and why this depends on the strength of the base added, by thinking about the competition between the kinetic and thermodynamic products.
 
-The thermodynamic product is the enolate that is thermodynamically more stable. In general, more subtituted alkenes are more stable than less substituted alkenes (see Figure \@ref(fig:fig-alkene-stabilities)), so we can expect product B to be the thermodynamic product. 
+The thermodynamic product is the enolate that is thermodynamically more stable. In general, more substituted alkenes are more stable than less substituted alkenes (see Figure \@ref(fig:fig-alkene-stabilities)), so we can expect product B to be the thermodynamic product. 
 
 ```{r fig-alkene-stabilities, fig.cap="Negative enthalpies of hydrogenation, $-\\Delta H_\\mathrm{hyd}$, for the series of C~6~H~12~ alkenes. The enthalpy of hydrogenation becomes less negative (less exothermic) as the degree of substitution of the alkene increases, indicating an increased stability of the C=C double bond.", out.width='95%', fig.align='center'}
 knitr::include_graphics("lecture_3/figures/alkene_stabilities.png")
@@ -109,7 +109,7 @@ knitr::include_graphics("lecture_3/figures/removable_protons.png")
 
 Now that we have identified the kinetic product as product A and the thermodynamic product as product B, we can think about why using a strong base gives predominantly product A (kinetic control) but a weak base gives predominantly product B (thermodynamic control).
 
-First, let us consider the case of using a strong base. We have already identified that $k_\text{A} > k_\text{B}$, by considering which proton is more easily removed. In the presence of a strong base, we can also say that the position of equilibrium for both products ie expected to strongly favour the products, i.e., $K_\mathrm{A} \gg 1$ and $K_\mathrm{B} \gg 1$. For a reversible reaction the equilibrium constant is equal to the ratio of rate constants for the forward and reverse reactions, so:
+First, let us consider the case of using a strong base. We have already identified that $k_\text{A} > k_\text{B}$, by considering which proton is more easily removed. In the presence of a strong base, we can also say that the position of equilibrium for both products is expected to strongly favour the products, i.e., $K_\mathrm{A} \gg 1$ and $K_\mathrm{B} \gg 1$. For a reversible reaction the equilibrium constant is equal to the ratio of rate constants for the forward and reverse reactions, so:
 
 \begin{equation}
 \frac{k_\mathrm{A}}{k_{-\mathrm{A}}} \gg 1 \qquad \frac{k_\mathrm{B}}{k_{-\mathrm{B}}} \gg 1.
@@ -124,10 +124,10 @@ Because $K_\mathrm{A} \gg 1$ and $K_\mathrm{B} \gg 1$, the free energies of form
 knitr::include_graphics("lecture_3/figures/strong_base_rc_diagram.png")
 ```
 
-In the presence of a weak base, both equilibria are more balanced: $K_\mathrm{A} \approx 1$ and $K_\mathrm{B} \approx 1$. Again, using the fact that these equiibrium constants are equal to the ratios of rate constants for the forward and reverse reactions, this tells us that $k_{-\mathrm{A}} \approx k_\mathrm{A}$ and $k_{-\mathrm{B}} \approx k_\mathrm{B}$, i.e., both reverse reactions have rates that are approximately equal to the corresponding forward reactions, and are therefore highly reversible.
+In the presence of a weak base, both equilibria are more balanced: $K_\mathrm{A} \approx 1$ and $K_\mathrm{B} \approx 1$. Again, using the fact that these equilibrium constants are equal to the ratios of rate constants for the forward and reverse reactions, this tells us that $k_{-\mathrm{A}} \approx k_\mathrm{A}$ and $k_{-\mathrm{B}} \approx k_\mathrm{B}$, i.e., both reverse reactions have rates that are approximately equal to the corresponding forward reactions, and are therefore highly reversible.
 We still have $k_\text{A} > k_\text{B}$, and, so, at the start of the reaction product A forms faster than product B. But, because R &rarr; A is reversible, A is able to convert back to the reactant and then to form product B. Eventually we end up with a ratio [B]/[A] that reflects the free energy difference between the two products, with preferential formation for the thermodynamic product, B.
 
-```{r fig-weak-base-rc-diagram, fig.cap="In the presence of a weak base, the position of equilibrium less strongly favours both enolates, and both reactions are effectively reversible. Now the selectivity is determined by the free energy difference between the two products. Because B is more thermodymamically stable than A (because it is the more substituted enolate), we get preferential selectivity for the thermodynamic product B.", out.width='80%', fig.align='center'}
+```{r fig-weak-base-rc-diagram, fig.cap="In the presence of a weak base, the position of equilibrium less strongly favours both enolates, and both reactions are effectively reversible. Now the selectivity is determined by the free energy difference between the two products. Because B is more thermodynamically stable than A (because it is the more substituted enolate), we get preferential selectivity for the thermodynamic product B.", out.width='80%', fig.align='center'}
 knitr::include_graphics("lecture_3/figures/weak_base_rc_diagram.png")
 ```
 
