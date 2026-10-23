@@ -50,16 +50,16 @@ A steady state exists when the rates of formation and consumption of the interme
 
 Consider a reaction with the mechanism:
 
-$$\mathrm{A} + \mathrm{B} \underset{k_{-1}}{\overset{k1}\rightleftharpoons} \mathrm{C} \overset{k_2}\rightarrow \mathrm{D}$$
+$$\mathrm{A} + \mathrm{B} \underset{k_{-1}}{\overset{k_1}\rightleftharpoons} \mathrm{C} \overset{k_2}\rightarrow \mathrm{D}$$
 
 Reactants A and B combine reversibly to form an intermediate C, which then reacts to form product D. The steady-state approximation assumes $\mathrm{d}[\mathrm{C}]/\mathrm{d}t \approx 0$ &mdash; that is, the concentration of C remains approximately constant as the reaction proceeds.
 
-```{r fig-steady-state-comparison, fig.cap="Time evolution of concentrations for the reaction mechanism $\\mathrm{A} + \\mathrm{B} \\underset{k_1}{\\overset{k1}\\rightleftharpoons} \\mathrm{C} \\overset{k_2}\\longrightarrow \\mathrm{D}$ where $k_2 \\gg k_1$. Solid lines show the exact concentrations, while the dashed line shows the predicted product concentration $[\\mathrm{D}]_\\mathrm{SSA}$ calculated using the steady-state approximation for intermediate C. The approximation overshoots during the initial induction period where [C] is still building up, but describes the reaction progress well once steady state is established.", out.width='50%', fig.align='center'}
+```{r fig-steady-state-comparison, fig.cap="Time evolution of concentrations for the reaction mechanism $\\mathrm{A} + \\mathrm{B} \\underset{k_{-1}}{\\overset{k_1}\\rightleftharpoons} \\mathrm{C} \\overset{k_2}\\longrightarrow \\mathrm{D}$ where $k_{-1} + k_2 \\gg k_1[\\mathrm{A}], k_1[\\mathrm{B}]$. Solid lines show the exact concentrations, while the dashed line shows the predicted product concentration $[\\mathrm{D}]_\\mathrm{SSA}$ calculated using the steady-state approximation for intermediate C. The approximation overshoots during the initial induction period where [C] is still building up, but describes the reaction progress well once steady state is established.", out.width='50%', fig.align='center'}
 knitr::include_graphics("lecture_1/figures/steady_state_comparison.png")
 ```
 
-Figure \@ref(fig:fig-steady-state-comparison) compares the steady-state prediction for [D] (dashed line) with the exact concentration profiles (solid lines) when $k_2 \gg k_1$. During the induction period, the steady-state approximation overestimates the rate of product formation because it assumes C has already reached its steady-state concentration. However, once this period passes, the predicted and actual concentrations align well.
+Figure \@ref(fig:fig-steady-state-comparison) compares the steady-state prediction for [D] (dashed line) with the exact concentration profiles (solid lines) when $k_{-1} + k_2 \gg k_1[\mathrm{A}], k_1[\mathrm{B}]$. During the induction period, the steady-state approximation overestimates the rate of product formation because it assumes C has already reached its steady-state concentration. However, once this period passes, the predicted and actual concentrations align well.
 
-These observations suggest several criteria for applying the steady-state approximation to new systems. First, the kinetics must support the basic steady-state assumption, typically requiring $k_2 \gg k_1$. Second, the timescale of interest must exceed the induction period. Third, any deviations during the induction period should not compromise the analysis.
+These observations suggest several criteria for applying the steady-state approximation to new systems. First, the kinetics must support the basic steady-state assumption: C must be removed much faster than A and B react, $k_{-1} + k_2 \gg k_1[\mathrm{A}], k_1[\mathrm{B}]$. Second, the timescale of interest must exceed the induction period. Third, any deviations during the induction period should not compromise the analysis.
 
 When steady-state predictions match experimental data, they provide evidence for a reaction mechanism involving an intermediate maintained at near-constant concentration during the main reaction phase.

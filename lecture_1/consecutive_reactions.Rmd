@@ -34,7 +34,7 @@ $$[\mathrm{B}] = \frac{k_1[\mathrm{A}]_0}{k_2-k_1}(\mathrm{e}^{-k_1t} - \mathrm{
 
 Finally, we can find [C] using conservation of mass ([A] + [B] + [C] = [A]₀):
 
-$$[\mathrm{C}] = [\mathrm{A}]_0\left[1 + \frac{k_1\mathrm{e}^{-k_2t} - k_2\mathrm{e}^{-k_1t}}{k_1-k_2}\right]$$
+$$[\mathrm{C}] = [\mathrm{A}]_0\left[1 + \frac{k_1\mathrm{e}^{-k_2t} - k_2\mathrm{e}^{-k_1t}}{k_2-k_1}\right]$$
 
 ```{r fig-consecutive-reactions, fig.cap="Concentration profiles for a consecutive reaction A → B → C. The intermediate B exhibits a maximum concentration at intermediate times.", out.width='45%', fig.align='center'}
 knitr::include_graphics("lecture_1/figures/consecutive_reactions.png")
